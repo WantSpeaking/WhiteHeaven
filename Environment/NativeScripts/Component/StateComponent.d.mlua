@@ -1,0 +1,38 @@
+@Component
+script StateComponent extends Component
+
+	@Sync
+	property string CurrentStateName = "IDLE"
+
+	@Sync
+	property boolean Enable = true
+
+	property boolean EnableInHierarchy
+
+	property Entity Entity
+
+	method boolean AddCondition(string stateName, string nextStateName, func -> boolean conditionCheckFunction, boolean reverseResult) end
+
+	method boolean AddCondition(string stateName, string nextStateName, boolean reverseResult) end
+
+	method boolean AddState(string stateName, func updateFunction) end
+
+	method boolean AddState(string stateName, Type stateType) end
+
+	method boolean ChangeState(string stateName) end
+
+	method void RemoveCondition(string stateName, string nextStateName) end
+
+	method void RemoveState(string name) end
+
+	method boolean IsClient() end
+
+	method boolean IsServer() end
+
+	emitter EmitDeadEvent(DeadEvent event) end
+
+	emitter EmitReviveEvent(ReviveEvent event) end
+
+	emitter EmitStateChangeEvent(StateChangeEvent event) end
+
+end

@@ -1,0 +1,8 @@
+@Event
+script TextInputValueChangeEvent
+
+	property string text
+
+	constructor TextInputValueChangeEvent(string text) end
+
+end

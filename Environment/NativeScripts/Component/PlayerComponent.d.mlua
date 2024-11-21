@@ -1,0 +1,65 @@
+@Component
+script PlayerComponent extends Component
+
+	@Sync
+	property integer Hp
+
+	@Sync
+	property integer MaxHp = 1000
+
+	@Sync
+	property string Nickname
+
+	@Sync
+	property boolean PVPMode = true
+
+	@Sync
+	property string ProfileCode
+
+	@Sync
+	property float RespawnDuration = 5
+
+	@Sync
+	property Vector3 RespawnPosition = Vector3(340282346638528859811704183484516925440.000, 340282346638528859811704183484516925440.000, 340282346638528859811704183484516925440.000)
+
+	@Sync
+	property number RespawnTime = 0
+
+	@Sync
+	property string UserId
+
+	@Sync
+	property boolean Enable = true
+
+	property boolean EnableInHierarchy
+
+	property Entity Entity
+
+	method boolean IsDead() end
+
+	@ExecSpace("Server")
+	method void MoveToEntityByPath(string worldPath) end
+
+	@ExecSpace("Server")
+	method void MoveToEntity(string entityID) end
+
+	@ExecSpace("Server")
+	method void MoveToMapPosition(string mapID, Vector2 targetPosition) end
+
+	@ExecSpace("Client")
+	method void ProcessDead(string targetUserId) end
+
+	@ExecSpace("Client")
+	method void ProcessRevive(string targetUserId) end
+
+	method void Respawn() end
+
+	method void SetPosition(Vector3 position) end
+
+	method void SetWorldPosition(Vector3 worldPosition) end
+
+	method boolean IsClient() end
+
+	method boolean IsServer() end
+
+end

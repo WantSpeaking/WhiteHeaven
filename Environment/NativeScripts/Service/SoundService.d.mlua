@@ -1,0 +1,134 @@
+@Service
+script SoundService extends Service
+
+	@ExecSpace("ClientOnly")
+	method boolean IsPlayBGM() end
+
+	@ExecSpace("ClientOnly")
+	method void LoadSound(string id) end
+
+	@ExecSpace("Client")
+	method void PauseBGM() end
+
+	@ExecSpace("Client")
+	method void PauseBGM(Entity messageOwnerEntity) end
+
+	@ExecSpace("Client")
+	method void PauseBGM(string targetUserId) end
+
+	@ExecSpace("Client")
+	method void PauseSound(string id) end
+
+	@ExecSpace("Client")
+	method void PauseSound(string id, Entity messageOwnerEntity) end
+
+	@ExecSpace("Client")
+	method void PauseSound(string id, string targetUserId) end
+
+	@ExecSpace("Client")
+	method void PlayBGM(string id, float volume) end
+
+	@ExecSpace("Client")
+	method void PlayBGM(string id, float volume, Entity messageOwnerEntity) end
+
+	@ExecSpace("Client")
+	method void PlayBGM(string id, float volume, string targetUserId) end
+
+	@ExecSpace("Client")
+	method void PlayLoopSound(string id, float volume) end
+
+	@ExecSpace("Client")
+	method void PlayLoopSound(string id, float volume, Entity messageOwnerEntity) end
+
+	@ExecSpace("Client")
+	method void PlayLoopSound(string id, float volume, string targetUserId) end
+
+	@ExecSpace("Client")
+	method void PlayLoopSoundAtPos(string id, Vector3 pos, Entity listener, float volume) end
+
+	@ExecSpace("Client")
+	method void PlayLoopSoundAtPos(string id, Vector3 pos, Entity listener, float volume, Entity messageOwnerEntity) end
+
+	@ExecSpace("Client")
+	method void PlayLoopSoundAtPos(string id, Vector3 pos, Entity listener, float volume, string targetUserId) end
+
+	@ExecSpace("Client")
+	method void PlaySound(string id, float volume) end
+
+	@ExecSpace("Client")
+	method void PlaySound(string id, float volume, Entity messageOwnerEntity) end
+
+	@ExecSpace("Client")
+	method void PlaySound(string id, float volume, string targetUserId) end
+
+	@ExecSpace("Client")
+	method void PlaySoundAtPos(string id, Vector3 pos, Entity listener, float volume) end
+
+	@ExecSpace("Client")
+	method void PlaySoundAtPos(string id, Vector3 pos, Entity listener, float volume, Entity messageOwnerEntity) end
+
+	@ExecSpace("Client")
+	method void PlaySoundAtPos(string id, Vector3 pos, Entity listener, float volume, string targetUserId) end
+
+	@ExecSpace("Client")
+	method void ResumeBGM() end
+
+	@ExecSpace("Client")
+	method void ResumeBGM(Entity messageOwnerEntity) end
+
+	@ExecSpace("Client")
+	method void ResumeBGM(string targetUserId) end
+
+	@ExecSpace("Client")
+	method void ResumeSound(string id) end
+
+	@ExecSpace("Client")
+	method void ResumeSound(string id, Entity messageOwnerEntity) end
+
+	@ExecSpace("Client")
+	method void ResumeSound(string id, string targetUserId) end
+
+	@ExecSpace("Client")
+	method void SetBGMVolume(float volume) end
+
+	@ExecSpace("Client")
+	method void SetBGMVolume(float volume, Entity messageOwnerEntity) end
+
+	@ExecSpace("Client")
+	method void SetBGMVolume(float volume, string targetUserId) end
+
+	@ExecSpace("Client")
+	method void StopBGM(boolean immediately) end
+
+	@ExecSpace("Client")
+	method void StopBGM(boolean immediately, Entity messageOwnerEntity) end
+
+	@ExecSpace("Client")
+	method void StopBGM(boolean immediately, string targetUserId) end
+
+	@ExecSpace("Client")
+	method void StopSound(string id) end
+
+	@ExecSpace("Client")
+	method void StopSound(string id, Entity messageOwnerEntity) end
+
+	@ExecSpace("Client")
+	method void StopSound(string id, string targetUserId) end
+
+	method MODEventHandlerBase ConnectEvent(Type eventType, IMODScriptFunction eventHandler) end
+
+	method MODEventHandlerBase ConnectEvent(Type eventType, IMODScriptFunction eventHandler) end
+
+	method MODEventHandlerBase ConnectEvent(string key, IMODScriptFunction eventHandler) end
+
+	method boolean DisconnectEvent(Type eventType, MODEventHandlerBase eventHandler) end
+
+	method boolean DisconnectEvent(Type eventType, MODEventHandlerBase eventHandler) end
+
+	method boolean DisconnectEvent(string key, MODEventHandlerBase eventHandler) end
+
+	method void SendEvent(EventType sendEvent) end
+
+	emitter EmitSoundPlayStateChangedEvent(SoundPlayStateChangedEvent event) end
+
+end

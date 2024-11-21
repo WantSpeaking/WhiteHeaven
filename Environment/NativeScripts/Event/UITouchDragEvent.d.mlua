@@ -1,0 +1,14 @@
+@Event
+script UITouchDragEvent
+
+	property Entity Entity
+
+	property Vector2 TouchDelta
+
+	property int32 TouchId
+
+	property Vector2 TouchPoint
+
+	constructor UITouchDragEvent(Entity entity, Vector2 touchDelta, int32 touchId, Vector2 touchPoint) end
+
+end

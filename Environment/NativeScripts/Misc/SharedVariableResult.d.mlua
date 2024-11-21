@@ -1,0 +1,8 @@
+@Misc
+script SharedVariableResult
+
+	property SharedMemoryResultCode Code
+
+	property SharedVariableInfo Info
+
+end

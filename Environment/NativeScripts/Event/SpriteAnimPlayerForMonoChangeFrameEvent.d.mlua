@@ -1,0 +1,14 @@
+@Event
+script SpriteAnimPlayerForMonoChangeFrameEvent
+
+	property int32 FrameIndex = -1
+
+	property boolean ReversePlaying = false
+
+	property int32 TotalFrameCount = 0
+
+	property SpriteAnimPlayerForMono AnimPlayer
+
+	constructor SpriteAnimPlayerForMonoChangeFrameEvent() end
+
+end

@@ -1,0 +1,57 @@
+@Component
+script PlayerControllerComponent extends Component
+
+	@Sync
+	property boolean AlwaysMovingState = false
+
+	@Sync
+	property int32 FixedLookAt = 0
+
+	@Sync
+	property float LookDirectionX = -1
+
+	@Sync
+	property boolean Enable = true
+
+	property boolean EnableInHierarchy
+
+	property Entity Entity
+
+	method void ActionAttack() end
+
+	method void ActionCrouch() end
+
+	method void ActionDownJump() end
+
+	method void ActionEnterPortal() end
+
+	method void ActionInteraction(KeyboardKey key, boolean isKeyDown) end
+
+	method void ActionJump() end
+
+	method void ActionSit() end
+
+	@ExecSpace("ClientOnly")
+	method void AddCondition(string actionName, func -> boolean conditionFunction) end
+
+	@ExecSpace("ClientOnly")
+	method string GetActionName(KeyboardKey key) end
+
+	@ExecSpace("ClientOnly")
+	method void RemoveActionKey(KeyboardKey key) end
+
+	@ExecSpace("ClientOnly")
+	method void RemoveAllActionKeyByActionName(string actionName) end
+
+	@ExecSpace("ClientOnly")
+	method void SetActionKey(KeyboardKey key, string actionName, func -> boolean conditionFunction) end
+
+	method boolean IsClient() end
+
+	method boolean IsServer() end
+
+	emitter EmitChangedLookAtEvent(ChangedLookAtEvent event) end
+
+	emitter EmitPlayerActionEvent(PlayerActionEvent event) end
+
+end

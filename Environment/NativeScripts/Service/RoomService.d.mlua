@@ -1,0 +1,65 @@
+@Service
+script RoomService extends Service
+
+	property ReadOnlyDictionary<string, InstanceRoom> InstanceRooms
+
+	property string RoomKey
+
+	property string StaticRoomKey
+
+	@ExecSpace("ServerOnly")
+	method InstanceRoom CreateInstanceRoom(string key, table<string> mapNames, float firstUserWaitSeconds) end
+
+	@ExecSpace("ServerOnly")
+	method SharedMemoryResultCode DeleteSharedMemoryAndWait(string name) end
+
+	@ExecSpace("ServerOnly")
+	method void DeleteSharedMemoryAsync(string name, func<SharedMemoryResultCode> callbackFunction) end
+
+	@ExecSpace("ServerOnly")
+	method InstanceRoom GetOrCreateInstanceRoom(string key, float firstUserWaitSeconds) end
+
+	@ExecSpace("ServerOnly")
+	method SharedMemoryResultCode, RoomSharedMemory GetSharedMemory(string name) end
+
+	method boolean IsInstanceRoom() end
+
+	@ExecSpace("ServerOnly")
+	method boolean MoveUserToInstanceRoom(string key, string userId, string mapName) end
+
+	@ExecSpace("ServerOnly")
+	method boolean MoveUserToStaticRoom(string userId, string mapName) end
+
+	@ExecSpace("ServerOnly")
+	method int32 MoveUsersToInstanceRoom(string key, table<string> userIds, string mapName) end
+
+	@ExecSpace("ServerOnly")
+	method int32 MoveUsersToStaticRoom(table<string> userIds, string mapName) end
+
+	method SendEventRequestResultCode RequestSendEventToAllRoomsAndWait(EventType sendEvent) end
+
+	method void RequestSendEventToAllRoomsAsync(EventType sendEvent, func<SendEventRequestResultCode, EventType> callbackFunction) end
+
+	method SendEventRequestResultCode RequestSendEventToRoomAndWait(EventType sendEvent, string targetRoomKey) end
+
+	method void RequestSendEventToRoomAsync(EventType sendEvent, string targetRoomKey, func<SendEventRequestResultCode, EventType> callbackFunction) end
+
+	method MODEventHandlerBase ConnectEvent(Type eventType, IMODScriptFunction eventHandler) end
+
+	method MODEventHandlerBase ConnectEvent(Type eventType, IMODScriptFunction eventHandler) end
+
+	method MODEventHandlerBase ConnectEvent(string key, IMODScriptFunction eventHandler) end
+
+	method boolean DisconnectEvent(Type eventType, MODEventHandlerBase eventHandler) end
+
+	method boolean DisconnectEvent(Type eventType, MODEventHandlerBase eventHandler) end
+
+	method boolean DisconnectEvent(string key, MODEventHandlerBase eventHandler) end
+
+	method void SendEvent(EventType sendEvent) end
+
+	emitter EmitRoomBeginEvent(RoomBeginEvent event) end
+
+	emitter EmitRoomEndEvent(RoomEndEvent event) end
+
+end

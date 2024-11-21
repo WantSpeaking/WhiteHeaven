@@ -1,0 +1,8 @@
+@Event
+script RenderResourceContainerEvent
+
+	property boolean AllowInterrupt = true
+
+	property boolean IsSuccess = true
+
+end

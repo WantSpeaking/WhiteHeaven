@@ -1,0 +1,8 @@
+@Event
+script EntityPreDeserializeComponentsEvent
+
+	property Entity Entity
+
+	constructor EntityPreDeserializeComponentsEvent(Entity entity) end
+
+end

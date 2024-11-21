@@ -1,0 +1,51 @@
+@Service
+script WorldInstanceService extends Service
+
+	property string WorldInstanceId
+
+	@ExecSpace("ServerOnly")
+	method SharedMemoryResultCode DeleteSharedMemoryAndWait(string name) end
+
+	@ExecSpace("ServerOnly")
+	method void DeleteSharedMemoryAsync(string name, func<SharedMemoryResultCode> callbackFunction) end
+
+	@ExecSpace("ServerOnly")
+	method SharedMemoryResultCode, WorldInstanceSharedMemory GetSharedMemory(string name) end
+
+	@ExecSpace("ServerOnly")
+	method boolean, WorldInstanceInfoPages GetWorldInstanceInfoPagesAndWait() end
+
+	@ExecSpace("ServerOnly")
+	method void GetWorldInstanceInfoPagesAsync(func<boolean, WorldInstanceInfoPages> callbackFunction) end
+
+	@ExecSpace("ServerOnly")
+	method SharedMemoryResultCode ReleaseSharedMemoryAndWait(string name) end
+
+	@ExecSpace("ServerOnly")
+	method void ReleaseSharedMemoryAsync(string name, func<SharedMemoryResultCode> callbackFunction) end
+
+	method SendEventRequestResultCode RequestSendEventToAllWorldInstancesAndWait(EventType sendEvent) end
+
+	method void RequestSendEventToAllWorldInstancesAsync(EventType sendEvent, func<SendEventRequestResultCode, EventType> callbackFunction) end
+
+	method SendEventRequestResultCode RequestSendEventToWorldInstanceAndWait(EventType sendEvent, string targetWorldInstanceId) end
+
+	method void RequestSendEventToWorldInstanceAsync(EventType sendEvent, string targetWorldInstanceId, func<SendEventRequestResultCode, EventType> callbackFunction) end
+
+	method MODEventHandlerBase ConnectEvent(Type eventType, IMODScriptFunction eventHandler) end
+
+	method MODEventHandlerBase ConnectEvent(Type eventType, IMODScriptFunction eventHandler) end
+
+	method MODEventHandlerBase ConnectEvent(string key, IMODScriptFunction eventHandler) end
+
+	method boolean DisconnectEvent(Type eventType, MODEventHandlerBase eventHandler) end
+
+	method boolean DisconnectEvent(Type eventType, MODEventHandlerBase eventHandler) end
+
+	method boolean DisconnectEvent(string key, MODEventHandlerBase eventHandler) end
+
+	method void SendEvent(EventType sendEvent) end
+
+	emitter EmitWorldInstanceExcludedEvent(WorldInstanceExcludedEvent event) end
+
+end

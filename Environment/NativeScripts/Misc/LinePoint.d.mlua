@@ -1,0 +1,14 @@
+@Misc
+script LinePoint
+
+	property Color Color = Color(1.000, 1.000, 1.000, 1.000)
+
+	property Vector2 Position = Vector2(0.000, 0.000)
+
+	property float Width = 1
+
+	constructor LinePoint() end
+
+	constructor LinePoint(Vector2 position, Color color, float width) end
+
+end

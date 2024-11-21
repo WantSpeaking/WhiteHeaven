@@ -1,0 +1,35 @@
+@Component
+script Player extends Component
+
+	@ExecSpace("ServerOnly")
+	method void OnInitialize()
+		log("OnInitialize")
+	end
+
+	@ExecSpace("ServerOnly")
+	method void OnBeginPlay()
+		log("OnBeginPlay")
+	end
+
+	@ExecSpace("ServerOnly")
+	method void OnMapEnter(Entity enteredMap)
+		self.Entity.Enable = enteredMap.Name ~= "login"
+		log("OnMapEnter:"..enteredMap.Name)
+	end
+
+	@ExecSpace("ServerOnly")
+	method void OnMapLeave(Entity leftMap)
+		log("OnMapLeave")
+	end
+
+	@ExecSpace("ServerOnly")
+	method void OnEndPlay()
+		log("OnEndPlay")
+	end
+
+	@ExecSpace("ServerOnly")
+	method void OnDestroy()
+		log("OnDestroy ")
+	end
+
+end

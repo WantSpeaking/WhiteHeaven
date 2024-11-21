@@ -1,0 +1,12 @@
+@Misc
+script PolygonShape
+
+	property float Angle
+
+	property List<Vector2> Points
+
+	property Vector2 Position
+
+	constructor PolygonShape(Vector2 position, List<Vector2> points, float angle) end
+
+end

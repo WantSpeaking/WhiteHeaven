@@ -1,0 +1,8 @@
+@Event
+script EntityRemoveComponentEvent
+
+	property Entity Entity
+
+	constructor EntityRemoveComponentEvent(Entity entity, Component component) end
+
+end

@@ -1,0 +1,46 @@
+@Component
+script HelloEditor extends Component
+
+	@EventSender("Entity", "b870397b-b804-4fa8-942d-a930cea6f217")
+	handler HandleButtonClickEditorEvent(ButtonClickEditorEvent event)
+		--------------- Native Event Sender Info ----------------
+		-- Sender: ButtonComponent
+		-- Space: Editor
+		---------------------------------------------------------
+		
+		-- Parameters
+		-- local Entity = event.Entity
+		---------------------------------------------------------
+		
+		local saveInventory = function(mapid)
+		    	log(mapid)
+			_EditorService:SaveMap()
+		end
+		
+		local timerID = 0
+		local count = 0
+		
+		local saveInventory1 = function()
+		    	_EditorService:CreateMap(saveInventory)
+			count+=1
+			if count >4000 then
+				_TimerService:ClearTimer(timerID)
+			end
+		end
+		
+		_EditorService:LoadMap("map01",false)
+		--_EditorService:
+		--timerID = _TimerService:SetTimerRepeat(saveInventory1,0.5)
+		
+		--for	i=4,100
+		--do
+			--_EditorService:CreateMap(saveInventory)
+		--end
+		
+		--_EditorService:SelectEntity("ef88ae62-1197-4d5e-8a02-3b49f033e30f")
+		
+		---_EditorService:CloneSelectedEntity()
+		--print(_EntityService:GetEntityByPath("/maps/map03"))
+	end
+
+end

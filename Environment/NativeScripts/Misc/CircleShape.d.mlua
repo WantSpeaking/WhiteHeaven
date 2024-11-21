@@ -1,0 +1,10 @@
+@Misc
+script CircleShape
+
+	property float Radius
+
+	property Vector2 Position
+
+	constructor CircleShape(Vector2 position, float radius) end
+
+end

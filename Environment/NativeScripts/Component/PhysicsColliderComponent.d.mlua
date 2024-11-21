@@ -1,0 +1,65 @@
+@Component
+script PhysicsColliderComponent extends Component
+
+	@Sync
+	property Vector2 BoxSize = Vector2(0.000, 0.000)
+
+	@Sync
+	property float CircleRadius = 0
+
+	property boolean ClientOnly = false
+
+	@Sync
+	property Vector2 ColliderOffset = Vector2(0.000, 0.000)
+
+	@Sync
+	property ColliderType ColliderType = ColliderType.Box
+
+	@Sync
+	property CollisionGroup CollisionGroup
+
+	@Sync
+	property float Density = 1
+
+	@Sync
+	property boolean EnableContactEvent = false
+
+	@Sync
+	property float Friction = 0.3
+
+	property boolean IsLegacy = false
+
+	@Sync
+	property boolean IsSensor = false
+
+	@Sync
+	property SyncList<Vector2> PolygonPoints
+
+	@Sync
+	property float Restitution = 0
+
+	@Sync
+	property boolean UseCustomPhysicalProperties = false
+
+	@Sync
+	property boolean Enable = true
+
+	property boolean EnableInHierarchy
+
+	property Entity Entity
+
+	method PhysicsRigidbodyComponent GetAttachedPhysicsRigidbody() end
+
+	method void OnContactBegin(PhysicsContactBeginEvent beginEvent) end
+
+	method void OnContactEnd(PhysicsContactEndEvent endEvent) end
+
+	method boolean IsClient() end
+
+	method boolean IsServer() end
+
+	emitter EmitPhysicsContactBeginEvent(PhysicsContactBeginEvent event) end
+
+	emitter EmitPhysicsContactEndEvent(PhysicsContactEndEvent event) end
+
+end

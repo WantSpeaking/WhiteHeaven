@@ -1,0 +1,66 @@
+@Misc
+script RoomSharedMemory
+
+	property string Name
+
+	@ExecSpace("ServerOnly")
+	method Dictionary<string, SharedVariableResult> BatchCreateVariableAndWait(Dictionary<string, string> nameValues) end
+
+	@ExecSpace("ServerOnly")
+	method void BatchCreateVariableAsync(Dictionary<string, string> nameValues, func<Dictionary<string, SharedVariableResult>> callbackFunction) end
+
+	@ExecSpace("ServerOnly")
+	method Dictionary<string, SharedMemoryResultCode> BatchDeleteVariableAndWait(List<string> names) end
+
+	@ExecSpace("ServerOnly")
+	method void BatchDeleteVariableAsync(List<string> names, func<Dictionary<string, SharedMemoryResultCode>> callbackFunction) end
+
+	@ExecSpace("ServerOnly")
+	method Dictionary<string, SharedVariableResult> BatchGetVariableAndWait(List<string> names) end
+
+	@ExecSpace("ServerOnly")
+	method void BatchGetVariableAsync(List<string> names, func<Dictionary<string, SharedVariableResult>> callbackFunction) end
+
+	@ExecSpace("ServerOnly")
+	method Dictionary<string, SharedVariableResult> BatchSetVariableAndWait(Dictionary<string, string> nameValues) end
+
+	@ExecSpace("ServerOnly")
+	method void BatchSetVariableAsync(Dictionary<string, string> nameValues, func<Dictionary<string, SharedVariableResult>> callbackFunction) end
+
+	@ExecSpace("ServerOnly")
+	method Dictionary<string, SharedVariableResult> BatchUpdateVariableAndWait(Dictionary<SharedVariableKeyInfo, string> keyValues) end
+
+	@ExecSpace("ServerOnly")
+	method void BatchUpdateVariableAsync(Dictionary<SharedVariableKeyInfo, string> keyValues, func<Dictionary<string, SharedVariableResult>> callbackFunction) end
+
+	@ExecSpace("ServerOnly")
+	method SharedVariableResult CreateVariableAndWait(string name, string value) end
+
+	@ExecSpace("ServerOnly")
+	method void CreateVariableAsync(string name, string value, func<SharedVariableResult> callbackFunction) end
+
+	@ExecSpace("ServerOnly")
+	method SharedMemoryResultCode DeleteVariableAndWait(string name) end
+
+	@ExecSpace("ServerOnly")
+	method void DeleteVariableAsync(string name, func<SharedMemoryResultCode> callbackFunction) end
+
+	@ExecSpace("ServerOnly")
+	method SharedVariableResult GetVariableAndWait(string name) end
+
+	@ExecSpace("ServerOnly")
+	method void GetVariableAsync(string name, func<SharedVariableResult> callbackFunction) end
+
+	@ExecSpace("ServerOnly")
+	method SharedVariableResult SetVariableAndWait(string name, string value) end
+
+	@ExecSpace("ServerOnly")
+	method void SetVariableAsync(string name, string value, func<SharedVariableResult> callbackFunction) end
+
+	@ExecSpace("ServerOnly")
+	method SharedVariableResult UpdateVariableAndWait(SharedVariableKeyInfo keyInfo, string value) end
+
+	@ExecSpace("ServerOnly")
+	method void UpdateVariableAsync(SharedVariableKeyInfo keyInfo, string value, func<SharedVariableResult> callbackFunction) end
+
+end

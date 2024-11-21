@@ -1,0 +1,12 @@
+@Event
+script SingleSpriteContainerEvent
+
+	property string TexturePath
+
+	property boolean AllowInterrupt = true
+
+	property boolean IsSuccess = true
+
+	constructor SingleSpriteContainerEvent(string texturePath) end
+
+end

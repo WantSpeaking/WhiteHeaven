@@ -1,0 +1,30 @@
+@Component
+script LineGUIRendererComponent extends Component
+
+	property float Flexibility = 3
+
+	property boolean IsFlexible = true
+
+	property boolean IsSmooth = false
+
+	property boolean Loop = false
+
+	@Sync
+	property string MaterialId = ""
+
+	property SyncList<LinePoint> Points
+
+	@Sync
+	property boolean Enable = true
+
+	property boolean EnableInHierarchy
+
+	property Entity Entity
+
+	method void ChangeMaterial(string materialId) end
+
+	method boolean IsClient() end
+
+	method boolean IsServer() end
+
+end

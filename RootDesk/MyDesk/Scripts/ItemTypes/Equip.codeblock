@@ -1,0 +1,33 @@
+{
+  "Id": "",
+  "GameId": "",
+  "EntryKey": "codeblock://20741079-3de4-420d-96a1-75b7d6aba653",
+  "ContentType": "x-mod/codeblock",
+  "Content": "",
+  "Usage": 0,
+  "UsePublish": 1,
+  "UseService": 0,
+  "CoreVersion": "1.21.0.0",
+  "StudioVersion": "0.1.0.0",
+  "DynamicLoading": 0,
+  "ContentProto": {
+    "Use": "Json",
+    "Json": {
+      "CoreVersion": {
+        "Major": 0,
+        "Minor": 2
+      },
+      "ScriptVersion": {
+        "Major": 1,
+        "Minor": 1
+      },
+      "Description": "",
+      "Id": "20741079-3de4-420d-96a1-75b7d6aba653",
+      "Language": 1,
+      "Name": "Equip",
+      "Type": 6,
+      "Source": 0,
+      "Target": "codeblock://d4a5f5e8-902b-432a-a7c8-0d210c1e9108"
+    }
+  }
+}

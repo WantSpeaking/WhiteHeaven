@@ -1,0 +1,8 @@
+@Misc
+script SortableDataStorageItem
+
+	property DataStorageKeyInfo KeyInfo
+
+	property integer Value
+
+end

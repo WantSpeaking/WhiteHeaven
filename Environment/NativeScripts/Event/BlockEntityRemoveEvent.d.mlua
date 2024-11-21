@@ -1,0 +1,10 @@
+@Event
+script BlockEntityRemoveEvent
+
+	property Dictionary<string, string> extras
+
+	property string id
+
+	constructor BlockEntityRemoveEvent(Dictionary<string, string> extras, string id) end
+
+end

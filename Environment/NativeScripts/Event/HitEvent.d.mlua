@@ -1,0 +1,20 @@
+@Event
+script HitEvent
+
+	property Vector2 AttackCenter
+
+	property Entity AttackerEntity
+
+	property List<integer> Damages
+
+	property any Extra
+
+	property HitFeedbackAction FeedbackAction
+
+	property boolean IsCritical
+
+	property integer TotalDamage
+
+	constructor HitEvent(Vector2 attackCenter, Entity attackerEntity, List<integer> damages, any extra, HitFeedbackAction feedbackAction, boolean isCritical, integer totalDamage) end
+
+end

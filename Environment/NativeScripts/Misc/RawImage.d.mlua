@@ -1,0 +1,8 @@
+@Misc
+script RawImage
+
+	property int32 Height
+
+	property int32 Width
+
+end

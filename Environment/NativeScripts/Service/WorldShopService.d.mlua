@@ -1,0 +1,30 @@
+@Service
+script WorldShopService extends Service
+
+	method WorldShopProduct GetProductAndWait(string productId) end
+
+	method WorldShopProductPages GetProductsAndWait(WorldShopProductType productType, WorldShopProductStatus productStatus) end
+
+	@ExecSpace("ClientOnly")
+	method void PromptPurchase(string productId) end
+
+	@ExecSpace("ServerOnly")
+	method void SetProcessPurchaseCallback(func<WorldShopPurchaseInfo> -> boolean callback) end
+
+	method boolean UserHasPassAndWait(string userId, string productId) end
+
+	method MODEventHandlerBase ConnectEvent(Type eventType, IMODScriptFunction eventHandler) end
+
+	method MODEventHandlerBase ConnectEvent(Type eventType, IMODScriptFunction eventHandler) end
+
+	method MODEventHandlerBase ConnectEvent(string key, IMODScriptFunction eventHandler) end
+
+	method boolean DisconnectEvent(Type eventType, MODEventHandlerBase eventHandler) end
+
+	method boolean DisconnectEvent(Type eventType, MODEventHandlerBase eventHandler) end
+
+	method boolean DisconnectEvent(string key, MODEventHandlerBase eventHandler) end
+
+	method void SendEvent(EventType sendEvent) end
+
+end

@@ -1,0 +1,47 @@
+@Logic
+script Data extends Logic
+
+	property table ItemTable = {}
+
+	property number ItemTableRowCount = 0
+
+	method void OnBeginPlay()
+			local dataset = _DataService:GetTable("ItemTableDataSet")
+		    local rowCount = dataset:GetRowCount()
+		
+		    for i = 1, rowCount do
+		    	---@type string
+		    	local id = dataset:GetCell(i, "Id")
+		    	---@type string
+		    	local name = dataset:GetCell(i, "Name")
+		    	---@type string
+		    	local iconRUID = dataset:GetCell(i, "IconRUID")
+		    	---@type integer
+		    	local maxStackCount = math.tointeger(tonumber(dataset:GetCell(i, "MaxStackCount")))
+		    	---@type integer
+		    	local price = math.tointeger(tonumber(dataset:GetCell(i, "Price")))
+		
+		    	local data = ItemInfo()
+		    	data.Index = i
+		    	data.Id = id
+		    	data.Name = name
+		    	data.IconRUID = iconRUID
+		    	data.MaxStackCount = maxStackCount
+		    	data.Price = price
+		
+		    	if self.ItemTable[id] ~= nil then
+		    		log_warning ("[SimpleInventoryItemTable] Duplicated Item Id: " .. id)
+		    	end
+		
+		    	self.ItemTable[id] = data
+		    end
+		
+				
+		    -- Total number of items
+		    self.ItemTableRowCount = rowCount
+		
+		
+		--log(self.ItemTable["potion_bluepill"].Name);
+	end
+
+end

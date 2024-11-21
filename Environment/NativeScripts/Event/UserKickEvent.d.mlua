@@ -1,0 +1,14 @@
+@Event
+script UserKickEvent
+
+	property KickReason KickReason
+
+	property string ProfileCode
+
+	property string UserId
+
+	constructor UserKickEvent(IUser user) end
+
+	constructor UserKickEvent(KickReason kickReason, string userId, string profileCode) end
+
+end

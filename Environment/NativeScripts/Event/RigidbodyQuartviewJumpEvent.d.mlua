@@ -1,0 +1,10 @@
+@Event
+script RigidbodyQuartviewJumpEvent
+
+	property boolean IsJumping = false
+
+	property Entity PlayerEntity
+
+	constructor RigidbodyQuartviewJumpEvent(boolean isJumping) end
+
+end

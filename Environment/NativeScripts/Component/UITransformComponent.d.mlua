@@ -1,0 +1,74 @@
+@Component
+script UITransformComponent extends Component
+
+	property PlatformType ActivePlatform = PlatformType.All
+
+	property AlignmentType AlignmentOption = AlignmentType.Center
+
+	property Vector2 AnchorsMax = Vector2(0.500, 0.500)
+
+	property Vector2 AnchorsMin = Vector2(0.500, 0.500)
+
+	property Vector2 OffsetMax = Vector2(0.500, 0.500)
+
+	property Vector2 OffsetMin = Vector2(0.500, 0.500)
+
+	property Vector2 Pivot = Vector2(0.500, 0.500)
+
+	property Vector2 RectSize = Vector2(100.000, 100.000)
+
+	property UIModeType UIMode = UIModeType.None
+
+	property Vector3 UIRotation
+
+	property Vector3 UIScale = Vector3(1.000, 1.000, 1.000)
+
+	property Vector2 anchoredPosition = Vector2(0.000, 0.000)
+
+	property Vector3 Rotation
+
+	@Sync
+	property Vector3 Position
+
+	@Sync
+	property Quaternion QuaternionRotation = Quaternion(0.000, 0.000, 0.000, 1.000)
+
+	@Sync
+	property Vector3 Scale = Vector3(1.000, 1.000, 1.000)
+
+	property Vector3 WorldPosition
+
+	property Vector3 WorldRotation
+
+	property float WorldZRotation
+
+	property float ZRotation
+
+	@Sync
+	property boolean Enable = true
+
+	property boolean EnableInHierarchy
+
+	property Entity Entity
+
+	method table<Vector2> GetWorldCorners() end
+
+	method void Rotate(float angle) end
+
+	method Vector3 ToLocalDirection(Vector3 worldDirection) end
+
+	method Vector3 ToLocalPoint(Vector3 worldPoint) end
+
+	method Vector3 ToWorldDirection(Vector3 localDirection) end
+
+	method Vector3 ToWorldPoint(Vector3 localPoint) end
+
+	method void Translate(float deltaX, float deltaY) end
+
+	method boolean IsClient() end
+
+	method boolean IsServer() end
+
+	emitter EmitUIModeTypeChangedEvent(UIModeTypeChangedEvent event) end
+
+end

@@ -1,0 +1,76 @@
+@Component
+script KinematicbodyComponent extends Component
+
+	property Vector2 Acceleration = Vector2(1.000, 1.000)
+
+	@Sync
+	property boolean ApplyClimbableRotation = true
+
+	@Sync
+	property boolean EnableJump = true
+
+	@Sync
+	property boolean EnableShadow = true
+
+	@Sync
+	property boolean EnableTileCollision = true
+
+	@Sync
+	property float JumpDrag = 20
+
+	@Sync
+	property float JumpSpeed = 6.3
+
+	property Vector2 MoveVelocity
+
+	@Sync
+	property Color ShadowColor = Color(0.300, 0.300, 0.300, 0.800)
+
+	@Sync
+	property Vector2 ShadowOffset = Vector2(0.000, 0.000)
+
+	@Sync
+	property float ShadowScalingRatio = 0.5
+
+	@Sync
+	property Vector2 ShadowSize = Vector2(0.700, 0.300)
+
+	@Sync
+	property Vector2 SpeedFactor = Vector2(1.000, 1.000)
+
+	@Sync
+	property boolean Enable = true
+
+	property boolean EnableInHierarchy
+
+	property Entity Entity
+
+	method Vector2 GetGroundPosition() end
+
+	method Vector2 GetWorldGroundPosition() end
+
+	method boolean IsOnGround() end
+
+	method void OnEnterRectTile(RectTileEnterEvent enterEvent) end
+
+	method void OnLeaveRectTile(RectTileLeaveEvent leaveEvent) end
+
+	method void SetPosition(Vector2 position) end
+
+	method void SetWorldPosition(Vector2 position) end
+
+	method boolean IsClient() end
+
+	method boolean IsServer() end
+
+	emitter EmitKinematicbodyJumpEvent(KinematicbodyJumpEvent event) end
+
+	emitter EmitRectTileCollisionBeginEvent(RectTileCollisionBeginEvent event) end
+
+	emitter EmitRectTileCollisionEndEvent(RectTileCollisionEndEvent event) end
+
+	emitter EmitRectTileEnterEvent(RectTileEnterEvent event) end
+
+	emitter EmitRectTileLeaveEvent(RectTileLeaveEvent event) end
+
+end

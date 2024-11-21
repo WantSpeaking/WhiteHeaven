@@ -1,0 +1,8 @@
+@Event
+script SoundPlayStateChangedEvent
+
+	property SoundPlayState State
+
+	constructor SoundPlayStateChangedEvent(SoundPlayState state) end
+
+end

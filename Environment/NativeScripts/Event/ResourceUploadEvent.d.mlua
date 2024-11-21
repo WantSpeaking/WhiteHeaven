@@ -1,0 +1,10 @@
+@Event
+script ResourceUploadEvent
+
+	property string RUID
+
+	property string UserId
+
+	constructor ResourceUploadEvent(string userId, string ruid) end
+
+end

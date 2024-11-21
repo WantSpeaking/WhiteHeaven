@@ -1,0 +1,12 @@
+@Misc
+script RectTileInfo
+
+	property int32 Index = 0
+
+	property boolean IsCollidable = false
+
+	property string Name
+
+	property string SpriteRUID
+
+end

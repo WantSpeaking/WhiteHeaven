@@ -1,0 +1,8 @@
+@Event
+script ChangedLookAtEvent
+
+	property float LookAtX = 0
+
+	constructor ChangedLookAtEvent(float lookAtX) end
+
+end

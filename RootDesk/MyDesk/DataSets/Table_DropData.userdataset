@@ -1,0 +1,22 @@
+{
+  "Id": "",
+  "GameId": "",
+  "EntryKey": "userdataset://2b2b38f9-1c4d-4374-95c6-4d9a6cb7f041",
+  "ContentType": "x-mod/userdataset",
+  "Content": "",
+  "Usage": 0,
+  "UsePublish": 1,
+  "UseService": 0,
+  "CoreVersion": "1.21.0.0",
+  "StudioVersion": "0.1.0.0",
+  "DynamicLoading": 0,
+  "ContentProto": {
+    "Use": "Json",
+    "Json": {
+      "name": "Table_DropData",
+      "id": "2b2b38f9-1c4d-4374-95c6-4d9a6cb7f041",
+      "serveronly": false,
+      "dynamicloading": 0
+    }
+  }
+}

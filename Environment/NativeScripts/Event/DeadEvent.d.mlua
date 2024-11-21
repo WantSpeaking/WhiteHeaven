@@ -1,0 +1,6 @@
+@Event
+script DeadEvent
+
+	constructor DeadEvent() end
+
+end

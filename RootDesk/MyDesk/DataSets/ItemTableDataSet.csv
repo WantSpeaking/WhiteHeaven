@@ -1,0 +1,6 @@
+﻿Id,Name,IconRUID,MaxStackCount,Price
+potion_red,Red Potion,323920d2805d4ec1aa85eca9e3e1cab2,5,40
+potion_redpill,Red Pill,a821ee95c9c6486d9db0b6458eeaa549,10,50
+potion_blue,Blue Potion,7e9b39b73f4945b1a8d77db6c99a6946,5,190
+potion_bluepill,Blue Pill,f95f8f220d8d42aeb0dd8698a209c8c8,10,200
+arrow,Arrow,b4d01db53b424753b1596cf6a63be944,99,1

@@ -1,0 +1,66 @@
+@Misc
+script Color
+
+	property float a
+
+	property float b
+
+	static property Color black
+
+	static property Color blue
+
+	static property Color clear
+
+	static property Color cyan
+
+	property float g
+
+	static property Color gray
+
+	static property Color green
+
+	static property Color magenta
+
+	property float r
+
+	static property Color red
+
+	static property Color white
+
+	static property Color yellow
+
+	constructor MODColor(float r, float g, float b) end
+
+	constructor MODColor(float r, float g, float b, float a) end
+
+	static method Color FromHexCode(string hexCode) end
+
+	static method float Grayscale(Color color) end
+
+	static method Color HSVToRGB(float h, float s, float v) end
+
+	static method Color HSVToRGB(float h, float s, float v, boolean hdr) end
+
+	static method Color Lerp(Color a, Color b, float t) end
+
+	static method Color LerpUnclamped(Color a, Color b, float t) end
+
+	static method float, float, float RGBToHSV(Color rgbColor) end
+
+	static method boolean op_Inequality(Color left, Color right) end
+
+	static method Color op_Multiply(Color left, Color right) end
+
+	static method Color op_Multiply(Color left, float right) end
+
+	static method Color op_Multiply(float left, Color right) end
+
+	static method Color op_Addition(Color left, Color right) end
+
+	static method Color op_Subtraction(Color left, Color right) end
+
+	static method Color op_Division(Color left, float right) end
+
+	static method boolean op_Equality(Color left, Color right) end
+
+end

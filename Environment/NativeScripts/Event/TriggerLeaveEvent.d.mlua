@@ -1,0 +1,8 @@
+@Event
+script TriggerLeaveEvent
+
+	property Entity TriggerBodyEntity
+
+	constructor TriggerLeaveEvent(Entity triggerBodyEntity) end
+
+end

@@ -1,0 +1,6 @@
+@Event
+script AvatarRendererPlayRateChangeEvent
+
+	property float PlayRate = 1
+
+end

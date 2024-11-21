@@ -1,0 +1,8 @@
+@Event
+script EntityCreateEditorBySelectAssetEvent
+
+	property Entity Entity
+
+	constructor EntityCreateEditorBySelectAssetEvent(Entity entity) end
+
+end

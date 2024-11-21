@@ -1,0 +1,8 @@
+@Event
+script TriggerStayEvent
+
+	property Entity TriggerBodyEntity
+
+	constructor TriggerStayEvent(Entity triggerBodyEntity) end
+
+end

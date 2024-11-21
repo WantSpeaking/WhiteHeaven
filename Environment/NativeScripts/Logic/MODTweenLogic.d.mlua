@@ -1,0 +1,36 @@
+@Logic
+script MODTweenLogic extends Logic
+
+	static method float Ease(EaseType type, float from, float totalDelta, float time, float duration) end
+
+	static method Component MoveTo(Entity entity, Vector2 dest, float time, EaseType ease, boolean needSync) end
+
+	static method Component MoveToOffset(Entity entity, Vector2 offset, float time, EaseType ease, boolean needSync) end
+
+	static method Component StartFloating(Entity entity, float oneCycleTime, float amplitude, EaseType easeType, boolean needSync) end
+
+	static method Component StartRot(Entity entity, float radius, float speed, boolean lookAtCenter, boolean needSync) end
+
+	static method void StopFloating(Component floatingComp, boolean reset) end
+
+	static method void StopRot(Component rotComp, boolean reset) end
+
+	method MODEventHandlerBase ConnectEvent(Type eventType, IMODScriptFunction eventHandler) end
+
+	method MODEventHandlerBase ConnectEvent(Type eventType, IMODScriptFunction eventHandler) end
+
+	method MODEventHandlerBase ConnectEvent(string key, IMODScriptFunction eventHandler) end
+
+	method boolean DisconnectEvent(Type eventType, MODEventHandlerBase eventHandler) end
+
+	method boolean DisconnectEvent(Type eventType, MODEventHandlerBase eventHandler) end
+
+	method boolean DisconnectEvent(string key, MODEventHandlerBase eventHandler) end
+
+	method boolean IsClient() end
+
+	method boolean IsServer() end
+
+	method void SendEvent(EventType sendEvent) end
+
+end

@@ -1,0 +1,10 @@
+@Event
+script EntityPostAttachEntityEvent
+
+	property Entity PrevParent
+
+	property Entity Entity
+
+	constructor EntityPostAttachEntityEvent(Entity entity, Entity prevParent) end
+
+end

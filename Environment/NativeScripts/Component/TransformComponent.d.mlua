@@ -1,0 +1,46 @@
+@Component
+script TransformComponent extends Component
+
+	property Vector3 Rotation
+
+	@Sync
+	property Vector3 Position
+
+	@Sync
+	property Quaternion QuaternionRotation = Quaternion(0.000, 0.000, 0.000, 1.000)
+
+	@Sync
+	property Vector3 Scale = Vector3(1.000, 1.000, 1.000)
+
+	property Vector3 WorldPosition
+
+	property Vector3 WorldRotation
+
+	property float WorldZRotation
+
+	property float ZRotation
+
+	@Sync
+	property boolean Enable = true
+
+	property boolean EnableInHierarchy
+
+	property Entity Entity
+
+	method void Rotate(float angle) end
+
+	method Vector3 ToLocalDirection(Vector3 worldDirection) end
+
+	method Vector3 ToLocalPoint(Vector3 worldPoint) end
+
+	method Vector3 ToWorldDirection(Vector3 localDirection) end
+
+	method Vector3 ToWorldPoint(Vector3 localPoint) end
+
+	method void Translate(float deltaX, float deltaY) end
+
+	method boolean IsClient() end
+
+	method boolean IsServer() end
+
+end

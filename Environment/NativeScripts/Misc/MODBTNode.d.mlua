@@ -1,0 +1,14 @@
+@Misc
+script MODBTNode
+
+	property boolean ExclusiveExecutionWhenRunning = false
+
+	property func InitFunction
+
+	property string Name
+
+	property AIComponent ParentAI
+
+	method BehaviourTreeStatus Behave(float deltaTime) end
+
+end

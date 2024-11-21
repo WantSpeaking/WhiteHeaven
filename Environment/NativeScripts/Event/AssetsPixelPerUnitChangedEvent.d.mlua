@@ -1,0 +1,8 @@
+@Event
+script AssetsPixelPerUnitChangedEvent
+
+	property float ZoomRatio = 100
+
+	constructor AssetsPixelPerUnitChangedEvent(float zoomRatio) end
+
+end

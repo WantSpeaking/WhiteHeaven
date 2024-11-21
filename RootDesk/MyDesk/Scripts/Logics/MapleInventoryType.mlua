@@ -1,0 +1,26 @@
+@Logic
+script MapleInventoryType extends Logic
+@Sync
+property number UNDEFINED = 0
+
+@Sync
+property number EQUIP = 1
+
+@Sync
+property number USE = 2
+
+@Sync
+property number SETUP = 3
+
+@Sync
+property number ETC = 4
+
+@Sync
+property number CASH = 5
+
+@Sync
+property number CANHOLD = 6
+
+@Sync
+property number EQUIPPED = -1
+end

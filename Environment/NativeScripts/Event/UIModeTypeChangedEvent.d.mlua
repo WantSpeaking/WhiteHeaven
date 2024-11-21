@@ -1,0 +1,8 @@
+@Event
+script UIModeTypeChangedEvent
+
+	property UIModeType UIModeType = None
+
+	constructor UIModeTypeChangedEvent(UIModeType uiModeType) end
+
+end

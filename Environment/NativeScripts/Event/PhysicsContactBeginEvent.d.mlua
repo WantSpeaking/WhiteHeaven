@@ -1,0 +1,8 @@
+@Event
+script PhysicsContactBeginEvent
+
+	property Entity ContactedBodyEntity
+
+	constructor PhysicsContactBeginEvent(Entity contactedBodyEntity) end
+
+end

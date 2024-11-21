@@ -1,0 +1,14 @@
+@Misc
+script InstanceRoom
+
+	property string InstanceKey
+
+	method int32 GetUserCount() end
+
+	method boolean IsValid() end
+
+	method boolean MoveUser(string userId, string mapName) end
+
+	method int32 MoveUsers(table<string> userIds, string mapName) end
+
+end

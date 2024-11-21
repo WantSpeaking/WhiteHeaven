@@ -1,0 +1,8 @@
+@Event
+script EntityAddComponentEvent
+
+	property Entity Entity
+
+	constructor EntityAddComponentEvent(Entity entity, Component component) end
+
+end

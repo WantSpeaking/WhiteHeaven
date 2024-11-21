@@ -1,0 +1,28 @@
+@Misc
+script RevoluteJoint
+
+	property boolean CollideConnected = false
+
+	property Vector2 LocalAnchorA = Vector2(0.000, 0.000)
+
+	property Vector2 LocalAnchorB = Vector2(0.000, 0.000)
+
+	property float LowerAngle = 0
+
+	property float MaxMotorTorque = 10000
+
+	property boolean MotorEnable = false
+
+	property float MotorSpeed = 0
+
+	property EntityRef TargetEntityRef
+
+	property float UpperAngle = 0
+
+	property boolean UseLimits = false
+
+	constructor RevoluteJoint() end
+
+	constructor RevoluteJoint(RevoluteJoint joint) end
+
+end

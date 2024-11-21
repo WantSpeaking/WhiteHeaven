@@ -1,0 +1,19 @@
+@Component
+script AvatarBodyActionSelectorComponent extends Component
+
+	property MapleAvatarBodyActionState ActionState
+
+	@Sync
+	property boolean Enable = true
+
+	property boolean EnableInHierarchy
+
+	property Entity Entity
+
+	method boolean IsClient() end
+
+	method boolean IsServer() end
+
+	emitter EmitActionStateChangedEvent(ActionStateChangedEvent event) end
+
+end

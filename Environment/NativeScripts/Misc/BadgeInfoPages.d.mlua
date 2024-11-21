@@ -1,0 +1,10 @@
+@Misc
+script BadgeInfoPages
+
+	property boolean IsLastPage
+
+	method table<BadgeInfo> GetCurrentPageDatas() end
+
+	method void MoveToNextPageAndWait() end
+
+end

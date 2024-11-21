@@ -1,0 +1,8 @@
+@Event
+script RequestStateActionLoadEvent
+
+	property List<string> ActionList
+
+	constructor RequestStateActionLoadEvent(List<string> actionList) end
+
+end

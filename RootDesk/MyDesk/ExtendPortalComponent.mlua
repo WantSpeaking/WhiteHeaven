@@ -1,0 +1,44 @@
+@Component
+script ExtendPortalComponent extends PortalComponent
+
+	property integer TargetMapId = 10000
+
+	property string TargetPortalName = "portal-1_1"
+
+	@ExecSpace("ClientOnly")
+	method void OnInitialize()
+		
+	end
+
+	@ExecSpace("ServerOnly")
+	method void OnBeginPlay()
+		--print("/maps/"..self.TargetMapId..self.TargetPortalName)
+		--print(_EntityService:GetEntityByPath("/maps/"..self.TargetMapId.."/"..self.TargetPortalName))
+		--local ref = _EntityService:GetEntityByPath("/maps/"..self.TargetMapId.."/"..self.TargetPortalName)
+		--self.PortalEntityRef = ref
+		--self:SetPortalEntityRef(ref)
+	end
+
+	@ExecSpace("Client")
+	method void SetPortalEntityRef(EntityRef ref)
+		self.PortalEntityRef = ref
+		print("SetPortalEntityRef")
+	end
+
+	@ExecSpace("ClientOnly")
+	@EventSender("Self")
+	handler HandlePortalUseEvent(PortalUseEvent event)
+		--------------- Native Event Sender Info ----------------
+		-- Sender: PortalComponent
+		-- Space: Client
+		---------------------------------------------------------
+		
+		-- Parameters
+		-- local PortalUser = event.PortalUser
+		---------------------------------------------------------
+		print("PortalUse")
+		_TeleportService:TeleportToEntityPath(_UserService.LocalPlayer,"/maps/"..self.TargetMapId.."/"..self.TargetPortalName)
+		
+	end
+
+end

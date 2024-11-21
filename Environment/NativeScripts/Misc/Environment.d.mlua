@@ -1,0 +1,21 @@
+@Misc
+script Environment
+
+	property string WorldId
+
+	@ExecSpace("ClientOnly")
+	method string GetApplicationVersion() end
+
+	method boolean IsMakerEdit() end
+
+	method boolean IsMakerPlay() end
+
+	method boolean IsMobilePlatform() end
+
+	method boolean IsPCPlatform() end
+
+	method boolean IsPlay() end
+
+	method boolean IsPublishedPlay() end
+
+end

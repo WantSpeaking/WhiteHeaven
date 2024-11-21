@@ -1,0 +1,12 @@
+@Event
+script UserLeaveEvent
+
+	property string ProfileCode
+
+	property string UserId
+
+	constructor UserLeaveEvent(IUser user) end
+
+	constructor UserLeaveEvent(string userId, string profileCode) end
+
+end

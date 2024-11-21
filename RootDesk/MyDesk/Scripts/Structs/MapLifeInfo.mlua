@@ -1,0 +1,13 @@
+@Struct
+script MapLifeInfo
+
+	@Sync
+	property integer MapID = 0
+
+	property integer LifeID = 0
+
+	property integer X = 0
+
+	property integer Y = 0
+
+end

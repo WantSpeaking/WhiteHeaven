@@ -1,0 +1,4 @@
+@Event
+script AnimationClipDecoderEvent
+
+end

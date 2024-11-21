@@ -1,0 +1,10 @@
+@Event
+script PinchInOutEvent
+
+	property float PinchRate
+
+	property Vector2 TouchPoint
+
+	constructor PinchInOutEvent(float pinchRate) end
+
+end

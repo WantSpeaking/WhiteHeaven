@@ -1,0 +1,10 @@
+@Event
+script EntityRemoveChildrenEvent
+
+	property Entity RemovedChildren
+
+	property Entity Entity
+
+	constructor EntityRemoveChildrenEvent(Entity entity, Entity removedChildren) end
+
+end

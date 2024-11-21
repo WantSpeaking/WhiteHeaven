@@ -1,0 +1,53 @@
+@Component
+script PixelRendererComponent extends Component
+
+	property boolean IgnoreMapLayerCheck = false
+
+	property int32 OrderInLayer = 0
+
+	property string SortingLayer = "Default"
+
+	property int32 Height = 16
+
+	property int32 Width = 16
+
+	@Sync
+	property boolean Enable = true
+
+	property boolean EnableInHierarchy
+
+	property Entity Entity
+
+	@ExecSpace("ClientOnly")
+	method void FillColor(Color color) end
+
+	@ExecSpace("ClientOnly")
+	method Color GetPixel(int32 x, int32 y) end
+
+	@ExecSpace("ClientOnly")
+	method table<Color> GetPixels() end
+
+	@ExecSpace("ClientOnly")
+	method void ResetWithColor(int32 width, int32 height, Color color) end
+
+	@ExecSpace("ClientOnly")
+	method void ResetWithColors(int32 width, int32 height, table<Color> pixels) end
+
+	@ExecSpace("ClientOnly")
+	method void SetAlpha(float alpha) end
+
+	@ExecSpace("ClientOnly")
+	method void SetPixel(int32 x, int32 y, Color color) end
+
+	@ExecSpace("ClientOnly")
+	method void SetPixels(table<Color> pixels) end
+
+	method boolean IsClient() end
+
+	method boolean IsServer() end
+
+	emitter EmitOrderInLayerChangedEvent(OrderInLayerChangedEvent event) end
+
+	emitter EmitSortingLayerChangedEvent(SortingLayerChangedEvent event) end
+
+end

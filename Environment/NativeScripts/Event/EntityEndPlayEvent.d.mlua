@@ -1,0 +1,8 @@
+@Event
+script EntityEndPlayEvent
+
+	property Entity Entity
+
+	constructor EntityEndPlayEvent(Entity entity) end
+
+end

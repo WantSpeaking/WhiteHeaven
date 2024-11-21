@@ -1,0 +1,10 @@
+@Event
+script RefreshEntitySelectionEvent
+
+	property Entity m_selectedEntity
+
+	property int32 tag
+
+	constructor RefreshEntitySelectionEvent(Entity selectedEntity, int32 tag) end
+
+end

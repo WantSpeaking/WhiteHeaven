@@ -1,0 +1,36 @@
+@Service
+script InputService extends Service
+
+	@ExecSpace("Client")
+	method void CursorLockMode(CursorLockMode lockMode) end
+
+	@ExecSpace("ClientOnly")
+	method CursorLockMode GetCursorLockMode() end
+
+	@ExecSpace("ClientOnly")
+	method Vector2 GetCursorPosition() end
+
+	@ExecSpace("ClientOnly")
+	method boolean IsPointerOverUI() end
+
+	@ExecSpace("ClientOnly")
+	method boolean IsPointerOverUI(int32 pointerId) end
+
+	@ExecSpace("Client")
+	method void SetCursorVisible(boolean visible) end
+
+	method MODEventHandlerBase ConnectEvent(Type eventType, IMODScriptFunction eventHandler) end
+
+	method MODEventHandlerBase ConnectEvent(Type eventType, IMODScriptFunction eventHandler) end
+
+	method MODEventHandlerBase ConnectEvent(string key, IMODScriptFunction eventHandler) end
+
+	method boolean DisconnectEvent(Type eventType, MODEventHandlerBase eventHandler) end
+
+	method boolean DisconnectEvent(Type eventType, MODEventHandlerBase eventHandler) end
+
+	method boolean DisconnectEvent(string key, MODEventHandlerBase eventHandler) end
+
+	method void SendEvent(EventType sendEvent) end
+
+end

@@ -1,0 +1,8 @@
+@Event
+script EntityConstructEvent
+
+	property Entity Entity
+
+	constructor EntityConstructEvent(Entity entity) end
+
+end

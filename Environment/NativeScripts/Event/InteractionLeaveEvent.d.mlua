@@ -1,0 +1,8 @@
+@Event
+script InteractionLeaveEvent
+
+	property Entity InteractionEntity
+
+	constructor InteractionLeaveEvent() end
+
+end

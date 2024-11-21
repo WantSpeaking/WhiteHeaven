@@ -1,0 +1,16 @@
+@Event
+script BlockUserDataListEvent
+
+	property boolean callDirtyOnPost
+
+	property string data
+
+	property int32 eventType
+
+	property string id
+
+	property int32 index
+
+	constructor BlockUserDataListEvent(int32 eventType, string id, int32 index, string data, boolean callDirtyOnPost) end
+
+end

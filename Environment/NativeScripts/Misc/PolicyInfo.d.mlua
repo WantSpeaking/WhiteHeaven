@@ -1,0 +1,8 @@
+@Misc
+script PolicyInfo
+
+	property boolean ArePaidRandomItemsRestricted
+
+	property boolean IsPaidItemTradingAllowed
+
+end

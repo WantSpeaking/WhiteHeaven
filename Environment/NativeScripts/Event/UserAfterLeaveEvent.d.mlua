@@ -1,0 +1,10 @@
+@Event
+script UserAfterLeaveEvent
+
+	property string ProfileCode
+
+	property string UserId
+
+	constructor UserAfterLeaveEvent(IUser user) end
+
+end

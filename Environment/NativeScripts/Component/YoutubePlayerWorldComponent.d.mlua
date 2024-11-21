@@ -1,0 +1,60 @@
+@Component
+script YoutubePlayerWorldComponent extends Component
+
+	property Vector2 ControllerScale = Vector2(1.000, 1.000)
+
+	property boolean IgnoreMapLayerCheck = false
+
+	property Vector2 LocalScale = Vector2(1.000, 1.000)
+
+	property int32 OrderInLayer = 0
+
+	property boolean ShowController = true
+
+	property string SortingLayer = "Default"
+
+	property boolean Loop = true
+
+	property boolean PlayOnAwake = true
+
+	@Sync
+	property float PlaySpeed = 1
+
+	property boolean Shuffle = true
+
+	property List<string> Urls
+
+	@Sync
+	property float Volume = 1
+
+	@Sync
+	property boolean Enable = true
+
+	property boolean EnableInHierarchy
+
+	property Entity Entity
+
+	@ExecSpace("Client")
+	method void ClearScreen(string targetUserId) end
+
+	@ExecSpace("Client")
+	method void Jump(int32 timeInSeconds, string targetUserId) end
+
+	@ExecSpace("Client")
+	method void Pause(string targetUserId) end
+
+	@ExecSpace("Client")
+	method void Play(string targetUserId) end
+
+	@ExecSpace("Client")
+	method void PlayPause(string targetUserId) end
+
+	method boolean IsClient() end
+
+	method boolean IsServer() end
+
+	emitter EmitOrderInLayerChangedEvent(OrderInLayerChangedEvent event) end
+
+	emitter EmitSortingLayerChangedEvent(SortingLayerChangedEvent event) end
+
+end

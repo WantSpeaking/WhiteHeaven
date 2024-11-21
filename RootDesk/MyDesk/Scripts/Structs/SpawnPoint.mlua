@@ -1,0 +1,24 @@
+@Struct
+script SpawnPoint
+
+	@Sync
+	property integer MonsterID = 0
+
+	@Sync
+	property Vector3 Pos = Vector3(0,0,0)
+
+	@Sync
+	property integer SpawnedMonsters = 0
+
+	@Sync
+	property number NextPossibleSpawn = 0
+
+	method boolean shouldSpawn()
+		return true
+	end
+
+	method integer getMonsterId()
+		return monsterID
+	end
+
+end

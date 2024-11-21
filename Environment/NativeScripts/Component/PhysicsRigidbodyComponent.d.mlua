@@ -1,0 +1,97 @@
+@Component
+script PhysicsRigidbodyComponent extends Component
+
+	@Sync
+	property float AngularDamping = 0
+
+	@Sync
+	property BodyType BodyType = BodyType.Dynamic
+
+	@Sync
+	property PhysicsCollisionDetectionMode CollisionDetectionMode = PhysicsCollisionDetectionMode.Discrete
+
+	@Sync
+	property boolean FixedRotation = false
+
+	@Sync
+	property float Friction = 0.3
+
+	@Sync
+	property float GravityScale = 1
+
+	@Sync
+	property float LinearDamping = 0
+
+	@Sync
+	property float Mass = 1
+
+	@Sync
+	property float Restitution = 0
+
+	@Sync
+	property PhysicsSleepingMode SleepingMode = PhysicsSleepingMode.StartAwake
+
+	@Sync
+	property boolean UseDensity = false
+
+	@Sync
+	property boolean Enable = true
+
+	property boolean EnableInHierarchy
+
+	property Entity Entity
+
+	method void ApplyAngularImpulse(float impulse) end
+
+	method void ApplyForce(Vector2 force) end
+
+	method void ApplyForce(Vector2 force, Vector2 worldPoint) end
+
+	method void ApplyLinearImpulse(Vector2 impulse) end
+
+	method void ApplyLinearImpulse(Vector2 impulse, Vector2 worldPoint) end
+
+	method void ApplyTorque(float force) end
+
+	@ExecSpace("Server")
+	method void ClearPhysicsOwnership() end
+
+	method float GetAngularVelocity() end
+
+	method float GetDensity() end
+
+	method Vector2 GetLinearVelocity() end
+
+	method Vector2 GetLinearVelocityAtPoint(Vector2 worldPoint) end
+
+	method Vector2 GetPosition() end
+
+	method float GetRotation() end
+
+	method void SetAngularVelocity(float velocity) end
+
+	@ExecSpace("ServerOnly")
+	method void SetClientAsPhysicsOwner(string userId) end
+
+	method void SetLinearVelocity(Vector2 velocity) end
+
+	method void SetLinearVelocityX(float velocityX) end
+
+	method void SetLinearVelocityY(float velocityY) end
+
+	method void SetPosition(Vector2 position) end
+
+	method void SetRotation(float angle) end
+
+	@ExecSpace("Server")
+	method void SetServerAsPhysicsOwner() end
+
+	method void Sleep() end
+
+	method void Wake() end
+
+	method boolean IsClient() end
+
+	method boolean IsServer() end
+
+end

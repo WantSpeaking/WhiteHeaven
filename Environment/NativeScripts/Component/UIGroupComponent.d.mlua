@@ -1,0 +1,21 @@
+@Component
+script UIGroupComponent extends Component
+
+	property boolean DefaultShow
+
+	property int32 GroupOrder
+
+	property UIGroupType GroupType
+
+	@Sync
+	property boolean Enable = true
+
+	property boolean EnableInHierarchy
+
+	property Entity Entity
+
+	method boolean IsClient() end
+
+	method boolean IsServer() end
+
+end

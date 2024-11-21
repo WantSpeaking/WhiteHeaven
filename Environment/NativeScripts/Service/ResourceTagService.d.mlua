@@ -1,0 +1,44 @@
+@Service
+script ResourceTagService extends Service
+
+	@ExecSpace("ServerOnly")
+	method void GetTags(string RUID, int32 maxCount, boolean higherPriorityOrder, Action`4 callback) end
+
+	@ExecSpace("ServerOnly")
+	method void PickRuid(string category, string subCategory, func<string> callback) end
+
+	@ExecSpace("ServerOnly")
+	method void ReportPickRuid(string category, string subCategory, boolean isTaggingFinished, func<string> callback) end
+
+	@ExecSpace("ServerOnly")
+	method void RuidUsedByReportQuiz(string RUID, func<boolean> callback) end
+
+	@ExecSpace("ServerOnly")
+	method void RuidUsedByTagQuiz(string RUID, func<boolean> callback) end
+
+	@ExecSpace("ServerOnly")
+	method void SetRUID(string category, string subCategory, string RUID, table<string> tags) end
+
+	@ExecSpace("ServerOnly")
+	method void SetReportTags(string RUID, table<string> tags, table<string> userIds) end
+
+	@ExecSpace("ServerOnly")
+	method void SetTags(string RUID, table<string> tags, table<string> userIds) end
+
+	method boolean ValidateCharacter(string tag) end
+
+	method MODEventHandlerBase ConnectEvent(Type eventType, IMODScriptFunction eventHandler) end
+
+	method MODEventHandlerBase ConnectEvent(Type eventType, IMODScriptFunction eventHandler) end
+
+	method MODEventHandlerBase ConnectEvent(string key, IMODScriptFunction eventHandler) end
+
+	method boolean DisconnectEvent(Type eventType, MODEventHandlerBase eventHandler) end
+
+	method boolean DisconnectEvent(Type eventType, MODEventHandlerBase eventHandler) end
+
+	method boolean DisconnectEvent(string key, MODEventHandlerBase eventHandler) end
+
+	method void SendEvent(EventType sendEvent) end
+
+end

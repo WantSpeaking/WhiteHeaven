@@ -1,0 +1,105 @@
+@Logic
+script Stage extends Logic
+
+	@Sync
+	property string mapid = "map02"
+
+	property string EntityPath_LoginGroup = "/ui/LoginGroup"
+
+	property string EntityPath_DefaultGroup = "/ui/DefaultGroup"
+
+	@Sync
+	property Entity Entity_LoginGroup = nil
+
+	property Entity Entity_DefaultGroup = nil
+
+	property string DefaultDestinationObjectName = "SpawnLocation"
+
+	@ExecSpace("Server")
+	method void ChangeMap(Entity targetEntity, string mapid, string destinationObjectName)
+		self.mapid = mapid
+		_TeleportService:TeleportToEntityPath(targetEntity,"/maps/"..mapid.."/"..destinationObjectName)
+		
+		
+	end
+
+	method void OnBeginPlay()
+		if self:IsClient() then
+		      	self:OnBeginPlayClient()
+		    else
+		    	self:OnBeginPlayServer()
+		    end
+	end
+
+	method void OnBeginPlayClient()
+		self.Entity_LoginGroup = _EntityService:GetEntityByPath(self.EntityPath_LoginGroup);
+		self.Entity_DefaultGroup = _EntityService:GetEntityByPath(self.EntityPath_DefaultGroup);
+	end
+
+	method void OnBeginPlayServer()
+		
+	end
+
+	method void SpawnLife()
+		
+	end
+
+	@ExecSpace("ServerOnly")
+	@EventSender("LocalPlayer")
+	handler HandleEntityMapChangedEvent(EntityMapChangedEvent event)
+		--------------- Native Event Sender Info ----------------
+		-- Sender: MODEntity
+		-- Space: Server, Client
+		---------------------------------------------------------
+		
+		-- Parameters
+		-- local NewMap = event.NewMap
+		-- local OldMap = event.OldMap
+		-- local Entity = event.Entity
+		---------------------------------------------------------
+		if event.NewMap.Name == "login" then
+			
+		end
+		log("map changed"..event.Entity.Name)
+	end
+
+	@ExecSpace("ServerOnly")
+	@EventSender("Service", "UserService")
+	handler HandleUserEnterEvent(UserEnterEvent event)
+		--------------- Native Event Sender Info ----------------
+		-- Sender: UserService
+		-- Space: Server
+		---------------------------------------------------------
+		
+		-- Parameters
+		-- local ProfileCode = event.ProfileCode
+		-- local UserId = event.UserId
+		---------------------------------------------------------
+		--[[log("event.UserId"..event.UserId)
+		log(_RoomService.StaticRoomKey)
+		log(_RoomService.RoomKey)
+		log(_RoomService:IsInstanceRoom())
+		log(_UserService.Users[event.UserId].Nickname)]]
+		_RoomService:MoveUserToStaticRoom(event.UserId, "map02")
+	end
+
+	@ExecSpace("ClientOnly")
+	@EventSender("Entity", "14254695-6b9c-4b9b-8ede-26ef1b7e0a8a")
+	handler HandleButtonClickEvent(ButtonClickEvent event)
+		--------------- Native Event Sender Info ----------------
+		-- Sender: ButtonComponent
+		-- Space: Client
+		---------------------------------------------------------
+		
+		-- Parameters
+		-- local Entity = event.Entity
+		---------------------------------------------------------
+		log("切换地图")
+		self.Entity_LoginGroup.Enable = false;
+		self.Entity_DefaultGroup.Enable = true;
+		--self:ChangeMap(_UserService.LocalPlayer.Name)
+		self:ChangeMap(_UserService.LocalPlayer,self.mapid,self.DefaultDestinationObjectName)
+		--_TeleportService:TeleportToEntityPath(_UserService.LocalPlayer,"/maps/"..self.mapid.."/SpawnLocation")
+	end
+
+end

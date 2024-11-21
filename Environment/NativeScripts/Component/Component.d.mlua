@@ -1,0 +1,15 @@
+@Component
+script Component
+
+	@Sync
+	property boolean Enable = true
+
+	property boolean EnableInHierarchy
+
+	property Entity Entity
+
+	method boolean IsClient() end
+
+	method boolean IsServer() end
+
+end

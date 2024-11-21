@@ -1,0 +1,33 @@
+@Component
+script ButtonComponent extends Component
+
+	property TransitionColorSet Colors
+
+	property TransitionRUIDSet ImageRUIDs
+
+	property KeyboardKey KeyCode = KeyboardKey.None
+
+	property TransitionType Transition = TransitionType.ColorTint
+
+	@Sync
+	property boolean Enable = true
+
+	property boolean EnableInHierarchy
+
+	property Entity Entity
+
+	method boolean IsClient() end
+
+	method boolean IsServer() end
+
+	emitter EmitButtonClickEditorEvent(ButtonClickEditorEvent event) end
+
+	emitter EmitButtonClickEvent(ButtonClickEvent event) end
+
+	emitter EmitButtonPressedEvent(ButtonPressedEvent event) end
+
+	emitter EmitButtonStateChangeEditorEvent(ButtonStateChangeEditorEvent event) end
+
+	emitter EmitButtonStateChangeEvent(ButtonStateChangeEvent event) end
+
+end

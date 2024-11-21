@@ -1,0 +1,29 @@
+@Component
+script InventoryComponent extends Component
+
+	property boolean IsInitialized = false
+
+	@Sync
+	property boolean Enable = true
+
+	property boolean EnableInHierarchy
+
+	property Entity Entity
+
+	method table<MODItem> GetItemList() end
+
+	method table<MODItem> GetItemsWithType(Type itemType) end
+
+	method boolean IsClient() end
+
+	method boolean IsServer() end
+
+	emitter EmitInventoryItemAddedEvent(InventoryItemAddedEvent event) end
+
+	emitter EmitInventoryItemInitEvent(InventoryItemInitEvent event) end
+
+	emitter EmitInventoryItemModifiedEvent(InventoryItemModifiedEvent event) end
+
+	emitter EmitInventoryItemRemovedEvent(InventoryItemRemovedEvent event) end
+
+end

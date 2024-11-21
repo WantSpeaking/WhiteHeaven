@@ -1,0 +1,10 @@
+@Misc
+script RegexGroup
+
+	property string Name
+
+	property boolean Success
+
+	method table<RegexCapture> GetCaptures() end
+
+end

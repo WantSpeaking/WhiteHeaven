@@ -1,0 +1,10 @@
+@Event
+script BlockPropertyInputSubmitEvent
+
+	property string id
+
+	property string text
+
+	constructor BlockPropertyInputSubmitEvent(string id, string text) end
+
+end

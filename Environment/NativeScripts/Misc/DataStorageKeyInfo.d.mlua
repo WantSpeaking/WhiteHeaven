@@ -1,0 +1,14 @@
+@Misc
+script DataStorageKeyInfo
+
+	property string Key = ""
+
+	property string Tag = ""
+
+	property string Version = ""
+
+	constructor DataStorageKeyInfo() end
+
+	constructor DataStorageKeyInfo(string key, string version, string tag) end
+
+end

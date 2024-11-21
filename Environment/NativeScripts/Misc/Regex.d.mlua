@@ -1,0 +1,50 @@
+@Misc
+script Regex
+
+	property boolean IsRightToLeft
+
+	constructor MODRegex(string pattern) end
+
+	constructor MODRegex(string pattern, RegexOption options) end
+
+	method table<string> GetGroupNames() end
+
+	method table<int32> GetGroupNumbers() end
+
+	method string GroupNameFromNumber(int32 number) end
+
+	method int32 GroupNumberFromName(string name) end
+
+	method boolean IsMatch(string origin) end
+
+	method boolean IsMatch(string origin, int32 startIndex) end
+
+	method RegexMatch Match(string origin) end
+
+	method RegexMatch Match(string origin, int32 startIndex) end
+
+	method RegexMatch Match(string origin, int32 startIndex, int32 length) end
+
+	method table<RegexMatch> Matches(string origin) end
+
+	method table<RegexMatch> Matches(string origin, int32 startIndex) end
+
+	method string Replace(string origin, string replacement) end
+
+	method string Replace(string origin, string replacement, int32 count) end
+
+	method string Replace(string origin, string replacement, int32 count, int32 startIndex) end
+
+	method string ReplaceByEvaluator(string origin, func<RegexMatch> -> string evaluator) end
+
+	method string ReplaceByEvaluator(string origin, func<RegexMatch> -> string evaluator, int32 count) end
+
+	method string ReplaceByEvaluator(string origin, func<RegexMatch> -> string evaluator, int32 count, int32 startIndex) end
+
+	method table<string> Split(string origin) end
+
+	method table<string> Split(string origin, int32 count) end
+
+	method table<string> Split(string origin, int32 count, int32 startIndex) end
+
+end

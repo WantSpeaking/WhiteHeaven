@@ -1,0 +1,8 @@
+@Event
+script EntityPreAttachEntityEvent
+
+	property Entity Entity
+
+	constructor EntityPreAttachEntityEvent(Entity entity) end
+
+end

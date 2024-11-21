@@ -1,0 +1,32 @@
+@Component
+script DistanceJointComponent extends Component
+
+	@Sync
+	property SyncList<DistanceJoint> Joints
+
+	@Sync
+	property boolean Enable = true
+
+	property boolean EnableInHierarchy
+
+	property Entity Entity
+
+	method int32 AddJoint(Entity targetEntity, Vector2 localAnchorA, Vector2 localAnchorB, float length) end
+
+	method void DestroyJoint(int32 index) end
+
+	method int32 GetJointsCount() end
+
+	method void SetCollideConnected(int32 index, boolean collideConnected) end
+
+	method void SetLength(int32 index, float length) end
+
+	method void SetLocalAnchorA(int32 index, Vector2 localAnchorA) end
+
+	method void SetLocalAnchorB(int32 index, Vector2 localAnchorB) end
+
+	method boolean IsClient() end
+
+	method boolean IsServer() end
+
+end

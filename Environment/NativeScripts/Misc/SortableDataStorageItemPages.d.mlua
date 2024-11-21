@@ -1,0 +1,15 @@
+@Misc
+script SortableDataStorageItemPages
+
+	property boolean IsLastPage
+
+	@ExecSpace("ServerOnly")
+	method table<SortableDataStorageItem> GetCurrentPageDatas() end
+
+	@ExecSpace("ServerOnly")
+	method int32 LoadNextPageAndWait() end
+
+	@ExecSpace("ServerOnly")
+	method void MoveToNextPageAndWait() end
+
+end

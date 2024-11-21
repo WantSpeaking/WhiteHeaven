@@ -1,0 +1,8 @@
+@Event
+script EntityDestroyEvent
+
+	property Entity Entity
+
+	constructor EntityDestroyEvent(Entity entity) end
+
+end

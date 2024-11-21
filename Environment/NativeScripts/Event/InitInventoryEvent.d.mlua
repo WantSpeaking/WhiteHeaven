@@ -1,0 +1,6 @@
+@Event
+script InitInventoryEvent
+
+	constructor InitInventoryEvent() end
+
+end

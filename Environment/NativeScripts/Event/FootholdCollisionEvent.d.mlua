@@ -1,0 +1,18 @@
+@Event
+script FootholdCollisionEvent
+
+	property int32 FootholdId
+
+	property Vector2 FootholdNormal
+
+	property Vector2 ImpactDir
+
+	property float ImpactForce
+
+	property Vector2 ReflectDir
+
+	property RigidbodyComponent Rigidbody
+
+	constructor FootholdCollisionEvent(RigidbodyComponent rigidbody, Vector2 impactDir, float impactForce, Vector2 footholdNormal, Vector2 reflectDir, int32 footholdId) end
+
+end

@@ -1,0 +1,8 @@
+@Event
+script FaceActionStateChangeEvent
+
+	property MapleAvatarFaceActionState ActionState
+
+	constructor FaceActionStateChangeEvent() end
+
+end

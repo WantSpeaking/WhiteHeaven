@@ -1,0 +1,12 @@
+@Misc
+script WorldShopPurchaseInfo
+
+	property integer OrderNumber
+
+	property string ProductId
+
+	property string PurchaseId
+
+	property string UserId
+
+end

@@ -1,0 +1,125 @@
+@Component
+script LiteInventory extends Component
+
+	@Sync
+	property boolean IsInitialized = false
+
+	@ExecSpace("ServerOnly")
+	method void OnBeginPlay()
+		-- Load UserItemDataSet into inventoryData
+		    self._T.inventoryData = {}
+		    for i = 1, _DataService:GetRowCount("UserItemDataSet") do
+		    	self._T.inventoryData[i] = 0
+		    end
+		
+		    local userDataStorage = _DataStorageService:GetUserDataStorage(self.Entity.PlayerComponent.UserId)
+		    local errorCode, itemData = userDataStorage:GetAndWait("ItemData")
+		
+		    -- Output error code if data load fails
+		    if errorCode ~= 0 then
+		    	log(errorCode)
+		    	return
+		    end
+		
+		    -- If there is loaded data, apply it
+		    if itemData ~= nil then
+		    	local itemArr = _UtilLogic:Split(itemData, ",")
+		    	for i, v in ipairs(itemArr) do
+		    		self._T.inventoryData[i] = tonumber(v)
+		    	end
+		    end
+		
+		local initEvent = OnInventoryInitialized()
+		for i, v in ipairs(self._T.inventoryData) do
+				initEvent.AllItemCounts[i] = v
+			end
+		
+		self._T.userDataStorage = userDataStorage
+		
+		-- Existing content
+		self._T.userDataStorage = userDataStorage
+		
+		-- Continue writing the following.
+		self:SendInitializedEvent(initEvent)
+		self.IsInitialized = true
+		
+		local saveInventory = function()
+		    	local dataConcatString = table.concat(self._T.inventoryData, ",")
+		    	self._T.userDataStorage:SetAsync("ItemData", dataConcatString, function() log("Saved") end)
+		    	log("Saving...")
+		    end
+		    
+		    local saveInterval = 300
+		    _TimerService:SetTimerRepeat(saveInventory, saveInterval, saveInterval)
+	end
+
+	@ExecSpace("Multicast")
+	method void SendInitializedEvent(OnInventoryInitialized event)
+		self.Entity:SendEvent(event)
+	end
+
+	@ExecSpace("ServerOnly")
+	method void ModifyItem(number itemIndex, number deltaAmount)
+		if itemIndex < 1 or itemIndex > #self._T.inventoryData then
+		    	log_error("itemIndex error")
+		    	return
+		    end
+		    
+		    local prevAmount = self._T.inventoryData[itemIndex]
+		    local amountResult = prevAmount + deltaAmount
+		    
+		    if amountResult < 0 then
+		    	log_error("Item amount is less then zero")
+		    	amountResult = 0
+		    end
+		    
+		    self._T.inventoryData[itemIndex] = amountResult
+		    
+		    local modifiedEvent = OnInventoryModified()
+		    modifiedEvent.ItemIndex = itemIndex
+		    modifiedEvent.ItemCount = amountResult
+		    self:SendModifiedEvent(modifiedEvent)
+	end
+
+	@ExecSpace("Multicast")
+	method void SendModifiedEvent(OnInventoryModified event)
+		self.Entity:SendEvent(event)
+	end
+
+	@ExecSpace("ServerOnly")
+	method void RemoveItem(number itemIndex)
+		if itemIndex < 1 or itemIndex > #self._T.inventoryData then
+		    	log_error("itemIndex error")
+		    	return
+		    end
+		    
+		    self._T.inventoryData[itemIndex] = 0
+		    
+		    local modifiedEvent = OnInventoryModified()
+		    modifiedEvent.ItemIndex = itemIndex
+		    modifiedEvent.ItemCount = 0
+		    self:SendModifiedEvent(modifiedEvent)
+	end
+
+	@ExecSpace("ServerOnly")
+	@EventSender("Service", "UserService")
+	handler HandleUserLeaveEvent(UserLeaveEvent event)
+		-- Parameters
+		local UserId = event.UserId
+		---------------------------------------------------------
+		
+		local thisUserId = self.Entity.PlayerComponent.UserId
+		
+		if thisUserId ~= UserId then
+		    return
+		end
+		
+		-- Save inventory data info when play is over.
+		if self._T.userDataStorage then
+		    local dataConcatString = table.concat(self._T.inventoryData, ",")
+		    self._T.userDataStorage:SetAndWait("ItemData", dataConcatString)
+		end
+		
+	end
+
+end

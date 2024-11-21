@@ -1,0 +1,8 @@
+@Event
+script WebViewClickedEvent
+
+	property Vector2 NormalizedPosition
+
+	constructor WebViewClickedEvent(Vector2 normalizedPosition) end
+
+end

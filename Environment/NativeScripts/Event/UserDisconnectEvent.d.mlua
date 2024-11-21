@@ -1,0 +1,16 @@
+@Event
+script UserDisconnectEvent
+
+	property string DisconnectMapName
+
+	property string ProfileCode
+
+	property DateTime TimeNetworkClosed
+
+	property string UserId
+
+	constructor UserDisconnectEvent(IUser user) end
+
+	constructor UserDisconnectEvent(string disconnectMapName, DateTime timeNetworkClosed, string userId, string profileCode) end
+
+end

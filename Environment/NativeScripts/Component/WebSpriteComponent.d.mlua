@@ -1,0 +1,53 @@
+@Component
+script WebSpriteComponent extends Component
+
+	property List<string> AnimationUrl
+
+	@Sync
+	property boolean FlipX = false
+
+	@Sync
+	property boolean FlipY = false
+
+	@Sync
+	property boolean IgnoreMapLayerCheck = false
+
+	@Sync
+	property string MaterialId = ""
+
+	@Sync
+	property boolean NeedGizmo = true
+
+	@Sync
+	property Vector2 Offset = Vector2(0.000, 0.000)
+
+	@Sync
+	property int32 OrderInLayer = 0
+
+	@Sync
+	property string SortingLayer = "Default"
+
+	@Sync
+	property Color Color = Color(1.000, 1.000, 1.000, 1.000)
+
+	@Sync
+	property string Url = ""
+
+	@Sync
+	property boolean Enable = true
+
+	property boolean EnableInHierarchy
+
+	property Entity Entity
+
+	method void ChangeMaterial(string materialId) end
+
+	method boolean IsClient() end
+
+	method boolean IsServer() end
+
+	emitter EmitOrderInLayerChangedEvent(OrderInLayerChangedEvent event) end
+
+	emitter EmitSortingLayerChangedEvent(SortingLayerChangedEvent event) end
+
+end

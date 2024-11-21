@@ -1,0 +1,12 @@
+@Misc
+script SortedViewItemInfo
+
+	property DataStorageKeyInfo KeyInfo
+
+	property Dictionary<string, string> Metadata
+
+	property int32 Rank
+
+	property integer Value
+
+end

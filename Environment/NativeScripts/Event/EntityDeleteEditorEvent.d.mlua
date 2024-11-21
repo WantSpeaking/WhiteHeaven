@@ -1,0 +1,8 @@
+@Event
+script EntityDeleteEditorEvent
+
+	property string EntityName
+
+	constructor EntityDeleteEditorEvent(string entityName) end
+
+end

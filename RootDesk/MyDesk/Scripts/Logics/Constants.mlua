@@ -1,0 +1,8 @@
+@Logic
+script Constants extends Logic
+
+	property string LocalizationTableKeyPrefix_Mob = "Mob_"
+
+	property number CheckSpawnMobInterval = 2
+
+end

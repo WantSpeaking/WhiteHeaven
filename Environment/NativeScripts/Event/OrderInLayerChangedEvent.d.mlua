@@ -1,0 +1,8 @@
+@Event
+script OrderInLayerChangedEvent
+
+	property int32 OrderInLayer
+
+	constructor OrderInLayerChangedEvent(int32 orderInLayer) end
+
+end

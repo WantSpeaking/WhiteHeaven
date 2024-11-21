@@ -1,0 +1,22 @@
+{
+  "Id": "",
+  "GameId": "",
+  "EntryKey": "userdataset://ea773eef-6250-4bc3-9433-f0b5687caa80",
+  "ContentType": "x-mod/userdataset",
+  "Content": "",
+  "Usage": 0,
+  "UsePublish": 1,
+  "UseService": 0,
+  "CoreVersion": "1.21.0.0",
+  "StudioVersion": "0.1.0.0",
+  "DynamicLoading": 0,
+  "ContentProto": {
+    "Use": "Json",
+    "Json": {
+      "name": "UserItemDataSet",
+      "id": "ea773eef-6250-4bc3-9433-f0b5687caa80",
+      "serveronly": false,
+      "dynamicloading": 0
+    }
+  }
+}

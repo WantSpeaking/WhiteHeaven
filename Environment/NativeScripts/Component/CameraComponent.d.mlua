@@ -1,0 +1,59 @@
+@Component
+script CameraComponent extends Component
+
+	property Vector2 CameraOffset = Vector2(0.000, 0.000)
+
+	property boolean ConfineCameraArea = true
+
+	property Vector2 Damping = Vector2(2.500, 5.000)
+
+	property Vector2 DeadZone = Vector2(0.052, 0.080)
+
+	property float DutchAngle = 0
+
+	property boolean IsAllowZoomInOut = false
+
+	@Sync
+	property Vector2 LeftBottom = Vector2(-1.000, -1.000)
+
+	@Sync
+	property string MaterialId = ""
+
+	@Sync
+	property Vector2 RightTop = Vector2(1.000, 1.000)
+
+	property Vector2 ScreenOffset = Vector2(0.500, 0.655)
+
+	property Vector2 SoftZone = Vector2(0.268, 0.750)
+
+	@Sync
+	property boolean UseCustomBound = false
+
+	property float ZoomRatio = 100
+
+	property float ZoomRatioMax = 500
+
+	property float ZoomRatioMin = 30
+
+	@Sync
+	property boolean Enable = true
+
+	property boolean EnableInHierarchy
+
+	property Entity Entity
+
+	method void ChangeMaterial(string materialId) end
+
+	method Vector2, Vector2 GetBound() end
+
+	@ExecSpace("Client")
+	method void SetZoomTo(float percent, float duration, string targetUserId) end
+
+	@ExecSpace("Client")
+	method void ShakeCamera(float intensity, float duration, string targetUserId) end
+
+	method boolean IsClient() end
+
+	method boolean IsServer() end
+
+end

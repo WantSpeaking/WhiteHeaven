@@ -1,0 +1,35 @@
+@Service
+script ItemService extends Service
+
+	@ExecSpace("ServerOnly")
+	method void ChangeOwner(MODItem item, InventoryComponent owner) end
+
+	@ExecSpace("ServerOnly")
+	method void ChangeOwner(string itemGUID, InventoryComponent owner) end
+
+	@ExecSpace("ServerOnly")
+	method MODItem CreateItem(Type itemType, string itemDataTableName, InventoryComponent ownerInventoryComponent) end
+
+	@ExecSpace("ServerOnly")
+	method MODItem GetItemByGUID(string guid) end
+
+	method table<MODItem> GetMODItemsByOwner(InventoryComponent owner) end
+
+	@ExecSpace("ServerOnly")
+	method void RemoveItem(MODItem item) end
+
+	method MODEventHandlerBase ConnectEvent(Type eventType, IMODScriptFunction eventHandler) end
+
+	method MODEventHandlerBase ConnectEvent(Type eventType, IMODScriptFunction eventHandler) end
+
+	method MODEventHandlerBase ConnectEvent(string key, IMODScriptFunction eventHandler) end
+
+	method boolean DisconnectEvent(Type eventType, MODEventHandlerBase eventHandler) end
+
+	method boolean DisconnectEvent(Type eventType, MODEventHandlerBase eventHandler) end
+
+	method boolean DisconnectEvent(string key, MODEventHandlerBase eventHandler) end
+
+	method void SendEvent(EventType sendEvent) end
+
+end

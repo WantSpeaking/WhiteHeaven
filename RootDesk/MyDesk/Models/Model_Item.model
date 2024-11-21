@@ -1,0 +1,95 @@
+{
+  "Id": "",
+  "GameId": "",
+  "EntryKey": "model://maplestoryitem$001d527c22cd4b219f816632769f826b",
+  "ContentType": "x-mod/model",
+  "Content": "",
+  "Usage": 0,
+  "UsePublish": 1,
+  "UseService": 0,
+  "CoreVersion": "1.21.0.0",
+  "StudioVersion": "0.1.0.0",
+  "DynamicLoading": 0,
+  "ContentProto": {
+    "Use": "Json",
+    "Json": {
+      "Type": "MODLazyModel",
+      "Name": "Model_Item",
+      "Id": "maplestoryitem$001d527c22cd4b219f816632769f826b",
+      "ModelId": "ItemAsset",
+      "DataSetId": "ItemDataSet",
+      "DataId": "001d527c22cd4b219f816632769f826b",
+      "Target": {
+        "Version": 1,
+        "Name": "Model_Item",
+        "BaseModelId": "itemasset",
+        "Id": "maplestoryitem$001d527c22cd4b219f816632769f826b",
+        "Components": [
+          "script.Item",
+          "MOD.Core.TriggerComponent",
+          "MOD.Core.TweenFloatingComponent",
+          "script.MapleMapItem"
+        ],
+        "Properties": [],
+        "Values": [
+          {
+            "TargetType": null,
+            "Name": "renderguid",
+            "ValueType": {
+              "$type": "MODNativeType",
+              "type": "System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+            },
+            "Value": "ebc5d6d004444538a4a645770e126590"
+          },
+          {
+            "TargetType": "MOD.Core.TweenFloatingComponent",
+            "Name": "Amplitude",
+            "ValueType": {
+              "$type": "MODNativeType",
+              "type": "System.Single, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+            },
+            "Value": 0.16
+          },
+          {
+            "TargetType": "MOD.Core.TweenFloatingComponent",
+            "Name": "OneCycleTime",
+            "ValueType": {
+              "$type": "MODNativeType",
+              "type": "System.Single, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+            },
+            "Value": 0.5
+          },
+          {
+            "TargetType": "MOD.Core.TweenFloatingComponent",
+            "Name": "TweenType",
+            "ValueType": {
+              "$type": "MODNativeType",
+              "type": "MOD.Core.Logic.EaseType, MOD.Core, Version=1.21.0.0, Culture=neutral, PublicKeyToken=null"
+            },
+            "Value": 3
+          },
+          {
+            "TargetType": "MOD.Core.TweenFloatingComponent",
+            "Name": "SyncType",
+            "ValueType": {
+              "$type": "MODNativeType",
+              "type": "MOD.Core.Logic.TweenSyncType, MOD.Core, Version=1.21.0.0, Culture=neutral, PublicKeyToken=null"
+            },
+            "Value": 1
+          },
+          {
+            "TargetType": "MOD.Core.TweenFloatingComponent",
+            "Name": "Enable",
+            "ValueType": {
+              "$type": "MODNativeType",
+              "type": "System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+            },
+            "Value": false
+          }
+        ],
+        "EventLinks": [],
+        "Children": []
+      }
+    }
+  }
+}

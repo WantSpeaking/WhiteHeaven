@@ -1,0 +1,29 @@
+@Component
+script UITouchReceiveComponent extends Component
+
+	@Sync
+	property boolean Enable = true
+
+	property boolean EnableInHierarchy
+
+	property Entity Entity
+
+	method boolean IsClient() end
+
+	method boolean IsServer() end
+
+	emitter EmitUITouchBeginDragEvent(UITouchBeginDragEvent event) end
+
+	emitter EmitUITouchEnterEvent(UITouchEnterEvent event) end
+
+	emitter EmitUITouchDownEvent(UITouchDownEvent event) end
+
+	emitter EmitUITouchDragEvent(UITouchDragEvent event) end
+
+	emitter EmitUITouchEndDragEvent(UITouchEndDragEvent event) end
+
+	emitter EmitUITouchExitEvent(UITouchExitEvent event) end
+
+	emitter EmitUITouchUpEvent(UITouchUpEvent event) end
+
+end

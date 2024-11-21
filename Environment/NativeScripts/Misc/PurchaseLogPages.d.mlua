@@ -1,0 +1,12 @@
+@Misc
+script PurchaseLogPages
+
+	property boolean IsLastPage
+
+	@ExecSpace("ServerOnly")
+	method table<string> GetCurrentPageDatas() end
+
+	@ExecSpace("ServerOnly")
+	method void MoveToNextPageAndWait() end
+
+end

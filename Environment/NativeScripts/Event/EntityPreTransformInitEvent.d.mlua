@@ -1,0 +1,8 @@
+@Event
+script EntityPreTransformInitEvent
+
+	property Entity Entity
+
+	constructor EntityPreTransformInitEvent(Entity entity) end
+
+end

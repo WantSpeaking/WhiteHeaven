@@ -1,0 +1,25 @@
+@Component
+script FootholdComponent extends Component
+
+	@Sync
+	property boolean Enable = true
+
+	property boolean EnableInHierarchy
+
+	property Entity Entity
+
+	method Foothold GetFoothold(int32 footholdId) end
+
+	method table<Foothold> GetFootholdAll() end
+
+	method Foothold GetNearestFootholdByPoint(Vector2 point, float distance) end
+
+	method Foothold Raycast(Vector2 point, Vector2 direction, float distance) end
+
+	method table<Foothold> RaycastAll(Vector2 point, Vector2 direction, float distance) end
+
+	method boolean IsClient() end
+
+	method boolean IsServer() end
+
+end

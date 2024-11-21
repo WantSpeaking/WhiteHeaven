@@ -1,0 +1,6 @@
+@Event
+script StateActionLoadResultEvent
+
+	constructor StateActionLoadResultEvent() end
+
+end

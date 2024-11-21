@@ -1,0 +1,63 @@
+@Component
+script UIShop extends Component
+
+	property Entity itemUI = nil
+
+	property Entity scrollView = nil
+
+	property string ShopBtnPath = "/ui/DefaultGroup/RPGButtons/btn_shop"
+
+	property SyncTable<string, Entity> SlotItems
+
+	@ExecSpace("ClientOnly")
+	method void OnBeginPlay()
+		self.itemUI =_EntityService:GetEntityByPath(self.Entity.Path .. "/ShopPanel/Shop_ScrollView/item_slot")
+		    self.itemUI:SetEnable(false)
+		    self.scrollView = _EntityService:GetEntityByPath(self.Entity.Path .. "/ShopPanel/Shop_ScrollView")
+		
+		    -- Add UI Preset/Buttons
+		    local inventoryButton = _EntityService:GetEntityByPath(self.ShopBtnPath)
+		    if inventoryButton ~= nil then
+		    	local openFunc = function()
+		    		self.Entity.Enable = true
+		    	end
+		    	if inventoryButton.ButtonComponent == nil then
+		    		inventoryButton:AddComponent("MOD.Core.ButtonComponent")
+		    	end
+		    	inventoryButton:ConnectEvent(ButtonClickEvent, openFunc)
+		    end
+		
+		    -- Close Button
+		    local closeButton = _EntityService:GetEntityByPath(self.Entity.Path .. "/ShopPanel/CloseButton")
+		    local closeFunc = function()
+		    	self.Entity.Enable = false
+		    end
+		
+		    closeButton:ConnectEvent(ButtonClickEvent, closeFunc)
+		
+			-- Initialize the product list.
+			self:InitializeItemList()
+	end
+
+	@ExecSpace("ClientOnly")
+	method void InitializeItemList()
+		-- Place items in the product list in the order of the index.
+		
+		    local itemTable = _Data.ItemTable
+		    local itemCount = _Data.ItemTableRowCount
+		
+		    -- Prepare as many empty slots as items. 
+		    local shopItemSlots = {}
+		    for i = 1, itemCount do
+		    	shopItemSlots[i] = _SpawnService:SpawnByEntity(self.itemUI, "Item", Vector3.zero, self.scrollView) 
+		    end
+		
+		    -- Place items in the slot in the order of the index.
+		    for k, v in pairs(itemTable) do
+		    	---@type ItemInfo
+		    	local itemInfo = v
+		    	shopItemSlots[itemInfo.Index].UIShopItemSlot:SetData(itemInfo.Id, itemInfo.Price)
+		    end
+	end
+
+end

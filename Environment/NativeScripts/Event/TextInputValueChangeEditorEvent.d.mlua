@@ -1,0 +1,8 @@
+@Event
+script TextInputValueChangeEditorEvent
+
+	property string text
+
+	constructor TextInputValueChangeEditorEvent(string text) end
+
+end

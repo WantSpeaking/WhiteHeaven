@@ -1,0 +1,27 @@
+@Component
+script JoystickComponent extends Component
+
+	property AxisType Axis = AxisType.Axis_8
+
+	property KeyboardKey DownArrow = KeyboardKey.DownArrow
+
+	property boolean DynamicStick = true
+
+	property KeyboardKey LeftArrow = KeyboardKey.LeftArrow
+
+	property KeyboardKey RightArrow = KeyboardKey.RightArrow
+
+	property KeyboardKey UpArrow = KeyboardKey.UpArrow
+
+	@Sync
+	property boolean Enable = true
+
+	property boolean EnableInHierarchy
+
+	property Entity Entity
+
+	method boolean IsClient() end
+
+	method boolean IsServer() end
+
+end

@@ -1,0 +1,47 @@
+@Component
+script PolygonRendererComponent extends Component
+
+	@Sync
+	property Color Color = Color(1.000, 1.000, 1.000, 1.000)
+
+	@Sync
+	property boolean IgnoreMapLayerCheck = false
+
+	@Sync
+	property string MaterialId = ""
+
+	@Sync
+	property int32 OrderInLayer = 0
+
+	@Sync
+	property SyncList<Vector2> Points
+
+	@Sync
+	property string SortingLayer = "Default"
+
+	@Sync
+	property SyncList<Vector2> UVs
+
+	@Sync
+	property boolean UseCustomUVs = false
+
+	@Sync
+	property boolean Enable = true
+
+	property boolean EnableInHierarchy
+
+	property Entity Entity
+
+	method void ChangeMaterial(string materialId) end
+
+	method boolean IsDrawable() end
+
+	method boolean IsClient() end
+
+	method boolean IsServer() end
+
+	emitter EmitOrderInLayerChangedEvent(OrderInLayerChangedEvent event) end
+
+	emitter EmitSortingLayerChangedEvent(SortingLayerChangedEvent event) end
+
+end

@@ -1,0 +1,10 @@
+@Event
+script ScreenTouchHoldEvent
+
+	property int32 TouchId
+
+	property Vector2 TouchPoint
+
+	constructor ScreenTouchHoldEvent(Vector2 touchPoint, int32 touchId) end
+
+end

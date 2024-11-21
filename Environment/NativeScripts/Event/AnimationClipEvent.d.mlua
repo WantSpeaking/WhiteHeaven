@@ -1,0 +1,8 @@
+@Event
+script AnimationClipEvent
+
+	property string ClipName
+
+	constructor AnimationClipEvent(string clipName) end
+
+end

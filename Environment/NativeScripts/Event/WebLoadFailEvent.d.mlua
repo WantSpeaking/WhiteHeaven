@@ -1,0 +1,6 @@
+@Event
+script WebLoadFailEvent
+
+	constructor WebLoadFailEvent() end
+
+end

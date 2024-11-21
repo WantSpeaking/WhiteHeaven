@@ -1,0 +1,62 @@
+@Component
+script TweenCircularComponent extends Component
+
+	@Sync
+	property float Degree = 360
+
+	@Sync
+	property boolean IsClockwise = false
+
+	@Sync
+	property boolean LookAtCenter = false
+
+	@Sync
+	property float Radius = 1
+
+	@Sync
+	property float Speed = 50
+
+	@Sync
+	property boolean AutoDestroy = false
+
+	@Sync
+	property boolean AutoStart = true
+
+	@Sync
+	property TweenState CurrentState
+
+	@Sync
+	property Vector3 OriginPosition
+
+	@Sync
+	property Quaternion OriginRotation
+
+	@Sync
+	property Vector3 OriginScale
+
+	property TweenSyncType SyncType = TweenSyncType.Default
+
+	property number TweenTime
+
+	@Sync
+	property boolean Enable = true
+
+	property boolean EnableInHierarchy
+
+	property Entity Entity
+
+	method void Destroy() end
+
+	method void Pause() end
+
+	method void Play() end
+
+	method void RestartFromCurrentPosition() end
+
+	method void Stop(boolean reset) end
+
+	method boolean IsClient() end
+
+	method boolean IsServer() end
+
+end

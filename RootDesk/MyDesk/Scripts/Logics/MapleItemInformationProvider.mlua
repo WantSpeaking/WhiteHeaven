@@ -1,0 +1,18 @@
+@Logic
+script MapleItemInformationProvider extends Logic
+
+	method boolean isQuestItem(integer itemId)
+		return false
+	end
+
+	method any randomizeStats(any equip)
+		return equip
+	end
+
+	method any getEquipById()
+		local nEquip
+		nEquip = Equip()
+		return nEquip
+	end
+
+end

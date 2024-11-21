@@ -1,0 +1,18 @@
+@Event
+script BlockEntityCreateEvent
+
+	property string id
+
+	property int32 index
+
+	property boolean isSibling
+
+	property string to
+
+	property float x
+
+	property float y
+
+	constructor BlockEntityCreateEvent(string id, int32 index, boolean isSibling, string to, float x, float y) end
+
+end

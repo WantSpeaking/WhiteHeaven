@@ -1,0 +1,76 @@
+@Component
+script WebViewComponent extends Component
+
+	@Sync
+	property boolean ClickingEnabled = true
+
+	property DragMode DragMode = DragMode.DragToScroll
+
+	property float DragThreshold = 20
+
+	@Sync
+	property boolean HoveringEnabled = true
+
+	@Sync
+	property boolean IgnoreMapLayerCheck = false
+
+	@Sync
+	property int32 OrderInLayer = 0
+
+	@Sync
+	property int32 PixelPerUnit = 100
+
+	property float ScrollSensitivity = 15
+
+	@Sync
+	property boolean ScrollingEnabled = true
+
+	@Sync
+	property string SortingLayer = "Default"
+
+	@Sync
+	property string Url = "https://mod.nexon.com/"
+
+	@Sync
+	property boolean Enable = true
+
+	property boolean EnableInHierarchy
+
+	property Entity Entity
+
+	method void Click(Vector2 normalizedPosition) end
+
+	method void GoBack() end
+
+	method void GoForward() end
+
+	@ExecSpace("Client")
+	method void Reload(string targetUserId) end
+
+	method void Scroll(Vector2 scrollDelta) end
+
+	method void ScrollAt(Vector2 scrollDelta, Vector2 normalizedPosition) end
+
+	method void ZoomIn() end
+
+	method void ZoomOut() end
+
+	method boolean IsClient() end
+
+	method boolean IsServer() end
+
+	emitter EmitOrderInLayerChangedEvent(OrderInLayerChangedEvent event) end
+
+	emitter EmitSortingLayerChangedEvent(SortingLayerChangedEvent event) end
+
+	emitter EmitWebLoadCompleteEvent(WebLoadCompleteEvent event) end
+
+	emitter EmitWebLoadFailEvent(WebLoadFailEvent event) end
+
+	emitter EmitWebViewClickedEvent(WebViewClickedEvent event) end
+
+	emitter EmitWebViewPopupClosedEvent(WebViewPopupClosedEvent event) end
+
+	emitter EmitWebViewPopupEvent(WebViewPopupEvent event) end
+
+end

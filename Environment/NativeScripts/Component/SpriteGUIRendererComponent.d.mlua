@@ -1,0 +1,94 @@
+@Component
+script SpriteGUIRendererComponent extends Component
+
+	property SpriteAnimClipPlayType AnimClipPlayType = SpriteAnimClipPlayType.Loop
+
+	property int32 EndFrameIndex = 2147483647
+
+	@Sync
+	property boolean IgnoreMapLayerCheck = false
+
+	property DataRef ImageRUID = DataRef("")
+
+	property Vector2 LocalPosition
+
+	property Vector2 LocalScale = Vector2(1.000, 1.000)
+
+	@Sync
+	property string MaterialId = ""
+
+	@Sync
+	property int32 OrderInLayer = 0
+
+	@Sync
+	property boolean OverrideSorting = false
+
+	property float PlayRate = 1
+
+	property PreserveSpriteType PreserveSprite = PreserveSpriteType.None
+
+	@Sync
+	property string SortingLayer = "UI"
+
+	property int32 StartFrameIndex = 0
+
+	property Color Color = Color(1.000, 1.000, 1.000, 1.000)
+
+	property boolean DropShadow = false
+
+	property float DropShadowAngle = 30
+
+	property Color DropShadowColor = Color(0.000, 0.000, 0.000, 0.720)
+
+	property float DropShadowDistance = 32
+
+	property float FillAmount = 1
+
+	property boolean FillCenter = true
+
+	property boolean FillClockWise = true
+
+	property FillMethodType FillMethod = FillMethodType.Horizontal
+
+	property int32 FillOrigin = 0
+
+	property boolean FlipX = false
+
+	property boolean FlipY = false
+
+	property int32 FrameColumn = 1
+
+	property int32 FrameRate = 0
+
+	property int32 FrameRow = 1
+
+	property boolean Outline = false
+
+	property Color OutlineColor = Color(0.000, 0.000, 0.000, 1.000)
+
+	property float OutlineWidth = 3
+
+	property boolean RaycastTarget = true
+
+	property ImageType Type = ImageType.Sliced
+
+	@Sync
+	property boolean Enable = true
+
+	property boolean EnableInHierarchy
+
+	property Entity Entity
+
+	method void ChangeMaterial(string materialId) end
+
+	method void SetNativeSize() end
+
+	method boolean IsClient() end
+
+	method boolean IsServer() end
+
+	emitter EmitOrderInLayerChangedEvent(OrderInLayerChangedEvent event) end
+
+	emitter EmitSortingLayerChangedEvent(SortingLayerChangedEvent event) end
+
+end

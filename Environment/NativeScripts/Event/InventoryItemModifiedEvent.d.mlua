@@ -1,0 +1,10 @@
+@Event
+script InventoryItemModifiedEvent
+
+	property Entity Entity
+
+	property List<MODItem> Items
+
+	constructor InventoryItemModifiedEvent(Entity inventoryEntity, List<MODItem> items) end
+
+end

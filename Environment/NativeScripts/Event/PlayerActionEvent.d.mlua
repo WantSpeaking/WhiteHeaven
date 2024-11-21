@@ -1,0 +1,10 @@
+@Event
+script PlayerActionEvent
+
+	property string ActionName
+
+	property Entity PlayerEntity
+
+	constructor PlayerActionEvent(string actionName) end
+
+end

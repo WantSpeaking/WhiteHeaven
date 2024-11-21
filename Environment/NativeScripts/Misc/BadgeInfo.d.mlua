@@ -1,0 +1,22 @@
+@Misc
+script BadgeInfo
+
+	property string Description
+
+	property DateTime EndAcquisitionPeriod
+
+	property BadgeGrade Grade
+
+	property boolean HasAcquisitionPeriod
+
+	property string Id
+
+	property string Name
+
+	property DateTime StartAcquisitionPeriod
+
+	property BadgeStatus Status
+
+	property string ThumbnailRUID
+
+end

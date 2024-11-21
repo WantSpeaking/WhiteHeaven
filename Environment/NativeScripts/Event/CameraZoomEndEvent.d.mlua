@@ -1,0 +1,8 @@
+@Event
+script CameraZoomEndEvent
+
+	property CameraComponent ZoomCameraComponent
+
+	constructor CameraZoomEndEvent(CameraComponent zoomCameraComponent) end
+
+end

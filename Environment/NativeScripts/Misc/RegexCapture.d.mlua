@@ -1,0 +1,10 @@
+@Misc
+script RegexCapture
+
+	property int32 Index
+
+	property int32 Length
+
+	property string Text
+
+end

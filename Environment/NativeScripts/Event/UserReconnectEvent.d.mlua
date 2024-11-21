@@ -1,0 +1,16 @@
+@Event
+script UserReconnectEvent
+
+	property string ProfileCode
+
+	property string ReconnectMapName
+
+	property DateTime TimeNetworkClosed
+
+	property string UserId
+
+	constructor UserReconnectEvent(IUser user) end
+
+	constructor UserReconnectEvent(string reconnectMapName, DateTime timeNetworkClosed, string userId, string profileCode) end
+
+end

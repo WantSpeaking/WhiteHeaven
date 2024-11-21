@@ -1,0 +1,14 @@
+@Misc
+script AnimationClip
+
+	property ReadOnlyList<Frame> Frames
+
+	property float PlayRate
+
+	property boolean IsLoadComplete = false
+
+	property string RUID
+
+	property ResourceType Type
+
+end

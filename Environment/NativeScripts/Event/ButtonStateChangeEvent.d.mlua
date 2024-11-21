@@ -1,0 +1,8 @@
+@Event
+script ButtonStateChangeEvent
+
+	property ButtonState state
+
+	constructor ButtonStateChangeEvent(ButtonState state) end
+
+end

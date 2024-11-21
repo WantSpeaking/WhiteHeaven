@@ -1,0 +1,87 @@
+@Service
+script TeleportService extends Service
+
+	@ExecSpace("Server")
+	method void ClearReservation() end
+
+	@ExecSpace("Server")
+	method void ClearReservation(Entity messageOwnerEntity) end
+
+	@ExecSpace("ServerOnly")
+	method WarpRecord GetWarpRecord(string userId) end
+
+	@ExecSpace("Server")
+	method boolean ReserveTeleportToEntity(Entity targetEntity, Entity destinationEntity, boolean overridePrevious) end
+
+	@ExecSpace("Server")
+	method boolean ReserveTeleportToEntity(Entity targetEntity, Entity destinationEntity, boolean overridePrevious, Entity messageOwnerEntity) end
+
+	@ExecSpace("Server")
+	method boolean ReserveTeleportToMapPosition(Entity targetEntity, Vector3 destinationPosition, string destinationMapName, boolean overridePrevious) end
+
+	@ExecSpace("Server")
+	method boolean ReserveTeleportToMapPosition(Entity targetEntity, Vector3 destinationPosition, string destinationMapName, boolean overridePrevious, Entity messageOwnerEntity) end
+
+	@ExecSpace("Server")
+	method void TeleportReservedEntities() end
+
+	@ExecSpace("Server")
+	method void TeleportReservedEntities(Entity messageOwnerEntity) end
+
+	@ExecSpace("Server")
+	method void TeleportToEntity(Entity targetEntity, Entity destinationEntity) end
+
+	@ExecSpace("Server")
+	method void TeleportToEntity(Entity targetEntity, Entity destinationEntity, Entity messageOwnerEntity) end
+
+	@ExecSpace("Server")
+	method void TeleportToEntityPath(Entity targetEntity, string destinationEntityPath) end
+
+	@ExecSpace("Server")
+	method void TeleportToEntityPath(Entity targetEntity, string destinationEntityPath, Entity messageOwnerEntity) end
+
+	@ExecSpace("Server")
+	method void TeleportToMapPosition(Entity targetEntity, Vector3 destinationPosition, string destinationMapName) end
+
+	@ExecSpace("Server")
+	method void TeleportToMapPosition(Entity targetEntity, Vector3 destinationPosition, string destinationMapName, Entity messageOwnerEntity) end
+
+	@ExecSpace("Server")
+	method void UnReserveTeleport(Entity targetEntity) end
+
+	@ExecSpace("Server")
+	method void UnReserveTeleport(Entity targetEntity, Entity messageOwnerEntity) end
+
+	@ExecSpace("ServerOnly")
+	method boolean WarpUserToWorldAndWait(string userId, string destinationWorldId, string warpData) end
+
+	@ExecSpace("ServerOnly")
+	method void WarpUserToWorldAsync(string userId, string destinationWorldId, string warpData, func<boolean> callbackFunction) end
+
+	@ExecSpace("ServerOnly")
+	method boolean WarpUserToWorldInstanceAndWait(string userId, string destinationWorldInstanceId, string warpData) end
+
+	@ExecSpace("ServerOnly")
+	method void WarpUserToWorldInstanceAsync(string userId, string destinationWorldInstanceId, string warpData, func<boolean> callbackFunction) end
+
+	@ExecSpace("ServerOnly")
+	method boolean WarpUsersToWorldAndWait(table<string> userIds, string destinationWorldId, string warpData) end
+
+	@ExecSpace("ServerOnly")
+	method void WarpUsersToWorldAsync(table<string> userIds, string destinationWorldId, string warpData, func<boolean> callbackFunction) end
+
+	method MODEventHandlerBase ConnectEvent(Type eventType, IMODScriptFunction eventHandler) end
+
+	method MODEventHandlerBase ConnectEvent(Type eventType, IMODScriptFunction eventHandler) end
+
+	method MODEventHandlerBase ConnectEvent(string key, IMODScriptFunction eventHandler) end
+
+	method boolean DisconnectEvent(Type eventType, MODEventHandlerBase eventHandler) end
+
+	method boolean DisconnectEvent(Type eventType, MODEventHandlerBase eventHandler) end
+
+	method boolean DisconnectEvent(string key, MODEventHandlerBase eventHandler) end
+
+	method void SendEvent(EventType sendEvent) end
+
+end

@@ -1,0 +1,33 @@
+@Component
+script PolygonGUIRendererComponent extends Component
+
+	property Color Color = Color(1.000, 1.000, 1.000, 1.000)
+
+	@Sync
+	property string MaterialId = ""
+
+	property SyncList<Vector2> Points
+
+	@Sync
+	property SyncList<Vector2> UVs
+
+	@Sync
+	property boolean UseCustomUVs = false
+
+	@Sync
+	property boolean Enable = true
+
+	property boolean EnableInHierarchy
+
+	property Entity Entity
+
+	method void ChangeMaterial(string materialId) end
+
+	@ExecSpace("ClientOnly")
+	method boolean IsDrawable() end
+
+	method boolean IsClient() end
+
+	method boolean IsServer() end
+
+end

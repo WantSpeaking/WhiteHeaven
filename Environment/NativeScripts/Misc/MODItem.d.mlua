@@ -1,0 +1,22 @@
+@Misc
+script MODItem
+
+	property string Description
+
+	property string GUID
+
+	property string IconRUID
+
+	property int32 ItemCount
+
+	property string ItemDataTableName
+
+	property UserDataRow ItemTableData
+
+	property string ItemTypeName
+
+	property string Owner
+
+	method int32 GetSize() end
+
+end

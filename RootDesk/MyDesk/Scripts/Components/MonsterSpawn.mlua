@@ -1,0 +1,81 @@
+@Component
+script MonsterSpawn extends Component
+
+	@Sync
+	property number MaxSpawnCount = 10
+
+	@Sync
+	property number Time = 0
+
+	property table MonsterArray = {}
+
+	method void SpawnMonster(number spawnCount)
+		local parent = _EntityService:GetEntityByPath("/maps/map01")
+		local nextNum = 0
+		local positions = self:GetRandomPosition(spawnCount)
+		
+		for i = 1, #positions do
+		    	nextNum = #self.MonsterArray + 1
+		    	self.MonsterArray[nextNum] = _SpawnService:SpawnByModelId(
+		    	    "model://maplestorymonster$f18aab06bfaa4a50bf6caa5b7bfa8a4f",
+		    	    "SpawnedMonster",
+		    	    positions[i],
+		    	    parent)
+		    end
+		
+		    
+	end
+
+	@ExecSpace("ServerOnly")
+	method void OnBeginPlay()
+		self.MonsterArray = {}
+		--print(_EntityService:GetEntityByPath("/maps/10000/TileMap"))
+		--PortalEntityRef = EntityRef(_EntityService:GetEntityByPath("/maps/10000/portal-1_1"))
+	end
+
+	method table GetRandomPosition(number spawnCount)
+		local leftX = 1 -- x coordinate on the left side of the spawn area
+		    local rightX = 8 -- x coordinate on the right side of the spawn area
+		    local y = -2 -- y coordinate of the spawn area
+		    local areaWidth = rightX - leftX
+		local positions = {}
+		for i = 1, spawnCount do
+		        local randomX = (_UtilLogic:RandomIntegerRange(0,100) / 100) * areaWidth + leftX
+		        positions[i] = Vector3(randomX, y, 0)
+		    end
+		    
+		    return positions
+	end
+
+	method number GetCurMonsterCount()
+		--remove nil mob,return real mob count
+		local i = 1
+		    while i <= #self.MonsterArray do
+		        if isvalid(self.MonsterArray[i]) == true then
+		            i = i + 1
+		        else
+		            table.remove(self.MonsterArray,i)
+		        end
+		    end
+		
+		    return #self.MonsterArray
+	end
+
+	@ExecSpace("ServerOnly")
+	method void OnUpdate(number delta)
+		self.Time = self.Time + delta
+		
+		    if self.Time >= 5 then
+		        self.Time = 0
+		        local curMonsterCnt = self:GetCurMonsterCount()
+		        if curMonsterCnt == nil then
+		            return
+		        end
+		        local spawnCount = self.MaxSpawnCount - curMonsterCnt
+		        if spawnCount > 0 then
+		            self:SpawnMonster(spawnCount)
+		        end
+		    end
+	end
+
+end

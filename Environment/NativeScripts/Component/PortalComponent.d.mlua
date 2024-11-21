@@ -1,0 +1,29 @@
+@Component
+script PortalComponent extends Component
+
+	@Sync
+	property Vector2 BoxOffset
+
+	@Sync
+	property Vector2 BoxSize
+
+	property CollisionGroup CollisionGroup = CollisionGroups.Portal
+
+	property boolean IsLegacy = false
+
+	property EntityRef PortalEntityRef
+
+	@Sync
+	property boolean Enable = true
+
+	property boolean EnableInHierarchy
+
+	property Entity Entity
+
+	method boolean IsClient() end
+
+	method boolean IsServer() end
+
+	emitter EmitPortalUseEvent(PortalUseEvent event) end
+
+end

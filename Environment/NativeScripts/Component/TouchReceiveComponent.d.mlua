@@ -1,0 +1,31 @@
+@Component
+script TouchReceiveComponent extends Component
+
+	property boolean AutoFitToSize = false
+
+	property boolean DynamicTouchArea = false
+
+	property boolean RelayEventToBehind = true
+
+	property Vector2 TouchArea = Vector2(1.000, 1.000)
+
+	property float TouchAreaUpdateTime = 1
+
+	@Sync
+	property boolean Enable = true
+
+	property boolean EnableInHierarchy
+
+	property Entity Entity
+
+	method boolean IsClient() end
+
+	method boolean IsServer() end
+
+	emitter EmitTouchEvent(TouchEvent event) end
+
+	emitter EmitTouchHoldEvent(TouchHoldEvent event) end
+
+	emitter EmitTouchReleaseEvent(TouchReleaseEvent event) end
+
+end

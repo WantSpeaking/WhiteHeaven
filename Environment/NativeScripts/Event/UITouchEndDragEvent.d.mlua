@@ -1,0 +1,12 @@
+@Event
+script UITouchEndDragEvent
+
+	property Entity Entity
+
+	property int32 TouchId
+
+	property Vector2 TouchPoint
+
+	constructor UITouchEndDragEvent(Entity entity, int32 touchId, Vector2 touchPoint) end
+
+end

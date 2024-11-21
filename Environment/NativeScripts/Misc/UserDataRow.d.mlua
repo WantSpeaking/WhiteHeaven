@@ -1,0 +1,12 @@
+@Misc
+script UserDataRow
+
+	property string id
+
+	property string model
+
+	method int32 Count() end
+
+	method string GetItem(string columnName) end
+
+end

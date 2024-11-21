@@ -1,0 +1,37 @@
+@Component
+script AIChaseComponent extends Component
+
+	property float DetectionRange = 5
+
+	property boolean IsChaseNearPlayer = true
+
+	property EntityRef TargetEntityRef
+
+	property boolean IsLegacy = false
+
+	property boolean LogEnabled = false
+
+	property UpdateAuthorityType UpdateAuthority = UpdateAuthorityType.Server
+
+	@Sync
+	property boolean Enable = true
+
+	property boolean EnableInHierarchy
+
+	property Entity Entity
+
+	method Entity GetCurrentTarget() end
+
+	method void SetTarget(Entity targetEntity) end
+
+	method MODBTNode CreateLeafNode(string nodeName, func<float> -> BehaviourTreeStatus onBehaveFunction) end
+
+	method MODBTNode CreateNode(string nodeType, string nodeName, func<float> -> BehaviourTreeStatus onBehaveFunction) end
+
+	method void SetRootNode(MODBTNode node) end
+
+	method boolean IsClient() end
+
+	method boolean IsServer() end
+
+end

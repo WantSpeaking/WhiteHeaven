@@ -1,0 +1,12 @@
+@Event
+script EntityChangedParentEvent
+
+	property Entity NewParent
+
+	property Entity OldParent
+
+	property Entity Entity
+
+	constructor EntityChangedParentEvent(Entity entity, Entity oldParent, Entity newParent) end
+
+end

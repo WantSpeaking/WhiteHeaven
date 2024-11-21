@@ -1,0 +1,8 @@
+@Event
+script ParticleEmitStartEvent
+
+	property Entity ParticleEntity
+
+	constructor ParticleEmitStartEvent() end
+
+end

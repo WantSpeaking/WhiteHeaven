@@ -1,0 +1,6 @@
+@Misc
+script MODStateType
+
+	property StateComponent ParentComponent
+
+end

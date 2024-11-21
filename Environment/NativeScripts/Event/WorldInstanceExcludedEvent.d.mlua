@@ -1,0 +1,6 @@
+@Event
+script WorldInstanceExcludedEvent
+
+	constructor WorldInstanceExcludedEvent() end
+
+end

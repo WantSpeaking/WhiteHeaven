@@ -1,0 +1,6 @@
+@Event
+script RigidbodyClimbableDetachEndEvent
+
+	constructor RigidbodyClimbableDetachEndEvent() end
+
+end

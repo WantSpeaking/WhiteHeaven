@@ -1,0 +1,47 @@
+@Component
+script AvatarGUIRendererComponent extends Component
+
+	property Color Color = Color(1.000, 1.000, 1.000, 1.000)
+
+	property boolean FlipX = false
+
+	property boolean FlipY = false
+
+	@Sync
+	property string MaterialId = ""
+
+	property float PlayRate = 1
+
+	property PreserveSpriteType PreserveAvatar = PreserveSpriteType.None
+
+	property boolean RaycastTarget = true
+
+	@Sync
+	property boolean Enable = true
+
+	property boolean EnableInHierarchy
+
+	property Entity Entity
+
+	method void ChangeMaterial(string materialId) end
+
+	@ExecSpace("ClientOnly")
+	method Entity GetAvatarRootEntity() end
+
+	@ExecSpace("ClientOnly")
+	method Entity GetBodyEntity() end
+
+	@ExecSpace("ClientOnly")
+	method Entity GetFaceEntity() end
+
+	@ExecSpace("ClientOnly")
+	method void PlayEmotion(EmotionalType emotionalType, float duration) end
+
+	@ExecSpace("ClientOnly")
+	method void SetAvatarPartColor(MapleAvatarItemCategory category, float r, float g, float b, float a) end
+
+	method boolean IsClient() end
+
+	method boolean IsServer() end
+
+end

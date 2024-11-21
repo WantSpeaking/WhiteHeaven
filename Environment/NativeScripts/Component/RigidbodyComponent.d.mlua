@@ -1,0 +1,101 @@
+@Component
+script RigidbodyComponent extends Component
+
+	@Sync
+	property boolean ApplyClimbableRotation = true
+
+	property float DownJumpSpeed = 2
+
+	property float Gravity = 1
+
+	property boolean IgnoreMoveBoundary = false
+
+	property boolean IsBlockVerticalLine = false
+
+	property boolean IsQuaterViewMove = false
+
+	property boolean IsolatedMove = false
+
+	property float JumpBias = 0.03
+
+	@Sync
+	property AutomaticLayerOption LayerSettingType = AutomaticLayerOption.All
+
+	property float Mass = 100
+
+	property Vector2 MoveVelocity
+
+	property float QuaterViewAccelerationX = 1
+
+	property float QuaterViewAccelerationY = 1
+
+	property Vector2 RealMoveVelocity = Vector2(0.000, 0.000)
+
+	property float WalkAcceleration = 1
+
+	property float WalkDrag = 1
+
+	property float WalkJump = 1.23
+
+	property float WalkSlant = 0.9
+
+	property float WalkSpeed = 1.4
+
+	@Sync
+	property boolean Enable = true
+
+	property boolean EnableInHierarchy
+
+	property Entity Entity
+
+	method void AddForce(Vector2 forcePower) end
+
+	method void AttachTo(string entityId, Vector3 offset) end
+
+	method void Detach() end
+
+	method boolean DownJump() end
+
+	method Foothold GetCurrentFoothold() end
+
+	method Vector2 GetCurrentFootholdPerpendicular() end
+
+	method boolean IsOnGround() end
+
+	method boolean JustJump(Vector2 jumpRate) end
+
+	method void PositionReset() end
+
+	method boolean PredictFootholdEnd(float distance, boolean isFoward) end
+
+	method void SetForce(Vector2 forcePower) end
+
+	method void SetForceReserve(Vector2 forcePower) end
+
+	method void SetPosition(Vector2 position) end
+
+	method void SetUseCustomMove(boolean isUse) end
+
+	method void SetWorldPosition(Vector2 position) end
+
+	method boolean IsClient() end
+
+	method boolean IsServer() end
+
+	emitter EmitFootholdCollisionEvent(FootholdCollisionEvent event) end
+
+	emitter EmitFootholdEnterEvent(FootholdEnterEvent event) end
+
+	emitter EmitFootholdLeaveEvent(FootholdLeaveEvent event) end
+
+	emitter EmitRigidbodyAttachEvent(RigidbodyAttachEvent event) end
+
+	emitter EmitRigidbodyClimbableAttachStartEvent(RigidbodyClimbableAttachStartEvent event) end
+
+	emitter EmitRigidbodyClimbableDetachEndEvent(RigidbodyClimbableDetachEndEvent event) end
+
+	emitter EmitRigidbodyDetachEvent(RigidbodyDetachEvent event) end
+
+	emitter EmitRigidbodyQuartviewJumpEvent(RigidbodyQuartviewJumpEvent event) end
+
+end

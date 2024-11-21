@@ -1,0 +1,12 @@
+@Event
+script UITouchDownEvent
+
+	property Entity Entity
+
+	property int32 TouchId
+
+	property Vector2 TouchPoint
+
+	constructor UITouchDownEvent(Entity entity, int32 touchId, Vector2 touchPoint) end
+
+end

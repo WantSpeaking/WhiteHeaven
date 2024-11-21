@@ -1,0 +1,8 @@
+@Event
+script AnimSelectorStateChangeEvent
+
+	property string State
+
+	constructor AnimSelectorStateChangeEvent() end
+
+end

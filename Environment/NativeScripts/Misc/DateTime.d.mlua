@@ -1,0 +1,66 @@
+@Misc
+script DateTime
+
+	property int32 Day
+
+	property DayOfWeekType DayOfWeek
+
+	property integer Elapsed
+
+	property int32 Hour
+
+	static property DateTime MaxValue = DateTime(9999, 12, 31, 23, 59, 59)
+
+	property int32 Millisecond
+
+	static property DateTime MinValue = DateTime(1, 1, 1, 0, 0, 0)
+
+	property int32 Minute
+
+	property int32 Month
+
+	property int32 Second
+
+	static property DateTime UtcNow
+
+	property int32 Year
+
+	constructor MODDateTime(int32 year, int32 month, int32 day) end
+
+	constructor MODDateTime(int32 year, int32 month, int32 day, int32 hour, int32 minute, int32 second) end
+
+	constructor MODDateTime(int32 year, int32 month, int32 day, int32 hour, int32 minute, int32 second, int32 millisecond) end
+
+	constructor MODDateTime(integer elapsed) end
+
+	constructor MODDateTime(string dateTimeString) end
+
+	constructor MODDateTime(string dateTimeString, string format) end
+
+	constructor MODDateTime(string dateTimeString, string format, string cultureName) end
+
+	method boolean IsLocalTime() end
+
+	method string ToFormattedString(string format) end
+
+	method string ToFormattedString(string format, string cultureName) end
+
+	static method boolean op_Inequality(DateTime left, DateTime right) end
+
+	static method DateTime op_Addition(DateTime left, TimeSpan right) end
+
+	static method TimeSpan op_Subtraction(DateTime left, DateTime right) end
+
+	static method DateTime op_Subtraction(DateTime left, TimeSpan right) end
+
+	static method boolean op_LessThan(DateTime left, DateTime right) end
+
+	static method boolean op_LessThanOrEqual(DateTime left, DateTime right) end
+
+	static method boolean op_Equality(DateTime left, DateTime right) end
+
+	static method boolean op_GreaterThan(DateTime left, DateTime right) end
+
+	static method boolean op_GreaterThanOrEqual(DateTime left, DateTime right) end
+
+end

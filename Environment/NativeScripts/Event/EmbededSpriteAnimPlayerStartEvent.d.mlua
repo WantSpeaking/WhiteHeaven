@@ -1,0 +1,12 @@
+@Event
+script EmbededSpriteAnimPlayerStartEvent
+
+	property float ClipPlayRate = 1
+
+	property SpriteAnimClipPlayType ClipPlayType = SpriteAnimClipPlayType.Onetime
+
+	property IEmbeddedSpriteAnimPlayer AnimPlayer
+
+	constructor EmbededSpriteAnimPlayerStartEvent(IEmbeddedSpriteAnimPlayer animPlayer, SpriteAnimClipPlayType clipPlayType, float clipPlayRate) end
+
+end

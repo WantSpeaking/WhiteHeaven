@@ -1,0 +1,12 @@
+@Event
+script EntityWorldChangedEvent
+
+	property Entity NewWorld
+
+	property Entity OldWorld
+
+	property Entity Entity
+
+	constructor EntityWorldChangedEvent(Entity entity, Entity oldWorld, Entity newWorld) end
+
+end

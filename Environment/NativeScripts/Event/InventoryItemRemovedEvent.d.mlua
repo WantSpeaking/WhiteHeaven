@@ -1,0 +1,10 @@
+@Event
+script InventoryItemRemovedEvent
+
+	property Entity Entity
+
+	property List<MODItem> Items
+
+	constructor InventoryItemRemovedEvent(Entity inventoryEntity, List<MODItem> items) end
+
+end

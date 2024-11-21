@@ -1,0 +1,14 @@
+@Event
+script EmbededSpriteAnimPlayerChangeFrameEvent
+
+	property int32 FrameIndex = -1
+
+	property boolean ReversePlaying = false
+
+	property int32 TotalFrameCount = 0
+
+	property IEmbeddedSpriteAnimPlayer AnimPlayer
+
+	constructor EmbededSpriteAnimPlayerChangeFrameEvent(IEmbeddedSpriteAnimPlayer animPlayer, int32 frameIndex, boolean reversePlaying, int32 totalFrameCount) end
+
+end

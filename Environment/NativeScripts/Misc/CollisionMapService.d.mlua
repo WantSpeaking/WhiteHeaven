@@ -1,0 +1,8 @@
+@Misc
+script CollisionMapService
+
+	method List<Component> OverlapBox(string name, Vector2 position, Vector2 size) end
+
+	method List<Component> RaycastAll(string name, Vector2 position) end
+
+end

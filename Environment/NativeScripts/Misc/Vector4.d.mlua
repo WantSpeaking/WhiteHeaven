@@ -1,0 +1,54 @@
+@Misc
+script Vector4
+
+	static property Vector4 negativeInfinity
+
+	static property Vector4 one
+
+	static property Vector4 positiveInfinity
+
+	property float w
+
+	property float x
+
+	property float y
+
+	property float z
+
+	static property Vector4 zero
+
+	constructor MODVector4(float x, float y, float z, float w) end
+
+	static method float Distance(Vector4 a, Vector4 b) end
+
+	static method float Dot(Vector4 a, Vector4 b) end
+
+	static method Vector4 Lerp(Vector4 a, Vector4 b, float t) end
+
+	static method Vector4 LerpUnclamped(Vector4 a, Vector4 b, float t) end
+
+	static method float Magnitude(Vector4 a) end
+
+	static method Vector4 Normalize(Vector4 a) end
+
+	static method Vector4 Project(Vector4 a, Vector4 b) end
+
+	static method float SqrMagnitude(Vector4 a) end
+
+	static method boolean op_Inequality(Vector4 left, Vector4 right) end
+
+	static method Vector4 op_Multiply(Vector4 left, float right) end
+
+	static method Vector4 op_Multiply(float left, Vector4 right) end
+
+	static method Vector4 op_Addition(Vector4 left, Vector4 right) end
+
+	static method Vector4 op_UnaryNegation(Vector4 value) end
+
+	static method Vector4 op_Subtraction(Vector4 left, Vector4 right) end
+
+	static method Vector4 op_Division(Vector4 left, float right) end
+
+	static method boolean op_Equality(Vector4 left, Vector4 right) end
+
+end

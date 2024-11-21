@@ -1,0 +1,21 @@
+@Component
+script StateDataContainerComponent extends Component
+
+	property Dictionary<string, boolean> FlipX
+
+	property Dictionary<string, boolean> FlipY
+
+	property Dictionary<string, Color> TintColor
+
+	@Sync
+	property boolean Enable = true
+
+	property boolean EnableInHierarchy
+
+	property Entity Entity
+
+	method boolean IsClient() end
+
+	method boolean IsServer() end
+
+end

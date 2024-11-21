@@ -1,0 +1,62 @@
+@Misc
+script CollisionSimulator
+
+	method Component Overlap(CollisionGroup collisionGroup, Shape shape) end
+
+	method Component Overlap(table groups, Shape shape) end
+
+	method Component Overlap(string collisionGroupName, Shape shape) end
+
+	method table<Component> OverlapAll(CollisionGroup collisionGroup, Shape shape) end
+
+	method table<Component> OverlapAll(table groups, Shape shape) end
+
+	method table<Component> OverlapAll(string collisionGroupName, Shape shape) end
+
+	method int32 OverlapAllFast(CollisionGroup collisionGroup, Shape shape, table outputList) end
+
+	method int32 OverlapAllFast(table groups, Shape shape, table outputList) end
+
+	method int32 OverlapAllFast(string collisionGroupName, Shape shape, table outputList) end
+
+	method Component OverlapBox(string collisionGroupName, Vector2 position, Vector2 size, float angle) end
+
+	method table<Component> OverlapBoxAll(string collisionGroupName, Vector2 position, Vector2 size, float angle) end
+
+	method int32 OverlapBoxAllFast(string collisionGroupName, Vector2 position, Vector2 size, float angle, table outputList) end
+
+	method Component OverlapCircle(string collisionGroupName, Vector2 position, float radius) end
+
+	method table<Component> OverlapCircleAll(string collisionGroupName, Vector2 position, float radius) end
+
+	method int32 OverlapCircleAllFast(string collisionGroupName, Vector2 position, float radius, table outputList) end
+
+	method table<Component> OverlapLineAll(string collisionGroupName, Vector2 point1, Vector2 point2) end
+
+	method int32 OverlapLineAllFast(string collisionGroupName, Vector2 point1, Vector2 point2, table outputList) end
+
+	method Component OverlapPoint(CollisionGroup collisionGroup, Vector2 point) end
+
+	method Component OverlapPoint(table groups, Vector2 point) end
+
+	method Component OverlapPoint(string collisionGroupName, Vector2 point) end
+
+	method table<Component> OverlapPointAll(CollisionGroup collisionGroup, Vector2 point) end
+
+	method table<Component> OverlapPointAll(table groups, Vector2 point) end
+
+	method table<Component> OverlapPointAll(string collisionGroupName, Vector2 point) end
+
+	method int32 OverlapPointAllFast(CollisionGroup collisionGroup, Vector2 point, table outputList) end
+
+	method int32 OverlapPointAllFast(table groups, Vector2 point, table outputList) end
+
+	method int32 OverlapPointAllFast(string collisionGroupName, Vector2 point, table outputList) end
+
+	method Component Raycast(CollisionGroup collisionGroup, Vector2 origin, Vector2 direction, float distance) end
+
+	method Component Raycast(table groups, Vector2 origin, Vector2 direction, float distance) end
+
+	method Component Raycast(string collisionGroupName, Vector2 origin, Vector2 direction, float distance) end
+
+end

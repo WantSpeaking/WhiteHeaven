@@ -1,0 +1,10 @@
+@Event
+script EntityAddChildrenEvent
+
+	property Entity AddedChildren
+
+	property Entity Entity
+
+	constructor EntityAddChildrenEvent(Entity entity, Entity addedChildren) end
+
+end

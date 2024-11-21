@@ -1,0 +1,8 @@
+@Event
+script EntityPostTransformInitEvent
+
+	property Entity Entity
+
+	constructor EntityPostTransformInitEvent(Entity entity) end
+
+end

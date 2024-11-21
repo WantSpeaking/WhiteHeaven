@@ -1,0 +1,8 @@
+@Event
+script KeyUpEvent
+
+	property KeyboardKey key
+
+	constructor KeyUpEvent(KeyboardKey key) end
+
+end

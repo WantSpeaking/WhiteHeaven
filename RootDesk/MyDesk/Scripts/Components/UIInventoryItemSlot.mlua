@@ -1,0 +1,85 @@
+@Component
+script UIInventoryItemSlot extends Component
+
+	property any item = nil
+
+	property string itemGUID = ""
+
+	property number ItemIndex = 0
+
+	property integer ItemCount = 0
+
+	property integer SlotIndex = 0
+
+	property string ItemId = ""
+
+	method void SetData(integer slotIndex, string itemId, integer itemCount)
+		---@type ItemInfo
+		    local itemInfo = _Data.ItemTable[itemId]
+		
+		    if itemInfo == nil then
+		    	log_error("[UIInventoryItemSlot] (SetData) Item Id Error")
+		    	return
+		    end
+		
+		    local imageEntity = self.Entity:GetChildByName("img_slot")
+		    local countEntity = imageEntity:GetChildByName("item_count")
+		
+		    imageEntity.SpriteGUIRendererComponent.ImageRUID = itemInfo.IconRUID
+		    countEntity.TextComponent.Text = tostring(itemCount)
+		    countEntity:SetEnable(true)
+		
+		    self.SlotIndex = slotIndex
+		    self.ItemId = itemId
+	end
+
+	method void SetDataOriginal(any item)
+		self.item = item
+		
+		local imageEntity = self.Entity:GetChildByName("img_slot")
+		imageEntity.SpriteGUIRendererComponent.ImageRUID = item.IconRUID
+		
+		imageEntity:GetChildByName("item_count").TextComponent.Text = tostring(item.ItemCount)
+		self.itemGUID = item.GUID
+	end
+
+	method void SetCount(number count)
+		-- Change Item Quantity
+		    self.ItemCount = count
+		 
+		    local textEntity = self.Entity:GetChildByName("item_count", true)
+		    textEntity.TextComponent.Text = tostring(math.floor(count))
+		 
+		    -- If the number of items is greater than 0, it shows the slot; otherwise it hides it.
+		    if count > 0 then
+		        self.Entity:SetEnable(true)
+		    else
+		        self.Entity:SetEnable(false)
+		    end
+	end
+
+	method void Clear()
+			local imageEntity = self.Entity:GetChildByName("img_slot")
+		    imageEntity.SpriteGUIRendererComponent.ImageRUID = "129f02486c2baef49a41b31ce16171f6"
+		    local countEntity = imageEntity:GetChildByName("item_count")
+		    countEntity.TextComponent.Text = nil
+		    countEntity:SetEnable(false)
+		
+		    self.ItemId = ""
+		    self.ItemCount = 0
+	end
+
+	@EventSender("Self")
+	handler HandleButtonClickEvent(ButtonClickEvent event)
+		-- Only when there is an item in the slot
+		    if self.ItemId == "" then
+		        return
+		    end
+		
+		    -- Enable the sale pop-up.
+		    local popup = _EntityService:GetEntityByPath("/ui/DefaultGroup/Shop/SellPopup")
+		    popup.UISellPopup:SetData(self.SlotIndex, self.ItemId, self.ItemCount)
+		    popup:SetEnable(true)
+	end
+
+end

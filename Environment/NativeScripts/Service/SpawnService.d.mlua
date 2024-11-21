@@ -1,0 +1,28 @@
+@Service
+script SpawnService extends Service
+
+	method Entity Clone(string name, Entity original, Entity parent, boolean posOffset, boolean dynamic) end
+
+	method Entity SpawnByEntity(Entity entity, string name, Vector3 spawnPosition, Entity parent, boolean includeChild) end
+
+	method Entity SpawnByEntityTemplate(Entity entityTemplate, string name, Vector3 spawnPosition, boolean includeChild, boolean dynamic, boolean needSync, boolean nameEditable) end
+
+	method Entity SpawnByModelId(string id, string name, Vector3 spawnPosition, Entity parent) end
+
+	method Entity SpawnByModelId(string id, string name, Vector3 spawnPosition, Entity parent, string ownerId, boolean dynamic, boolean needSync, boolean nameEditable) end
+
+	method MODEventHandlerBase ConnectEvent(Type eventType, IMODScriptFunction eventHandler) end
+
+	method MODEventHandlerBase ConnectEvent(Type eventType, IMODScriptFunction eventHandler) end
+
+	method MODEventHandlerBase ConnectEvent(string key, IMODScriptFunction eventHandler) end
+
+	method boolean DisconnectEvent(Type eventType, MODEventHandlerBase eventHandler) end
+
+	method boolean DisconnectEvent(Type eventType, MODEventHandlerBase eventHandler) end
+
+	method boolean DisconnectEvent(string key, MODEventHandlerBase eventHandler) end
+
+	method void SendEvent(EventType sendEvent) end
+
+end

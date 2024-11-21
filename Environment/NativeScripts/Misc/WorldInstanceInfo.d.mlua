@@ -1,0 +1,10 @@
+@Misc
+script WorldInstanceInfo
+
+	property int32 CurrentUserCount
+
+	property string Id
+
+	property int32 MaxUserCount
+
+end

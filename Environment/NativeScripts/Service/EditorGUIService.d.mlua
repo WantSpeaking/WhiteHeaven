@@ -1,0 +1,58 @@
+@Service
+script EditorGUIService extends Service
+
+	method void AddLink(string id, Entity lhs, Entity rhs, float controlFactorX, float controlFactorY) end
+
+	method void AddPaletteTab(string id, string text, string icon) end
+
+	method void AddSystemPaletteTab(EditorSystemPalette category, string filters) end
+
+	method void AlignGUI(string id, EditorAlignmentType align, Vector2 offset) end
+
+	method void CreateGUI(string json) end
+
+	method void DeselectPaletteItem() end
+
+	method void ForceActivateEditorGUI() end
+
+	method void MessageBox(string message, string buttons, func<string> callback) end
+
+	method void MovePaletteItemFirstIndex(int32 index) end
+
+	method void RebuildGUI(string id, string json) end
+
+	method void RemoveGUI(string id) end
+
+	method void RemoveLink(string id) end
+
+	method void RemovePaletteTab(string id) end
+
+	method void RemovePaletteTabAll() end
+
+	method void SetPalette(List<string> lists) end
+
+	method void SetPlayTrigger(string trigger) end
+
+	method void SetSelectedPaletteTab(int32 index) end
+
+	method void SetTemplateMode() end
+
+	method void StartTutorial(string tutorial) end
+
+	method void TraceWrite(string msg) end
+
+	method MODEventHandlerBase ConnectEvent(Type eventType, IMODScriptFunction eventHandler) end
+
+	method MODEventHandlerBase ConnectEvent(Type eventType, IMODScriptFunction eventHandler) end
+
+	method MODEventHandlerBase ConnectEvent(string key, IMODScriptFunction eventHandler) end
+
+	method boolean DisconnectEvent(Type eventType, MODEventHandlerBase eventHandler) end
+
+	method boolean DisconnectEvent(Type eventType, MODEventHandlerBase eventHandler) end
+
+	method boolean DisconnectEvent(string key, MODEventHandlerBase eventHandler) end
+
+	method void SendEvent(EventType sendEvent) end
+
+end

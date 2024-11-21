@@ -1,0 +1,7 @@
+@Event
+script SimpleInventoryMesoModifiedEvent
+
+	@Sync
+	property integer Meso = 0
+
+end

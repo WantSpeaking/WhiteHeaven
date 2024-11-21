@@ -1,0 +1,30 @@
+@Misc
+script PrismaticJoint
+
+	property boolean CollideConnected = false
+
+	property Vector2 LocalAnchorA = Vector2(0.000, 0.000)
+
+	property Vector2 LocalAnchorB = Vector2(0.000, 0.000)
+
+	property Vector2 LocalAxis = Vector2(0.000, 1.000)
+
+	property float LowerTranslation = 0
+
+	property float MaxMotorForce = 10000
+
+	property boolean MotorEnable = false
+
+	property float MotorSpeed = 0
+
+	property EntityRef TargetEntityRef
+
+	property float UpperTranslation = 0
+
+	property boolean UseLimits = false
+
+	constructor PrismaticJoint() end
+
+	constructor PrismaticJoint(PrismaticJoint joint) end
+
+end

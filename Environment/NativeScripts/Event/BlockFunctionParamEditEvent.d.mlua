@@ -1,0 +1,12 @@
+@Event
+script BlockFunctionParamEditEvent
+
+	property string blockfunctionParamId
+
+	property int32 editType
+
+	property string title
+
+	constructor BlockFunctionParamEditEvent(int32 editType, string blockfunctionParamId, string title) end
+
+end

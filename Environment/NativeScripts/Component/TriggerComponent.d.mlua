@@ -1,0 +1,55 @@
+@Component
+script TriggerComponent extends Component
+
+	@Sync
+	property Vector2 BoxOffset = Vector2(0.000, 0.000)
+
+	@Sync
+	property Vector2 BoxSize = Vector2(0.000, 0.000)
+
+	@Sync
+	property float CircleRadius = 0
+
+	property string ColliderName = "TriggerBox"
+
+	@Sync
+	property Vector2 ColliderOffset = Vector2(0.000, 0.000)
+
+	@Sync
+	property ColliderType ColliderType = ColliderType.Box
+
+	@Sync
+	property CollisionGroup CollisionGroup = CollisionGroups.TriggerBox
+
+	property boolean IsLegacy = false
+
+	@Sync
+	property boolean IsPassive = false
+
+	@Sync
+	property SyncList<Vector2> PolygonPoints
+
+	@Sync
+	property boolean Enable = true
+
+	property boolean EnableInHierarchy
+
+	property Entity Entity
+
+	method void OnEnterTriggerBody(TriggerEnterEvent enterEvent) end
+
+	method void OnLeaveTriggerBody(TriggerLeaveEvent leaveEvent) end
+
+	method void OnStayTriggerBody(TriggerStayEvent stayEvent) end
+
+	method boolean IsClient() end
+
+	method boolean IsServer() end
+
+	emitter EmitTriggerEnterEvent(TriggerEnterEvent event) end
+
+	emitter EmitTriggerLeaveEvent(TriggerLeaveEvent event) end
+
+	emitter EmitTriggerStayEvent(TriggerStayEvent event) end
+
+end

@@ -1,0 +1,10 @@
+@Event
+script BlockFunctionParamCreateEvent
+
+	property string blockfunctionImplementid
+
+	property string paramType
+
+	constructor BlockFunctionParamCreateEvent(string blockfunctionImplementid, string paramType) end
+
+end

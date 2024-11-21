@@ -1,0 +1,61 @@
+@Component
+script BackgroundComponent extends Component
+
+	@Sync
+	property Color BottomColor = Color(0.000, 0.000, 1.000, 1.000)
+
+	@Sync
+	property string MaterialId = ""
+
+	@Sync
+	property Color MiddleBottomColor = Color(0.450, 0.800, 1.000, 1.000)
+
+	@Sync
+	property float MiddleBottomRatio = 0.45
+
+	@Sync
+	property Color MiddleTopColor = Color(0.900, 0.700, 0.300, 1.000)
+
+	@Sync
+	property float MiddleTopRatio = 0.55
+
+	@Sync
+	property float ScrollRate = 1
+
+	@Sync
+	property Color SolidColor = Color(1.000, 1.000, 1.000, 1.000)
+
+	@Sync
+	property string TemplateRUID = ""
+
+	@Sync
+	property Color TopColor = Color(1.000, 0.000, 0.000, 1.000)
+
+	@Sync
+	property BackgroundType Type = BackgroundType.Unknown
+
+	@Sync
+	property string WebUrl = ""
+
+	@Sync
+	property boolean Enable = true
+
+	property boolean EnableInHierarchy
+
+	property Entity Entity
+
+	method void ChangeBackgroundByGradient(Color top, Color middleTop, Color middleBottom, Color bottom, float middleTopRatio, float middleBottomRatio) end
+
+	method void ChangeBackgroundBySolidColor(Color value) end
+
+	method void ChangeBackgroundByTemplateRUID(string value) end
+
+	method void ChangeBackgroundByWebUrl(string value) end
+
+	method void ChangeMaterial(string materialId) end
+
+	method boolean IsClient() end
+
+	method boolean IsServer() end
+
+end

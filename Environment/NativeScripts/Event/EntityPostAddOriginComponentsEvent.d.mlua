@@ -1,0 +1,8 @@
+@Event
+script EntityPostAddOriginComponentsEvent
+
+	property Entity Entity
+
+	constructor EntityPostAddOriginComponentsEvent(Entity entity) end
+
+end

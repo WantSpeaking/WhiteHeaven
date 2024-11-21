@@ -1,0 +1,12 @@
+@Event
+script SpriteAnimPlayerChangeStateEvent
+
+	property SpriteAnimPlayerState NewState = SpriteAnimPlayerState.Invalid
+
+	property SpriteAnimPlayerState PrevState = SpriteAnimPlayerState.Invalid
+
+	property IEmbeddedSpriteAnimPlayer AnimPlayer
+
+	constructor SpriteAnimPlayerChangeStateEvent(IEmbeddedSpriteAnimPlayer animPlayer, SpriteAnimPlayerState prevState, SpriteAnimPlayerState newState) end
+
+end

@@ -1,0 +1,76 @@
+@Logic
+script Datas_MapLifeInfo extends Logic
+
+	property table Table = {}
+
+	method table getTable()
+		if #self.Table == 0 then
+		self:loadTable()
+		end
+		
+		return self.Table
+	end
+
+	method void loadTable()
+		if self._T.MapID_Table == nil then
+			self._T.MapID_Table = {}
+		end
+		
+		if self._T.Datas == nil then
+			self._T.Datas = {}
+		end
+		
+		local dataset = _DataService:GetTable("Table_MapLifeInfo")
+		local rowCount = dataset:GetRowCount()
+		
+		
+		for i = 1, rowCount do
+			
+			---@type integer
+		    local mapID = math.tointeger(tonumber(dataset:GetCell(i, "MapID")))
+		---@type integer
+		    local lifeID = math.tointeger(tonumber(dataset:GetCell(i, "LifeID")))	
+		--@type integer
+		    local x = math.tointeger(tonumber(dataset:GetCell(i, "X")))
+		--@type integer
+		    local y = math.tointeger(tonumber(dataset:GetCell(i, "Y")))
+			
+			local data = MapLifeInfo()
+			data.MapID = mapID;
+			data.LifeID = lifeID;
+			data.X =x;
+			data.Y =y;
+			
+			table.insert(self._T.Datas,data)
+			self._T.MapID_Table[mapID] = data
+			
+		end
+		
+		for key, value in pairs(self._T.MapID_Table) do
+			self.Table[value.MapID]={}
+			--table.insert(self.NewValue2,{})
+		    --print(key, value)
+		end
+		
+		for key, value in pairs(self._T.Datas) do
+			
+			---@type integer
+		    --local mapID = math.tointeger(tonumber(dataset:GetCell(i, "mapID")))
+			table.insert(self.Table[value.MapID],value)
+			
+		end
+		
+		--[[for key, value in pairs(self.Table) do
+			for key1, value1 in pairs(value) do
+		    print("    ",value1.lifeID)
+			end
+		end]]
+		
+		--log(self.Table[1000].x);
+	end
+
+	method void OnBeginPlay()
+		self:loadTable()
+	end
+
+end

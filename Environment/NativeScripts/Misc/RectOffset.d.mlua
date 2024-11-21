@@ -1,0 +1,14 @@
+@Misc
+script RectOffset
+
+	property int32 bottom
+
+	property int32 left
+
+	property int32 right
+
+	property int32 top
+
+	constructor MODRectOffset(int32 left, int32 right, int32 top, int32 bottom) end
+
+end

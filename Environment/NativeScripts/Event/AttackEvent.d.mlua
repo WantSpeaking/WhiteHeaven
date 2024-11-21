@@ -1,0 +1,8 @@
+@Event
+script AttackEvent
+
+	property Entity DefenderEntity
+
+	constructor AttackEvent(Entity defenderEntity) end
+
+end

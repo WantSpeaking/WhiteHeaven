@@ -1,0 +1,32 @@
+@Component
+script StageComponent extends Component
+
+	@Sync
+	property string mapid = "map02"
+
+	property boolean isLoad = false
+
+	@Sync
+	property string userId = ""
+
+	@ExecSpace("ServerOnly")
+	method void load_map(string mapid)
+		self.mapid = mapid
+		_RoomService:MoveUserToStaticRoom(self.userId, mapid)
+		 
+	end
+
+	@ExecSpace("ServerOnly")
+	method void OnBeginPlay()
+		--self.userId = _UserService.LocalPlayer.Id
+	end
+
+	@ExecSpace("ServerOnly")
+	method void OnUpdate(number delta)
+		--[[if self.isLoad == false then
+			self:load_map(self.mapid)
+			self.isLoad = true
+		end]]
+	end
+
+end

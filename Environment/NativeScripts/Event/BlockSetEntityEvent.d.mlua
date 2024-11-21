@@ -1,0 +1,8 @@
+@Event
+script BlockSetEntityEvent
+
+	property Entity entity
+
+	constructor BlockSetEntityEvent(Entity entity) end
+
+end

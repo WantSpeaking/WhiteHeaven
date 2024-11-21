@@ -1,0 +1,15 @@
+@Struct
+script MonsterDropEntry
+
+	@Sync
+	property integer itemId = 0
+	@Sync
+	property integer chance = 0
+	@Sync
+	property integer Minimum = 0
+	@Sync
+	property integer Maximum = 0
+	@Sync
+	property integer questid = 0
+
+end

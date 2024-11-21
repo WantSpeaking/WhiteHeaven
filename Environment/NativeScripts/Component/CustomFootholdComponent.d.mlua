@@ -1,0 +1,34 @@
+@Component
+script CustomFootholdComponent extends Component
+
+	@Sync
+	property float FootholdDrag = 1
+
+	@Sync
+	property float FootholdForce = 0
+
+	@Sync
+	property float FootholdWalkSpeedFactor = 1
+
+	property boolean IsDynamicFoothold = false
+
+	property boolean PhysicsInteractable = false
+
+	@Sync
+	property RigidbodyMovementOptionType RigidbodyMovementOption = RigidbodyMovementOptionType.RelativeX
+
+	@Sync
+	property SyncList<List<Vector2>> edgeLists
+
+	@Sync
+	property boolean Enable = true
+
+	property boolean EnableInHierarchy
+
+	property Entity Entity
+
+	method boolean IsClient() end
+
+	method boolean IsServer() end
+
+end

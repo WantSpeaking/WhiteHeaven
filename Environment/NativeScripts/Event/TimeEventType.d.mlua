@@ -1,0 +1,6 @@
+@Event
+script TimeEventType
+
+	constructor TimeEventType() end
+
+end

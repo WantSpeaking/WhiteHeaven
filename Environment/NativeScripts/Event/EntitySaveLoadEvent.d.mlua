@@ -1,0 +1,10 @@
+@Event
+script EntitySaveLoadEvent
+
+	property JObject JsonData
+
+	property Entity Entity
+
+	constructor EntitySaveLoadEvent(Entity entity, JObject jsonData) end
+
+end

@@ -1,0 +1,27 @@
+@Component
+script DamageSkinSettingComponent extends Component
+
+	@Sync
+	property DataRef DamageSkinId = DataRef("6ba67548f43f48f29eb23dafd0766383")
+
+	@Sync
+	property Vector2 DamageSkinScale = Vector2(1.000, 1.000)
+
+	@Sync
+	property float DelayPerAttack = 0.05
+
+	@Sync
+	property DamageSkinTweenType TweenType = DamageSkinTweenType.Default
+
+	@Sync
+	property boolean Enable = true
+
+	property boolean EnableInHierarchy
+
+	property Entity Entity
+
+	method boolean IsClient() end
+
+	method boolean IsServer() end
+
+end

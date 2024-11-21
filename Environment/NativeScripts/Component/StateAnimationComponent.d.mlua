@@ -1,0 +1,28 @@
+@Component
+script StateAnimationComponent extends Component
+
+	@Sync
+	property SyncDictionary<string, string> ActionSheet
+
+	@Sync
+	property boolean Enable = true
+
+	property boolean EnableInHierarchy
+
+	property Entity Entity
+
+	method void ReceiveStateChangeEvent(IEventSender sender, StateChangeEvent stateEvent) end
+
+	method void RemoveActionSheet(string key) end
+
+	method void SetActionSheet(string key, string animationClipRuid) end
+
+	method string StateStringToAnimationKey(string stateName) end
+
+	method boolean IsClient() end
+
+	method boolean IsServer() end
+
+	emitter EmitAnimationClipEvent(AnimationClipEvent event) end
+
+end

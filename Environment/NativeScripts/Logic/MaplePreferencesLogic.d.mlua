@@ -1,0 +1,79 @@
+@Logic
+script MaplePreferencesLogic extends Logic
+
+	@Sync
+	property string DeathSound = "8727e134756141c58bf2f525a1598eee"
+
+	@Sync
+	property string JumpSound = "a49c4b3963e148f09b2eb9de98d42ef4"
+
+	@Sync
+	property string WeaponBowSound = "UNSET"
+
+	@Sync
+	property string WeaponCaneSound = "UNSET"
+
+	@Sync
+	property string WeaponCannonSound = "UNSET"
+
+	@Sync
+	property string WeaponCrossBowSound = "UNSET"
+
+	@Sync
+	property string WeaponDualBowSound = "UNSET"
+
+	@Sync
+	property string WeaponGunSound = "UNSET"
+
+	@Sync
+	property string WeaponKnuckleSound = "UNSET"
+
+	@Sync
+	property string WeaponMaceSound = "UNSET"
+
+	@Sync
+	property string WeaponPoleArmSound = "UNSET"
+
+	@Sync
+	property string WeaponSpearSound = "UNSET"
+
+	@Sync
+	property string WeaponSwordBSound = "UNSET"
+
+	@Sync
+	property string WeaponSwordKSound = "UNSET"
+
+	@Sync
+	property string WeaponSwordLSound = "UNSET"
+
+	@Sync
+	property string WeaponSwordSSound = "UNSET"
+
+	@Sync
+	property string WeaponSwordZBSound = "UNSET"
+
+	@Sync
+	property string WeaponSwordZLSound = "UNSET"
+
+	@Sync
+	property string WeaponTGloveSound = "UNSET"
+
+	method MODEventHandlerBase ConnectEvent(Type eventType, IMODScriptFunction eventHandler) end
+
+	method MODEventHandlerBase ConnectEvent(Type eventType, IMODScriptFunction eventHandler) end
+
+	method MODEventHandlerBase ConnectEvent(string key, IMODScriptFunction eventHandler) end
+
+	method boolean DisconnectEvent(Type eventType, MODEventHandlerBase eventHandler) end
+
+	method boolean DisconnectEvent(Type eventType, MODEventHandlerBase eventHandler) end
+
+	method boolean DisconnectEvent(string key, MODEventHandlerBase eventHandler) end
+
+	method boolean IsClient() end
+
+	method boolean IsServer() end
+
+	method void SendEvent(EventType sendEvent) end
+
+end

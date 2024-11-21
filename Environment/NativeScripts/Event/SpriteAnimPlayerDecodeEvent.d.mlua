@@ -1,0 +1,6 @@
+@Event
+script SpriteAnimPlayerDecodeEvent
+
+	property IEmbeddedSpriteAnimPlayer AnimPlayer
+
+end

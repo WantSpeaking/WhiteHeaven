@@ -1,0 +1,12 @@
+@Event
+script BlockFunctionModeEvent
+
+	property string id
+
+	property boolean isEditMode
+
+	property int32 processAtEndOfEdit
+
+	constructor BlockFunctionModeEvent(string id, boolean isEditMode, int32 processAtEndOfEdit) end
+
+end

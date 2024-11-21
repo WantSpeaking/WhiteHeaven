@@ -1,0 +1,31 @@
+@Service
+script BadgeService extends Service
+
+	@ExecSpace("ServerOnly")
+	method boolean AwardBadgeAndWait(string userId, string badgeId) end
+
+	method BadgeInfo GetBadgeInfoAndWait(string badgeId) end
+
+	method void GetBadgeInfoAsync(string badgeId, func<string, BadgeInfo> callback) end
+
+	method BadgeInfoPages GetBadgeInfosAndWait(table<BadgeGrade> badgeGrades, BadgeStatus badgeStatus) end
+
+	method boolean UserHasBadgeAndWait(string userId, string badgeId) end
+
+	method void UserHasBadgeAsync(string userId, string badgeId, func<string, string, boolean> callback) end
+
+	method MODEventHandlerBase ConnectEvent(Type eventType, IMODScriptFunction eventHandler) end
+
+	method MODEventHandlerBase ConnectEvent(Type eventType, IMODScriptFunction eventHandler) end
+
+	method MODEventHandlerBase ConnectEvent(string key, IMODScriptFunction eventHandler) end
+
+	method boolean DisconnectEvent(Type eventType, MODEventHandlerBase eventHandler) end
+
+	method boolean DisconnectEvent(Type eventType, MODEventHandlerBase eventHandler) end
+
+	method boolean DisconnectEvent(string key, MODEventHandlerBase eventHandler) end
+
+	method void SendEvent(EventType sendEvent) end
+
+end

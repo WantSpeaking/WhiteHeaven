@@ -1,0 +1,6 @@
+@Event
+script RigidbodyEvent
+
+	property RigidbodyComponent Rigidbody
+
+end

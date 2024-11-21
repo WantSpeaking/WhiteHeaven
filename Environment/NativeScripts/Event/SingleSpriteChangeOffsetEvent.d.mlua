@@ -1,0 +1,14 @@
+@Event
+script SingleSpriteChangeOffsetEvent
+
+	property string DisplayName
+
+	property Vector2 Origin = Vector2(0.000, 0.000)
+
+	property Vector2 OriginOffset = Vector2(0.000, 0.000)
+
+	property int32 SpritePPU = 100
+
+	constructor SingleSpriteChangeOffsetEvent(Vector2 origin, Vector2 originOffset, int32 spritePPU) end
+
+end

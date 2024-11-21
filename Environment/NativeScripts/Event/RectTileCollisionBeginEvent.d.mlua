@@ -1,0 +1,18 @@
+@Event
+script RectTileCollisionBeginEvent
+
+	property Entity Entity
+
+	property Vector2 Normal
+
+	property Vector2 Point
+
+	property RectTileInfo TileInfo
+
+	property RectTileMapComponent TileMap
+
+	property Vector2Int TilePosition
+
+	constructor RectTileCollisionBeginEvent(Entity entity, RectTileMapComponent tileMap, Vector2Int tilePosition, RectTileInfo tileInfo, Vector2 point, Vector2 normal) end
+
+end

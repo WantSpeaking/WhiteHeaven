@@ -1,0 +1,12 @@
+@Event
+script AnimClipEventTagFrameEvent
+
+	property string EventTag
+
+	property int32 FrameIndex = -1
+
+	property IEmbeddedSpriteAnimPlayer AnimPlayer
+
+	constructor AnimClipEventTagFrameEvent(IEmbeddedSpriteAnimPlayer animPlayer, int32 frameIndex, string eventTag) end
+
+end

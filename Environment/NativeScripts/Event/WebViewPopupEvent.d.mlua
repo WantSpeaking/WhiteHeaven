@@ -1,0 +1,6 @@
+@Event
+script WebViewPopupEvent
+
+	constructor WebViewPopupEvent() end
+
+end

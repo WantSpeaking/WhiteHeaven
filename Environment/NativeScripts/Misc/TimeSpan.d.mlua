@@ -1,0 +1,82 @@
+@Misc
+script TimeSpan
+
+	property int32 Days
+
+	property integer Elapsed
+
+	property int32 Hours
+
+	static property TimeSpan MaxValue
+
+	property int32 Milliseconds
+
+	static property TimeSpan MinValue
+
+	property int32 Minutes
+
+	property int32 Seconds
+
+	property number TotalDays
+
+	property number TotalHours
+
+	property integer TotalMilliseconds
+
+	property number TotalMinutes
+
+	property number TotalSeconds
+
+	static property TimeSpan Zero
+
+	constructor MODTimeSpan(int32 hours, int32 minutes, int32 seconds) end
+
+	constructor MODTimeSpan(int32 days, int32 hours, int32 minutes, int32 seconds) end
+
+	constructor MODTimeSpan(int32 days, int32 hours, int32 minutes, int32 seconds, int32 milliseconds) end
+
+	constructor MODTimeSpan(integer elapsed) end
+
+	constructor MODTimeSpan(string timeSpanString) end
+
+	constructor MODTimeSpan(string timeSpanString, string format) end
+
+	constructor MODTimeSpan(string timeSpanString, string format, string cultureName) end
+
+	method TimeSpan Duration() end
+
+	static method TimeSpan FromDays(number value) end
+
+	static method TimeSpan FromHours(number value) end
+
+	static method TimeSpan FromMilliseconds(integer value) end
+
+	static method TimeSpan FromMinutes(number value) end
+
+	static method TimeSpan FromSeconds(number value) end
+
+	method TimeSpan Negate() end
+
+	method string ToFormattedString(string format) end
+
+	method string ToFormattedString(string format, string cultureName) end
+
+	static method boolean op_Inequality(TimeSpan left, TimeSpan right) end
+
+	static method TimeSpan op_Addition(TimeSpan left, TimeSpan right) end
+
+	static method TimeSpan op_UnaryNegation(TimeSpan value) end
+
+	static method TimeSpan op_Subtraction(TimeSpan left, TimeSpan right) end
+
+	static method boolean op_LessThan(TimeSpan left, TimeSpan right) end
+
+	static method boolean op_LessThanOrEqual(TimeSpan left, TimeSpan right) end
+
+	static method boolean op_Equality(TimeSpan left, TimeSpan right) end
+
+	static method boolean op_GreaterThan(TimeSpan left, TimeSpan right) end
+
+	static method boolean op_GreaterThanOrEqual(TimeSpan left, TimeSpan right) end
+
+end

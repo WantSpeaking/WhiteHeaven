@@ -1,0 +1,80 @@
+@Misc
+script Vector3
+
+	static property Vector3 back
+
+	static property Vector3 down
+
+	static property Vector3 forward
+
+	static property Vector3 left
+
+	static property Vector3 negativeInfinity
+
+	static property Vector3 one
+
+	static property Vector3 positiveInfinity
+
+	static property Vector3 right
+
+	static property Vector3 up
+
+	property float x
+
+	property float y
+
+	property float z
+
+	static property Vector3 zero
+
+	constructor MODVector3(float x, float y, float z) end
+
+	static method float Angle(Vector3 a, Vector3 b) end
+
+	static method Vector3 Cross(Vector3 a, Vector3 b) end
+
+	static method float Distance(Vector3 a, Vector3 b) end
+
+	static method float Dot(Vector3 a, Vector3 b) end
+
+	static method Vector3 Lerp(Vector3 a, Vector3 b, float t) end
+
+	static method Vector3 LerpUnclamped(Vector3 a, Vector3 b, float t) end
+
+	static method float Magnitude(Vector3 a) end
+
+	static method Vector3 Normalize(Vector3 a) end
+
+	static method Vector3 Project(Vector3 a, Vector3 b) end
+
+	static method Vector3 ProjectOnPlane(Vector3 vector, Vector3 planeNormal) end
+
+	static method Vector3 Reflect(Vector3 vector, Vector3 normal) end
+
+	static method float SignedAngle(Vector3 from, Vector3 to, Vector3 axis) end
+
+	static method Vector3 Slerp(Vector3 a, Vector3 b, float t) end
+
+	static method Vector3 SlerpUnclamped(Vector3 a, Vector3 b, float t) end
+
+	static method float SqrMagnitude(Vector3 a) end
+
+	static method Vector2 ToVector2(Vector3 a) end
+
+	static method boolean op_Inequality(Vector3 left, Vector3 right) end
+
+	static method Vector3 op_Multiply(Vector3 left, float right) end
+
+	static method Vector3 op_Multiply(float left, Vector3 right) end
+
+	static method Vector3 op_Addition(Vector3 left, Vector3 right) end
+
+	static method Vector3 op_UnaryNegation(Vector3 value) end
+
+	static method Vector3 op_Subtraction(Vector3 left, Vector3 right) end
+
+	static method Vector3 op_Division(Vector3 left, float right) end
+
+	static method boolean op_Equality(Vector3 left, Vector3 right) end
+
+end

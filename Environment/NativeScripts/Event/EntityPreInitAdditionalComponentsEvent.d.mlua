@@ -1,0 +1,10 @@
+@Event
+script EntityPreInitAdditionalComponentsEvent
+
+	property List<string> AdditionalComponents
+
+	property Entity Entity
+
+	constructor EntityPreInitAdditionalComponentsEvent(Entity entity, List<string> additionalComponents) end
+
+end

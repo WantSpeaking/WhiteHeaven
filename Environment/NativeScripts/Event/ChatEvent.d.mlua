@@ -1,0 +1,12 @@
+@Event
+script ChatEvent
+
+	property string Message
+
+	property string SenderName
+
+	property string UserId
+
+	constructor ChatEvent(string message, string senderName, string userId) end
+
+end

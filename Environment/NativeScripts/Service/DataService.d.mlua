@@ -1,0 +1,26 @@
+@Service
+script DataService extends Service
+
+	method string GetCell(string name, int32 row, int32 col) end
+
+	method string GetCell(string name, int32 row, string columnName) end
+
+	method int32 GetRowCount(string name) end
+
+	method MODUserDataSet GetTable(string name) end
+
+	method MODEventHandlerBase ConnectEvent(Type eventType, IMODScriptFunction eventHandler) end
+
+	method MODEventHandlerBase ConnectEvent(Type eventType, IMODScriptFunction eventHandler) end
+
+	method MODEventHandlerBase ConnectEvent(string key, IMODScriptFunction eventHandler) end
+
+	method boolean DisconnectEvent(Type eventType, MODEventHandlerBase eventHandler) end
+
+	method boolean DisconnectEvent(Type eventType, MODEventHandlerBase eventHandler) end
+
+	method boolean DisconnectEvent(string key, MODEventHandlerBase eventHandler) end
+
+	method void SendEvent(EventType sendEvent) end
+
+end

@@ -1,0 +1,26 @@
+@Event
+script SpriteAnimClipContainerEvent
+
+	property string ClipName
+
+	property SpriteAnimClipPlayType ClipPlayType = SpriteAnimClipPlayType.Onetime
+
+	property boolean DetachSocketAtFinished = false
+
+	property int32 EndFrameIndex = 0
+
+	property float LoopTime = 0
+
+	property float PlayRate = 1
+
+	property int32 StartFrameIndex = 0
+
+	property int32 ThumbnailFrameIndex = 0
+
+	property boolean AllowInterrupt = true
+
+	property boolean IsSuccess = true
+
+	constructor SpriteAnimClipContainerEvent(string clipName, SpriteAnimClipPlayType clipPlayType, boolean detachSocketAtFinished, int32 endFrameIndex, float loopTime, float playRate, int32 startFrameIndex, int32 thumbnailFrameIndex) end
+
+end

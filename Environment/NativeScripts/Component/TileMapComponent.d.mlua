@@ -1,0 +1,43 @@
+@Component
+script TileMapComponent extends Component
+
+	@Sync
+	property Color Color = Color(1.000, 1.000, 1.000, 1.000)
+
+	property float FootholdDrag = 1
+
+	property float FootholdForce = 0
+
+	property float FootholdWalkSpeedFactor = 1
+
+	property boolean IgnoreMapLayerCheck = false
+
+	property boolean IsBlockVerticalLine = false
+
+	property boolean IsOddGridPosition = false
+
+	@Sync
+	property int32 OrderInLayer = 0
+
+	property boolean PhysicsInteractable = false
+
+	property string SortingLayer = "Default"
+
+	property TileMapVersion TileMapVersion = TileMapVersion.MapleStyle
+
+	property DataRef TileSetRUID
+
+	@Sync
+	property boolean Enable = true
+
+	property boolean EnableInHierarchy
+
+	property Entity Entity
+
+	method boolean IsClient() end
+
+	method boolean IsServer() end
+
+	emitter EmitOrderInLayerChangedEvent(OrderInLayerChangedEvent event) end
+
+end

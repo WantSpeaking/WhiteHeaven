@@ -1,0 +1,22 @@
+@Misc
+script RegexMatch
+
+	property int32 Index
+
+	property int32 Length
+
+	property string Name
+
+	property boolean Success
+
+	property string Text
+
+	method table<RegexCapture> GetCaptures() end
+
+	method table GetGroups() end
+
+	method RegexMatch NextMatch() end
+
+	method string Result(string replacement) end
+
+end

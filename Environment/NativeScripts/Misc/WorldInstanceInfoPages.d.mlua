@@ -1,0 +1,12 @@
+@Misc
+script WorldInstanceInfoPages
+
+	property boolean IsLastPage
+
+	@ExecSpace("ServerOnly")
+	method table<WorldInstanceInfo> GetCurrentPageDatas() end
+
+	@ExecSpace("ServerOnly")
+	method boolean MoveToNextPageAndWait() end
+
+end

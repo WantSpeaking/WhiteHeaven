@@ -1,0 +1,84 @@
+@Component
+script ClimbableSpriteRendererComponent extends Component
+
+	property string ClipName = "1"
+
+	@Sync
+	property SpriteDrawMode DrawMode = SpriteDrawMode.Simple
+
+	@Sync
+	property boolean FlipX = false
+
+	@Sync
+	property boolean FlipY = false
+
+	@Sync
+	property boolean IgnoreMapLayerCheck = false
+
+	@Sync
+	property string MaterialId = ""
+
+	@Sync
+	property boolean NeedGizmo = false
+
+	@Sync
+	property int32 OrderInLayer = 0
+
+	property RenderSettingType RenderSetting = RenderSettingType.SceneAnimationRenderer
+
+	@Sync
+	property string SortingLayer = "Default"
+
+	@Sync
+	property string SpriteRUID = ""
+
+	property string SpriteRUIDHead = ""
+
+	property string SpriteRUIDTail = ""
+
+	@Sync
+	property Vector2 TiledSize = Vector2(1.000, 1.000)
+
+	@Sync
+	property Color Color = Color(1.000, 1.000, 1.000, 1.000)
+
+	@Sync
+	property boolean Enable = true
+
+	property boolean EnableInHierarchy
+
+	property Entity Entity
+
+	method void ChangeMaterial(string materialId) end
+
+	method void ResetColliderBox() end
+
+	method boolean IsClient() end
+
+	method boolean IsServer() end
+
+	emitter EmitEmbededSpriteAnimPlayerChangeFrameEvent(EmbededSpriteAnimPlayerChangeFrameEvent event) end
+
+	emitter EmitEmbededSpriteAnimPlayerChangeStateEvent(EmbededSpriteAnimPlayerChangeStateEvent event) end
+
+	emitter EmitEmbededSpriteAnimPlayerEndEvent(EmbededSpriteAnimPlayerEndEvent event) end
+
+	emitter EmitEmbededSpriteAnimPlayerStartEvent(EmbededSpriteAnimPlayerStartEvent event) end
+
+	emitter EmitOrderInLayerChangedEvent(OrderInLayerChangedEvent event) end
+
+	emitter EmitSortingLayerChangedEvent(SortingLayerChangedEvent event) end
+
+	emitter EmitSpriteAnimPlayerChangeFrameEvent(SpriteAnimPlayerChangeFrameEvent event) end
+
+	emitter EmitSpriteAnimPlayerChangeStateEvent(SpriteAnimPlayerChangeStateEvent event) end
+
+	emitter EmitSpriteAnimPlayerEndEvent(SpriteAnimPlayerEndEvent event) end
+
+	emitter EmitSpriteAnimPlayerEndFrameEvent(SpriteAnimPlayerEndFrameEvent event) end
+
+	emitter EmitSpriteAnimPlayerStartEvent(SpriteAnimPlayerStartEvent event) end
+
+	emitter EmitSpriteAnimPlayerStartFrameEvent(SpriteAnimPlayerStartFrameEvent event) end
+
+end

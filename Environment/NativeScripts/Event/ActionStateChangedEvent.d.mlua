@@ -1,0 +1,18 @@
+@Event
+script ActionStateChangedEvent
+
+	property string CoreActionName
+
+	property int32 EndFrameIndex = 2147483647
+
+	property string PartsActionName
+
+	property float PlayRate = 1
+
+	property SpriteAnimClipPlayType PlayType = SpriteAnimClipPlayType.Loop
+
+	property int32 StartFrameIndex = 0
+
+	constructor ActionStateChangedEvent(string coreActionName, string partsActionName, float playRate, SpriteAnimClipPlayType playType, int32 startFrameIndex, int32 endFrameIndex) end
+
+end

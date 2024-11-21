@@ -1,0 +1,10 @@
+@Event
+script KinematicbodyJumpEvent
+
+	property boolean IsJumping = false
+
+	property KinematicbodyComponent Kinematicbody
+
+	constructor KinematicbodyJumpEvent(boolean isJumping, KinematicbodyComponent kinematicbody) end
+
+end

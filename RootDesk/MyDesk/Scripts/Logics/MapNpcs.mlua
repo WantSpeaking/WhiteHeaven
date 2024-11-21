@@ -1,0 +1,4 @@
+@Logic
+script MapNpcs extends Logic
+
+end

@@ -1,0 +1,33 @@
+{
+  "Id": "",
+  "GameId": "",
+  "EntryKey": "codeblock://c804a9cd-0d27-44f5-86ce-369b037dfa38",
+  "ContentType": "x-mod/codeblock",
+  "Content": "",
+  "Usage": 0,
+  "UsePublish": 1,
+  "UseService": 0,
+  "CoreVersion": "1.21.0.0",
+  "StudioVersion": "0.1.0.0",
+  "DynamicLoading": 0,
+  "ContentProto": {
+    "Use": "Json",
+    "Json": {
+      "CoreVersion": {
+        "Major": 0,
+        "Minor": 2
+      },
+      "ScriptVersion": {
+        "Major": 1,
+        "Minor": 1
+      },
+      "Description": "",
+      "Id": "c804a9cd-0d27-44f5-86ce-369b037dfa38",
+      "Language": 1,
+      "Name": "CharacterAttack",
+      "Type": 4,
+      "Source": 0,
+      "Target": "MOD.Core.AttackComponent"
+    }
+  }
+}

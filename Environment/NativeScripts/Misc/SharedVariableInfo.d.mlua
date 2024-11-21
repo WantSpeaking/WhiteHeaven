@@ -1,0 +1,10 @@
+@Misc
+script SharedVariableInfo
+
+	property string ETag
+
+	property string Name
+
+	property string Value
+
+end

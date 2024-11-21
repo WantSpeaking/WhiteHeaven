@@ -1,0 +1,8 @@
+@Event
+script StudioAvatarActionEvent
+
+	property StudioAvatarActionType ActionType = Invalid
+
+	constructor StudioAvatarActionEvent(StudioAvatarActionType actionType) end
+
+end

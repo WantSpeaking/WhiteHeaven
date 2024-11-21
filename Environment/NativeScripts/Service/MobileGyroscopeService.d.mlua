@@ -1,0 +1,51 @@
+@Service
+script MobileGyroscopeService extends Service
+
+	@ExecSpace("ClientOnly")
+	method Vector3 GetAttitudeEuler() end
+
+	@ExecSpace("ClientOnly")
+	method Vector3 GetGravity() end
+
+	@ExecSpace("ClientOnly")
+	method Vector3 GetRotationRate() end
+
+	@ExecSpace("ClientOnly")
+	method Vector3 GetRotationRateUnbiased() end
+
+	@ExecSpace("ClientOnly")
+	method float GetUpdateInterval() end
+
+	@ExecSpace("ClientOnly")
+	method Vector3 GetUserAcceleration() end
+
+	@ExecSpace("ClientOnly")
+	method boolean IsEnabled() end
+
+	@ExecSpace("ClientOnly")
+	method boolean IsHWSupported() end
+
+	@ExecSpace("ClientOnly")
+	method void SetUpdateInterval(float interval) end
+
+	@ExecSpace("ClientOnly")
+	method boolean StartAndWait() end
+
+	@ExecSpace("ClientOnly")
+	method boolean StopAndWait(boolean resetData) end
+
+	method MODEventHandlerBase ConnectEvent(Type eventType, IMODScriptFunction eventHandler) end
+
+	method MODEventHandlerBase ConnectEvent(Type eventType, IMODScriptFunction eventHandler) end
+
+	method MODEventHandlerBase ConnectEvent(string key, IMODScriptFunction eventHandler) end
+
+	method boolean DisconnectEvent(Type eventType, MODEventHandlerBase eventHandler) end
+
+	method boolean DisconnectEvent(Type eventType, MODEventHandlerBase eventHandler) end
+
+	method boolean DisconnectEvent(string key, MODEventHandlerBase eventHandler) end
+
+	method void SendEvent(EventType sendEvent) end
+
+end

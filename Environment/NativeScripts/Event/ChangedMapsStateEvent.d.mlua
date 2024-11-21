@@ -1,0 +1,8 @@
+@Event
+script ChangedMapsStateEvent
+
+	property string ChangedState
+
+	constructor ChangedMapsStateEvent(string changedState) end
+
+end

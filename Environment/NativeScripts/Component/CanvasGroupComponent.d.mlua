@@ -1,0 +1,21 @@
+@Component
+script CanvasGroupComponent extends Component
+
+	property boolean BlocksRaycasts = true
+
+	property float GroupAlpha = 1
+
+	property boolean Interactable = true
+
+	@Sync
+	property boolean Enable = true
+
+	property boolean EnableInHierarchy
+
+	property Entity Entity
+
+	method boolean IsClient() end
+
+	method boolean IsServer() end
+
+end

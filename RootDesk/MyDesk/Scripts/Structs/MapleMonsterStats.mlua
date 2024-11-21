@@ -1,0 +1,61 @@
+@Struct
+script MapleMonsterStats
+
+	@Sync
+	property boolean changeable = false
+	
+	@Sync
+	property integer MobID = 0
+
+	@Sync
+	property string EntryID = ""
+
+	@Sync
+	property integer exp = 0
+	
+	@Sync
+	property integer MaxHP = 0
+
+	@Sync
+	property integer MaxMP = 0
+	
+	@Sync
+	property integer level = 0
+	@Sync
+	property integer PADamage = 0
+	@Sync
+	property integer PDDamage = 0
+	@Sync
+	property integer MADamage = 0
+	@Sync
+	property integer MDDamage = 0
+	@Sync
+	property integer dropPeriod = 0
+	@Sync
+	property integer cp = 0
+	@Sync
+	property integer buffToGive = -1
+	@Sync
+	property integer removeAfter = 0
+
+	@Sync
+	property boolean boss = false
+	
+	@Sync
+	property boolean undead = false
+	
+	@Sync
+	property boolean ffaLoot = false
+	
+	@Sync
+	property boolean isExplosiveReward = false
+	
+	@Sync
+	property boolean firstAttack = false
+	
+	@Sync
+	property boolean removeOnMiss = false
+	
+	
+
+end

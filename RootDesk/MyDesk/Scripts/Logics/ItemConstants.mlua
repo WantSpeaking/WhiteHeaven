@@ -1,0 +1,20 @@
+@Logic
+script ItemConstants extends Logic
+
+	property table inventoryTypeCache = {}
+
+	method number getInventoryType(integer itemId)
+		if self.inventoryTypeCache[itemId] ~= nil then
+			return self.inventoryTypeCache[itemId]
+		end
+		
+		local ret= _MapleInventoryType.UNDEFINED
+		local type = itemId /  1000000
+		if type>= 1 and type <= 5 then
+			ret = type
+		end
+		
+		elf.inventoryTypeCache[itemId] = ret
+	end
+
+end

@@ -1,0 +1,9 @@
+@Event
+script SimpleInventoryInitializedEvent
+
+	@Sync
+	property integer Meso = 0
+
+	property table ItemStacks = {}
+
+end

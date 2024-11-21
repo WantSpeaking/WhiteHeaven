@@ -1,0 +1,58 @@
+@Service
+script BlockCodingService extends Service
+
+	property string AvatarModel
+
+	property string TextModel
+
+	method void AddComponent(string entityId, string componenetTypeName) end
+
+	method void AddPaletteTab(string id, string text, string icon) end
+
+	method void ApplyContentOfUserDataListToUI(string id, string data, func<Entity> callback) end
+
+	method void AttachToChild(string from, string to) end
+
+	method void AttachToSibling(string from, string to) end
+
+	method void CloneChildBlocks(Entity sourceParentEntity, Entity targetParentEntity, func<Entity> callback) end
+
+	method void CreateBlock(string _json, func<string> _callback) end
+
+	method int32 GetLuaCallBackStackCount() end
+
+	method void GetSelectedEntity(func<Entity> _callback) end
+
+	method void RefreshBlockCodingGUI(boolean clearAll) end
+
+	method void RefreshCanvasWithEntity(string _id) end
+
+	method void RefreshDataBind() end
+
+	method void RemoveComponent(string entityId, string componenetTypeName) end
+
+	method void RemoveEntity(string id) end
+
+	method void RemoveEntityAll() end
+
+	method void ResetLuaCallBackStackCount() end
+
+	method void SetPalette(string json) end
+
+	method void UserDataTypeDirty(string id) end
+
+	method MODEventHandlerBase ConnectEvent(Type eventType, IMODScriptFunction eventHandler) end
+
+	method MODEventHandlerBase ConnectEvent(Type eventType, IMODScriptFunction eventHandler) end
+
+	method MODEventHandlerBase ConnectEvent(string key, IMODScriptFunction eventHandler) end
+
+	method boolean DisconnectEvent(Type eventType, MODEventHandlerBase eventHandler) end
+
+	method boolean DisconnectEvent(Type eventType, MODEventHandlerBase eventHandler) end
+
+	method boolean DisconnectEvent(string key, MODEventHandlerBase eventHandler) end
+
+	method void SendEvent(EventType sendEvent) end
+
+end

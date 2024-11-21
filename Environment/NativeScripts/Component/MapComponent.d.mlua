@@ -1,0 +1,44 @@
+@Component
+script MapComponent extends Component
+
+	property float AirAccelerationXFactor = 1
+
+	property float AirDecelerationXFactor = 1
+
+	property float FallSpeedMaxXFactor = 1
+
+	property float FallSpeedMaxYFactor = 1
+
+	property float Gravity = 1
+
+	property boolean InstanceMap = false
+
+	@Sync
+	property Vector2 LeftBottom = Vector2(-1.000, -1.000)
+
+	@Sync
+	property Vector2 RightTop = Vector2(1.000, 1.000)
+
+	property TileMapMode TileMapMode = TileMapMode.MapleTile
+
+	@Sync
+	property boolean UseCustomBound = false
+
+	property float WalkAccelerationFactor = 1
+
+	property float WalkDrag = 1
+
+	@Sync
+	property boolean Enable = true
+
+	property boolean EnableInHierarchy
+
+	property Entity Entity
+
+	method Vector2, Vector2 GetBound() end
+
+	method boolean IsClient() end
+
+	method boolean IsServer() end
+
+end

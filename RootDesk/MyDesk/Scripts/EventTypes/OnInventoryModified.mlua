@@ -1,0 +1,10 @@
+@Event
+script OnInventoryModified
+
+	@Sync
+	property number ItemIndex = 0
+
+	@Sync
+	property number ItemCount = 0
+
+end

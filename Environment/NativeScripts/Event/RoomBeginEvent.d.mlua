@@ -1,0 +1,6 @@
+@Event
+script RoomBeginEvent
+
+	constructor RoomBeginEvent() end
+
+end

@@ -1,0 +1,6 @@
+@Event
+script GizmoColliderChangedEvent
+
+	constructor GizmoColliderChangedEvent() end
+
+end

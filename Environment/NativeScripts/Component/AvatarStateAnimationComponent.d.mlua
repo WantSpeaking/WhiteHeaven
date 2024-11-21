@@ -1,0 +1,35 @@
+@Component
+script AvatarStateAnimationComponent extends Component
+
+	@Sync
+	property SyncDictionary<string, string> ActionSheet
+
+	property boolean IsLegacy = false
+
+	@Sync
+	property SyncDictionary<string, AvatarBodyActionElement> StateToAvatarBodyActionSheet
+
+	@Sync
+	property boolean Enable = true
+
+	property boolean EnableInHierarchy
+
+	property Entity Entity
+
+	method void ReceiveStateChangeEvent(IEventSender sender, StateChangeEvent stateEvent) end
+
+	method void ReceiveStateChangeEvent(IEventSender sender, StateChangeEvent stateEvent) end
+
+	method void RemoveActionSheet(string key) end
+
+	method void SetActionSheet(string key, string animationClipRuid) end
+
+	method string StateStringToAnimationKey(string stateName) end
+
+	method boolean IsClient() end
+
+	method boolean IsServer() end
+
+	emitter EmitBodyActionStateChangeEvent(BodyActionStateChangeEvent event) end
+
+end

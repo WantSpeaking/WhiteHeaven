@@ -1,0 +1,67 @@
+@Component
+script Item extends Component
+
+	@Sync
+	property number ItemIndex = 0
+
+	@Sync
+	property number DropTweenTime = 0.8
+
+	method void InitItem(number itemIndex)
+		self.ItemIndex = itemIndex
+		
+		    -- Set the sprites of what the dropped item will look like
+		    local sprite = self.Entity.SpriteRendererComponent
+		    local itemDataSet = _DataService:GetTable("UserItemDataSet")
+		    local ruid = itemDataSet:GetRow(self.ItemIndex):GetItem("IconRUID")
+		    sprite.SpriteRUID = ruid
+	end
+
+	@ExecSpace("ServerOnly")
+	method void OnBeginPlay()
+		if self:IsClient() then
+		      	self:OnBeginPlayClient()
+		    else
+		    	self:OnBeginPlayServer()
+		    end
+	end
+
+	method void OnBeginPlayClient()
+		-- Tween
+		    local totalTweenTime = self.DropTweenTime
+		    local jumpHeight = 11
+		    -- When an item is dropped, it floats up as much as jumpHeight once
+		    local tween = _TweenLogic:MoveOffset(self.Entity, Vector2(0, jumpHeight), totalTweenTime / 2, EaseType.QuadEaseOut)
+		    -- Let it go down as much as it goes up
+		    tween:SetOnEndCallback(function() 
+		    	local tween2 = _TweenLogic:MoveOffset(self.Entity, Vector2(0, -jumpHeight), totalTweenTime / 2, EaseType.QuadEaseIn) 
+		    	tween2:SetOnEndCallback(function() self.Entity.TweenFloatingComponent.Enable = true end)
+		    end)
+	end
+
+	method void OnBeginPlayServer()
+		-- Enable TriggerComponent after Tween finishes
+		    _TimerService:SetTimerOnce(function() self.Entity.TriggerComponent.Enable = true end, self.DropTweenTime + 0.1) 
+	end
+
+	@ExecSpace("ServerOnly")
+	@EventSender("Self")
+	handler HandleTriggerEnterEvent(TriggerEnterEvent event)
+		-- Parameters
+		    local TriggerBodyEntity = event.TriggerBodyEntity
+		    --------------------------------------------------------
+		    --Takes inventory of the entity that collided with the item entity. Returns if there's no inventory.
+		    local inventory = TriggerBodyEntity.SimpleInventory
+		    if inventory == nil then return end
+		
+			local itemDataSet = _DataService:GetTable("ItemTableDataSet")
+			inventory:AddItem(itemDataSet:GetRow(self.ItemIndex):GetItem("Id"),1);
+		    -- Call the ModifyItem() function to process the change in the number of items
+		    --inventory:ModifyItem(self.ItemIndex, 1)
+		
+		    --Destroy the collided item entity
+		    self.Entity:Destroy()
+		
+	end
+
+end

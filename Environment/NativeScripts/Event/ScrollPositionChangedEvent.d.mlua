@@ -1,0 +1,8 @@
+@Event
+script ScrollPositionChangedEvent
+
+	property Vector2 NormalizedPosition = Vector2(0.000, 0.000)
+
+	constructor ScrollPositionChangedEvent(Vector2 normalizedPosition) end
+
+end

@@ -1,0 +1,8 @@
+@Event
+script InitMapleCostumeEvent
+
+	property List<MapleAvatarItemData> AvartarItems
+
+	constructor InitMapleCostumeEvent(List<MapleAvatarItemData> avartarItems) end
+
+end

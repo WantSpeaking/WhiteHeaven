@@ -1,0 +1,24 @@
+@Service
+script PolicyService extends Service
+
+	@ExecSpace("ServerOnly")
+	method PolicyInfo GetPolicyInfoForUserAndWait(string userId) end
+
+	@ExecSpace("ServerOnly")
+	method void GetPolicyInfoForUserAsync(string userId, func<PolicyInfo> callbackFunction) end
+
+	method MODEventHandlerBase ConnectEvent(Type eventType, IMODScriptFunction eventHandler) end
+
+	method MODEventHandlerBase ConnectEvent(Type eventType, IMODScriptFunction eventHandler) end
+
+	method MODEventHandlerBase ConnectEvent(string key, IMODScriptFunction eventHandler) end
+
+	method boolean DisconnectEvent(Type eventType, MODEventHandlerBase eventHandler) end
+
+	method boolean DisconnectEvent(Type eventType, MODEventHandlerBase eventHandler) end
+
+	method boolean DisconnectEvent(string key, MODEventHandlerBase eventHandler) end
+
+	method void SendEvent(EventType sendEvent) end
+
+end

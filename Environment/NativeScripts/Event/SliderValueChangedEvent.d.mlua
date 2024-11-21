@@ -1,0 +1,8 @@
+@Event
+script SliderValueChangedEvent
+
+	property float Value = 0
+
+	constructor SliderValueChangedEvent(float value) end
+
+end

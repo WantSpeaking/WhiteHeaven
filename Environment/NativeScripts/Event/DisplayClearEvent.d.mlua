@@ -1,0 +1,8 @@
+@Event
+script DisplayClearEvent
+
+	property DisplayClearType ClearType = DisplayClearType.Hard
+
+	constructor DisplayClearEvent(DisplayClearType clearType) end
+
+end

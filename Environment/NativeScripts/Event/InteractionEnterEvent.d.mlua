@@ -1,0 +1,8 @@
+@Event
+script InteractionEnterEvent
+
+	property Entity InteractionEntity
+
+	constructor InteractionEnterEvent() end
+
+end

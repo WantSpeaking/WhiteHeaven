@@ -1,0 +1,46 @@
+@Logic
+script TweenLogic extends Logic
+
+	method float Ease(float startValue, float endValue, float duration, EaseType type, float tweenTime) end
+
+	method Tweener MakeTween(Vector2 startValue, Vector2 endValue, float duration, EaseType type, func<Vector2> tweenFunction) end
+
+	method Tweener MakeTween(Vector3 startValue, Vector3 endValue, float duration, EaseType type, func<Vector3> tweenFunction) end
+
+	method Tweener MakeTween(float startValue, float endValue, float duration, EaseType type, func<float> tweenFunction) end
+
+	method Tweener MoveOffset(Entity entity, Vector2 offset, float duration, EaseType type) end
+
+	method Tweener MoveTo(Entity entity, Vector2 destination, float duration, EaseType type) end
+
+	method Tweener PlayTween(Vector2 startValue, Vector2 endValue, float duration, EaseType type, func<Vector2> tweenFunction) end
+
+	method Tweener PlayTween(Vector3 startValue, Vector3 endValue, float duration, EaseType type, func<Vector3> tweenFunction) end
+
+	method Tweener PlayTween(float startValue, float endValue, float duration, EaseType type, func<float> tweenFunction) end
+
+	method Tweener RotateAroundOffset(Entity entity, float angle, Vector2 offset, boolean lookOffset, float duration, EaseType type) end
+
+	method Tweener RotateTo(Entity entity, float angle, float duration, EaseType type) end
+
+	method Tweener ScaleTo(Entity entity, Vector2 targetScale, float duration, EaseType type) end
+
+	method MODEventHandlerBase ConnectEvent(Type eventType, IMODScriptFunction eventHandler) end
+
+	method MODEventHandlerBase ConnectEvent(Type eventType, IMODScriptFunction eventHandler) end
+
+	method MODEventHandlerBase ConnectEvent(string key, IMODScriptFunction eventHandler) end
+
+	method boolean DisconnectEvent(Type eventType, MODEventHandlerBase eventHandler) end
+
+	method boolean DisconnectEvent(Type eventType, MODEventHandlerBase eventHandler) end
+
+	method boolean DisconnectEvent(string key, MODEventHandlerBase eventHandler) end
+
+	method boolean IsClient() end
+
+	method boolean IsServer() end
+
+	method void SendEvent(EventType sendEvent) end
+
+end

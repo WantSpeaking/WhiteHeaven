@@ -1,0 +1,42 @@
+@Component
+script MovementComponent extends Component
+
+	@Sync
+	property float InputSpeed = 1
+
+	@Sync
+	property boolean IsClimbPaused = true
+
+	@Sync
+	property float JumpForce = 0
+
+	@Sync
+	property boolean Enable = true
+
+	property boolean EnableInHierarchy
+
+	property Entity Entity
+
+	method boolean DownJump() end
+
+	method boolean IsFaceLeft() end
+
+	method boolean Jump() end
+
+	method void MoveToDirection(Vector2 direction, float deltaTime) end
+
+	method void SetPosition(Vector2 position) end
+
+	method void SetWorldPosition(Vector2 position) end
+
+	method void Stop() end
+
+	method boolean IsClient() end
+
+	method boolean IsServer() end
+
+	emitter EmitChangedMovementInputEvent(ChangedMovementInputEvent event) end
+
+	emitter EmitClimbPauseEvent(ClimbPauseEvent event) end
+
+end

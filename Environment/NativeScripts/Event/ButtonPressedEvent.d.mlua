@@ -1,0 +1,6 @@
+@Event
+script ButtonPressedEvent
+
+	constructor ButtonPressedEvent() end
+
+end

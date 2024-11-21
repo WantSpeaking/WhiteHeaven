@@ -1,0 +1,12 @@
+@Event
+script EntityPreAddOriginComponentsEvent
+
+	property List<string> ComponentsInfo
+
+	property EntityOriginType OriginType
+
+	property Entity Entity
+
+	constructor EntityPreAddOriginComponentsEvent(Entity entity, EntityOriginType originType, List<string> componentsInfo) end
+
+end

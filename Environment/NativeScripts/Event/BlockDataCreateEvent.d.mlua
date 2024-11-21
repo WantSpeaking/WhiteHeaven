@@ -1,0 +1,12 @@
+@Event
+script BlockDataCreateEvent
+
+	property string dataType
+
+	property string name
+
+	property int32 optionIndex
+
+	constructor BlockDataCreateEvent(string dataType, string name, int32 optionIndex) end
+
+end

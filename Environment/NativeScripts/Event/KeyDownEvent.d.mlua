@@ -1,0 +1,8 @@
+@Event
+script KeyDownEvent
+
+	property KeyboardKey key
+
+	constructor KeyDownEvent(KeyboardKey key) end
+
+end

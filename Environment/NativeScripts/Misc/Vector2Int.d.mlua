@@ -1,0 +1,54 @@
+@Misc
+script Vector2Int
+
+	static property Vector2Int down
+
+	static property Vector2Int left
+
+	static property Vector2Int one
+
+	static property Vector2Int right
+
+	static property Vector2Int up
+
+	property int32 x
+
+	property int32 y
+
+	static property Vector2Int zero
+
+	constructor MODVector2Int(int32 x, int32 y) end
+
+	static method float Angle(Vector2Int a, Vector2Int b) end
+
+	static method float Distance(Vector2Int a, Vector2Int b) end
+
+	static method float Magnitude(Vector2Int a) end
+
+	static method float SignedAngle(Vector2Int from, Vector2Int to) end
+
+	static method float SqrMagnitude(Vector2Int a) end
+
+	static method Vector2 ToVector2(Vector2Int a) end
+
+	static method boolean op_Inequality(Vector2Int left, Vector2Int right) end
+
+	static method Vector2Int op_Multiply(Vector2Int left, Vector2Int right) end
+
+	static method Vector2Int op_Multiply(Vector2Int left, int32 right) end
+
+	static method Vector2Int op_Multiply(int32 left, Vector2Int right) end
+
+	static method Vector2Int op_Addition(Vector2Int left, Vector2Int right) end
+
+	static method Vector2Int op_UnaryNegation(Vector2Int value) end
+
+	static method Vector2Int op_Subtraction(Vector2Int left, Vector2Int right) end
+
+	static method Vector2Int op_Division(Vector2Int left, Vector2Int right) end
+
+	static method Vector2Int op_Division(Vector2Int left, int32 right) end
+
+	static method boolean op_Equality(Vector2Int left, Vector2Int right) end
+
+end

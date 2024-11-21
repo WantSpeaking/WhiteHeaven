@@ -1,0 +1,34 @@
+@Misc
+script Sprite
+
+	property Vector4 Border = Vector4(0.000, 0.000, 0.000, 0.000)
+
+	property RectOffset Collision
+
+	property ReadOnlyList<ReadOnlyList<Vector2Int>> Footholds
+
+	property int32 Height
+
+	property Vector2Int OffsetInTexture
+
+	property Vector2 Pivot
+
+	property Vector2Int PivotPixel
+
+	property float PixelPerUnit = 100
+
+	property int32 Width
+
+	property boolean IsLoadComplete = false
+
+	property string RUID
+
+	property ResourceType Type
+
+	static method Sprite Get(string RUID) end
+
+	method Sprite LoadAndWait() end
+
+	static method void LoadAsync(string RUID, func<boolean, Sprite> loadCompleteCallback) end
+
+end

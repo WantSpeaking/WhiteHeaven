@@ -1,0 +1,43 @@
+@Component
+script SliderComponent extends Component
+
+	property SliderDirection Direction = SliderDirection.LeftToRight
+
+	property Color FillRectColor = Color(1.000, 1.000, 1.000, 1.000)
+
+	property DataRef FillRectImageRUID
+
+	property RectOffset FillRectPadding
+
+	property RectOffset HandleAreaPadding
+
+	property Color HandleColor = Color(1.000, 1.000, 1.000, 1.000)
+
+	property DataRef HandleImageRUID
+
+	property Vector2 HandleSize = Vector2(50.000, 50.000)
+
+	property float MaxValue = 1
+
+	property float MinValue = 0
+
+	property boolean UseHandle = false
+
+	property boolean UseIntegerValue = false
+
+	property float Value = 1
+
+	@Sync
+	property boolean Enable = true
+
+	property boolean EnableInHierarchy
+
+	property Entity Entity
+
+	method boolean IsClient() end
+
+	method boolean IsServer() end
+
+	emitter EmitSliderValueChangedEvent(SliderValueChangedEvent event) end
+
+end

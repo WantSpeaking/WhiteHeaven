@@ -1,0 +1,6 @@
+@Event
+script EntityEventType
+
+	property Entity Entity
+
+end

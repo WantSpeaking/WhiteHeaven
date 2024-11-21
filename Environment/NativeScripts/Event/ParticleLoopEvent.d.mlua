@@ -1,0 +1,8 @@
+@Event
+script ParticleLoopEvent
+
+	property Entity ParticleEntity
+
+	constructor ParticleLoopEvent() end
+
+end

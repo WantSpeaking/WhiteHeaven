@@ -1,0 +1,8 @@
+@Misc
+script DataStorageItem
+
+	property DataStorageKeyInfo KeyInfo
+
+	property string Value
+
+end

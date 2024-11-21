@@ -1,0 +1,8 @@
+@Event
+script EmbededSpriteAnimPlayerEndEvent
+
+	property IEmbeddedSpriteAnimPlayer AnimPlayer
+
+	constructor EmbededSpriteAnimPlayerEndEvent(IEmbeddedSpriteAnimPlayer animPlayer) end
+
+end

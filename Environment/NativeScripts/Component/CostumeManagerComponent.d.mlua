@@ -1,0 +1,83 @@
+@Component
+script CostumeManagerComponent extends Component
+
+	@Sync
+	property string CustomBodyEquip
+
+	@Sync
+	property string CustomCapEquip = ""
+
+	@Sync
+	property string CustomCapeEquip = ""
+
+	@Sync
+	property string CustomCoatEquip = ""
+
+	@Sync
+	property string CustomEarAccessoryEquip = ""
+
+	@Sync
+	property string CustomEarEquip
+
+	@Sync
+	property string CustomEyeAccessoryEquip = ""
+
+	@Sync
+	property string CustomFaceAccessoryEquip = ""
+
+	@Sync
+	property string CustomFaceEquip = ""
+
+	@Sync
+	property string CustomGloveEquip = ""
+
+	@Sync
+	property string CustomHairEquip = ""
+
+	@Sync
+	property string CustomLongcoatEquip = ""
+
+	@Sync
+	property string CustomOneHandedWeaponEquip = ""
+
+	@Sync
+	property string CustomPantsEquip = ""
+
+	@Sync
+	property string CustomShoesEquip = ""
+
+	@Sync
+	property string CustomSubWeaponEquip = ""
+
+	@Sync
+	property string CustomTwoHandedWeaponEquip = ""
+
+	@Sync
+	property string DefaultEquipUserId = ""
+
+	property ReadOnlyList<MapleAvatarItemData> EquippedItems
+
+	@Sync
+	property boolean UseCustomEquipOnly = false
+
+	@Sync
+	property boolean Enable = true
+
+	property boolean EnableInHierarchy
+
+	property Entity Entity
+
+	@ExecSpace("ClientOnly")
+	method string GetEquip(MapleAvatarItemCategory category) end
+
+	method void SetEquip(MapleAvatarItemCategory category, string itemRUID) end
+
+	method boolean IsClient() end
+
+	method boolean IsServer() end
+
+	emitter EmitDestroyMapleCostumeEvent(DestroyMapleCostumeEvent event) end
+
+	emitter EmitInitMapleCostumeEvent(InitMapleCostumeEvent event) end
+
+end

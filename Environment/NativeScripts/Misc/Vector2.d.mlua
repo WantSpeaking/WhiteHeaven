@@ -1,0 +1,84 @@
+@Misc
+script Vector2
+
+	static property Vector2 down
+
+	static property Vector2 left
+
+	static property Vector2 negativeInfinity
+
+	static property Vector2 one
+
+	static property Vector2 positiveInfinity
+
+	static property Vector2 right
+
+	static property Vector2 up
+
+	property float x
+
+	property float y
+
+	static property Vector2 zero
+
+	constructor MODVector2(float x, float y) end
+
+	static method float Angle(Vector2 a, Vector2 b) end
+
+	static method Vector2Int CeilToInt(Vector2 a) end
+
+	static method float Distance(Vector2 a, Vector2 b) end
+
+	static method float Dot(Vector2 a, Vector2 b) end
+
+	static method Vector2Int FloorToInt(Vector2 a) end
+
+	static method Vector2 Lerp(Vector2 a, Vector2 b, float t) end
+
+	static method Vector2 LerpUnclamped(Vector2 a, Vector2 b, float t) end
+
+	static method float Magnitude(Vector2 a) end
+
+	static method Vector2 Normalize(Vector2 a) end
+
+	static method Vector2 Perpendicular(Vector2 a) end
+
+	static method Vector2 Project(Vector2 a, Vector2 b) end
+
+	static method Vector2 Reflect(Vector2 vector, Vector2 normal) end
+
+	static method Vector2Int RoundToInt(Vector2 a) end
+
+	static method float SignedAngle(Vector2 from, Vector2 to) end
+
+	static method Vector2 Slerp(Vector2 a, Vector2 b, float t) end
+
+	static method Vector2 SlerpUnclamped(Vector2 a, Vector2 b, float t) end
+
+	static method float SqrMagnitude(Vector2 a) end
+
+	static method Vector2Int ToVector2Int(Vector2 a) end
+
+	static method Vector3 ToVector3(Vector2 a) end
+
+	static method boolean op_Inequality(Vector2 left, Vector2 right) end
+
+	static method Vector2 op_Multiply(Vector2 left, Vector2 right) end
+
+	static method Vector2 op_Multiply(Vector2 left, float right) end
+
+	static method Vector2 op_Multiply(float left, Vector2 right) end
+
+	static method Vector2 op_Addition(Vector2 left, Vector2 right) end
+
+	static method Vector2 op_UnaryNegation(Vector2 value) end
+
+	static method Vector2 op_Subtraction(Vector2 left, Vector2 right) end
+
+	static method Vector2 op_Division(Vector2 left, Vector2 right) end
+
+	static method Vector2 op_Division(Vector2 left, float right) end
+
+	static method boolean op_Equality(Vector2 left, Vector2 right) end
+
+end

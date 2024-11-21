@@ -1,0 +1,22 @@
+@Struct
+script ItemInfo
+
+	@Sync
+	property integer Index = 0
+
+	@Sync
+	property string Id = ""
+
+	@Sync
+	property string Name = ""
+
+	@Sync
+	property string IconRUID = ""
+
+	@Sync
+	property integer MaxStackCount = 0
+
+	@Sync
+	property integer Price = 0
+
+end

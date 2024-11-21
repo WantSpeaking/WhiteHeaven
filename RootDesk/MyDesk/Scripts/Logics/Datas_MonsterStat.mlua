@@ -1,0 +1,43 @@
+@Logic
+script Datas_MonsterStat extends Logic
+
+	property table Table = {}
+
+	method table getTable()
+		if #self.Table == 0 then
+		self:loadTable()
+		end
+		
+		return self.Table
+	end
+
+	method void loadTable()
+		local dataset = _DataService:GetTable("Table_MonsterStat")
+		local rowCount = dataset:GetRowCount()
+		
+			
+		
+		for i = 1, rowCount do
+			
+			---@type integer
+		    local MobID = math.tointeger(tonumber(dataset:GetCell(i, "MobID")))
+			local EntryID = dataset:GetCell(i, "EntryID")
+		--@type integer
+		    local MaxHP = math.tointeger(tonumber(dataset:GetCell(i, "MaxHP")))
+		--@type integer
+		    local MaxMP = math.tointeger(tonumber(dataset:GetCell(i, "MaxMP")))
+		
+			
+			local data = MapleMonsterStats()
+			data.MobID= MobID
+			data.MaxHP = MaxHP
+			data.MaxMP = MaxMP
+			data.EntryID = EntryID
+			
+			self.Table[MobID] = data
+		end
+		
+		--log(self.Table[1000].maxMP);
+	end
+
+end

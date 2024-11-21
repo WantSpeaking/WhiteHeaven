@@ -1,0 +1,10 @@
+@Event
+script EntityPostChangedPathEvent
+
+	property string PrevPath
+
+	property Entity Entity
+
+	constructor EntityPostChangedPathEvent(Entity entity, string prevPath) end
+
+end

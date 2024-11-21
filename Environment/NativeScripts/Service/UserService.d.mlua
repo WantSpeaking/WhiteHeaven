@@ -1,0 +1,47 @@
+@Service
+script UserService extends Service
+
+	property Entity LocalPlayer
+
+	property ReadOnlyDictionary<string, Entity> UserEntities
+
+	property ReadOnlyDictionary<string, User> Users
+
+	method User GetUserByProfileCode(string profileCode) end
+
+	method int32 GetUserCount() end
+
+	method Entity GetUserEntityByUserId(string userId) end
+
+	method table<Entity> GetUsersByMapComponent(MapComponent mapComponent) end
+
+	method table<Entity> GetUsersByMapName(string mapName) end
+
+	@ExecSpace("ServerOnly")
+	method void KickUser(string userId, KickReason kickReason) end
+
+	method MODEventHandlerBase ConnectEvent(Type eventType, IMODScriptFunction eventHandler) end
+
+	method MODEventHandlerBase ConnectEvent(Type eventType, IMODScriptFunction eventHandler) end
+
+	method MODEventHandlerBase ConnectEvent(string key, IMODScriptFunction eventHandler) end
+
+	method boolean DisconnectEvent(Type eventType, MODEventHandlerBase eventHandler) end
+
+	method boolean DisconnectEvent(Type eventType, MODEventHandlerBase eventHandler) end
+
+	method boolean DisconnectEvent(string key, MODEventHandlerBase eventHandler) end
+
+	method void SendEvent(EventType sendEvent) end
+
+	emitter EmitUserDisconnectEvent(UserDisconnectEvent event) end
+
+	emitter EmitUserEnterEvent(UserEnterEvent event) end
+
+	emitter EmitUserKickEvent(UserKickEvent event) end
+
+	emitter EmitUserLeaveEvent(UserLeaveEvent event) end
+
+	emitter EmitUserReconnectEvent(UserReconnectEvent event) end
+
+end

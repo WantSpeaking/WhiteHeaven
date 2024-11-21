@@ -1,0 +1,72 @@
+@Component
+script RectTileMapComponent extends Component
+
+	@Sync
+	property Vector2 GridSize = Vector2(1.000, 1.000)
+
+	property boolean IgnoreMapLayerCheck = false
+
+	property boolean IsOddGridPosition = false
+
+	@Sync
+	property int32 OrderInLayer = 0
+
+	property boolean PhysicsInteractable = false
+
+	property string SortingLayer = "Default"
+
+	property int32 TileCount
+
+	@Sync
+	property string TileSetRUID
+
+	@Sync
+	property boolean Enable = true
+
+	property boolean EnableInHierarchy
+
+	property Entity Entity
+
+	method void BoxFill(int32 tileIndex, Vector2Int from, Vector2Int to) end
+
+	method void BoxFill(string tileName, Vector2Int from, Vector2Int to) end
+
+	method void BoxRemove(Vector2Int from, Vector2Int to) end
+
+	method void Clear() end
+
+	method List<Vector2Int> GetAllTilePositions() end
+
+	method RectTileInfo GetTile(Vector2Int cellPosition) end
+
+	method RectTileInfo GetTile(int32 cellPositionX, int32 cellPositionY) end
+
+	method void RemoveTile(Vector2Int cellPosition) end
+
+	method void RemoveTile(int32 cellPositionX, int32 cellPositionY) end
+
+	method void Reset() end
+
+	method void SetTile(int32 tileIndex, Vector2Int cellPosition) end
+
+	method void SetTile(int32 tileIndex, int32 cellPositionX, int32 cellPositionY) end
+
+	method void SetTile(string tileName, Vector2Int cellPosition) end
+
+	method void SetTile(string tileName, int32 cellPositionX, int32 cellPositionY) end
+
+	method Vector2Int ToCellPosition(Vector3 worldPosition) end
+
+	method Vector2Int ToCellPosition(float worldPositionX, float worldPositionY) end
+
+	method Vector3 ToWorldPosition(Vector2Int cellPosition) end
+
+	method Vector3 ToWorldPosition(int32 cellPositionX, int32 cellPositionY) end
+
+	method boolean IsClient() end
+
+	method boolean IsServer() end
+
+	emitter EmitOrderInLayerChangedEvent(OrderInLayerChangedEvent event) end
+
+end

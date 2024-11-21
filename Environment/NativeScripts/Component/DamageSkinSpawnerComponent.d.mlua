@@ -1,0 +1,18 @@
+@Component
+script DamageSkinSpawnerComponent extends Component
+
+	@Sync
+	property Vector2 DamageSkinOffset = Vector2(0.000, 0.000)
+
+	@Sync
+	property boolean Enable = true
+
+	property boolean EnableInHierarchy
+
+	property Entity Entity
+
+	method boolean IsClient() end
+
+	method boolean IsServer() end
+
+end

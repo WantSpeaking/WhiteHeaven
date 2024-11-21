@@ -1,0 +1,294 @@
+@Component
+script MapleMapHS extends MapComponent
+
+	property integer MapID = 0
+
+	property table MonsterSpawnPoints = {}
+
+	property table MonsterArray = {}
+
+	property number MaxSpawnCount = 10
+
+	property Entity MobParent = nil
+
+	property boolean dropsOn = true
+
+	property table mesoicons = {"a724200c454c4fcf878b0a3cdbb706d6","b60c3cbbf52c40709f2fd886d98fe2d9","c3fe3ffa606f41069ce8b36278e9e7e8","f0aa7764ff5344848d59accafa2dbf6e"}
+
+	@Sync
+	property Entity MesoParent = nil
+
+	@ExecSpace("ServerOnly")
+	method void OnBeginPlay()
+		
+		self.MobParent = _SpawnService:SpawnByModelId("model://6c6787c3-edae-462b-87f5-4cbc73542909","Mobs",Vector3(0,0,0),self.Entity);
+		self.MesoParent = _SpawnService:SpawnByModelId("model://6c6787c3-edae-462b-87f5-4cbc73542909","Mesos",Vector3(0,0,0),self.Entity);
+		
+		local dataset = _DataService:GetTable("Table_MapLifeInfo")
+		local rowCount = dataset:GetRowCount()
+		
+		self.MapID = math.tointeger(tonumber(self.Entity.Name))
+		
+		--@type MapLifeInfo
+		local MapLifeInfos = _Datas_MapLifeInfo.Table[self.MapID]
+		for key, value in pairs(MapLifeInfos) do
+			local data = SpawnPoint()
+			data.MonsterID = value.LifeID
+			data.Pos = Vector3(value.X,value.Y,0)
+			self.MonsterSpawnPoints[#self.MonsterSpawnPoints+1]=data
+		    --print(key, value)
+		end
+		
+		self.MaxSpawnCount = #self.MonsterSpawnPoints
+		--[[local monsterID = math.tointeger(tonumber(MapLifeInfo.lifeID))
+		local x = math.tointeger(tonumber(MapLifeInfo.x))
+		local y = math.tointeger(tonumber(MapLifeInfo.y))
+		
+		local data = SpawnPoint()
+		data.monsterID = monsterID
+		data.pos = Vector2(x,y)
+		self.monsterSpawn[#self.monsterSpawn+1]=data]]
+		--print(self:GetBound())
+		
+		local CheckSpawnMobRepeat = function()
+			self:CheckSpawnMob()
+		end
+		_TimerService:SetTimerRepeat(CheckSpawnMobRepeat,_Constants.CheckSpawnMobInterval,1)
+	end
+
+	@ExecSpace("ServerOnly")
+	method void OnMapEnter(Entity enteredMap)
+		
+	end
+
+	@ExecSpace("ServerOnly")
+	method void OnEndPlay()
+		
+	end
+
+	@ExecSpace("ServerOnly")
+	method void CheckSpawnMob()
+		
+		for key, value in pairs(self.MonsterSpawnPoints) do
+			if isvalid(self.MonsterArray[key]) == false then
+		    	self:SpawnMonster(key,value)
+		    end
+		end
+	end
+
+	@ExecSpace("ServerOnly")
+	method void SpawnMonster(number MonsterArrayIndex, SpawnPoint sp)
+		---@type MonsterStat
+		local mobStat = _Datas_MonsterStat:getTable()[sp.MonsterID]
+		
+		local mobEntryID = mobStat.EntryID
+		
+		
+		local pos = sp.Pos
+		
+		local mob = _SpawnService:SpawnByModelId(
+		    	    mobEntryID,
+		    	    tostring(sp.MonsterID),
+		    	    pos,
+		    	    self.MobParent);
+		
+		mob.MapleMonsterHS.ID = sp.MonsterID
+		mob.MapleMonsterHS.HP = mobStat.MaxHP
+		mob.MapleMonsterHS.MaxHP = mobStat.MaxHP
+		mob.MapleMonsterHS.MP = mobStat.MaxMP
+		mob.MapleMonsterHS.MaxMP = mobStat.MaxMP
+		
+		self.MonsterArray[MonsterArrayIndex] = mob
+	end
+
+	method table GetRandomPosition(number spawnCount)
+		local leftX = 1 -- x coordinate on the left side of the spawn area
+		    local rightX = 8 -- x coordinate on the right side of the spawn area
+		    local y = -2 -- y coordinate of the spawn area
+		    local areaWidth = rightX - leftX
+		local positions = {}
+		for i = 1, spawnCount do
+		        local randomX = (_UtilLogic:RandomIntegerRange(0,100) / 100) * areaWidth + leftX
+		        positions[i] = Vector3(randomX, y, 0)
+		    end
+		    
+		    return positions
+	end
+
+	method number GetCurMonsterCount()
+		--remove nil mob,return real mob count
+		local i = 1
+		    while i <= #self.MonsterArray do
+		        if isvalid(self.MonsterArray[i]) == true then
+		            i = i + 1
+		        else
+		            table.remove(self.MonsterArray,i)
+		        end
+		    end
+		
+		    return #self.MonsterArray
+	end
+
+	@ExecSpace("Client")
+	method void Test()
+		print(_LocalizationService.CurrentLocaleId,_LocalizationService.LocalTranslator)
+	end
+
+	@ExecSpace("ClientOnly")
+	method void OnUpdate(number delta)
+		--print(_LocalizationService.CurrentLocaleId,_LocalizationService.LocalTranslator)
+	end
+
+	method void sortDropEntries(table from, table item, table visibleQuest, table otherQuest, MapleCharacter chr)
+		local ii = _MapleItemInformationProvider
+		
+		for key, mde in pairs(from) do
+			if ii:isQuestItem(mde.itemId)~=false then
+				table.insert(item,mde)
+			else
+				if chr:needQuestItem(mde.questid,mde.itemId) then
+					table.insert(visibleQuest,mde)
+				else
+					table.insert(otherQuest,mde)
+				end
+			end
+		end
+	end
+
+	method void dropFromMonster(MapleCharacter chr, MapleMonsterHS mob, boolean useBaseRate)
+		if mob.dropsDisabled or self.dropsOn == false then
+			return
+		end
+		
+		local droptype = 0
+		if mob.stats.isExplosiveReward then
+			droptype = 3
+		elseif mob.stats.ffaLoot then
+			droptype = 2
+		elseif chr.party ~= nil then
+			droptype = 1
+		else
+			droptype = 0
+		end 
+		
+		local mobpos = mob:getPosition().x
+		local chRate = 0
+		if not mob:isBoss() then
+			chRate = chr.dropRate
+		else
+			chRate = chr:getBossDropRate()
+		end
+		
+		local d = 1
+		local pos = {0, mob:getPosition().y}
+		
+		--[[MonsterStatusEffect stati = mob.getStati(MonsterStatus.SHOWDOWN);
+		        if (stati != null) {
+		            chRate *= (stati.getStati().get(MonsterStatus.SHOWDOWN).doubleValue() / 100.0 + 1.0);
+		        }]]
+		
+		if useBaseRate then
+			chRate = 1
+		end
+		
+		--[[final MapleMonsterInformationProvider mi = MapleMonsterInformationProvider.getInstance();
+		        final List<MonsterGlobalDropEntry> globalEntry = mi.getRelevantGlobalDrops(this.getId());
+		]]
+		local mi = _MapleMonsterInformationProvider
+		
+		local lootEntry = mi:retrieveEffectiveDrop(mob.ID)
+		local dropEntry = {}
+		local visibleQuestEntry = {}
+		local otherQuestEntry = {}
+		
+		--List<MonsterDropEntry> lootEntry = YamlConfig.config.server.USE_SPAWN_RELEVANT_LOOT ? mob.retrieveRelevantDrops() : mi.retrieveEffectiveDrop(mob.getId());
+		
+		self:sortDropEntries(lootEntry,dropEntry,visibleQuestEntry,otherQuestEntry,chr)
+		if #lootEntry  == 0 then 
+			return
+		end
+			
+	end
+
+	method void dropGlobalItemsFromMonsterOnMap(table globalEntry, Vector3 pos, number d, number droptype, integer mobpos, MapleCharacter chr, MapleMonsterHS mob)
+		
+	end
+
+	method number dropItemsFromMonsterOnMap(table dropEntry, Vector3 pos, number d, integer chRate, number droptype, integer mobpos, MapleCharacter chr, MapleMonsterHS mob)
+		if #dropEntry == 0 then
+			return d
+		end
+		_Helper:Shuffle(dropEntry)
+		
+		local idrop
+		local ii = _MapleItemInformationProvider
+		
+		for key, de in pairs(dropEntry) do
+			local cardRate = chr:getCardRate(de.itemId)
+			local dropChance = math.min(de.chance*chRate*cardRate,math.maxinteger)
+			
+			if math.random(1,999999)<dropChance then
+				if de.itemId == 0 then
+					local mesos = math.random(1,de.Maximum - de.Minimum)
+					
+					if mesos > 0 then
+						--[[if (chr.getBuffedValue(MapleBuffStat.MESOUP) != null) {
+		                            mesos = (int) (mesos * chr.getBuffedValue(MapleBuffStat.MESOUP).doubleValue() / 100.0);
+		                        }
+		                        mesos = mesos * chr.getMesoRate();
+		                        if (mesos <= 0) {
+		                            mesos = Integer.MAX_VALUE;
+		                        }]]
+						self:spawnMesoDrop(mesos,pos,mob,chr,false,droptype)
+					end
+				else
+					
+				end
+			end
+			---@type integer
+		    --local mapID = math.tointeger(tonumber(dataset:GetCell(i, "mapID")))
+			table.insert(self.Table[value.MapID],value)
+			if _ItemConstants:getInventoryType(de.itemId) == _MapleInventoryType.EQUIP then
+				idrop = ii:randomizeStats(ii:getEquipById(de.itemId))
+				
+			else
+				idrop = ItemHS()
+				idrop.id = de.itemId 
+			end
+			
+			
+		end
+		 
+	end
+
+	@ExecSpace("Server")
+	method void spawnMesoDrop(integer meso, Vector3 position, MapleMonsterHS dropper, MapleCharacter owner, boolean playerDrop, number droptype)
+		local mesotype = 1
+		if meso > 999 then
+			mesotype = 4
+		elseif meso>99 then
+			mesotype = 3
+		elseif meso>99 then
+			mesotype = 2
+		else
+			mesotype = 1
+		end
+		
+		local mesoRUID = self.mesoicons[mesotype]
+		
+		local mesoEntity = _SpawnService:SpawnByModelId("model://maplestoryitem$001d527c22cd4b219f816632769f826b","Meso_"..meso,position,self.MesoParent)
+		mesoEntity.SpriteRendererComponent.SpriteRUID = mesoRUID
+		mesoEntity.MapleMapItem.meso = meso
+		
+		
+	end
+
+	method void spawnDrop(Entity mapobject, Vector3 dropPos, MapleMonsterHS dropper, MapleCharacter chr, number droptype, number questid)
+		--local mdrop = 
+	end
+
+	method void spawnAndAddRangedMapObject(Entity mapobject)
+		
+	end
+
+end

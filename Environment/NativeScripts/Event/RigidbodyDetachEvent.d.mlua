@@ -1,0 +1,8 @@
+@Event
+script RigidbodyDetachEvent
+
+	property Entity DetachedEntity
+
+	constructor RigidbodyDetachEvent(Entity detachedEntity) end
+
+end

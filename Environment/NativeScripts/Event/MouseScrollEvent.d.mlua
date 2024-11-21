@@ -1,0 +1,8 @@
+@Event
+script MouseScrollEvent
+
+	property float ScrollDelta
+
+	constructor MouseScrollEvent(float scrollDelta) end
+
+end

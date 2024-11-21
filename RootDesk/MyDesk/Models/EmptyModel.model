@@ -1,0 +1,27 @@
+{
+  "Id": "",
+  "GameId": "",
+  "EntryKey": "model://6c6787c3-edae-462b-87f5-4cbc73542909",
+  "ContentType": "x-mod/model",
+  "Content": "",
+  "Usage": 0,
+  "UsePublish": 1,
+  "UseService": 0,
+  "CoreVersion": "1.21.0.0",
+  "StudioVersion": "0.1.0.0",
+  "DynamicLoading": 0,
+  "ContentProto": {
+    "Use": "Json",
+    "Json": {
+      "Version": 1,
+      "Name": "EmptyModel",
+      "BaseModelId": null,
+      "Id": "6c6787c3-edae-462b-87f5-4cbc73542909",
+      "Components": [],
+      "Properties": [],
+      "Values": [],
+      "EventLinks": [],
+      "Children": []
+    }
+  }
+}

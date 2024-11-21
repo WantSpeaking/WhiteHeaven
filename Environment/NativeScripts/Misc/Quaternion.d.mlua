@@ -1,0 +1,30 @@
+@Misc
+script Quaternion
+
+	property float w
+
+	property float x
+
+	property float y
+
+	property float z
+
+	constructor MODQuaternion(float x, float y, float z, float w) end
+
+	static method float Angle(Quaternion a, Quaternion b) end
+
+	static method float Dot(Quaternion a, Quaternion b) end
+
+	static method Quaternion Euler(Vector3 euler) end
+
+	static method Quaternion Normalize(Quaternion q) end
+
+	static method boolean op_Inequality(Quaternion left, Quaternion right) end
+
+	static method Quaternion op_Multiply(Quaternion left, Quaternion right) end
+
+	static method Vector3 op_Multiply(Quaternion left, Vector3 right) end
+
+	static method boolean op_Equality(Quaternion left, Quaternion right) end
+
+end

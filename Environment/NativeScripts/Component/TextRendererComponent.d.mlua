@@ -1,0 +1,94 @@
+@Component
+script TextRendererComponent extends Component
+
+	@Sync
+	property boolean BestFit = false
+
+	@Sync
+	property float ConstraintX = 100
+
+	@Sync
+	property float ConstraintY = 100
+
+	@Sync
+	property Color FontColor = Color(0.000, 0.000, 0.000, 1.000)
+
+	@Sync
+	property float FontSize = 20
+
+	@Sync
+	property FontStyleType FontStyle = FontStyleType.Normal
+
+	@Sync
+	property TextHorizontalAlignmentOption HorizontalAlignment = TextHorizontalAlignmentOption.Center
+
+	@Sync
+	property boolean IgnoreMapLayerCheck = false
+
+	@Sync
+	property boolean IsRichText = true
+
+	@Sync
+	property float MaxSize = 40
+
+	@Sync
+	property float MinSize = 10
+
+	@Sync
+	property int32 OrderInLayer = 0
+
+	@Sync
+	property TextOverflowMode Overflow = TextOverflowMode.Overflow
+
+	@Sync
+	property RectOffset Padding
+
+	@Sync
+	property Vector2 RectOffset = Vector2(0.000, 0.000)
+
+	@Sync
+	property Vector2 RectSize = Vector2(10.000, 5.000)
+
+	@Sync
+	property boolean SizeFit
+
+	@Sync
+	property string SortingLayer = "Default"
+
+	@Sync
+	property string Text = "Text"
+
+	@Sync
+	property boolean UseConstraintX = false
+
+	@Sync
+	property boolean UseConstraintY = false
+
+	@Sync
+	property TextVerticalAlignmentOption VerticalAlignment = TextVerticalAlignmentOption.Middle
+
+	@Sync
+	property boolean Enable = true
+
+	property boolean EnableInHierarchy
+
+	property Entity Entity
+
+	@ExecSpace("ClientOnly")
+	method string GetLocalizedText() end
+
+	@ExecSpace("ClientOnly")
+	method float GetPreferredHeight(string preferredText, float width) end
+
+	@ExecSpace("ClientOnly")
+	method float GetPreferredWidth(string preferredText) end
+
+	method boolean IsClient() end
+
+	method boolean IsServer() end
+
+	emitter EmitSortingLayerChangedEvent(SortingLayerChangedEvent event) end
+
+	emitter EmitOrderInLayerChangedEvent(OrderInLayerChangedEvent event) end
+
+end

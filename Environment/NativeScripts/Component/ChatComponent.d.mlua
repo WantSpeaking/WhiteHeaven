@@ -1,0 +1,25 @@
+@Component
+script ChatComponent extends Component
+
+	property float ChatEmotionDuration = 5
+
+	property boolean Expand = true
+
+	property boolean UseChatBalloon = false
+
+	property boolean UseChatEmotion = true
+
+	@Sync
+	property boolean Enable = true
+
+	property boolean EnableInHierarchy
+
+	property Entity Entity
+
+	method boolean IsClient() end
+
+	method boolean IsServer() end
+
+	emitter EmitChatEvent(ChatEvent event) end
+
+end

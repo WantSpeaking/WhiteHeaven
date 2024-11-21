@@ -1,0 +1,33 @@
+@Service
+script MobileAccelerometerService extends Service
+
+	@ExecSpace("ClientOnly")
+	method Vector3 GetLastAcceleration() end
+
+	@ExecSpace("ClientOnly")
+	method boolean IsEnabled() end
+
+	@ExecSpace("ClientOnly")
+	method boolean IsHWSupported() end
+
+	@ExecSpace("ClientOnly")
+	method void Start() end
+
+	@ExecSpace("ClientOnly")
+	method void Stop() end
+
+	method MODEventHandlerBase ConnectEvent(Type eventType, IMODScriptFunction eventHandler) end
+
+	method MODEventHandlerBase ConnectEvent(Type eventType, IMODScriptFunction eventHandler) end
+
+	method MODEventHandlerBase ConnectEvent(string key, IMODScriptFunction eventHandler) end
+
+	method boolean DisconnectEvent(Type eventType, MODEventHandlerBase eventHandler) end
+
+	method boolean DisconnectEvent(Type eventType, MODEventHandlerBase eventHandler) end
+
+	method boolean DisconnectEvent(string key, MODEventHandlerBase eventHandler) end
+
+	method void SendEvent(EventType sendEvent) end
+
+end

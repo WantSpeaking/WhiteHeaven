@@ -1,0 +1,10 @@
+@Event
+script CameraSwitchEvent
+
+	property CameraComponent PreviousComponent
+
+	property CameraComponent SwitchedComponent
+
+	constructor CameraSwitchEvent(CameraComponent previousComponent, CameraComponent switchedComponent) end
+
+end

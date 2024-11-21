@@ -1,0 +1,46 @@
+@Component
+script TextInputComponent extends Component
+
+	property boolean AutoClear = false
+
+	property int32 CharacterLimit = 0
+
+	property InputContentType ContentType = InputContentType.Standard
+
+	property InputLineType LineType = InputLineType.MultiLineSubmit
+
+	property string PlaceHolder
+
+	property Color PlaceHolderColor = Color(0.195, 0.195, 0.195, 0.500)
+
+	property string Text = "Text"
+
+	@Sync
+	property boolean Enable = true
+
+	property boolean EnableInHierarchy
+
+	property Entity Entity
+
+	method void ActivateInputField() end
+
+	@ExecSpace("ClientOnly")
+	method string GetLocalizedPlaceHolder() end
+
+	method boolean IsClient() end
+
+	method boolean IsServer() end
+
+	emitter EmitTextInputEndEditEditorEvent(TextInputEndEditEditorEvent event) end
+
+	emitter EmitTextInputEndEditEvent(TextInputEndEditEvent event) end
+
+	emitter EmitTextInputSubmitEditorEvent(TextInputSubmitEditorEvent event) end
+
+	emitter EmitTextInputSubmitEvent(TextInputSubmitEvent event) end
+
+	emitter EmitTextInputValueChangeEditorEvent(TextInputValueChangeEditorEvent event) end
+
+	emitter EmitTextInputValueChangeEvent(TextInputValueChangeEvent event) end
+
+end

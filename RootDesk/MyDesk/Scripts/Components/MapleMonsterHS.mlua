@@ -1,0 +1,153 @@
+@Component
+script MapleMonsterHS extends Component
+
+	@Sync
+	property integer ID = 0
+
+	@Sync
+	property integer MaxHP = 0
+
+	property integer MaxMP = 0
+
+	@Sync
+	property integer HP = 0
+
+	@Sync
+	property integer MP = 0
+
+	property string Name = ""
+
+	property boolean dropsDisabled = false
+
+	property any stats = nil
+
+	method void OnBeginPlay()
+		if self:IsServer() then
+			self:OnBeginPlayServer()
+		else
+			self:OnBeginPlayClient()
+		end
+	end
+
+	method void OnDataChanged()
+		self.Entity.NameTagComponent.Name = self.Name
+	end
+
+	@ExecSpace("Client")
+	method void OnSpawn()
+		--[[print(self.ID,_LocalizationService:GetText(_Constants.LocalizationTableKeyPrefix_Mob..self.ID))
+		self.Entity.NameTagComponent.Name = _LocalizationService:GetText(_Constants.LocalizationTableKeyPrefix_Mob..self.ID)]]
+	end
+
+	@ExecSpace("Server")
+	method void OnBeginPlayServer()
+		--@type MonsterStat
+		--[[local monsterStat = _Datas_MonsterStat:getTable()[self.ID]
+		self.MaxHP = monsterStat.maxHP
+		self.MaxMP = monsterStat.maxMP
+		
+		self.HP = self.MaxHP
+		self.MP = self.MaxMP]]
+		
+		--log(self.maxHP)
+		--log(self.maxMP)
+	end
+
+	@ExecSpace("Client")
+	method void OnBeginPlayClient()
+		--[[self.ID = math.tointeger(tonumber(self.Entity.Name))
+		self.Entity.NameTagComponent.Name = _LocalizationService:GetText(_Constants.LocalizationTableKeyPrefix_Mob..self.ID)]]
+	end
+
+	@ExecSpace("ClientOnly")
+	method void OnSyncProperty(string name, any value)
+		if name == "ID" then
+		
+			self.ID = math.tointeger(tonumber(value))
+			--print(_LocalizationService.CurrentLocaleId)
+			local enTranslator = _LocalizationService:GetTranslatorForLocale("zh-cn")
+			self.Name = enTranslator:GetText(_Constants.LocalizationTableKeyPrefix_Mob..self.ID)
+			self.Entity.NameTagComponent.Name = self.Name
+		end
+		 
+	end
+
+	method Vector3 getPosition()
+		return self.Entity.TransformComponent.Position
+	end
+
+	method boolean isBoss()
+		return self.stats.boss
+	end
+
+	@ExecSpace("ServerOnly")
+	@EventSender("Self")
+	handler HandleHitEvent(HitEvent event)
+		--------------- Native Event Sender Info ----------------
+		-- Sender: HitComponent
+		-- Space: Server, Client
+		---------------------------------------------------------
+		
+		-- Parameters
+		-- local AttackCenter = event.AttackCenter
+		-- local AttackerEntity = event.AttackerEntity
+		-- local Damages = event.Damages
+		-- local Extra = event.Extra
+		-- local IsCritical = event.IsCritical
+		-- local TotalDamage = event.TotalDamage
+		---------------------------------------------------------
+		self.HP-=event.TotalDamage;
+		if self.HP <= 0 then
+			self.Entity.StateComponent:ChangeState("DEAD");
+		end
+		
+		--[[local disableAfterDeathAnimation = function()
+			self.Entity.StateComponent:ChangeState("IDLE");
+			self.Enable = false;
+			log("disableAfterDeathAnimation...")
+		end
+		local DeathAnimationTime = self.Entity.StateAnimationComponent.ActionSheet["die"]
+		_TimerService:SetTimerOnce(disableAfterDeathAnimation)]]
+	end
+
+	@ExecSpace("ClientOnly")
+	@EventSender("Self")
+	handler HandleSpriteAnimPlayerEndFrameEvent(SpriteAnimPlayerEndFrameEvent event)
+		--------------- Native Event Sender Info ----------------
+		-- Sender: ClimbableSpriteRendererComponent
+		-- Space: Client
+		---------------------------------------------------------
+		-- Sender: SpriteRendererComponent
+		-- Space: Client
+		---------------------------------------------------------
+		
+		-- Parameters
+		-- local FrameIndex = event.FrameIndex
+		-- local ReversePlaying = event.ReversePlaying
+		-- local TotalFrameCount = event.TotalFrameCount
+		-- local AnimPlayer = event.AnimPlayer
+		---------------------------------------------------------
+		if self.Entity.StateComponent.CurrentStateName == "DEAD" then
+			--self.Enable = false
+			self.Entity.SpriteRendererComponent.Color.a = 0
+		end
+	end
+
+	@ExecSpace("ServerOnly")
+	@EventSender("Self")
+	handler HandleDeadEvent(DeadEvent event)
+		--------------- Native Event Sender Info ----------------
+		-- Sender: StateComponent
+		-- Space: Server, Client
+		---------------------------------------------------------
+		-- Process monsters to randomly drop items set in UserItemDataSet
+		local itemCount = _DataService:GetTable("ItemTableDataSet"):GetRowCount()
+		
+		local index = _UtilLogic:RandomIntegerRange(1,itemCount)
+		-- Copy Entry ID of Model_Item and paste it to "Entry ID"
+		local itemEntity = _SpawnService:SpawnByModelId("model://maplestoryitem$001d527c22cd4b219f816632769f826b", "Item", self.Entity.TransformComponent.WorldPosition, self.Entity.Parent)
+		itemEntity.Item:InitItem(index)
+		
+	end
+
+end

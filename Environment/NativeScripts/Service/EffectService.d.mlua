@@ -1,0 +1,24 @@
+@Service
+script EffectService extends Service
+
+	method integer PlayEffect(string animationClipRUID, Entity instigator, Vector3 position, float zRotation, Vector3 scale, boolean isLoop, Dictionary<string, any> options) end
+
+	method integer PlayEffectAttached(string animationClipRUID, Entity parentEntity, Vector3 localPosition, float localZRotation, Vector3 localScale, boolean isLoop, Dictionary<string, any> options) end
+
+	method void RemoveEffect(integer serial) end
+
+	method MODEventHandlerBase ConnectEvent(Type eventType, IMODScriptFunction eventHandler) end
+
+	method MODEventHandlerBase ConnectEvent(Type eventType, IMODScriptFunction eventHandler) end
+
+	method MODEventHandlerBase ConnectEvent(string key, IMODScriptFunction eventHandler) end
+
+	method boolean DisconnectEvent(Type eventType, MODEventHandlerBase eventHandler) end
+
+	method boolean DisconnectEvent(Type eventType, MODEventHandlerBase eventHandler) end
+
+	method boolean DisconnectEvent(string key, MODEventHandlerBase eventHandler) end
+
+	method void SendEvent(EventType sendEvent) end
+
+end

@@ -1,0 +1,8 @@
+@Event
+script BlockPaletteTabChangeEvent
+
+	property string id
+
+	constructor BlockPaletteTabChangeEvent(string id) end
+
+end

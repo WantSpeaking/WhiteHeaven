@@ -1,0 +1,10 @@
+@Event
+script BlockUserDataListImportEvent
+
+	property string data
+
+	property string id
+
+	constructor BlockUserDataListImportEvent(string id, string data) end
+
+end

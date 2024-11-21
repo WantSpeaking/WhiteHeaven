@@ -1,0 +1,12 @@
+@Item
+script ItemHS extends Item
+
+	property integer id = 0
+
+	property number position = 0
+
+	property number quantity = 0
+
+	property number flag = 0
+
+end

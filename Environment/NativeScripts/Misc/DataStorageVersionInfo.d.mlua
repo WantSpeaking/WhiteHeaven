@@ -1,0 +1,8 @@
+@Misc
+script DataStorageVersionInfo
+
+	property DateTime CreateTime
+
+	property string Version
+
+end

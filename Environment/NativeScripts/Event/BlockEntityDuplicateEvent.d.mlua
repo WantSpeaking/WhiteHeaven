@@ -1,0 +1,12 @@
+@Event
+script BlockEntityDuplicateEvent
+
+	property string copy
+
+	property float x
+
+	property float y
+
+	constructor BlockEntityDuplicateEvent(string copy, float x, float y) end
+
+end

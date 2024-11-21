@@ -1,0 +1,78 @@
+@Service
+script EditorService extends Service
+
+	method void CloneSelectedEntity() end
+
+	method void CreateMap(func<string> callback) end
+
+	method void CreateSelectedModel(Vector2 position, func<Entity> callback, boolean select) end
+
+	method void CreateSelectedModel(Vector2 position, boolean select) end
+
+	method void DataSetInsertRow(string tableName) end
+
+	method void DataSetRemoveRow(string tableName, int32 row) end
+
+	method void DataSetSetCell(string tableName, int32 row, string columnName, string value) end
+
+	method void DeleteLiteDB() end
+
+	method void DeleteMap(string mapId) end
+
+	method void GetCameraPosition(func<Vector3> callback) end
+
+	method void GetCurrentMap(func<string> callback) end
+
+	method void GetMaps(func<List<string>> callback) end
+
+	method boolean GetModelProperty(string modelId, string componentName, string propertyName, func<string> callback) end
+
+	method void LoadMap(string mapId, boolean save) end
+
+	method void Notification(string notify) end
+
+	method void OpenUrl(string title, string url) end
+
+	method void RemoveMakerMenu(string name) end
+
+	method void RenameEntity(Entity entity, string name) end
+
+	method void SaveMap() end
+
+	method void SaveMyHome(func onComplete) end
+
+	method void SelectEntity(string entityId) end
+
+	method void SetCameraPosition(Vector3 position) end
+
+	method void SetCameraScrollMode(boolean isCameraScroll) end
+
+	method void SetCameraZoom(int32 zoom) end
+
+	method boolean SetModelProperty(string modelId, string componentName, string propertyName, string value) end
+
+	method void SetSelectedModel(string modelId) end
+
+	method void SetSelectedTile(string tileRUID) end
+
+	method void SetSiblingIndex(Entity entity, int32 index) end
+
+	method void SetStartingMap(string mapId) end
+
+	method void SetWorkingLayer(int32 layerIndex) end
+
+	method MODEventHandlerBase ConnectEvent(Type eventType, IMODScriptFunction eventHandler) end
+
+	method MODEventHandlerBase ConnectEvent(Type eventType, IMODScriptFunction eventHandler) end
+
+	method MODEventHandlerBase ConnectEvent(string key, IMODScriptFunction eventHandler) end
+
+	method boolean DisconnectEvent(Type eventType, MODEventHandlerBase eventHandler) end
+
+	method boolean DisconnectEvent(Type eventType, MODEventHandlerBase eventHandler) end
+
+	method boolean DisconnectEvent(string key, MODEventHandlerBase eventHandler) end
+
+	method void SendEvent(EventType sendEvent) end
+
+end

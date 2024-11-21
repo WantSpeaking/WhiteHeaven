@@ -1,0 +1,106 @@
+@Misc
+script CreatorDataStorage
+
+	@ExecSpace("ServerOnly")
+	method int32, DataStorageItemPages BatchGetAndWait(List<string> keys) end
+
+	@ExecSpace("ServerOnly")
+	method void BatchGetAsync(List<string> keys, func<int32, List<string>, DataStorageItemPages> callbackFunction) end
+
+	@ExecSpace("ServerOnly")
+	method int32, DataStorageItemPages BatchGetByInfoAndWait(List<DataStorageKeyInfo> keyInfos) end
+
+	@ExecSpace("ServerOnly")
+	method void BatchGetByInfoAsync(List<DataStorageKeyInfo> keyInfos, func<int32, List<DataStorageKeyInfo>, DataStorageItemPages> callbackFunction) end
+
+	@ExecSpace("ServerOnly")
+	method int32, List<string> BatchSetAndWait(Dictionary<string, string> keyValues) end
+
+	@ExecSpace("ServerOnly")
+	method void BatchSetAsync(Dictionary<string, string> keyValues, func<int32, List<string>> callbackFunction) end
+
+	@ExecSpace("ServerOnly")
+	method int32, List<DataStorageKeyInfo> BatchSetByInfoAndWait(Dictionary<DataStorageKeyInfo, string> keyValues) end
+
+	@ExecSpace("ServerOnly")
+	method void BatchSetByInfoAsync(Dictionary<DataStorageKeyInfo, string> keyValues, func<int32, List<DataStorageKeyInfo>> callbackFunction) end
+
+	@ExecSpace("ServerOnly")
+	method int32, string GetAndWait(string key) end
+
+	@ExecSpace("ServerOnly")
+	method void GetAsync(string key, func<int32, string, string> callbackFunction) end
+
+	@ExecSpace("ServerOnly")
+	method int32, string GetByInfoAndWait(DataStorageKeyInfo keyInfo) end
+
+	@ExecSpace("ServerOnly")
+	method void GetByInfoAsync(DataStorageKeyInfo keyInfo, func<int32, DataStorageKeyInfo, string> callbackFunction) end
+
+	@ExecSpace("ServerOnly")
+	method int32, DataStorageItemPages GetPagesAndWait(string tag) end
+
+	@ExecSpace("ServerOnly")
+	method void GetPagesAsync(string tag, func<int32, string, DataStorageItemPages> callbackFunction) end
+
+	@ExecSpace("ServerOnly")
+	method int32 SetAndWait(string key, string value) end
+
+	@ExecSpace("ServerOnly")
+	method void SetAsync(string key, string value, func<int32, string> callbackFunction) end
+
+	@ExecSpace("ServerOnly")
+	method int32 SetByInfoAndWait(DataStorageKeyInfo keyInfo, string value) end
+
+	@ExecSpace("ServerOnly")
+	method void SetByInfoAsync(DataStorageKeyInfo keyInfo, string value, func<int32, DataStorageKeyInfo> callbackFunction) end
+
+	@ExecSpace("ServerOnly")
+	method int32, List<string> TransactSetAndWait(Dictionary<string, string> keyValues) end
+
+	@ExecSpace("ServerOnly")
+	method void TransactSetAsync(Dictionary<string, string> keyValues, func<int32, List<string>> callbackFunction) end
+
+	@ExecSpace("ServerOnly")
+	method int32, List<DataStorageKeyInfo> TransactSetByInfoAndWait(Dictionary<DataStorageKeyInfo, string> keyValues) end
+
+	@ExecSpace("ServerOnly")
+	method void TransactSetByInfoAsync(Dictionary<DataStorageKeyInfo, string> keyValues, func<int32, List<DataStorageKeyInfo>> callbackFunction) end
+
+	@ExecSpace("ServerOnly")
+	method int32, string UpdateAndWait(string key, string expectedValue, string newValue) end
+
+	@ExecSpace("ServerOnly")
+	method void UpdateAsync(string key, string expectedValue, string newValue, func<int32, string, string> callbackFunction) end
+
+	@ExecSpace("ServerOnly")
+	method int32, string UpdateByInfoAndWait(DataStorageKeyInfo keyInfo, string expectedValue, string newValue) end
+
+	@ExecSpace("ServerOnly")
+	method void UpdateByInfoAsync(DataStorageKeyInfo keyInfo, string expectedValue, string newValue, func<int32, DataStorageKeyInfo, string> callbackFunction) end
+
+	@ExecSpace("ServerOnly")
+	method int32, List<string> BatchDeleteAndWait(List<string> keys) end
+
+	@ExecSpace("ServerOnly")
+	method void BatchDeleteAsync(List<string> keys, func<int32, List<string>> callbackFunction) end
+
+	@ExecSpace("ServerOnly")
+	method int32 DeleteAndWait(string key) end
+
+	@ExecSpace("ServerOnly")
+	method void DeleteAsync(string key, func<int32, string> callbackFunction) end
+
+	@ExecSpace("ServerOnly")
+	method int32, DataStorageVersionPages GetVersionsAndWait(string key, SortDirection sortDirection, DateTime minDate, DateTime maxDate) end
+
+	@ExecSpace("ServerOnly")
+	method void GetVersionsAsync(string key, SortDirection sortDirection, DateTime minDate, DateTime maxDate, func<int32, string, DataStorageVersionPages> callbackFunction) end
+
+	@ExecSpace("ServerOnly")
+	method int32, List<string> TransactDeleteAndWait(List<string> keys) end
+
+	@ExecSpace("ServerOnly")
+	method void TransactDeleteAsync(List<string> keys, func<int32, List<string>> callbackFunction) end
+
+end

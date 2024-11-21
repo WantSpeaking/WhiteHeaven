@@ -1,0 +1,23 @@
+@Component
+script RawImageGUIRendererComponent extends Component
+
+	@Sync
+	property string MaterialId = ""
+
+	@Sync
+	property boolean Enable = true
+
+	property boolean EnableInHierarchy
+
+	property Entity Entity
+
+	method void ChangeMaterial(string materialId) end
+
+	@ExecSpace("ClientOnly")
+	method void SetRawImage(RawImage rawImage) end
+
+	method boolean IsClient() end
+
+	method boolean IsServer() end
+
+end

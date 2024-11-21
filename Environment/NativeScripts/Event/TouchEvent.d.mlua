@@ -1,0 +1,10 @@
+@Event
+script TouchEvent
+
+	property int32 TouchId
+
+	property Vector2 TouchPoint
+
+	constructor TouchEvent(Vector2 touchPoint, int32 touchId) end
+
+end

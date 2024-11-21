@@ -1,0 +1,8 @@
+@Event
+script TextInputEndEditEvent
+
+	property string text
+
+	constructor TextInputEndEditEvent(string text) end
+
+end

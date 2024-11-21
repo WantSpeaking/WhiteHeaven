@@ -1,0 +1,10 @@
+@Event
+script EditorGUIButtonStateEvent
+
+	property string id
+
+	property string state
+
+	constructor EditorGUIButtonStateEvent(string id, string state) end
+
+end

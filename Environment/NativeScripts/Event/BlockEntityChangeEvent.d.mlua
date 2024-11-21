@@ -1,0 +1,20 @@
+@Event
+script BlockEntityChangeEvent
+
+	property string from
+
+	property Dictionary<string, string> fromExtras
+
+	property int32 index
+
+	property boolean isAttach
+
+	property boolean isSibling
+
+	property string to
+
+	property Dictionary<string, string> toExtras
+
+	constructor BlockEntityChangeEvent(string from, Dictionary<string, string> fromExtras, int32 index, boolean isAttach, boolean isSibling, string to, Dictionary<string, string> toExtras) end
+
+end

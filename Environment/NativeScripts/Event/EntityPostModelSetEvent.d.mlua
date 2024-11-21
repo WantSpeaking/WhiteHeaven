@@ -1,0 +1,10 @@
+@Event
+script EntityPostModelSetEvent
+
+	property MODModel Model
+
+	property Entity Entity
+
+	constructor EntityPostModelSetEvent(Entity entity, MODModel model) end
+
+end

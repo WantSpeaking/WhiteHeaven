@@ -1,0 +1,10 @@
+@Event
+script FootholdEnterEvent
+
+	property Entity Entity
+
+	property Foothold Foothold
+
+	constructor FootholdEnterEvent(Entity entity, Foothold foothold) end
+
+end

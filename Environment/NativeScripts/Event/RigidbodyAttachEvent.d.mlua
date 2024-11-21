@@ -1,0 +1,10 @@
+@Event
+script RigidbodyAttachEvent
+
+	property Entity AttachedEntity
+
+	property Vector2 Offset = Vector2(0.000, 0.000)
+
+	constructor RigidbodyAttachEvent(Entity attachedEntity, Vector2 offset) end
+
+end

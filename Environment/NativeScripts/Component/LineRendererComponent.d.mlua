@@ -1,0 +1,48 @@
+@Component
+script LineRendererComponent extends Component
+
+	@Sync
+	property float Flexibility = 3
+
+	@Sync
+	property boolean IgnoreMapLayerCheck = false
+
+	@Sync
+	property boolean IsFlexible = true
+
+	@Sync
+	property boolean IsSmooth = false
+
+	@Sync
+	property boolean Loop = false
+
+	@Sync
+	property string MaterialId = ""
+
+	@Sync
+	property int32 OrderInLayer = 0
+
+	@Sync
+	property SyncList<LinePoint> Points
+
+	@Sync
+	property string SortingLayer = "Default"
+
+	@Sync
+	property boolean Enable = true
+
+	property boolean EnableInHierarchy
+
+	property Entity Entity
+
+	method void ChangeMaterial(string materialId) end
+
+	method boolean IsClient() end
+
+	method boolean IsServer() end
+
+	emitter EmitOrderInLayerChangedEvent(OrderInLayerChangedEvent event) end
+
+	emitter EmitSortingLayerChangedEvent(SortingLayerChangedEvent event) end
+
+end

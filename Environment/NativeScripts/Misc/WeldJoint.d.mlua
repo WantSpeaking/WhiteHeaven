@@ -1,0 +1,16 @@
+@Misc
+script WeldJoint
+
+	property boolean CollideConnected = false
+
+	property Vector2 LocalAnchorA = Vector2(0.000, 0.000)
+
+	property Vector2 LocalAnchorB = Vector2(0.000, 0.000)
+
+	property EntityRef TargetEntityRef
+
+	constructor WeldJoint() end
+
+	constructor WeldJoint(WeldJoint joint) end
+
+end

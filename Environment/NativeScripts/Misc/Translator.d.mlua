@@ -1,0 +1,12 @@
+@Misc
+script Translator
+
+	property string LocaleId
+
+	@ExecSpace("ClientOnly")
+	method string GetText(string key) end
+
+	@ExecSpace("ClientOnly")
+	method string GetTextFormat(string key, any... args) end
+
+end

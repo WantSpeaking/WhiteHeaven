@@ -1,0 +1,8 @@
+@Event
+script ScreenTouchHoldEditorEvent
+
+	property Vector2 TouchPoint
+
+	constructor ScreenTouchHoldEditorEvent(Vector2 touchPoint) end
+
+end

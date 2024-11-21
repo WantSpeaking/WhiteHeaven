@@ -1,0 +1,52 @@
+@Component
+script ChatBalloonComponent extends Component
+
+	@Sync
+	property boolean ArrowChatEnabled = true
+
+	@Sync
+	property boolean AutoShowEnabled = false
+
+	@Sync
+	property float BalloonScale = 1
+
+	property DataRef ChatBalloonRUID = DataRef("7b6bd117bd0446a5bacec8ea6831c997")
+
+	@Sync
+	property boolean ChatModeEnabled = true
+
+	@Sync
+	property Color FontColor = Color(0.000, 0.000, 0.000, 1.000)
+
+	@Sync
+	property Vector2 FontOffset = Vector2(0.000, 0.000)
+
+	@Sync
+	property float FontSize = 1
+
+	@Sync
+	property float HideDuration = 5
+
+	@Sync
+	property string Message = ""
+
+	@Sync
+	property float Offset = 0
+
+	@Sync
+	property float ShowDuration = 5
+
+	@Sync
+	property boolean Enable = true
+
+	property boolean EnableInHierarchy
+
+	property Entity Entity
+
+	method boolean IsClient() end
+
+	method boolean IsServer() end
+
+	emitter EmitChatBalloonEvent(ChatBalloonEvent event) end
+
+end

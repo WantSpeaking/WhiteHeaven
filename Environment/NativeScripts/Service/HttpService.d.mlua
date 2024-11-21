@@ -1,0 +1,35 @@
+@Service
+script HttpService extends Service
+
+	property boolean httpEnabled = False
+
+	@ExecSpace("ServerOnly")
+	method string GetAndWait(string url, Dictionary<string, string> headers) end
+
+	method table JSONDecode(string input) end
+
+	method string JSONEncode(table input) end
+
+	@ExecSpace("ServerOnly")
+	method string PostAndWait(string url, string content, HttpContentType contentType, Dictionary<string, string> headers) end
+
+	@ExecSpace("ServerOnly")
+	method string RequestAndWait(string url, string httpMethod, string content, Dictionary<string, string> headers) end
+
+	method string UrlEncode(string input) end
+
+	method MODEventHandlerBase ConnectEvent(Type eventType, IMODScriptFunction eventHandler) end
+
+	method MODEventHandlerBase ConnectEvent(Type eventType, IMODScriptFunction eventHandler) end
+
+	method MODEventHandlerBase ConnectEvent(string key, IMODScriptFunction eventHandler) end
+
+	method boolean DisconnectEvent(Type eventType, MODEventHandlerBase eventHandler) end
+
+	method boolean DisconnectEvent(Type eventType, MODEventHandlerBase eventHandler) end
+
+	method boolean DisconnectEvent(string key, MODEventHandlerBase eventHandler) end
+
+	method void SendEvent(EventType sendEvent) end
+
+end

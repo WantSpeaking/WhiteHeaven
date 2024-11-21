@@ -1,0 +1,8 @@
+@Event
+script RigidbodyClimbableAttachStartEvent
+
+	property Entity AttachedEntity
+
+	constructor RigidbodyClimbableAttachStartEvent(Entity attachedEntity) end
+
+end

@@ -1,0 +1,34 @@
+@Service
+script LocalizationService extends Service
+
+	property string CurrentLocaleId
+
+	property Translator LocalTranslator
+
+	@ExecSpace("ClientOnly")
+	method string GetText(string key) end
+
+	@ExecSpace("ClientOnly")
+	method string GetTextFormat(string key, any... args) end
+
+	@ExecSpace("ClientOnly")
+	method Translator GetTranslatorForLocale(string localeId) end
+
+	@ExecSpace("ClientOnly")
+	method string SmartFormat(string format, any... args) end
+
+	method MODEventHandlerBase ConnectEvent(Type eventType, IMODScriptFunction eventHandler) end
+
+	method MODEventHandlerBase ConnectEvent(Type eventType, IMODScriptFunction eventHandler) end
+
+	method MODEventHandlerBase ConnectEvent(string key, IMODScriptFunction eventHandler) end
+
+	method boolean DisconnectEvent(Type eventType, MODEventHandlerBase eventHandler) end
+
+	method boolean DisconnectEvent(Type eventType, MODEventHandlerBase eventHandler) end
+
+	method boolean DisconnectEvent(string key, MODEventHandlerBase eventHandler) end
+
+	method void SendEvent(EventType sendEvent) end
+
+end

@@ -1,0 +1,8 @@
+@Event
+script ChangedMovementInputEvent
+
+	property Vector2 Direction = Vector2(0.000, 0.000)
+
+	constructor ChangedMovementInputEvent(Vector2 direction) end
+
+end

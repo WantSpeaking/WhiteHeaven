@@ -1,0 +1,6 @@
+@Event
+script WorldLoadEditorEvent
+
+	constructor WorldLoadEditorEvent() end
+
+end

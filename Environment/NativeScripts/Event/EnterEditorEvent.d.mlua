@@ -1,0 +1,6 @@
+@Event
+script EnterEditorEvent
+
+	constructor EnterEditorEvent() end
+
+end

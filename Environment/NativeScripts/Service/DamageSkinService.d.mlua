@@ -1,0 +1,27 @@
+@Service
+script DamageSkinService extends Service
+
+	method void Play(Entity targetEntity, string skinId, float delayPerAttack, table<any> damages, DamageSkinTweenType tweenType, boolean bCritical, Vector2 offset, Vector2 scale, float playRate) end
+
+	method void Play(Entity targetEntity, string skinId, float delayPerAttack, table<any> damages, DamageSkinTweenType tweenType, table<boolean> criticals, Vector2 offset, Vector2 scale, float playRate) end
+
+	method void PlayTextDamage(Entity targetEntity, string skinId, DamageSkinTextType textType, DamageSkinTweenType tweenType, Vector2 offset, Vector2 scale, float playRate) end
+
+	@ExecSpace("ClientOnly")
+	method void PreloadAsync(string skinId, func<boolean> completeCallback) end
+
+	method MODEventHandlerBase ConnectEvent(Type eventType, IMODScriptFunction eventHandler) end
+
+	method MODEventHandlerBase ConnectEvent(Type eventType, IMODScriptFunction eventHandler) end
+
+	method MODEventHandlerBase ConnectEvent(string key, IMODScriptFunction eventHandler) end
+
+	method boolean DisconnectEvent(Type eventType, MODEventHandlerBase eventHandler) end
+
+	method boolean DisconnectEvent(Type eventType, MODEventHandlerBase eventHandler) end
+
+	method boolean DisconnectEvent(string key, MODEventHandlerBase eventHandler) end
+
+	method void SendEvent(EventType sendEvent) end
+
+end

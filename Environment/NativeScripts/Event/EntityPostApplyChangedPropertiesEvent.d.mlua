@@ -1,0 +1,8 @@
+@Event
+script EntityPostApplyChangedPropertiesEvent
+
+	property Entity Entity
+
+	constructor EntityPostApplyChangedPropertiesEvent(Entity entity) end
+
+end

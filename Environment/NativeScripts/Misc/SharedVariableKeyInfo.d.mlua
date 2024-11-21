@@ -1,0 +1,12 @@
+@Misc
+script SharedVariableKeyInfo
+
+	property string ETag = ""
+
+	property string Name = ""
+
+	constructor SharedVariableKeyInfo() end
+
+	constructor SharedVariableKeyInfo(string name, string eTag) end
+
+end

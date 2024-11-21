@@ -1,0 +1,6 @@
+@Event
+script MonsterActionStateEvent
+
+	constructor MonsterActionStateEvent() end
+
+end

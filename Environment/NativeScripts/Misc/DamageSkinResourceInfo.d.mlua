@@ -1,0 +1,10 @@
+@Misc
+script DamageSkinResourceInfo
+
+	property boolean IsLoadComplete = false
+
+	property string RUID
+
+	property ResourceType Type
+
+end

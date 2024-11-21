@@ -1,0 +1,46 @@
+@Component
+script HitComponent extends Component
+
+	@Sync
+	property Vector2 BoxOffset = Vector2(0.000, 0.000)
+
+	@Sync
+	property Vector2 BoxSize
+
+	@Sync
+	property float CircleRadius = 0
+
+	property string ColliderName
+
+	@Sync
+	property Vector2 ColliderOffset = Vector2(0.000, 0.000)
+
+	@Sync
+	property ColliderType ColliderType = ColliderType.Box
+
+	@Sync
+	property CollisionGroup CollisionGroup = CollisionGroups.HitBox
+
+	property boolean IsLegacy = false
+
+	@Sync
+	property SyncList<Vector2> PolygonPoints
+
+	@Sync
+	property boolean Enable = true
+
+	property boolean EnableInHierarchy
+
+	property Entity Entity
+
+	method boolean IsHitTarget(string attackInfo) end
+
+	method void OnHit(Entity attacker, integer damage, boolean isCritical, string attackInfo, int32 hitCount) end
+
+	method boolean IsClient() end
+
+	method boolean IsServer() end
+
+	emitter EmitHitEvent(HitEvent event) end
+
+end

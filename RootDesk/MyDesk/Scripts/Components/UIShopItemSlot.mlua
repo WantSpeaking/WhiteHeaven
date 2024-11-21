@@ -1,0 +1,37 @@
+@Component
+script UIShopItemSlot extends Component
+
+	property string ItemId = ""
+
+	method void SetData(string itemId, integer itemPrice)
+		---@type ItemInfo
+		    local itemInfo = _Data.ItemTable[itemId]
+		
+		    if itemInfo == nil then
+		    	log_error("[UIShopItemSlot] (SetData) Item Id Error")
+		    	return 
+		    end
+		
+		    local imageEntity = self.Entity:GetChildByName("img_slot")
+		    local nameEntity = self.Entity:GetChildByName("item_name")
+		    local priceEntity = self.Entity:GetChildByName("item_price")
+		
+		    imageEntity.SpriteGUIRendererComponent.ImageRUID = itemInfo.IconRUID
+		    nameEntity.TextComponent.Text = itemInfo.Name
+		    priceEntity.TextComponent.Text = tostring(itemPrice) .. " Meso"
+		
+		    self.ItemId = itemId
+	end
+
+	@EventSender("Self")
+	handler HandleButtonClickEvent(ButtonClickEvent event)
+		-- Parameters
+		    local Entity = event.Entity
+		    --------------------------------------------------------
+		
+		    local popup = _EntityService:GetEntityByPath("/ui/DefaultGroup/Shop/BuyPopup")
+		    popup.UIBuyPopup:SetData(self.ItemId)
+		    popup:SetEnable(true)
+	end
+
+end

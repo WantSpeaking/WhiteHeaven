@@ -1,0 +1,12 @@
+@Event
+script UITouchEnterEvent
+
+	property Entity Entity
+
+	property int32 TouchId
+
+	property Vector2 TouchPoint
+
+	constructor UITouchEnterEvent(Entity entity, int32 touchId, Vector2 touchPoint) end
+
+end

@@ -1,0 +1,75 @@
+@Component
+script InteractionComponent extends Component
+
+	@Sync
+	property KeyboardKey ActionKey = KeyboardKey.E
+
+	@Sync
+	property string ActionName = ""
+
+	@Sync
+	property Vector2 BoxOffset = Vector2(0.000, 0.000)
+
+	@Sync
+	property Vector2 BoxSize = Vector2(1.000, 1.000)
+
+	@Sync
+	property float CircleRadius = 0
+
+	property string ColliderName = "Interaction"
+
+	@Sync
+	property Vector2 ColliderOffset = Vector2(0.000, 0.000)
+
+	@Sync
+	property ColliderType ColliderType = ColliderType.Box
+
+	property CollisionGroup CollisionGroup = CollisionGroups.Interaction
+
+	@Sync
+	property float HoldingDuration = 0
+
+	@Sync
+	property Vector2 InfoOffset = Vector2(0.000, 0.000)
+
+	@Sync
+	property InteractType InteractionType = InteractType.KeyDown
+
+	property boolean IsLegacy = false
+
+	@Sync
+	property SyncList<Vector2> PolygonPoints
+
+	@Sync
+	property boolean ShowActionInfo = true
+
+	@Sync
+	property boolean Enable = true
+
+	property boolean EnableInHierarchy
+
+	property Entity Entity
+
+	method void OnEnter() end
+
+	method void OnInteraction() end
+
+	method void OnLeave() end
+
+	method void SetOnEnter(func onEnterFunction) end
+
+	method void SetOnInteraction(func onInteractionFunction) end
+
+	method void SetOnLeave(func onLeaveFunction) end
+
+	method boolean IsClient() end
+
+	method boolean IsServer() end
+
+	emitter EmitInteractionEnterEvent(InteractionEnterEvent event) end
+
+	emitter EmitInteractionEvent(InteractionEvent event) end
+
+	emitter EmitInteractionLeaveEvent(InteractionLeaveEvent event) end
+
+end

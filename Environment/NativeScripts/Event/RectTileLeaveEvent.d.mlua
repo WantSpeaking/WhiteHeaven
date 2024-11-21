@@ -1,0 +1,16 @@
+@Event
+script RectTileLeaveEvent
+
+	property Entity Entity
+
+	property KinematicbodyComponent Kinematicbody
+
+	property RectTileInfo TileInfo
+
+	property RectTileMapComponent TileMap
+
+	property Vector2Int TilePosition
+
+	constructor RectTileLeaveEvent(KinematicbodyComponent kinematicbody, RectTileMapComponent tileMap, Vector2Int tilePosition, RectTileInfo tileInfo, Entity entity) end
+
+end

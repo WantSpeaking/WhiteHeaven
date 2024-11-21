@@ -1,0 +1,24 @@
+@Misc
+script WorldShopProduct
+
+	property string Description
+
+	property DateTime EndSalesPeriod
+
+	property boolean HasSalesPeriod
+
+	property string Id
+
+	property string Name
+
+	property int32 Price
+
+	property DateTime StartSalesPeriod
+
+	property WorldShopProductStatus Status
+
+	property string ThumbnailRUID
+
+	property WorldShopProductType Type
+
+end

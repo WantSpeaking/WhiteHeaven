@@ -1,0 +1,59 @@
+@Component
+script AvatarRendererComponent extends Component
+
+	@Sync
+	property boolean IgnoreMapLayerCheck = false
+
+	@Sync
+	property string MaterialId = ""
+
+	property int32 OrderInLayer
+
+	@Sync
+	property float PlayRate = 1
+
+	@Sync
+	property boolean ShowDefaultWeaponEffects = true
+
+	@Sync
+	property string SortingLayer = "Default"
+
+	@Sync
+	property boolean Enable = true
+
+	property boolean EnableInHierarchy
+
+	property Entity Entity
+
+	method void ChangeMaterial(string materialId) end
+
+	@ExecSpace("ClientOnly")
+	method Entity GetAvatarRootEntity() end
+
+	@ExecSpace("ClientOnly")
+	method Entity GetBodyEntity() end
+
+	@ExecSpace("ClientOnly")
+	method Entity GetFaceEntity() end
+
+	@ExecSpace("Client")
+	method void PlayEmotion(EmotionalType emotionalType, float duration, string targetUserId) end
+
+	@ExecSpace("Client")
+	method void SetAlpha(float alpha, string targetUserId) end
+
+	@ExecSpace("Client")
+	method void SetAvatarPartColor(MapleAvatarItemCategory category, float r, float g, float b, float a, string targetUserId) end
+
+	@ExecSpace("Client")
+	method void SetColor(float r, float g, float b, float a, string targetUserId) end
+
+	method boolean IsClient() end
+
+	method boolean IsServer() end
+
+	emitter EmitOrderInLayerChangedEvent(OrderInLayerChangedEvent event) end
+
+	emitter EmitSortingLayerChangedEvent(SortingLayerChangedEvent event) end
+
+end

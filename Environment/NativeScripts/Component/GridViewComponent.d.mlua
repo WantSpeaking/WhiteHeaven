@@ -1,0 +1,67 @@
+@Component
+script GridViewComponent extends Component
+
+	property Vector2 CellSize = Vector2(100.000, 100.000)
+
+	property int32 FixedCount = 1
+
+	property GridViewFixedType FixedType
+
+	property HorizontalScrollBarDirection HorizontalScrollBarDirection = HorizontalScrollBarDirection.LeftToRight
+
+	property Entity ItemEntity
+
+	property func<int32, Entity> OnClear
+
+	property func<int32, Entity> OnRefresh
+
+	property RectOffset Padding
+
+	property Color ScrollBarBackgroundColor = Color(1.000, 1.000, 1.000, 0.000)
+
+	property DataRef ScrollBarBackgroundImageRUID
+
+	property Color ScrollBarHandleColor = Color(0.725, 0.710, 0.698, 1.000)
+
+	property DataRef ScrollBarHandleImageRUID
+
+	property float ScrollBarThickness = 10
+
+	property ScrollBarVisibility ScrollBarVisible
+
+	property Vector2 Spacing
+
+	property int32 TotalCount
+
+	property boolean UseScroll = true
+
+	property VerticalScrollBarDirection VerticalScrollBarDirection = VerticalScrollBarDirection.BottomToTop
+
+	@Sync
+	property boolean Enable = true
+
+	property boolean EnableInHierarchy
+
+	property Entity Entity
+
+	method Vector2 GetScrollNormalizedPosition() end
+
+	method float GetScrollNormalizedPosition(UITransformAxis axis) end
+
+	method void Refresh(boolean resetPos, boolean force) end
+
+	method void RefreshIndex(int32 index) end
+
+	method void ResetScrollPosition(UITransformAxis axis) end
+
+	method void SetScrollNormalizedPosition(UITransformAxis axis, float value) end
+
+	method void SetScrollPositionByItemIndex(int32 index) end
+
+	method boolean IsClient() end
+
+	method boolean IsServer() end
+
+	emitter EmitScrollPositionChangedEvent(ScrollPositionChangedEvent event) end
+
+end

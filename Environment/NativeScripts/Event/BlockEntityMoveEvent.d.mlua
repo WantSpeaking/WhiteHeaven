@@ -1,0 +1,14 @@
+@Event
+script BlockEntityMoveEvent
+
+	property Dictionary<string, string> extras
+
+	property string id
+
+	property float x
+
+	property float y
+
+	constructor BlockEntityMoveEvent(Dictionary<string, string> extras, string id, float x, float y) end
+
+end

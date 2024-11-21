@@ -1,0 +1,14 @@
+@Misc
+script User
+
+	property NexonOtpStateType NexonOtpState = Unknown
+
+	property string Nickname
+
+	property string ProfileCode
+
+	property AccountTrustLevel UserAccountTrustLevel = Unknown
+
+	property string UserId
+
+end

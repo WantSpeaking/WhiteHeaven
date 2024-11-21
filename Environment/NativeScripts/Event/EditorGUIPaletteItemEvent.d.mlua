@@ -1,0 +1,10 @@
+@Event
+script EditorGUIPaletteItemEvent
+
+	property int32 index
+
+	property string ruid
+
+	constructor EditorGUIPaletteItemEvent(int32 index, string ruid) end
+
+end

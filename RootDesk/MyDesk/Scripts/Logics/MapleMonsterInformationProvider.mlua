@@ -1,0 +1,70 @@
+@Logic
+script MapleMonsterInformationProvider extends Logic
+
+	property table drops = {}
+
+	method table retrieveDrop(integer monsterId)
+		if self.drops[monsterId]~=nil then
+			return self.drops[monsterId]
+		else
+			self.drops[monsterId] = {}
+		end
+		
+		local dataset = _DataService:GetTable("Table_DropData")
+		local rowCount = dataset:GetRowCount()
+		
+		for i = 1, rowCount do
+			local dropperid = math.tointeger(tonumber(dataset:GetCell(i, "dropperid")))
+			if monsterId == dropperid then
+				local mde =  MonsterDropEntry()
+				mde.itemId = math.tointeger(tonumber(dataset:GetCell(i, "itemid")))
+				mde.Minimum = math.tointeger(tonumber(dataset:GetCell(i, "minimum_quantity")))
+				mde.Maximum = math.tointeger(tonumber(dataset:GetCell(i, "maximum_quantity")))
+				mde.questid = math.tointeger(tonumber(dataset:GetCell(i, "questid")))
+				mde.chance = math.tointeger(tonumber(dataset:GetCell(i, "chance")))		
+				table.insert(self.drops[monsterId],mde)
+			end
+		end
+	end
+
+	method table retrieveEffectiveDrop(integer monsterId)
+		local list = self:retrieveDrop(monsterId)
+		return list
+		--[[if (hasNoMultiEquipDrops.contains(monsterId) || !YamlConfig.config.server.USE_MULTIPLE_SAME_EQUIP_DROP) {
+		            return list;
+		        }
+		
+		        List<MonsterDropEntry> multiDrops = extraMultiEquipDrops.get(monsterId), extra = new LinkedList<>();
+		        if (multiDrops == null) {
+		            multiDrops = new LinkedList<>();
+		
+		            for (MonsterDropEntry mde : list) {
+		                if (ItemConstants.isEquipment(mde.itemId) && mde.Maximum > 1) {
+		                    multiDrops.add(mde);
+		
+		                    int rnd = Randomizer.rand(mde.Minimum, mde.Maximum);
+		                    for (int i = 0; i < rnd - 1; i++) {
+		                        extra.add(mde);   // this passes copies of the equips' MDE with min/max quantity > 1, but idc on equips they are unused anyways
+		                    }
+		                }
+		            }
+		
+		            if (!multiDrops.isEmpty()) {
+		                extraMultiEquipDrops.put(monsterId, multiDrops);
+		            } else {
+		                hasNoMultiEquipDrops.add(monsterId);
+		            }
+		        } else {
+		            for (MonsterDropEntry mde : multiDrops) {
+		                int rnd = Randomizer.rand(mde.Minimum, mde.Maximum);
+		                for (int i = 0; i < rnd - 1; i++) {
+		                    extra.add(mde);
+		                }
+		            }
+		        }
+		
+		        List<MonsterDropEntry> ret = new LinkedList<>(list);
+		        ret.addAll(extra);]]
+	end
+
+end

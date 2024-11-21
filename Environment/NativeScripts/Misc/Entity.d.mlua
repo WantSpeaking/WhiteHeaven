@@ -1,0 +1,148 @@
+@Misc
+script Entity
+
+	property ReadOnlyList<Entity> Children
+
+	property Entity CurrentMap
+
+	property string CurrentMapName
+
+	property Entity CurrentWorld
+
+	property boolean Enable = true
+
+	property boolean EnabledInHierarchy
+
+	property string Id
+
+	property MODModel Model
+
+	property string Name
+
+	property string OwnerId
+
+	property Entity Parent
+
+	property string Path
+
+	property boolean Visible = true
+
+	property boolean VisibleInHierarchy
+
+	@ExecSpace("ControlOnly")
+	method Component AddComponent(Type componentType) end
+
+	@ExecSpace("ControlOnly")
+	method Component AddComponent(string typename) end
+
+	method void AttachChild(Entity child) end
+
+	@ExecSpace("ControlOnly")
+	method boolean AttachTo(Entity parent) end
+
+	method Entity Clone(string name) end
+
+	method Entity Clone(string name, boolean posOffset, boolean dynamic) end
+
+	method MODEventHandlerBase ConnectEvent(Type eventType, IMODScriptFunction eventHandler) end
+
+	method MODEventHandlerBase ConnectEvent(Type eventType, IMODScriptFunction eventHandler) end
+
+	method MODEventHandlerBase ConnectEvent(string key, IMODScriptFunction eventHandler) end
+
+	@ExecSpace("ControlOnly")
+	method boolean Destroy() end
+
+	@ExecSpace("ControlOnly")
+	method boolean Destroy(float delaySeconds) end
+
+	@ExecSpace("ControlOnly")
+	method boolean Detach() end
+
+	method boolean DisconnectEvent(Type eventType, MODEventHandlerBase eventHandler) end
+
+	method boolean DisconnectEvent(Type eventType, MODEventHandlerBase eventHandler) end
+
+	method boolean DisconnectEvent(string key, MODEventHandlerBase eventHandler) end
+
+	method Entity GetChild(string id, boolean recursive) end
+
+	method Entity GetChildByName(string name, boolean recursive) end
+
+	method table<Component> GetChildComponentsByTypeName(string typename, boolean recursive) end
+
+	method Component GetComponent(Type componentType) end
+
+	method Component GetComponent(string typename) end
+
+	method Component GetFirstChildComponentByTypeName(string typename, boolean recursive) end
+
+	@ExecSpace("ControlOnly")
+	method boolean RemoveComponent(Type componentType) end
+
+	@ExecSpace("ControlOnly")
+	method boolean RemoveComponent(string typename) end
+
+	method void SendEvent(EventType sendEvent) end
+
+	method void SetEnable(boolean enable, boolean reset, boolean shouldSync) end
+
+	method void SetVisible(boolean visible, boolean reset, boolean shouldSync) end
+
+	emitter EmitEntityAddChildrenEvent(EntityAddChildrenEvent event) end
+
+	emitter EmitEntityBeginPlayEvent(EntityBeginPlayEvent event) end
+
+	emitter EmitEntityChangedParentEvent(EntityChangedParentEvent event) end
+
+	emitter EmitEntityEndPlayEvent(EntityEndPlayEvent event) end
+
+	emitter EmitEntityFinishedConstructEvent(EntityFinishedConstructEvent event) end
+
+	emitter EmitEntityMapChangedEvent(EntityMapChangedEvent event) end
+
+	emitter EmitEntityPostAddOriginComponentsEvent(EntityPostAddOriginComponentsEvent event) end
+
+	emitter EmitEntityPreApplyChangedPropertiesEvent(EntityPreApplyChangedPropertiesEvent event) end
+
+	emitter EmitEntityPostApplyChangedPropertiesEvent(EntityPostApplyChangedPropertiesEvent event) end
+
+	emitter EmitEntityPreAttachEntityEvent(EntityPreAttachEntityEvent event) end
+
+	emitter EmitEntityPostAttachEntityEvent(EntityPostAttachEntityEvent event) end
+
+	emitter EmitEntityPostChangedPathEvent(EntityPostChangedPathEvent event) end
+
+	emitter EmitEntityPreDeserializeComponentsEvent(EntityPreDeserializeComponentsEvent event) end
+
+	emitter EmitEntityPostDeserializeComponentsEvent(EntityPostDeserializeComponentsEvent event) end
+
+	emitter EmitEntityPreFillOriginPropertiesEvent(EntityPreFillOriginPropertiesEvent event) end
+
+	emitter EmitEntityPostFillOriginPropertiesEvent(EntityPostFillOriginPropertiesEvent event) end
+
+	emitter EmitEntityPreInitAdditionalComponentsEvent(EntityPreInitAdditionalComponentsEvent event) end
+
+	emitter EmitEntityPostInitAdditionalComponentsEvent(EntityPostInitAdditionalComponentsEvent event) end
+
+	emitter EmitEntityPostInitSyncedEvent(EntityPostInitSyncedEvent event) end
+
+	emitter EmitEntityPreInitSyncEvent(EntityPreInitSyncEvent event) end
+
+	emitter EmitEntityPostInitSyncEvent(EntityPostInitSyncEvent event) end
+
+	emitter EmitEntityPostModelSetEvent(EntityPostModelSetEvent event) end
+
+	emitter EmitEntityPostOriginSetEvent(EntityPostOriginSetEvent event) end
+
+	emitter EmitEntityPreTransformInitEvent(EntityPreTransformInitEvent event) end
+
+	emitter EmitEntityPostTransformInitEvent(EntityPostTransformInitEvent event) end
+
+	emitter EmitEntityRemoveChildrenEvent(EntityRemoveChildrenEvent event) end
+
+	emitter EmitEntitySaveLoadEvent(EntitySaveLoadEvent event) end
+
+	emitter EmitEntityWorldChangedEvent(EntityWorldChangedEvent event) end
+
+end

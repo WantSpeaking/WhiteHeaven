@@ -1,0 +1,19 @@
+@Component
+script AvatarFaceActionSelectorComponent extends Component
+
+	property MapleAvatarFaceActionState ActionState
+
+	property float BlinkInterval = 3
+
+	@Sync
+	property boolean Enable = true
+
+	property boolean EnableInHierarchy
+
+	property Entity Entity
+
+	method boolean IsClient() end
+
+	method boolean IsServer() end
+
+end

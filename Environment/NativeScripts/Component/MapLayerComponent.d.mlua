@@ -1,0 +1,23 @@
+@Component
+script MapLayerComponent extends Component
+
+	property boolean IsVisible = true
+
+	property int32 LayerSortOrder = 0
+
+	property boolean Locked
+
+	property string MapLayerName = ""
+
+	@Sync
+	property boolean Enable = true
+
+	property boolean EnableInHierarchy
+
+	property Entity Entity
+
+	method boolean IsClient() end
+
+	method boolean IsServer() end
+
+end

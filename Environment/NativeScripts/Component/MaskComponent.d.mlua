@@ -1,0 +1,21 @@
+@Component
+script MaskComponent extends Component
+
+	property RectOffset Padding
+
+	property MaskShape Shape = MaskShape.Rect
+
+	property Vector2Int Softness
+
+	@Sync
+	property boolean Enable = true
+
+	property boolean EnableInHierarchy
+
+	property Entity Entity
+
+	method boolean IsClient() end
+
+	method boolean IsServer() end
+
+end

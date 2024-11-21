@@ -1,0 +1,16 @@
+@Event
+script BodyActionStateChangeEvent
+
+	property MapleAvatarBodyActionState ActionState
+
+	property int32 endFrameIndex = 2147483647
+
+	property boolean needResetAction = false
+
+	property float playRate = 1
+
+	property int32 startFrameIndex = 0
+
+	constructor BodyActionStateChangeEvent(boolean needResetAction, MapleAvatarBodyActionState actionState, int32 startFrameIndex, int32 endFrameIndex, float playRate) end
+
+end

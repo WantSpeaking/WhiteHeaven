@@ -1,0 +1,10 @@
+@Misc
+script WorldShopProductPages
+
+	property boolean IsLastPage
+
+	method table<WorldShopProduct> GetCurrentPageDatas() end
+
+	method void MoveToNextPageAndWait() end
+
+end

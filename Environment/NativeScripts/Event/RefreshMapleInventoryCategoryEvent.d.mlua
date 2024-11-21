@@ -1,0 +1,10 @@
+@Event
+script RefreshMapleInventoryCategoryEvent
+
+	property HashSet`1 DirtyCategories
+
+	property Dictionary<MapleAvatarItemCategory, List<MapleAvatarItemData>> InventoryItems
+
+	constructor RefreshMapleInventoryCategoryEvent(HashSet`1 categories, Dictionary<MapleAvatarItemCategory, List<MapleAvatarItemData>> inventoryItems) end
+
+end

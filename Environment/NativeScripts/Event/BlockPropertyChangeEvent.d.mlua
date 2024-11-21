@@ -1,0 +1,12 @@
+@Event
+script BlockPropertyChangeEvent
+
+	property string from
+
+	property boolean isAttach
+
+	property string to
+
+	constructor BlockPropertyChangeEvent(string from, boolean isAttach, string to) end
+
+end

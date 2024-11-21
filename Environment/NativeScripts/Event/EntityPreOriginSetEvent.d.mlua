@@ -1,0 +1,10 @@
+@Event
+script EntityPreOriginSetEvent
+
+	property EntityOrigin Origin
+
+	property Entity Entity
+
+	constructor EntityPreOriginSetEvent(Entity entity, EntityOrigin origin) end
+
+end

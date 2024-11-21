@@ -1,0 +1,8 @@
+@Event
+script LogReceivedEvent
+
+	property LogStruct LogStructData
+
+	constructor LogReceivedEvent(LogStruct logStructData) end
+
+end

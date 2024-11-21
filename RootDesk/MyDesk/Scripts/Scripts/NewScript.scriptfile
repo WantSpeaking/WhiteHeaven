@@ -1,0 +1,22 @@
+{
+  "Id": "",
+  "GameId": "",
+  "EntryKey": "scriptfile://8a668789-a9e8-4647-af43-5a12555e7be6",
+  "ContentType": "x-mod/scriptfile",
+  "Content": "",
+  "Usage": 0,
+  "UsePublish": 1,
+  "UseService": 0,
+  "CoreVersion": "1.21.0.0",
+  "StudioVersion": "0.1.0.0",
+  "DynamicLoading": 0,
+  "ContentProto": {
+    "Use": "Json",
+    "Json": {
+      "Name": "NewScript",
+      "Id": "8a668789-a9e8-4647-af43-5a12555e7be6",
+      "Script": "local MapleInventoryType = {}\nMapleInventoryType.EQUIP = 1\n\n\n\nColor123 =\n{\n\tRED=1,\n\tGREEN=2,\n\tBLUE=3\n}\n\n",
+      "ModifyTime": "10/27/2024 07:00:23"
+    }
+  }
+}

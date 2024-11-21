@@ -1,0 +1,12 @@
+@Event
+script EntityMapChangedEvent
+
+	property Entity NewMap
+
+	property Entity OldMap
+
+	property Entity Entity
+
+	constructor EntityMapChangedEvent(Entity entity, Entity oldMap, Entity newMap) end
+
+end

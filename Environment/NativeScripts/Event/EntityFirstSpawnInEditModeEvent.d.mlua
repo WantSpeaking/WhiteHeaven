@@ -1,0 +1,12 @@
+@Event
+script EntityFirstSpawnInEditModeEvent
+
+	property MODData Data
+
+	property EntityOrigin Origin
+
+	property Entity Entity
+
+	constructor EntityFirstSpawnInEditModeEvent(Entity entity, EntityOrigin origin, MODData data) end
+
+end

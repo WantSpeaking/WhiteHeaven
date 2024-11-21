@@ -1,0 +1,36 @@
+@Service
+script ResourceService extends Service
+
+	method void ClearCaches() end
+
+	method ResourceType GetTypeAndWait(string RUID) end
+
+	method AnimationClip LoadAnimationClipAndWait(string RUID) end
+
+	method Sprite LoadSpriteAndWait(string RUID) end
+
+	method void PreloadAsync(List<string> ruidList, func completeCallback) end
+
+	@ExecSpace("ClientOnly")
+	method void RequestSpriteUploadAsync(RawImage rawImage, func<ResourceUploadError, string> callbackFunction) end
+
+	@ExecSpace("ServerOnly")
+	method void SetSpriteUploadValidationCallback(func<string> -> boolean callbackFunction) end
+
+	method MODEventHandlerBase ConnectEvent(Type eventType, IMODScriptFunction eventHandler) end
+
+	method MODEventHandlerBase ConnectEvent(Type eventType, IMODScriptFunction eventHandler) end
+
+	method MODEventHandlerBase ConnectEvent(string key, IMODScriptFunction eventHandler) end
+
+	method boolean DisconnectEvent(Type eventType, MODEventHandlerBase eventHandler) end
+
+	method boolean DisconnectEvent(Type eventType, MODEventHandlerBase eventHandler) end
+
+	method boolean DisconnectEvent(string key, MODEventHandlerBase eventHandler) end
+
+	method void SendEvent(EventType sendEvent) end
+
+	emitter EmitResourceUploadEvent(ResourceUploadEvent event) end
+
+end

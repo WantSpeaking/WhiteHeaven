@@ -1,0 +1,87 @@
+@Service
+script DataStorageService extends Service
+
+	@ExecSpace("ServerOnly")
+	method int32 DeleteCreatorDataStorageAndWait() end
+
+	@ExecSpace("ServerOnly")
+	method void DeleteCreatorDataStorageAsync(func<int32> callbackFunction) end
+
+	@ExecSpace("ServerOnly")
+	method int32 DeleteGlobalDataStorageAndWait(string name) end
+
+	@ExecSpace("ServerOnly")
+	method void DeleteGlobalDataStorageAsync(string name, func<int32, string> callbackFunction) end
+
+	@ExecSpace("ServerOnly")
+	method int32 DeleteSortableDataStorageAndWait(string name) end
+
+	@ExecSpace("ServerOnly")
+	method void DeleteSortableDataStorageAsync(string name, func<int32, string> callbackFunction) end
+
+	@ExecSpace("ServerOnly")
+	method int32 DeleteUserDataStorageAndWait(string userId) end
+
+	@ExecSpace("ServerOnly")
+	method void DeleteUserDataStorageAsync(string userId, func<int32, string> callbackFunction) end
+
+	@ExecSpace("ServerOnly")
+	method string GetAndWait(string storageName, string key) end
+
+	@ExecSpace("ServerOnly")
+	method void GetAsync(string storageName, string key, func<int32, string, string> callbackFunction) end
+
+	@ExecSpace("ServerOnly")
+	method CreatorDataStorage GetCreatorDataStorage() end
+
+	@ExecSpace("ServerOnly")
+	method DataStorage GetDataStorage(string name) end
+
+	@ExecSpace("ServerOnly")
+	method GlobalDataStorage GetGlobalDataStorage(string name) end
+
+	@ExecSpace("ServerOnly")
+	method int32, GlobalDataStoragePages GetGlobalDataStoragePagesAndWait() end
+
+	@ExecSpace("ServerOnly")
+	method void GetGlobalDataStoragePagesAsync(func<int32, GlobalDataStoragePages> callbackFunction) end
+
+	@ExecSpace("ServerOnly")
+	method SortableDataStorage GetSortableDataStorage(string name) end
+
+	@ExecSpace("ServerOnly")
+	method int32, SortableDataStoragePages GetSortableDataStoragePagesAndWait() end
+
+	@ExecSpace("ServerOnly")
+	method void GetSortableDataStoragePagesAsync(func<int32, SortableDataStoragePages> callbackFunction) end
+
+	@ExecSpace("ServerOnly")
+	method UserDataStorage GetUserDataStorage(string userId) end
+
+	@ExecSpace("ServerOnly")
+	method int32, UserDataStoragePages GetUserDataStoragePagesAndWait() end
+
+	@ExecSpace("ServerOnly")
+	method void GetUserDataStoragePagesAsync(func<int32, UserDataStoragePages> callbackFunction) end
+
+	@ExecSpace("ServerOnly")
+	method boolean SetAndWait(string storageName, string key, string value) end
+
+	@ExecSpace("ServerOnly")
+	method void SetAsync(string storageName, string key, string value, func<int32, string> callbackFunction) end
+
+	method MODEventHandlerBase ConnectEvent(Type eventType, IMODScriptFunction eventHandler) end
+
+	method MODEventHandlerBase ConnectEvent(Type eventType, IMODScriptFunction eventHandler) end
+
+	method MODEventHandlerBase ConnectEvent(string key, IMODScriptFunction eventHandler) end
+
+	method boolean DisconnectEvent(Type eventType, MODEventHandlerBase eventHandler) end
+
+	method boolean DisconnectEvent(Type eventType, MODEventHandlerBase eventHandler) end
+
+	method boolean DisconnectEvent(string key, MODEventHandlerBase eventHandler) end
+
+	method void SendEvent(EventType sendEvent) end
+
+end

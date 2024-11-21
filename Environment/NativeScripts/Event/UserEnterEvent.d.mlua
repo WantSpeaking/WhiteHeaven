@@ -1,0 +1,12 @@
+@Event
+script UserEnterEvent
+
+	property string ProfileCode
+
+	property string UserId
+
+	constructor UserEnterEvent(IUser user) end
+
+	constructor UserEnterEvent(string userId, string profileCode) end
+
+end

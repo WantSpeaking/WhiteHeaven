@@ -1,0 +1,35 @@
+@Component
+script NameTagComponent extends Component
+
+	@Sync
+	property boolean Bold = false
+
+	@Sync
+	property Color FontColor = Color(1.000, 1.000, 1.000, 1.000)
+
+	@Sync
+	property Vector2 FontOffset = Vector2(0.000, 0.000)
+
+	@Sync
+	property float FontSize = 1
+
+	@Sync
+	property string Name
+
+	property DataRef NameTagRUID = DataRef("9bf18287398c44699c20fc5123d1a1ae")
+
+	@Sync
+	property float OffsetY = 0
+
+	@Sync
+	property boolean Enable = true
+
+	property boolean EnableInHierarchy
+
+	property Entity Entity
+
+	method boolean IsClient() end
+
+	method boolean IsServer() end
+
+end

@@ -1,0 +1,28 @@
+@Misc
+script MODUserDataSet
+
+	property ReadOnlyList<string> Columns
+
+	property string Id
+
+	property string Name
+
+	property boolean ServerOnly
+
+	method UserDataRow FindRow(string columnName, string value) end
+
+	method table<UserDataRow> GetAllRow() end
+
+	method string GetCell(int32 row_1based, int32 col_1based) end
+
+	method string GetCell(int32 row_1based, string columnName) end
+
+	method table<string> GetColumn(int32 index_1based) end
+
+	method table<string> GetColumn(string columnName) end
+
+	method UserDataRow GetRow(int32 index_1based) end
+
+	method int32 GetRowCount() end
+
+end

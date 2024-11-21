@@ -1,0 +1,22 @@
+@Component
+script TagComponent extends Component
+
+	@Sync
+	property SyncList<string> Tags
+
+	@Sync
+	property boolean Enable = true
+
+	property boolean EnableInHierarchy
+
+	property Entity Entity
+
+	method void AddTag(string tag) end
+
+	method void RemoveTag(string tag) end
+
+	method boolean IsClient() end
+
+	method boolean IsServer() end
+
+end

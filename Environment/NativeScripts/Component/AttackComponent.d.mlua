@@ -1,0 +1,37 @@
+@Component
+script AttackComponent extends Component
+
+	@Sync
+	property boolean Enable = true
+
+	property boolean EnableInHierarchy
+
+	property Entity Entity
+
+	method table<Component> Attack(Vector2 size, Vector2 offset, string attackInfo, CollisionGroup collisionGroup) end
+
+	method table<Component> Attack(Shape shape, string attackInfo, CollisionGroup collisionGroup) end
+
+	method void AttackFast(Shape shape, string attackInfo, CollisionGroup collisionGroup) end
+
+	method table<Component> AttackFrom(Vector2 size, Vector2 position, string attackInfo, CollisionGroup collisionGroup) end
+
+	method boolean CalcCritical(Entity attacker, Entity defender, string attackInfo) end
+
+	method integer CalcDamage(Entity attacker, Entity defender, string attackInfo) end
+
+	method float GetCriticalDamageRate() end
+
+	method int32 GetDisplayHitCount(string attackInfo) end
+
+	method boolean IsAttackTarget(Entity defender, string attackInfo) end
+
+	method void OnAttack(Entity defender) end
+
+	method boolean IsClient() end
+
+	method boolean IsServer() end
+
+	emitter EmitAttackEvent(AttackEvent event) end
+
+end

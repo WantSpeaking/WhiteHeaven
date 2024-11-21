@@ -1,0 +1,63 @@
+@Logic
+script UtilLogic extends Logic
+
+	property number ElapsedSeconds
+
+	property number ServerElapsedSeconds
+
+	method boolean Contains(string origin, string targetString) end
+
+	@ExecSpace("ClientOnly")
+	method DateTime GetLocalTimeFrom(DateTime dateTime) end
+
+	method string GetUTCNow() end
+
+	method string Insert(string origin, int32 insertIndex, string otherString) end
+
+	method boolean IsNilorEmptyString(string origin) end
+
+	method number RandomDouble() end
+
+	method int32 RandomInteger() end
+
+	method int32 RandomIntegerRange(int32 min, int32 max) end
+
+	method string Remove(string origin, string targetString) end
+
+	method string Replace(string origin, string targetString, string newString) end
+
+	method table<string> Split(string origin, string separator, boolean useSeparatorAsOne) end
+
+	method void StringToTable(table table, string str) end
+
+	method table StringToTable(string str) end
+
+	method string SubString(string origin, int32 startIndex, int32 length) end
+
+	method string TableToString(table table) end
+
+	method string Trim(string origin, string trimString) end
+
+	method string TrimEnd(string origin, string trimString) end
+
+	method string TrimStart(string origin, string trimString) end
+
+	method MODEventHandlerBase ConnectEvent(Type eventType, IMODScriptFunction eventHandler) end
+
+	method MODEventHandlerBase ConnectEvent(Type eventType, IMODScriptFunction eventHandler) end
+
+	method MODEventHandlerBase ConnectEvent(string key, IMODScriptFunction eventHandler) end
+
+	method boolean DisconnectEvent(Type eventType, MODEventHandlerBase eventHandler) end
+
+	method boolean DisconnectEvent(Type eventType, MODEventHandlerBase eventHandler) end
+
+	method boolean DisconnectEvent(string key, MODEventHandlerBase eventHandler) end
+
+	method boolean IsClient() end
+
+	method boolean IsServer() end
+
+	method void SendEvent(EventType sendEvent) end
+
+end

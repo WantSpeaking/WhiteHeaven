@@ -1,0 +1,86 @@
+@Component
+script SoundComponent extends Component
+
+	@Sync
+	property string AudioClipRUID = ""
+
+	@Sync
+	property boolean Bgm = false
+
+	@Sync
+	property float HearingDistance = 15
+
+	@Sync
+	property boolean KeepBGM = false
+
+	@Sync
+	property boolean Loop = false
+
+	@Sync
+	property boolean Mute = false
+
+	@Sync
+	property float Pitch = 1
+
+	@Sync
+	property boolean PlayOnEnable = false
+
+	@Sync
+	property boolean SetCameraAsListener = false
+
+	@Sync
+	property float Volume = 1
+
+	@Sync
+	property boolean Enable = true
+
+	property boolean EnableInHierarchy
+
+	property Entity Entity
+
+	@ExecSpace("ClientOnly")
+	method float GetTimePosition() end
+
+	@ExecSpace("ClientOnly")
+	method float GetTotalTime() end
+
+	@ExecSpace("ClientOnly")
+	method boolean IsAudioClipLoaded() end
+
+	@ExecSpace("Client")
+	method boolean IsPlaying(string targetUserId) end
+
+	@ExecSpace("ClientOnly")
+	method boolean IsSyncedPlaying() end
+
+	@ExecSpace("Client")
+	method void Pause(string targetUserId) end
+
+	@ExecSpace("Client")
+	method void Play(string targetUserId) end
+
+	@ExecSpace("Server")
+	method void PlaySyncedSound() end
+
+	@ExecSpace("Client")
+	method void Resume(string targetUserId) end
+
+	@ExecSpace("Client")
+	method void SetListenerEntity(Entity entity, string targetUserId) end
+
+	@ExecSpace("Client")
+	method void SetTimePosition(float timeInSecond, string targetUserId) end
+
+	@ExecSpace("Client")
+	method void Stop(string targetUserId) end
+
+	@ExecSpace("Server")
+	method void StopSyncedSound() end
+
+	method boolean IsClient() end
+
+	method boolean IsServer() end
+
+	emitter EmitSoundPlayStateChangedEvent(SoundPlayStateChangedEvent event) end
+
+end

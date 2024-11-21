@@ -1,0 +1,12 @@
+@Event
+script SpriteAnimPlayerForMonoChangeStateEvent
+
+	property SpriteAnimPlayerState NewState = SpriteAnimPlayerState.Invalid
+
+	property SpriteAnimPlayerState PrevState = SpriteAnimPlayerState.Invalid
+
+	property SpriteAnimPlayerForMono AnimPlayer
+
+	constructor SpriteAnimPlayerForMonoChangeStateEvent() end
+
+end

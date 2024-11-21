@@ -1,0 +1,56 @@
+@Component
+script TweenFloatingComponent extends Component
+
+	@Sync
+	property float Amplitude = 1
+
+	@Sync
+	property float OneCycleTime = 1
+
+	@Sync
+	property EaseType TweenType = EaseType.Linear
+
+	@Sync
+	property boolean AutoDestroy = false
+
+	@Sync
+	property boolean AutoStart = true
+
+	@Sync
+	property TweenState CurrentState
+
+	@Sync
+	property Vector3 OriginPosition
+
+	@Sync
+	property Quaternion OriginRotation
+
+	@Sync
+	property Vector3 OriginScale
+
+	property TweenSyncType SyncType = TweenSyncType.Default
+
+	property number TweenTime
+
+	@Sync
+	property boolean Enable = true
+
+	property boolean EnableInHierarchy
+
+	property Entity Entity
+
+	method void Destroy() end
+
+	method void Pause() end
+
+	method void Play() end
+
+	method void RestartFromCurrentPosition() end
+
+	method void Stop(boolean reset) end
+
+	method boolean IsClient() end
+
+	method boolean IsServer() end
+
+end

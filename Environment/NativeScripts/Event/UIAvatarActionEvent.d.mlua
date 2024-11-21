@@ -1,0 +1,8 @@
+@Event
+script UIAvatarActionEvent
+
+	property StudioAvatarActionType ActionType = Invalid
+
+	constructor UIAvatarActionEvent(float actionSpeed, MapleAvatarBodyActionState bodyActionState) end
+
+end

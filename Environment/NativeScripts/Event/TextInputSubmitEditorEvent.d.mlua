@@ -1,0 +1,8 @@
+@Event
+script TextInputSubmitEditorEvent
+
+	property string Text
+
+	constructor TextInputSubmitEditorEvent(string text) end
+
+end

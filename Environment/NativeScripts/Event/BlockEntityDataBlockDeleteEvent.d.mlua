@@ -1,0 +1,8 @@
+@Event
+script BlockEntityDataBlockDeleteEvent
+
+	property string id
+
+	constructor BlockEntityDataBlockDeleteEvent(string id) end
+
+end

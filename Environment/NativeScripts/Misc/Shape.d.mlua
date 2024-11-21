@@ -1,0 +1,6 @@
+@Misc
+script Shape
+
+	property Vector2 Position
+
+end

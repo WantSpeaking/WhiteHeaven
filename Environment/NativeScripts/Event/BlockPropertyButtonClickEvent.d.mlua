@@ -1,0 +1,8 @@
+@Event
+script BlockPropertyButtonClickEvent
+
+	property string id
+
+	constructor BlockPropertyButtonClickEvent(string id) end
+
+end

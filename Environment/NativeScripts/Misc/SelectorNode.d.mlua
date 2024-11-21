@@ -1,0 +1,26 @@
+@Misc
+script SelectorNode
+
+	property boolean ExclusiveExecutionWhenRunning = false
+
+	property func InitFunction
+
+	property string Name
+
+	property AIComponent ParentAI
+
+	constructor SelectorNode(string name) end
+
+	method void AttachChild(MODBTNode node) end
+
+	method void AttachChildAt(MODBTNode node, int32 index) end
+
+	method boolean DetachChild(MODBTNode node) end
+
+	method boolean DetachChild(string nodeName) end
+
+	method void DetachChildAt(int32 index) end
+
+	method BehaviourTreeStatus Behave(float deltaTime) end
+
+end

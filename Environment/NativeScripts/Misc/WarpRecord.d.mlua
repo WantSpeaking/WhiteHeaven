@@ -1,0 +1,10 @@
+@Misc
+script WarpRecord
+
+	property string CurrentWorldId
+
+	property string Data
+
+	property string PreviousWorldId
+
+end

@@ -1,0 +1,64 @@
+@Service
+script InstanceMapService extends Service
+
+	property string InstanceKey
+
+	property ReadOnlyDictionary<string, InstanceRoom> InstanceMaps
+
+	property ReadOnlyDictionary<string, InstanceRoom> InstanceRooms
+
+	@ExecSpace("ServerOnly")
+	method InstanceRoom CreateInstanceMap(string key, table<string> mapNames) end
+
+	@ExecSpace("ServerOnly")
+	method InstanceRoom CreateInstanceRoom(string key, table<string> mapNames, float firstUserWaitSeconds) end
+
+	@ExecSpace("ServerOnly")
+	method InstanceRoom GetOrCreateInstanceMap(string key) end
+
+	@ExecSpace("ServerOnly")
+	method InstanceRoom GetOrCreateInstanceRoom(string key, float firstUserWaitSeconds) end
+
+	method boolean IsInstance() end
+
+	method boolean IsInstanceRoom() end
+
+	@ExecSpace("ServerOnly")
+	method boolean MoveUserToInstanceMap(string key, string userId, string mapName) end
+
+	@ExecSpace("ServerOnly")
+	method boolean MoveUserToInstanceRoom(string key, string userId, string mapName) end
+
+	@ExecSpace("ServerOnly")
+	method boolean MoveUserToParentMap(string userId, string mapName) end
+
+	@ExecSpace("ServerOnly")
+	method boolean MoveUserToStaticRoom(string userId, string mapName) end
+
+	@ExecSpace("ServerOnly")
+	method int32 MoveUsersToInstanceMap(string key, table<string> userIds, string mapName) end
+
+	@ExecSpace("ServerOnly")
+	method int32 MoveUsersToInstanceRoom(string key, table<string> userIds, string mapName) end
+
+	@ExecSpace("ServerOnly")
+	method int32 MoveUsersToParentMap(table<string> userIds, string mapName) end
+
+	@ExecSpace("ServerOnly")
+	method int32 MoveUsersToStaticRoom(table<string> userIds, string mapName) end
+
+	method MODEventHandlerBase ConnectEvent(Type eventType, IMODScriptFunction eventHandler) end
+
+	method MODEventHandlerBase ConnectEvent(Type eventType, IMODScriptFunction eventHandler) end
+
+	method MODEventHandlerBase ConnectEvent(string key, IMODScriptFunction eventHandler) end
+
+	method boolean DisconnectEvent(Type eventType, MODEventHandlerBase eventHandler) end
+
+	method boolean DisconnectEvent(Type eventType, MODEventHandlerBase eventHandler) end
+
+	method boolean DisconnectEvent(string key, MODEventHandlerBase eventHandler) end
+
+	method void SendEvent(EventType sendEvent) end
+
+end

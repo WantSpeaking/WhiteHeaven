@@ -1,0 +1,6 @@
+@Misc
+script SortedViewFilter
+
+	constructor SortedViewFilter(SortedViewFilterTarget target, SortedViewFilterOp op, string value) end
+
+end

@@ -1,0 +1,8 @@
+@Event
+script InventoryItemEvent
+
+	property Entity Entity
+
+	property List<MODItem> Items
+
+end

@@ -1,0 +1,32 @@
+@Service
+script ParticleService extends Service
+
+	method integer PlayAreaParticle(AreaParticleType particleType, Vector2 areaSize, Entity instigator, Vector3 position, float zRotation, Vector3 scale, boolean isLoop, Dictionary<string, any> options) end
+
+	method integer PlayAreaParticleAttached(AreaParticleType particleType, Vector2 areaSize, Entity parentEntity, Vector3 localPosition, float localZRotation, Vector3 localScale, boolean isLoop, Dictionary<string, any> options) end
+
+	method integer PlayBasicParticle(BasicParticleType particleType, Entity instigator, Vector3 position, float zRotation, Vector3 scale, boolean isLoop, Dictionary<string, any> options) end
+
+	method integer PlayBasicParticleAttached(BasicParticleType particleType, Entity parentEntity, Vector3 localPosition, float localZRotation, Vector3 localScale, boolean isLoop, Dictionary<string, any> options) end
+
+	method integer PlaySpriteParticle(SpriteParticleType particleType, string spriteRUID, Entity instigator, Vector3 position, float zRotation, Vector3 scale, boolean isLoop, Dictionary<string, any> options) end
+
+	method integer PlaySpriteParticleAttached(SpriteParticleType particleType, string spriteRUID, Entity parentEntity, Vector3 localPosition, float localZRotation, Vector3 localScale, boolean isLoop, Dictionary<string, any> options) end
+
+	method void RemoveParticle(integer serial) end
+
+	method MODEventHandlerBase ConnectEvent(Type eventType, IMODScriptFunction eventHandler) end
+
+	method MODEventHandlerBase ConnectEvent(Type eventType, IMODScriptFunction eventHandler) end
+
+	method MODEventHandlerBase ConnectEvent(string key, IMODScriptFunction eventHandler) end
+
+	method boolean DisconnectEvent(Type eventType, MODEventHandlerBase eventHandler) end
+
+	method boolean DisconnectEvent(Type eventType, MODEventHandlerBase eventHandler) end
+
+	method boolean DisconnectEvent(string key, MODEventHandlerBase eventHandler) end
+
+	method void SendEvent(EventType sendEvent) end
+
+end

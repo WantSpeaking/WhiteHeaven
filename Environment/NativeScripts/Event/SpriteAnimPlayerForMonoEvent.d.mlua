@@ -1,0 +1,6 @@
+@Event
+script SpriteAnimPlayerForMonoEvent
+
+	property SpriteAnimPlayerForMono AnimPlayer
+
+end

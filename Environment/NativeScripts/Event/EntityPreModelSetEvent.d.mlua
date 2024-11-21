@@ -1,0 +1,10 @@
+@Event
+script EntityPreModelSetEvent
+
+	property MODModel Model
+
+	property Entity Entity
+
+	constructor EntityPreModelSetEvent(Entity entity, MODModel model) end
+
+end

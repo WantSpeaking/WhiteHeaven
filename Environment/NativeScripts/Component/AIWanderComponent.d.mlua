@@ -1,0 +1,27 @@
+@Component
+script AIWanderComponent extends Component
+
+	property boolean IsLegacy = false
+
+	property boolean LogEnabled = false
+
+	property UpdateAuthorityType UpdateAuthority = UpdateAuthorityType.Server
+
+	@Sync
+	property boolean Enable = true
+
+	property boolean EnableInHierarchy
+
+	property Entity Entity
+
+	method MODBTNode CreateLeafNode(string nodeName, func<float> -> BehaviourTreeStatus onBehaveFunction) end
+
+	method MODBTNode CreateNode(string nodeType, string nodeName, func<float> -> BehaviourTreeStatus onBehaveFunction) end
+
+	method void SetRootNode(MODBTNode node) end
+
+	method boolean IsClient() end
+
+	method boolean IsServer() end
+
+end

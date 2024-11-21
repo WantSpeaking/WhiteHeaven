@@ -1,0 +1,26 @@
+@Service
+script TimerService extends Service
+
+	method void ClearTimer(integer id) end
+
+	method integer SetTimer(IMODScriptable scriptable, func callback, float intervalSeconds, boolean isRepeat, float startDelaySeconds) end
+
+	method integer SetTimerOnce(func callback, float delaySeconds) end
+
+	method integer SetTimerRepeat(func callback, float intervalSeconds, float startDelaySeconds) end
+
+	method MODEventHandlerBase ConnectEvent(Type eventType, IMODScriptFunction eventHandler) end
+
+	method MODEventHandlerBase ConnectEvent(Type eventType, IMODScriptFunction eventHandler) end
+
+	method MODEventHandlerBase ConnectEvent(string key, IMODScriptFunction eventHandler) end
+
+	method boolean DisconnectEvent(Type eventType, MODEventHandlerBase eventHandler) end
+
+	method boolean DisconnectEvent(Type eventType, MODEventHandlerBase eventHandler) end
+
+	method boolean DisconnectEvent(string key, MODEventHandlerBase eventHandler) end
+
+	method void SendEvent(EventType sendEvent) end
+
+end

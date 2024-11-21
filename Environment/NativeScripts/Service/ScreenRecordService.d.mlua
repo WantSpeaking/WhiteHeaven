@@ -1,0 +1,42 @@
+@Service
+script ScreenRecordService extends Service
+
+	@ExecSpace("ClientOnly")
+	method string FinishRecordAndWait() end
+
+	@ExecSpace("ClientOnly")
+	method table<MicrophoneDevice> GetMicrophoneDevicesAndWait() end
+
+	@ExecSpace("ClientOnly")
+	method int32 GetMicrophoneIndexForRecording() end
+
+	@ExecSpace("ClientOnly")
+	method boolean IsRecording() end
+
+	@ExecSpace("ClientOnly")
+	method int32 RemainRecordTime() end
+
+	@ExecSpace("ClientOnly")
+	method void SetMicrophoneIndexForRecording(int32 newIndex) end
+
+	@ExecSpace("ClientOnly")
+	method ScreenRecordStartResult StartRecordToFileAndWait(ScreenRecordMode recordMode, boolean excludeSystemUI, func<string> finishRecordCallback) end
+
+	@ExecSpace("ClientOnly")
+	method ScreenRecordStartResult StartRecordToPhotoLibraryAndWait(ScreenRecordMode recordMode, boolean excludeSystemUI) end
+
+	method MODEventHandlerBase ConnectEvent(Type eventType, IMODScriptFunction eventHandler) end
+
+	method MODEventHandlerBase ConnectEvent(Type eventType, IMODScriptFunction eventHandler) end
+
+	method MODEventHandlerBase ConnectEvent(string key, IMODScriptFunction eventHandler) end
+
+	method boolean DisconnectEvent(Type eventType, MODEventHandlerBase eventHandler) end
+
+	method boolean DisconnectEvent(Type eventType, MODEventHandlerBase eventHandler) end
+
+	method boolean DisconnectEvent(string key, MODEventHandlerBase eventHandler) end
+
+	method void SendEvent(EventType sendEvent) end
+
+end

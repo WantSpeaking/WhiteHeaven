@@ -1,0 +1,54 @@
+@Item
+script Equip extends ItemHS
+
+	property number upgradeSlots = 0
+
+	property number level = 0
+
+	property number itemLevel = 0
+
+	property number flag = 0
+
+	property number str = 0
+
+	property number dex = 0
+
+	property number _int = 0
+
+	property number luk = 0
+
+	property number hp = 0
+
+	property number mp = 0
+
+	property number watk = 0
+
+	property number matk = 0
+
+	property number wdef = 0
+
+	property number mdef = 0
+
+	property number acc = 0
+
+	property number avoid = 0
+
+	property number hands = 0
+
+	property number speed = 0
+
+	property number jump = 0
+
+	property number vicious = 0
+
+	property number itemExp = 0
+
+	property integer ringid = 0
+
+	property boolean wear = false
+
+	property boolean isUpgradeable = false
+
+	property boolean isElemental = false
+
+end

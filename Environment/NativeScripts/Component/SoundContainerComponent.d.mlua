@@ -1,0 +1,17 @@
+@Component
+script SoundContainerComponent extends Component
+
+	property Dictionary<string, string> SoundContainer
+
+	@Sync
+	property boolean Enable = true
+
+	property boolean EnableInHierarchy
+
+	property Entity Entity
+
+	method boolean IsClient() end
+
+	method boolean IsServer() end
+
+end

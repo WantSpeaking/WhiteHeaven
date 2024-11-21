@@ -1,0 +1,8 @@
+@Event
+script DataLoadCompleteEvent
+
+	property MODData Data
+
+	constructor DataLoadCompleteEvent() end
+
+end

@@ -1,0 +1,8 @@
+@Event
+script EntityPostInitSyncEvent
+
+	property Entity Entity
+
+	constructor EntityPostInitSyncEvent(Entity entity) end
+
+end

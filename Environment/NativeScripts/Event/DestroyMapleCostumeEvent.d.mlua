@@ -1,0 +1,6 @@
+@Event
+script DestroyMapleCostumeEvent
+
+	constructor DestroyMapleCostumeEvent() end
+
+end

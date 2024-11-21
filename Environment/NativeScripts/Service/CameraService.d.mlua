@@ -1,0 +1,58 @@
+@Service
+script CameraService extends Service
+
+	property float TransitionBlendTime = 2
+
+	property CameraBlendType TransitionBlendType = CameraBlendType.EaseInOut
+
+	property float currentZoomRatio = 100
+
+	@ExecSpace("ClientOnly")
+	method CameraComponent GetCurrentCameraComponent() end
+
+	@ExecSpace("Client")
+	method void SwitchCameraTo(CameraComponent cameraToSwitch) end
+
+	@ExecSpace("Client")
+	method void SwitchCameraTo(CameraComponent cameraToSwitch, Entity messageOwnerEntity) end
+
+	@ExecSpace("Client")
+	method void SwitchCameraTo(CameraComponent cameraToSwitch, string targetUserId) end
+
+	@ExecSpace("Client")
+	method void ZoomReset() end
+
+	@ExecSpace("Client")
+	method void ZoomReset(Entity messageOwnerEntity) end
+
+	@ExecSpace("Client")
+	method void ZoomReset(string targetUserId) end
+
+	@ExecSpace("Client")
+	method void ZoomTo(float percent, float duration) end
+
+	@ExecSpace("Client")
+	method void ZoomTo(float percent, float duration, Entity messageOwnerEntity) end
+
+	@ExecSpace("Client")
+	method void ZoomTo(float percent, float duration, string targetUserId) end
+
+	method MODEventHandlerBase ConnectEvent(Type eventType, IMODScriptFunction eventHandler) end
+
+	method MODEventHandlerBase ConnectEvent(Type eventType, IMODScriptFunction eventHandler) end
+
+	method MODEventHandlerBase ConnectEvent(string key, IMODScriptFunction eventHandler) end
+
+	method boolean DisconnectEvent(Type eventType, MODEventHandlerBase eventHandler) end
+
+	method boolean DisconnectEvent(Type eventType, MODEventHandlerBase eventHandler) end
+
+	method boolean DisconnectEvent(string key, MODEventHandlerBase eventHandler) end
+
+	method void SendEvent(EventType sendEvent) end
+
+	emitter EmitCameraSwitchEvent(CameraSwitchEvent event) end
+
+	emitter EmitCameraZoomEndEvent(CameraZoomEndEvent event) end
+
+end

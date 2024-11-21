@@ -1,0 +1,8 @@
+@Event
+script MouseMoveEvent
+
+	property Vector2 MouseDelta
+
+	constructor MouseMoveEvent(Vector2 mouseDelta) end
+
+end

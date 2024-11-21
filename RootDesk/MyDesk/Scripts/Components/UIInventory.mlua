@@ -1,0 +1,265 @@
+@Component
+script UIInventory extends Component
+
+	property Entity itemUI = nil
+
+	property Entity scrollView = nil
+
+	property SyncTable<string, Entity> SlotItems
+
+	property string inventoryBtnPath = "/ui/DefaultGroup/RPGButtons/btn_inventory"
+
+	property Entity MesoUI = nil
+
+	property table SlotList = {}
+
+	@ExecSpace("ClientOnly")
+	method void OnBeginPlayOriginal()
+		self.itemUI =_EntityService:GetEntityByPath(self.Entity.Path .. "/InventoryPanel/Inventory_ScrollView/item_slot")
+		self.itemUI:SetEnable(false)
+		self.scrollView = _EntityService:GetEntityByPath(self.Entity.Path .. "/InventoryPanel/Inventory_ScrollView")
+		
+		-- add UI Preset/Buttons
+		local inventoryButton = _EntityService:GetEntityByPath(self.inventoryBtnPath)
+		if inventoryButton ~= nil then
+			local openFunc = function()
+				self.Entity.Enable = true
+			end
+			if inventoryButton.ButtonComponent == nil then
+				inventoryButton:AddComponent("MOD.Core.ButtonComponent")
+			end
+			inventoryButton:ConnectEvent(ButtonClickEvent, openFunc)
+		end
+		
+		
+		local closeButton = _EntityService:GetEntityByPath(self.Entity.Path .. "/InventoryPanel/CloseButton")
+		local closeFunc = function()
+			self.Entity.Enable = false
+		end
+		
+		closeButton:ConnectEvent(ButtonClickEvent, closeFunc)
+		
+		
+		
+		
+		-- Create as many item slots as item types in advance.
+		    -- Manage slot list in inventory UI with slotList.
+		    self._T.slotList = {}
+		     
+		    for i = 1, _DataService:GetRowCount("UserItemDataSet") do
+		        self._T.slotList[i] = self:AddSlot(i, 0)
+		    end
+	end
+
+	method Entity AddSlot(number itemIndex, number itemCount)
+		local itemSlot =_SpawnService:SpawnByEntity(self.itemUI, "Item", Vector3.zero, self.scrollView)
+		    itemSlot.UIInventoryItemSlot:SetData(itemIndex, itemCount)
+		    return itemSlot
+	end
+
+	@ExecSpace("ClientOnly")
+	method void OnBeginPlay()
+			self.itemUI =_EntityService:GetEntityByPath(self.Entity.Path .. "/InventoryPanel/Inventory_ScrollView/item_slot")
+		    self.itemUI:SetEnable(false)
+		    self.scrollView = _EntityService:GetEntityByPath(self.Entity.Path .. "/InventoryPanel/Inventory_ScrollView")
+		    self.MesoUI = _EntityService:GetEntityByPath(self.Entity.Path .. "/InventoryPanel/CoinPanel/coin_count")
+		
+		    -- add UI Preset/Buttons
+		    local inventoryButton = _EntityService:GetEntityByPath(self.inventoryBtnPath)
+		    if inventoryButton ~= nil then
+		    	local openFunc = function()
+		    		self.Entity.Enable = true
+		    	end
+		    	if inventoryButton.ButtonComponent == nil then
+		    		inventoryButton:AddComponent("MOD.Core.ButtonComponent")
+		    	end
+		    	inventoryButton:ConnectEvent(ButtonClickEvent, openFunc)
+		    end
+		
+		    -- Close Button
+		    local closeButton = _EntityService:GetEntityByPath(self.Entity.Path .. "/InventoryPanel/CloseButton")
+		    local closeFunc = function()
+		    	self.Entity.Enable = false
+		    end
+		
+		    closeButton:ConnectEvent(ButtonClickEvent, closeFunc)
+		
+		    -- Create as many item slots as inventory capacity in advance
+		    local capacity = _UserService.LocalPlayer.SimpleInventory.Capacity
+		    for i = 1, capacity do
+		    	local itemSlot = _SpawnService:SpawnByEntity(self.itemUI, "Slot", Vector3.zero, self.scrollView)
+		    	itemSlot.UIInventoryItemSlot:Clear()
+		
+		    	self.SlotList[i] = itemSlot
+		    end
+	end
+
+	method void SetSlot(integer slotIndex, string itemId, integer itemCount)
+			local slot = self.SlotList[slotIndex]
+		    slot.UIInventoryItemSlot:SetData(slotIndex, itemId, itemCount)
+	end
+
+	method void ClearSlot(integer slotIndex)
+			local slot = self.SlotList[slotIndex]
+		    slot.UIInventoryItemSlot:Clear()
+	end
+
+	method void SetMeso(integer meso)
+		self.MesoUI.TextComponent.Text = tostring(meso)
+	end
+
+	@EventSender("LocalPlayer")
+	handler HandleInventoryItemInitEvent(InventoryItemInitEvent event)
+		-- Parameters
+		local Entity = event.Entity
+		local Items = event.Items
+		--------------------------------------------------------
+		
+		for i, item in pairs(Items) do
+			local itemslot = _SpawnService:SpawnByEntity(self.itemUI, "Item", Vector3.zero, self.scrollView)
+			itemslot.UIInventoryItemSlot:SetData(item)
+			self.SlotItems[item.GUID] = itemslot
+		end
+	end
+
+	@EventSender("LocalPlayer")
+	handler HandleInventoryItemAddedEvent(InventoryItemAddedEvent event)
+		-- Parameters
+		local Entity = event.Entity
+		local Items = event.Items
+		--------------------------------------------------------
+		for i, item in pairs(Items) do
+			local itemslot = _SpawnService:SpawnByEntity(self.itemUI, "Item", Vector3.zero, self.scrollView)
+			itemslot.UIInventoryItemSlot:SetData(item)
+			self.SlotItems[item.GUID] = itemslot
+		end
+	end
+
+	@EventSender("LocalPlayer")
+	handler HandleInventoryItemRemovedEvent(InventoryItemRemovedEvent event)
+		-- Parameters
+		local Entity = event.Entity
+		local Items = event.Items
+		--------------------------------------------------------
+		for	i,item in pairs(Items) do
+			if self.SlotItems[item.GUID] ~= nil then
+				self.SlotItems[item.GUID]:Destroy()
+			end
+		end
+	end
+
+	@EventSender("LocalPlayer")
+	handler HandleInventoryItemModifiedEvent(InventoryItemModifiedEvent event)
+		-- Parameters
+		local Entity = event.Entity
+		local Items = event.Items
+		--------------------------------------------------------
+		for	i,item in pairs(Items) do
+			if self.SlotItems[item.GUID] ~= nil then
+				self.SlotItems[item.GUID].UIInventoryItemSlot:SetData(item)
+			end
+		end
+	end
+
+	@EventSender("LocalPlayer")
+	handler HandleOnInventoryInitialized(OnInventoryInitialized event)
+		
+		-- Parameters
+		    local AllItemCounts = event.AllItemCounts
+		    ---------------------------------------------------------
+		 
+		    --[[for i, itemCount in pairs(AllItemCounts) do
+		        self._T.slotList[i].UIItemSlot:SetData(i, itemCount)
+		    end]]
+	end
+
+	@EventSender("LocalPlayer")
+	handler HandleOnInventoryModified(OnInventoryModified event)
+		-- Parameters
+		    local ItemIndex = event.ItemIndex
+		    local ItemCount = event.ItemCount
+		    ---------------------------------------------------------
+		 
+		    -- Check if the slot list is normal.
+		    if self._T.slotList == nil then
+		        return
+		    end
+		 
+		    local slot = self._T.slotList[ItemIndex]
+		 
+		    if slot == nil then
+		        self._T.slotList[ItemIndex] = self:AddSlot(ItemIndex, ItemCount)
+		    end
+		 
+		    -- Change the number of items that appear in the slot.
+		    slot.UIItemSlot:SetCount(ItemCount)
+		
+	end
+
+	@EventSender("LocalPlayer")
+	handler HandleSimpleInventoryInitializedEvent(SimpleInventoryInitializedEvent event)
+		-- Parameters
+		    local Meso = event.Meso
+		    local ItemStacks = event.ItemStacks
+		    ---------------------------------------------------------
+		
+		    self:SetMeso(Meso)
+		
+		    for _, stack in pairs(ItemStacks) do
+		    	if stack ~= nil then
+		    		self:SetSlot(stack.SlotIndex, stack.ItemId, stack.Count)
+		    	end
+		    end    
+		
+	end
+
+	@EventSender("LocalPlayer")
+	handler HandleSimpleInventoryItemAddedEvent(SimpleInventoryItemAddedEvent event)
+		-- Parameters
+		    local SlotIndex = event.SlotIndex
+		    local ItemId = event.ItemId
+		    local ItemCount = event.ItemCount
+		    ---------------------------------------------------------
+		
+		    self:SetSlot(SlotIndex, ItemId, ItemCount)
+		
+	end
+
+	@EventSender("LocalPlayer")
+	handler HandleSimpleInventoryItemModifiedEvent(SimpleInventoryItemModifiedEvent event)
+		 -- Parameters
+		    local SlotIndex = event.SlotIndex
+		    local ItemId = event.ItemId
+		    local ItemCount = event.ItemCount
+		    ---------------------------------------------------------
+		
+		    if ItemCount > 0 then
+		    	self:SetSlot(SlotIndex, ItemId, ItemCount)
+		    else
+		    	self:ClearSlot(SlotIndex)
+		    end
+		
+	end
+
+	@EventSender("LocalPlayer")
+	handler HandleSimpleInventoryItemRemovedEvent(SimpleInventoryItemRemovedEvent event)
+		-- Parameters
+		    local SlotIndex = event.SlotIndex
+		    local ItemId = event.ItemId
+		    ---------------------------------------------------------
+		
+		    self:ClearSlot(SlotIndex)
+		
+	end
+
+	@EventSender("LocalPlayer")
+	handler HandleSimpleInventoryMesoModifiedEvent(SimpleInventoryMesoModifiedEvent event)
+		-- Parameters
+		    local Meso = event.Meso
+		    ---------------------------------------------------------
+		
+		    self:SetMeso(Meso)
+		
+	end
+
+end

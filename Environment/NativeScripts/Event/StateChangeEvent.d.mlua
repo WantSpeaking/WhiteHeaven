@@ -1,0 +1,10 @@
+@Event
+script StateChangeEvent
+
+	property string CurrentStateName
+
+	property string PrevStateName
+
+	constructor StateChangeEvent(string currentStateName, string prevStateName) end
+
+end

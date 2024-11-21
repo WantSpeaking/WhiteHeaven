@@ -1,0 +1,8 @@
+@Event
+script SortingLayerChangedEvent
+
+	property string SortingLayer
+
+	constructor SortingLayerChangedEvent(string sortingLayer) end
+
+end

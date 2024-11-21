@@ -1,0 +1,86 @@
+@Component
+script SpriteRendererComponent extends Component
+
+	property Dictionary<string, string> ActionSheet
+
+	property string ClipName = ""
+
+	@Sync
+	property SpriteDrawMode DrawMode = SpriteDrawMode.Simple
+
+	@Sync
+	property int32 EndFrameIndex = 2147483647
+
+	@Sync
+	property boolean FlipX = false
+
+	@Sync
+	property boolean FlipY = false
+
+	@Sync
+	property boolean IgnoreMapLayerCheck = false
+
+	@Sync
+	property string MaterialID = ""
+
+	@Sync
+	property int32 OrderInLayer = 0
+
+	@Sync
+	property float PlayRate = 1
+
+	property RenderSettingType RenderSetting
+
+	@Sync
+	property string SortingLayer = "Default"
+
+	@Sync
+	property string SpriteRUID = ""
+
+	@Sync
+	property int32 StartFrameIndex = 0
+
+	@Sync
+	property Vector2 TiledSize = Vector2(1.000, 1.000)
+
+	@Sync
+	property Color Color = Color(1.000, 1.000, 1.000, 1.000)
+
+	@Sync
+	property boolean Enable = true
+
+	property boolean EnableInHierarchy
+
+	property Entity Entity
+
+	method void ChangeMaterial(string materialId) end
+
+	method boolean IsClient() end
+
+	method boolean IsServer() end
+
+	emitter EmitEmbededSpriteAnimPlayerChangeFrameEvent(EmbededSpriteAnimPlayerChangeFrameEvent event) end
+
+	emitter EmitEmbededSpriteAnimPlayerChangeStateEvent(EmbededSpriteAnimPlayerChangeStateEvent event) end
+
+	emitter EmitEmbededSpriteAnimPlayerEndEvent(EmbededSpriteAnimPlayerEndEvent event) end
+
+	emitter EmitEmbededSpriteAnimPlayerStartEvent(EmbededSpriteAnimPlayerStartEvent event) end
+
+	emitter EmitOrderInLayerChangedEvent(OrderInLayerChangedEvent event) end
+
+	emitter EmitSortingLayerChangedEvent(SortingLayerChangedEvent event) end
+
+	emitter EmitSpriteAnimPlayerChangeFrameEvent(SpriteAnimPlayerChangeFrameEvent event) end
+
+	emitter EmitSpriteAnimPlayerChangeStateEvent(SpriteAnimPlayerChangeStateEvent event) end
+
+	emitter EmitSpriteAnimPlayerEndEvent(SpriteAnimPlayerEndEvent event) end
+
+	emitter EmitSpriteAnimPlayerEndFrameEvent(SpriteAnimPlayerEndFrameEvent event) end
+
+	emitter EmitSpriteAnimPlayerStartEvent(SpriteAnimPlayerStartEvent event) end
+
+	emitter EmitSpriteAnimPlayerStartFrameEvent(SpriteAnimPlayerStartFrameEvent event) end
+
+end

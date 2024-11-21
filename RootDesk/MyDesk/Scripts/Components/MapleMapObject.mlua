@@ -1,0 +1,4 @@
+@Component
+script MapleMapObject extends Component
+
+end

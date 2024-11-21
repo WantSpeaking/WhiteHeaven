@@ -1,0 +1,10 @@
+@Event
+script SimpleInventoryItemRemovedEvent
+
+	@Sync
+	property integer SlotIndex = 0
+
+	@Sync
+	property string ItemId = ""
+
+end

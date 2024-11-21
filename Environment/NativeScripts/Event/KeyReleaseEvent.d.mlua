@@ -1,0 +1,8 @@
+@Event
+script KeyReleaseEvent
+
+	property KeyboardKey key
+
+	constructor KeyReleaseEvent(KeyboardKey key) end
+
+end

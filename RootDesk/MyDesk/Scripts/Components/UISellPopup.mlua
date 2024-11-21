@@ -1,0 +1,56 @@
+@Component
+script UISellPopup extends Component
+
+	property integer InventorySlotIndex = 0
+
+	@ExecSpace("ClientOnly")
+	method void OnBeginPlay()
+		self.Entity:SetEnable(false)
+		
+		    -- Close Button
+		    local closeButton = self.Entity:GetChildByName("btn_close")
+		    local closeFunc = function()
+		    	self.Entity.Enable = false
+		    end
+		
+		    closeButton:ConnectEvent(ButtonClickEvent, closeFunc)
+	end
+
+	method void SetData(integer inventorySlotIndex, string itemId, integer itemCount)
+		---@type ItemInfo
+		    local itemInfo = _Data.ItemTable[itemId]
+		
+		    if itemInfo == nil then
+		    	log_error("[UISellPopup] (SetData) Item Id Error: " .. itemId)
+		    	return
+		    end
+		
+		    local imageEntity = self.Entity:GetChildByName("img_item")
+		    local nameEntity = self.Entity:GetChildByName("txt_name")
+		    local inputEntity = self.Entity:GetChildByName("input_count")
+		    imageEntity.SpriteGUIRendererComponent.ImageRUID = itemInfo.IconRUID
+		    nameEntity.TextComponent.Text = itemInfo.Name
+		    inputEntity.TextInputComponent.Text = tostring(itemCount)
+		
+		    self.InventorySlotIndex = inventorySlotIndex
+	end
+
+	@EventSender("Entity", "9ad60437-05a0-4ed5-9e26-70cf302efe93")
+	handler HandleButtonClickEvent(ButtonClickEvent event)
+		--------------- Native Event Sender Info ----------------
+		    -- Sender: ButtonComponent
+		    -- Space: Client
+		    ---------------------------------------------------------
+		
+		    -- Parameters
+		    local Entity = event.Entity
+		    ---------------------------------------------------------
+		
+		    -- Proceed with the sale for the number of entered items.
+		    local inputEntity = self.Entity:GetChildByName("input_count")
+		    local count = tonumber(inputEntity.TextInputComponent.Text)
+		    _Shop:Sell(self.InventorySlotIndex, count)
+		    self.Entity:SetEnable(false)
+	end
+
+end

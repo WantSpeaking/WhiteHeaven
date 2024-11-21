@@ -1,0 +1,40 @@
+@Service
+script EntityService extends Service
+
+	method void Destroy(Entity entity) end
+
+	method void Destroy(Entity entity, float delaySeconds) end
+
+	method table<Entity> GetEntitiesByPath(string worldPath) end
+
+	method table<Entity> GetEntitiesByTag(string tag) end
+
+	method table<Entity> GetEntitiesSpawnedByModel(MODModel model) end
+
+	method table<Entity> GetEntitiesSpawnedByModelId(string modelId) end
+
+	method Entity GetEntity(string id) end
+
+	method Entity GetEntityByPath(string worldPath) end
+
+	method Entity GetEntityByTag(string tag) end
+
+	method table<Entity> GetSameModelEntities(Entity entity) end
+
+	method boolean IsValid(Entity entity) end
+
+	method MODEventHandlerBase ConnectEvent(Type eventType, IMODScriptFunction eventHandler) end
+
+	method MODEventHandlerBase ConnectEvent(Type eventType, IMODScriptFunction eventHandler) end
+
+	method MODEventHandlerBase ConnectEvent(string key, IMODScriptFunction eventHandler) end
+
+	method boolean DisconnectEvent(Type eventType, MODEventHandlerBase eventHandler) end
+
+	method boolean DisconnectEvent(Type eventType, MODEventHandlerBase eventHandler) end
+
+	method boolean DisconnectEvent(string key, MODEventHandlerBase eventHandler) end
+
+	method void SendEvent(EventType sendEvent) end
+
+end

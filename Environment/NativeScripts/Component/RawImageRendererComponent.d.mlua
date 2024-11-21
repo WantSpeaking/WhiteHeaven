@@ -1,0 +1,33 @@
+@Component
+script RawImageRendererComponent extends Component
+
+	property boolean IgnoreMapLayerCheck = false
+
+	@Sync
+	property string MaterialId = ""
+
+	property int32 OrderInLayer = 0
+
+	property string SortingLayer = "Default"
+
+	@Sync
+	property boolean Enable = true
+
+	property boolean EnableInHierarchy
+
+	property Entity Entity
+
+	method void ChangeMaterial(string materialId) end
+
+	@ExecSpace("ClientOnly")
+	method void SetRawImage(RawImage rawImage) end
+
+	method boolean IsClient() end
+
+	method boolean IsServer() end
+
+	emitter EmitOrderInLayerChangedEvent(OrderInLayerChangedEvent event) end
+
+	emitter EmitSortingLayerChangedEvent(SortingLayerChangedEvent event) end
+
+end

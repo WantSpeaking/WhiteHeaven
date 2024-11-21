@@ -1,0 +1,8 @@
+@Event
+script PortalUseEvent
+
+	property Entity PortalUser
+
+	constructor PortalUseEvent(Entity portalUser) end
+
+end

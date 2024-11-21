@@ -1,0 +1,6 @@
+@Event
+script WebLoadCompleteEvent
+
+	constructor WebLoadCompleteEvent() end
+
+end

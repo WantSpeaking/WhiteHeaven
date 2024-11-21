@@ -1,0 +1,6 @@
+@Event
+script ClimbPauseEvent
+
+	constructor ClimbPauseEvent() end
+
+end

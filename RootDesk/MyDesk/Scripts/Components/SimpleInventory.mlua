@@ -1,0 +1,356 @@
+@Component
+script SimpleInventory extends Component
+
+	property number Meso = 1000
+
+	property table ItemStacks = {}
+
+	property number Capacity = 16
+
+	@ExecSpace("ServerOnly")
+	method void OnBeginPlay()
+		-- Loading inventory data from the data storage
+		    local userId = self.Entity.PlayerComponent.UserId
+		    local userDataStorage = _DataStorageService:GetUserDataStorage(userId)
+		    local errorCode, loadData = userDataStorage:GetAndWait("SimpleInventoryData")
+		    
+		    -- Output error code if data load fails
+		    if errorCode ~= 0 then
+		    	log_error("[SimpleInventory] Data load fails:" .. tostring(errorCode))
+		    	return
+		    end
+		  
+		    -- If there is loaded data, apply it
+		    if loadData ~= nil then
+		    	self:Deserialize(loadData)
+		    end
+		    
+		    -- Inventory initialization event occurs
+		    self:SendInitializedEvent()
+		    
+		    -- Automatically save at regular intervals
+		    local saveInventory = function()
+		    local saveData = self:Serialize()
+		    userDataStorage:SetAsync("SimpleInventoryData", saveData, function() log ("[SimpleInventory] Saved") end)
+		    	log ("[SimpleInventory] Saving...")
+		    end
+		    
+			--[[self:AddItem("potion_red", 1)
+		    self:AddItem("potion_blue", 1)
+		    self:AddItem("potion_redpill", 1)
+		    self:AddItem("potion_bluepill", 1)
+		    self:AddItem("arrow", 1)]]
+		
+		    local saveInterval = 300
+		    _TimerService:SetTimerRepeat(saveInventory, saveInterval, saveInterval)
+	end
+
+	method string Serialize()
+		local dataTable = {}
+		    local itemStacks = {}
+		    
+		    dataTable.Meso = self.Meso
+		    
+		    for _, stack in pairs(self.ItemStacks) do
+		    	local stackData = stack:ToTable()
+		    	table.insert(itemStacks, stackData)
+		    end
+		    
+		    if #itemStacks > 0 then
+		    	dataTable.ItemStacks = itemStacks
+		    end
+		    
+		    return _HttpService:JSONEncode(dataTable)
+	end
+
+	method void Deserialize(string dataString)
+		if dataString == nil or dataString == "" then
+		    	return
+		    end
+		
+		    local dataTable = _HttpService:JSONDecode(dataString)
+		    local meso = dataTable.Meso
+		    local stacks = dataTable.ItemStacks
+		
+		    self.Meso = math.tointeger(meso)
+		
+		    if stacks ~= nil then
+		    	for _, stackData in pairs(stacks) do
+		    		local stack = ItemStack()
+		    		stack:FromTable(stackData)
+		    		self.ItemStacks[stack.SlotIndex] = stack
+		    	end
+		    end
+	end
+
+	@ExecSpace("ServerOnly")
+	method integer AddItem(string itemId, integer itemCount)
+		local itemInfo = _Data.ItemTable[itemId]
+		    
+		    if itemInfo == nil then
+		    	log_error("[SimpleInventory] (AddItem) Item Id Error: " .. itemId)
+		    	return
+		    end
+		    
+		    if itemCount <= 0 then
+		    	log_error("[SimpleInventory] (AddItem) Item Count Error: " .. itemCount)
+		    	return
+		    end
+		    
+		    local maxStackCount = itemInfo.MaxStackCount
+		    local remain = itemCount
+		    
+		    -- Fill in an existing slot
+		    for i = 1, self.Capacity do
+		        if remain <= 0 then
+		            break
+		        end
+		    
+		    ---@type ItemStack
+		    local stack = self.ItemStacks[i]
+		    
+		    if stack == nil then
+		        continue
+		    end
+		    
+		        if stack.ItemId == itemId then
+		            local addCount = math.min(maxStackCount - stack.Count, remain)
+		            stack.Count = stack.Count + addCount
+		            remain = remain - addCount
+		    
+		            self:SendItemModifiedEvent(stack)
+		        end
+		    end
+		    
+		    -- Create the new slot to fill in the remaining
+		    for i = 1, self.Capacity do
+		    if remain <= 0 then
+		        break
+		    end
+		
+		    if self.ItemStacks[i] ~= nil then
+		        continue
+		    end
+		    
+		    local addCount = math.min(maxStackCount, remain)
+		    
+		    local newStack = ItemStack()
+		    newStack.SlotIndex = i
+		    newStack.ItemId = itemId
+		    newStack.Count = addCount
+		    self.ItemStacks[i] = newStack
+		    
+		    remain = remain - addCount
+		    
+		    self:SendItemAddedEvent(newStack)
+		    end
+		    
+		    -- Fill all and return the remaining count
+		    return remain
+	end
+
+	@ExecSpace("ServerOnly")
+	method boolean HasSpaceFor(string itemId, integer itemCount)
+		local itemInfo = _Data.ItemTable[itemId]
+		
+		    if itemInfo == nil then
+		    	log_error("[SimpleInventory] (HasSpaceFor) Item Id Error: " .. itemId)
+		    	return
+		    end
+		
+		    if itemCount <= 0 then
+		    	log_error("[SimpleInventory] (HasSpaceFor) Item Count Error: " .. itemCount)
+		    	return
+		    end
+		
+		    local maxStackCount = itemInfo.MaxStackCount
+		    local remain = itemCount
+		
+		    for i = 1, self.Capacity do
+		    	if remain <= 0 then
+		    		break
+		    	end
+		
+		    	---@type ItemStack
+		    	local stack = self.ItemStacks[i]
+		
+		    	if stack == nil then
+		    		remain = remain - maxStackCount
+		    	elseif stack.ItemId == itemId then
+		    		remain = remain - math.min(maxStackCount - stack.Count, remain)
+		    	end
+		    end
+		
+		    return (remain <= 0)
+	end
+
+	@ExecSpace("ServerOnly")
+	method boolean RemoveItemAt(integer slotIndex, integer itemCount)
+		if slotIndex < 1 or slotIndex > self.Capacity then
+		    	log_error("[SimpleInventory] (RemoveItemAt) Slot Index Error: " .. slotIndex)
+		    	return false
+		    end
+		
+		    if itemCount < 1 then
+		    	log_error("[SimpleInventory] (RemoveItemAt) Item Count Error: " .. itemCount)
+		    	return false
+		    end
+		
+		    ---@type ItemStack
+		    local stack = self.ItemStacks[slotIndex]
+		
+		    if stack == nil then
+		    	log_error("[SimpleInventory] (RemoveItemAt) There is no item in the slot.")
+		    	return false
+		    end
+		
+		    if stack.Count < itemCount then
+		    	log_error("[SimpleInventory] (RemoveItemAt) There aren't enough items.")
+		    	return false
+		    end
+		
+		    stack.Count -= itemCount
+		
+		    if stack.Count > 0 then
+		    	self:SendItemModifiedEvent(stack)
+		    else
+		    	self.ItemStacks[slotIndex] = nil
+		    	self:SendItemRemovedEvent(stack)
+		    end
+		
+		    return true
+	end
+
+	@ExecSpace("ServerOnly")
+	method void SetMeso(integer meso)
+			self.Meso = meso
+		    self:SendMesoModifiedEvent(meso)
+	end
+
+	@ExecSpace("ServerOnly")
+	method void SendInitializedEvent()
+			local event = SimpleInventoryInitializedEvent()
+		    event.Meso = self.Meso
+		    event.ItemStacks = self.ItemStacks
+		    self.Entity:SendEvent(event)
+		    
+		    -- Deliver to local players only
+		    self:SendInitializedEventToClient(event, self.Entity.PlayerComponent.UserId)
+		
+	end
+
+	@ExecSpace("Client")
+	method void SendInitializedEventToClient(SimpleInventoryInitializedEvent event)
+		 	self.Meso = event.Meso
+		    self.ItemStacks = event.ItemStacks
+		    self.Entity:SendEvent(event)
+	end
+
+	@ExecSpace("ServerOnly")
+	method void SendItemAddedEvent(ItemStack stack)
+			local event = SimpleInventoryItemAddedEvent()
+		    event.SlotIndex = stack.SlotIndex
+		    event.ItemId = stack.ItemId
+		    event.ItemCount = stack.Count
+		    self.Entity:SendEvent(event)
+		    
+		    -- Deliver to local players only
+		    self:SendItemAddedEventToClient(event, self.Entity.PlayerComponent.UserId)
+	end
+
+	@ExecSpace("Client")
+	method void SendItemAddedEventToClient(SimpleInventoryItemAddedEvent event)
+			local stack = ItemStack()
+		    stack.SlotIndex = event.SlotIndex
+		    stack.ItemId = event.ItemId
+		    stack.Count = event.ItemCount
+		    self.ItemStacks[event.SlotIndex] = stack
+		    
+		    self.Entity:SendEvent(event)
+	end
+
+	@ExecSpace("ServerOnly")
+	method void SendItemModifiedEvent(ItemStack stack)
+		local event = SimpleInventoryItemModifiedEvent()
+		    event.SlotIndex = stack.SlotIndex
+		    event.ItemId = stack.ItemId
+		    event.ItemCount = stack.Count
+		    self.Entity:SendEvent(event)
+		
+		    -- Deliver to local players only
+		    self:SendItemModifiedEventToClient(event, self.Entity.PlayerComponent.UserId)
+	end
+
+	@ExecSpace("Client")
+	method void SendItemModifiedEventToClient(SimpleInventoryItemModifiedEvent event)
+		---@type ItemStack
+		    local stack = self.ItemStacks[event.SlotIndex]
+		    stack.SlotIndex = event.SlotIndex
+		    stack.ItemId = event.ItemId
+		    stack.Count = event.ItemCount
+		    
+		    self.Entity:SendEvent(event)
+	end
+
+	@ExecSpace("ServerOnly")
+	method void SendMesoModifiedEvent(integer meso)
+		local event = SimpleInventoryMesoModifiedEvent()
+		    event.Meso = meso
+		    self.Entity:SendEvent(event)
+		
+		    -- Deliver to local players only
+		    self:SendMesoModifiedEventToClient(event, self.Entity.PlayerComponent.UserId)
+	end
+
+	@ExecSpace("Client")
+	method void SendMesoModifiedEventToClient(SimpleInventoryMesoModifiedEvent event)
+			self.Meso = event.Meso
+		    
+		    self.Entity:SendEvent(event)    
+	end
+
+	@ExecSpace("ServerOnly")
+	method void SendItemRemovedEvent(ItemStack stack)
+			local event = SimpleInventoryItemRemovedEvent()
+		    event.SlotIndex = stack.SlotIndex
+		    event.ItemId = stack.ItemId
+		    self.Entity:SendEvent(event)
+		
+		    -- Deliver to local players only
+		    self:SendItemRemovedEventToClient(event, self.Entity.PlayerComponent.UserId)
+		
+	end
+
+	@ExecSpace("Client")
+	method void SendItemRemovedEventToClient(SimpleInventoryMesoModifiedEvent event)
+			self.ItemStacks[event.SlotIndex] = nil
+		    
+		    self.Entity:SendEvent(event)
+	end
+
+	@EventSender("Service", "UserService")
+	handler HandleUserLeaveEvent(UserLeaveEvent event)
+		--------------- Native Event Sender Info ----------------
+		    -- Sender: UserService
+		    -- Space: Server
+		    ---------------------------------------------------------
+		    
+		    -- Parameters
+		    local UserId = event.UserId
+		    ---------------------------------------------------------
+		    
+		    local thisUserId = self.Entity.PlayerComponent.UserId
+		    
+		    if thisUserId ~= UserId then
+		    	return
+		    end
+		    
+		    -- Save inventory data info when play is over
+		    local userDataStorage = _DataStorageService:GetUserDataStorage(thisUserId)
+		    if userDataStorage ~= nil then
+		    	local saveData = self:Serialize()
+		    	userDataStorage:SetAndWait("SimpleInventoryData", saveData)
+		    end
+	end
+
+end

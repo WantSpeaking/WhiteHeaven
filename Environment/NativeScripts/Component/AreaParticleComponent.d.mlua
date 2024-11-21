@@ -1,0 +1,83 @@
+@Component
+script AreaParticleComponent extends Component
+
+	@Sync
+	property Vector2 AreaOffset = Vector2(0.000, 0.000)
+
+	@Sync
+	property Vector2 AreaSize = Vector2(0.000, 0.000)
+
+	@Sync
+	property AreaParticleType ParticleType = AreaParticleType.None
+
+	@Sync
+	property boolean AutoRandomSeed = true
+
+	@Sync
+	property Color Color = Color(0.500, 0.250, 0.250, 1.000)
+
+	@Sync
+	property boolean IgnoreMapLayerCheck = false
+
+	@Sync
+	property boolean IsEmitting = false
+
+	@Sync
+	property boolean Loop = true
+
+	@Sync
+	property int32 OrderInLayer = 0
+
+	@Sync
+	property float ParticleCount = 1
+
+	@Sync
+	property float ParticleLifeTime = 1
+
+	@Sync
+	property float ParticleSize = 1
+
+	@Sync
+	property float ParticleSpeed = 1
+
+	@Sync
+	property boolean PlayOnEnable = true
+
+	@Sync
+	property float PlaySpeed = 1
+
+	@Sync
+	property boolean Prewarm = false
+
+	@Sync
+	property integer RandomSeed = 0
+
+	@Sync
+	property string SortingLayer = "Default"
+
+	@Sync
+	property boolean Enable = true
+
+	property boolean EnableInHierarchy
+
+	property Entity Entity
+
+	method void Play() end
+
+	method void Stop() end
+
+	method boolean IsClient() end
+
+	method boolean IsServer() end
+
+	emitter EmitOrderInLayerChangedEvent(OrderInLayerChangedEvent event) end
+
+	emitter EmitParticleEmitEndEvent(ParticleEmitEndEvent event) end
+
+	emitter EmitParticleEmitStartEvent(ParticleEmitStartEvent event) end
+
+	emitter EmitParticleLoopEvent(ParticleLoopEvent event) end
+
+	emitter EmitSortingLayerChangedEvent(SortingLayerChangedEvent event) end
+
+end

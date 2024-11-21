@@ -1,0 +1,45 @@
+{
+  "Id": "",
+  "GameId": "",
+  "EntryKey": "gamelogic://386ddc7474954ab5bb9d5a90ec9030ab",
+  "ContentType": "x-mod/gamelogic",
+  "Content": "",
+  "Usage": 0,
+  "UsePublish": 1,
+  "UseService": 0,
+  "CoreVersion": "1.22.0.0",
+  "StudioVersion": "0.1.0.0",
+  "DynamicLoading": 0,
+  "ContentProto": {
+    "Use": "Binary",
+    "Entities": [
+      {
+        "id": "a3728334-36fd-4a07-86cb-dabf947f5aba",
+        "path": "/common",
+        "componentNames": "script.MonsterSpawn,script.HelloEditor",
+        "jsonString": {
+          "name": "common",
+          "path": "/common",
+          "nameEditable": false,
+          "enable": true,
+          "visible": true,
+          "displayOrder": 0,
+          "pathConstraints": "/",
+          "revision": 2,
+          "modelId": null,
+          "@components": [
+            {
+              "@type": "script.MonsterSpawn",
+              "Enable": true
+            },
+            {
+              "@type": "script.HelloEditor",
+              "Enable": true
+            }
+          ],
+          "@version": 1
+        }
+      }
+    ]
+  }
+}

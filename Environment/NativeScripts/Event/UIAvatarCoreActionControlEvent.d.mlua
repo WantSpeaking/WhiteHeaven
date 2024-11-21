@@ -1,0 +1,8 @@
+@Event
+script UIAvatarCoreActionControlEvent
+
+	property StudioAvatarActionType ActionType = Invalid
+
+	constructor UIAvatarCoreActionControlEvent(float actionSpeed, string coreActionName, int32 selectFrame) end
+
+end

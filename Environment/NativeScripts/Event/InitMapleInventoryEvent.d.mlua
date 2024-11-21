@@ -1,0 +1,8 @@
+@Event
+script InitMapleInventoryEvent
+
+	property Dictionary<MapleAvatarItemCategory, List<MapleAvatarItemData>> InventoryItems
+
+	constructor InitMapleInventoryEvent(Dictionary<MapleAvatarItemCategory, List<MapleAvatarItemData>> inventoryItems) end
+
+end

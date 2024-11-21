@@ -1,0 +1,8 @@
+@Event
+script TriggerEnterEvent
+
+	property Entity TriggerBodyEntity
+
+	constructor TriggerEnterEvent(Entity triggerBodyEntity) end
+
+end

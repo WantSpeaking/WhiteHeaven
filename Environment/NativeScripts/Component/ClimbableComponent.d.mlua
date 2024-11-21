@@ -1,0 +1,31 @@
+@Component
+script ClimbableComponent extends Component
+
+	property boolean AllowHorizontalMove = false
+
+	@Sync
+	property Vector2 BoxOffset
+
+	@Sync
+	property Vector2 BoxSize
+
+	property ClimbableType ClimbableAnimationType = ClimbableType.Rope
+
+	property CollisionGroup CollisionGroup = CollisionGroups.Climbable
+
+	property boolean IsUseDefaultObjectBoxSize = true
+
+	property Vector2 SpeedFactor = Vector2(1.000, 1.000)
+
+	@Sync
+	property boolean Enable = true
+
+	property boolean EnableInHierarchy
+
+	property Entity Entity
+
+	method boolean IsClient() end
+
+	method boolean IsServer() end
+
+end

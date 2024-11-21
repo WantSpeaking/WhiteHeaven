@@ -1,0 +1,24 @@
+@Component
+script MapleCharacter extends Component
+
+	property any party = nil
+
+	@TargetUserSync
+	property integer dropRate = 0
+
+	method boolean needQuestItem(integer questid, integer itemId)
+		
+		return false
+	end
+
+	method integer getBossDropRate()
+		local w = _World
+		return (self.dropRate / w.droprate) * w.bossdroprate
+	end
+
+	method number getCardRate(integer itemid)
+		local rate = 100.0
+		return rate/100
+	end
+
+end

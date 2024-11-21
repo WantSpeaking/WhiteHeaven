@@ -1,0 +1,30 @@
+@Component
+script MapleMapItem extends MapleMapObject
+
+	property any item = nil
+
+	property MapleMapObject dropper = nil
+
+	property integer character_ownerid = 0
+
+	property integer party_ownerid = 0
+
+	property integer meso = 0
+
+	property integer questid = -1
+
+	property number type = 0
+
+	property boolean pickedUp = false
+
+	property boolean playerDrop = false
+
+	property boolean partyDrop = false
+
+	property number dropTime = 0
+
+	method void setDropTime(number time)
+		
+	end
+
+end

@@ -1,0 +1,23 @@
+{
+  "Id": "",
+  "GameId": "",
+  "EntryKey": "localedataset://67b85cfc-9e20-48d9-8040-b1c5bb6a2f38",
+  "ContentType": "x-mod/localedataset",
+  "Content": "",
+  "Usage": 0,
+  "UsePublish": 1,
+  "UseService": 0,
+  "CoreVersion": "1.21.0.0",
+  "StudioVersion": "0.1.0.0",
+  "DynamicLoading": 0,
+  "ContentProto": {
+    "Use": "Json",
+    "Json": {
+      "name": "WebSync LocaleDataSet",
+      "id": "67b85cfc-9e20-48d9-8040-b1c5bb6a2f38",
+      "serveronly": false,
+      "iswebsync": true,
+      "websyncedtime": 0
+    }
+  }
+}

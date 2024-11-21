@@ -1,0 +1,12 @@
+@Misc
+script AvatarBodyActionElement
+
+	property string AvatarBodyActionStateName
+
+	property float PlayRate
+
+	constructor AvatarBodyActionElement() end
+
+	constructor AvatarBodyActionElement(string avatarBodyActionStateName, float playRate) end
+
+end

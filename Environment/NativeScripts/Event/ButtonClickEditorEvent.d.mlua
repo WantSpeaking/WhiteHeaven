@@ -1,0 +1,8 @@
+@Event
+script ButtonClickEditorEvent
+
+	property Entity Entity
+
+	constructor ButtonClickEditorEvent(Entity entity) end
+
+end

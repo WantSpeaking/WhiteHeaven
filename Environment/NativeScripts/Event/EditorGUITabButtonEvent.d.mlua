@@ -1,0 +1,10 @@
+@Event
+script EditorGUITabButtonEvent
+
+	property string id
+
+	property int32 index
+
+	constructor EditorGUITabButtonEvent(string id, int32 index) end
+
+end

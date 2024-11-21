@@ -1,0 +1,48 @@
+@Service
+script ScreenshotService extends Service
+
+	@ExecSpace("ClientOnly")
+	method ScreenshotError, string CaptureFullScreenAsFileAndWait(string fileName, boolean includeUI) end
+
+	@ExecSpace("ClientOnly")
+	method void CaptureFullScreenAsFileAsync(string fileName, func<ScreenshotError, string> callbackFunction, boolean includeUI) end
+
+	@ExecSpace("ClientOnly")
+	method ScreenshotError, RawImage CaptureFullScreenAsPixelDataAndWait(boolean includeUI) end
+
+	@ExecSpace("ClientOnly")
+	method void CaptureFullScreenAsPixelDataAsync(func<ScreenshotError, RawImage> callbackFunction, boolean includeUI) end
+
+	@ExecSpace("ClientOnly")
+	method ScreenshotError, string CaptureFullScreenToPhotoLibraryAndWait(string fileName, boolean includeUI) end
+
+	@ExecSpace("ClientOnly")
+	method ScreenshotError, string CaptureScreenRegionAsFileAndWait(string fileName, Vector2 from, Vector2 to, boolean includeUI) end
+
+	@ExecSpace("ClientOnly")
+	method void CaptureScreenRegionAsFileAsync(string fileName, Vector2 from, Vector2 to, func<ScreenshotError, string> callbackFunction, boolean includeUI) end
+
+	@ExecSpace("ClientOnly")
+	method ScreenshotError, RawImage CaptureScreenRegionAsPixelDataAndWait(Vector2 from, Vector2 to, boolean includeUI) end
+
+	@ExecSpace("ClientOnly")
+	method void CaptureScreenRegionAsPixelDataAsync(Vector2 from, Vector2 to, func<ScreenshotError, RawImage> callbackFunction, boolean includeUI) end
+
+	@ExecSpace("ClientOnly")
+	method ScreenshotError, string CaptureScreenRegionToPhotoLibraryAndWait(string fileName, Vector2 from, Vector2 to, boolean includeUI) end
+
+	method MODEventHandlerBase ConnectEvent(Type eventType, IMODScriptFunction eventHandler) end
+
+	method MODEventHandlerBase ConnectEvent(Type eventType, IMODScriptFunction eventHandler) end
+
+	method MODEventHandlerBase ConnectEvent(string key, IMODScriptFunction eventHandler) end
+
+	method boolean DisconnectEvent(Type eventType, MODEventHandlerBase eventHandler) end
+
+	method boolean DisconnectEvent(Type eventType, MODEventHandlerBase eventHandler) end
+
+	method boolean DisconnectEvent(string key, MODEventHandlerBase eventHandler) end
+
+	method void SendEvent(EventType sendEvent) end
+
+end

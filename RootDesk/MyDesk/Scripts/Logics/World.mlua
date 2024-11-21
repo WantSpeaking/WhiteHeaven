@@ -1,0 +1,8 @@
+@Logic
+script World extends Logic
+
+	property integer droprate = 0
+
+	property integer bossdroprate = 0
+
+end

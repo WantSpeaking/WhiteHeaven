@@ -1,0 +1,10 @@
+@Misc
+script DataRef
+
+	property string DataId
+
+	constructor MODDataRef() end
+
+	constructor MODDataRef(string dataId) end
+
+end

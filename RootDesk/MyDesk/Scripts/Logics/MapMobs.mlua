@@ -1,0 +1,12 @@
+@Logic
+script MapMobs extends Logic
+
+	property integer mapID = 0
+
+	property number NewValue1 = 0
+
+	method void LoadAndStartSpawn(string mapID)
+		
+	end
+
+end
