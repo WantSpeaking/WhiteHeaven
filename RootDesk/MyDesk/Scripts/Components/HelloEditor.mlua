@@ -11,6 +11,17 @@ script HelloEditor extends Component
 		-- Parameters
 		-- local Entity = event.Entity
 		---------------------------------------------------------
+		local getAllMap = function(ids)
+		    for index,value in ipairs(ids) do
+				_EditorService:LoadMap(value,true)
+				_EditorService:SaveMap()
+				print(value)
+			end
+			
+			
+			
+		end
+		
 		
 		local saveInventory = function(mapid)
 		    	log(mapid)
@@ -28,7 +39,9 @@ script HelloEditor extends Component
 			end
 		end
 		
-		_EditorService:LoadMap("map01",false)
+		--_EditorService:LoadMap("map01",false)
+		--_EditorService:GetMaps(getAllMap)
+		
 		--_EditorService:
 		--timerID = _TimerService:SetTimerRepeat(saveInventory1,0.5)
 		

@@ -1,7 +1,7 @@
 {
   "Id": "",
   "GameId": "",
-  "EntryKey": "map://1000000",
+  "EntryKey": "map://1000006",
   "ContentType": "x-mod/map",
   "Content": "",
   "Usage": 0,
@@ -14,12 +14,12 @@
     "Use": "Binary",
     "Entities": [
       {
-        "id": "6f8111fa-2d42-4cdc-9374-e0168a33013e",
-        "path": "/maps/1000000",
+        "id": "33066d23-4688-4e60-bce0-c54ef0c542b9",
+        "path": "/maps/1000006",
         "componentNames": "MOD.Core.MapComponent,MOD.Core.FootholdComponent",
         "jsonString": {
-          "name": "1000000",
-          "path": "/maps/1000000",
+          "name": "1000006",
+          "path": "/maps/1000006",
           "nameEditable": true,
           "enable": true,
           "visible": true,
@@ -44,12 +44,12 @@
         }
       },
       {
-        "id": "ebe0a319-8103-4125-95e3-9d2c8dde4a7a",
-        "path": "/maps/1000000/TileMap",
+        "id": "b5f71177-b5af-4f23-854a-2e9d26053afa",
+        "path": "/maps/1000006/TileMap",
         "componentNames": "MOD.Core.TransformComponent,MOD.Core.TileMapComponent",
         "jsonString": {
           "name": "TileMap",
-          "path": "/maps/1000000/TileMap",
+          "path": "/maps/1000006/TileMap",
           "nameEditable": false,
           "enable": true,
           "visible": true,
@@ -95,306 +95,34 @@
                 {
                   "type": 5,
                   "position": {
-                    "x": 8,
-                    "y": -8
-                  },
-                  "tileIndex": 0
-                },
-                {
-                  "type": 5,
-                  "position": {
-                    "x": 8,
-                    "y": -6
+                    "x": 2,
+                    "y": 48
                   },
                   "tileIndex": 1
                 },
                 {
                   "type": 5,
                   "position": {
-                    "x": 8,
-                    "y": -4
-                  },
-                  "tileIndex": 0
-                },
-                {
-                  "type": 5,
-                  "position": {
-                    "x": 8,
-                    "y": -2
-                  },
-                  "tileIndex": 1
-                },
-                {
-                  "type": 5,
-                  "position": {
-                    "x": 8,
-                    "y": 0
-                  },
-                  "tileIndex": 1
-                },
-                {
-                  "type": 5,
-                  "position": {
-                    "x": 10,
-                    "y": -8
-                  },
-                  "tileIndex": 1
-                },
-                {
-                  "type": 5,
-                  "position": {
-                    "x": 20,
-                    "y": -2
-                  },
-                  "tileIndex": 1
-                },
-                {
-                  "type": 5,
-                  "position": {
-                    "x": 18,
-                    "y": -6
-                  },
-                  "tileIndex": 0
-                },
-                {
-                  "type": 5,
-                  "position": {
-                    "x": 18,
-                    "y": 0
-                  },
-                  "tileIndex": 0
-                },
-                {
-                  "type": 5,
-                  "position": {
-                    "x": 16,
-                    "y": 0
-                  },
-                  "tileIndex": 1
-                },
-                {
-                  "type": 5,
-                  "position": {
-                    "x": 20,
-                    "y": -6
+                    "x": 4,
+                    "y": 48
                   },
                   "tileIndex": 2
                 },
                 {
                   "type": 5,
                   "position": {
-                    "x": 16,
-                    "y": -4
-                  },
-                  "tileIndex": 0
-                },
-                {
-                  "type": 5,
-                  "position": {
-                    "x": 14,
-                    "y": -4
-                  },
-                  "tileIndex": 1
-                },
-                {
-                  "type": 5,
-                  "position": {
-                    "x": 16,
-                    "y": -8
-                  },
-                  "tileIndex": 0
-                },
-                {
-                  "type": 5,
-                  "position": {
-                    "x": 14,
-                    "y": -8
-                  },
-                  "tileIndex": 1
-                },
-                {
-                  "type": 5,
-                  "position": {
-                    "x": 16,
-                    "y": -6
-                  },
-                  "tileIndex": 1
-                },
-                {
-                  "type": 5,
-                  "position": {
-                    "x": 14,
-                    "y": -2
-                  },
-                  "tileIndex": 0
-                },
-                {
-                  "type": 5,
-                  "position": {
-                    "x": 14,
-                    "y": 0
-                  },
-                  "tileIndex": 0
-                },
-                {
-                  "type": 5,
-                  "position": {
-                    "x": 14,
-                    "y": -6
-                  },
-                  "tileIndex": 0
-                },
-                {
-                  "type": 5,
-                  "position": {
-                    "x": 18,
-                    "y": -4
-                  },
-                  "tileIndex": 1
-                },
-                {
-                  "type": 5,
-                  "position": {
-                    "x": 12,
-                    "y": -6
-                  },
-                  "tileIndex": 1
-                },
-                {
-                  "type": 5,
-                  "position": {
-                    "x": 12,
-                    "y": -4
-                  },
-                  "tileIndex": 0
-                },
-                {
-                  "type": 5,
-                  "position": {
-                    "x": 10,
-                    "y": -6
-                  },
-                  "tileIndex": 0
-                },
-                {
-                  "type": 5,
-                  "position": {
-                    "x": 12,
-                    "y": -2
-                  },
-                  "tileIndex": 1
-                },
-                {
-                  "type": 5,
-                  "position": {
-                    "x": 10,
-                    "y": -2
-                  },
-                  "tileIndex": 0
-                },
-                {
-                  "type": 5,
-                  "position": {
-                    "x": 20,
-                    "y": -4
-                  },
-                  "tileIndex": 0
-                },
-                {
-                  "type": 5,
-                  "position": {
-                    "x": 20,
-                    "y": 0
-                  },
-                  "tileIndex": 1
-                },
-                {
-                  "type": 5,
-                  "position": {
-                    "x": 16,
-                    "y": -2
-                  },
-                  "tileIndex": 1
-                },
-                {
-                  "type": 5,
-                  "position": {
-                    "x": 18,
-                    "y": -2
-                  },
-                  "tileIndex": 0
-                },
-                {
-                  "type": 5,
-                  "position": {
-                    "x": 10,
-                    "y": -4
-                  },
-                  "tileIndex": 1
-                },
-                {
-                  "type": 5,
-                  "position": {
-                    "x": 12,
-                    "y": -8
-                  },
-                  "tileIndex": 0
-                },
-                {
-                  "type": 5,
-                  "position": {
-                    "x": 12,
-                    "y": 0
-                  },
-                  "tileIndex": 1
-                },
-                {
-                  "type": 5,
-                  "position": {
-                    "x": 10,
-                    "y": 0
-                  },
-                  "tileIndex": 0
-                },
-                {
-                  "type": 5,
-                  "position": {
-                    "x": 6,
-                    "y": -4
-                  },
-                  "tileIndex": 0
-                },
-                {
-                  "type": 5,
-                  "position": {
-                    "x": 6,
-                    "y": 0
-                  },
-                  "tileIndex": 1
-                },
-                {
-                  "type": 5,
-                  "position": {
-                    "x": 6,
-                    "y": -2
+                    "x": 2,
+                    "y": 46
                   },
                   "tileIndex": 2
                 },
                 {
                   "type": 5,
                   "position": {
-                    "x": 6,
-                    "y": -8
+                    "x": 4,
+                    "y": 46
                   },
                   "tileIndex": 3
-                },
-                {
-                  "type": 5,
-                  "position": {
-                    "x": 6,
-                    "y": -6
-                  },
-                  "tileIndex": 4
                 }
               ],
               "Enable": true
@@ -404,12 +132,12 @@
         }
       },
       {
-        "id": "067ab27a-a56b-443a-b5a1-0c88209334ea",
-        "path": "/maps/1000000/TileMap_1",
+        "id": "d78e59ed-01a0-47cf-bd38-ab622e78a557",
+        "path": "/maps/1000006/TileMap_1",
         "componentNames": "MOD.Core.TransformComponent,MOD.Core.TileMapComponent",
         "jsonString": {
           "name": "TileMap_1",
-          "path": "/maps/1000000/TileMap_1",
+          "path": "/maps/1000006/TileMap_1",
           "nameEditable": false,
           "enable": true,
           "visible": true,
@@ -455,504 +183,8 @@
                 {
                   "type": 5,
                   "position": {
-                    "x": 2,
-                    "y": -10
-                  },
-                  "tileIndex": 0
-                },
-                {
-                  "type": 5,
-                  "position": {
-                    "x": 6,
-                    "y": -14
-                  },
-                  "tileIndex": 0
-                },
-                {
-                  "type": 5,
-                  "position": {
-                    "x": 8,
-                    "y": -12
-                  },
-                  "tileIndex": 0
-                },
-                {
-                  "type": 5,
-                  "position": {
-                    "x": 10,
-                    "y": -12
-                  },
-                  "tileIndex": 1
-                },
-                {
-                  "type": 5,
-                  "position": {
-                    "x": 12,
-                    "y": -12
-                  },
-                  "tileIndex": 0
-                },
-                {
-                  "type": 5,
-                  "position": {
-                    "x": 14,
-                    "y": -12
-                  },
-                  "tileIndex": 1
-                },
-                {
-                  "type": 5,
-                  "position": {
-                    "x": 14,
-                    "y": -14
-                  },
-                  "tileIndex": 0
-                },
-                {
-                  "type": 5,
-                  "position": {
-                    "x": 12,
-                    "y": -14
-                  },
-                  "tileIndex": 1
-                },
-                {
-                  "type": 5,
-                  "position": {
-                    "x": 10,
-                    "y": -14
-                  },
-                  "tileIndex": 0
-                },
-                {
-                  "type": 5,
-                  "position": {
-                    "x": 8,
-                    "y": -14
-                  },
-                  "tileIndex": 1
-                },
-                {
-                  "type": 5,
-                  "position": {
-                    "x": 18,
-                    "y": -12
-                  },
-                  "tileIndex": 1
-                },
-                {
-                  "type": 5,
-                  "position": {
-                    "x": 18,
-                    "y": -14
-                  },
-                  "tileIndex": 0
-                },
-                {
-                  "type": 5,
-                  "position": {
-                    "x": 16,
-                    "y": -12
-                  },
-                  "tileIndex": 0
-                },
-                {
-                  "type": 5,
-                  "position": {
-                    "x": 16,
-                    "y": -10
-                  },
-                  "tileIndex": 1
-                },
-                {
-                  "type": 5,
-                  "position": {
-                    "x": 16,
-                    "y": -14
-                  },
-                  "tileIndex": 1
-                },
-                {
-                  "type": 5,
-                  "position": {
-                    "x": 22,
-                    "y": -8
-                  },
-                  "tileIndex": 1
-                },
-                {
-                  "type": 5,
-                  "position": {
-                    "x": 22,
-                    "y": -6
-                  },
-                  "tileIndex": 0
-                },
-                {
-                  "type": 5,
-                  "position": {
-                    "x": 20,
-                    "y": -10
-                  },
-                  "tileIndex": 1
-                },
-                {
-                  "type": 5,
-                  "position": {
-                    "x": 20,
-                    "y": -12
-                  },
-                  "tileIndex": 0
-                },
-                {
-                  "type": 5,
-                  "position": {
-                    "x": 24,
-                    "y": -6
-                  },
-                  "tileIndex": 1
-                },
-                {
-                  "type": 5,
-                  "position": {
-                    "x": 24,
-                    "y": -8
-                  },
-                  "tileIndex": 0
-                },
-                {
-                  "type": 5,
-                  "position": {
-                    "x": 26,
-                    "y": -6
-                  },
-                  "tileIndex": 0
-                },
-                {
-                  "type": 5,
-                  "position": {
-                    "x": 26,
-                    "y": -14
-                  },
-                  "tileIndex": 0
-                },
-                {
-                  "type": 5,
-                  "position": {
-                    "x": 28,
-                    "y": -6
-                  },
-                  "tileIndex": 1
-                },
-                {
-                  "type": 5,
-                  "position": {
-                    "x": 28,
-                    "y": -8
-                  },
-                  "tileIndex": 0
-                },
-                {
-                  "type": 5,
-                  "position": {
-                    "x": 26,
-                    "y": -8
-                  },
-                  "tileIndex": 1
-                },
-                {
-                  "type": 5,
-                  "position": {
-                    "x": 28,
-                    "y": -12
-                  },
-                  "tileIndex": 0
-                },
-                {
-                  "type": 5,
-                  "position": {
-                    "x": 30,
-                    "y": -8
-                  },
-                  "tileIndex": 1
-                },
-                {
-                  "type": 5,
-                  "position": {
-                    "x": 30,
-                    "y": -6
-                  },
-                  "tileIndex": 0
-                },
-                {
-                  "type": 5,
-                  "position": {
-                    "x": 30,
-                    "y": -12
-                  },
-                  "tileIndex": 1
-                },
-                {
-                  "type": 5,
-                  "position": {
-                    "x": 28,
-                    "y": -10
-                  },
-                  "tileIndex": 1
-                },
-                {
-                  "type": 5,
-                  "position": {
-                    "x": 30,
-                    "y": -14
-                  },
-                  "tileIndex": 0
-                },
-                {
-                  "type": 5,
-                  "position": {
-                    "x": 32,
-                    "y": -12
-                  },
-                  "tileIndex": 0
-                },
-                {
-                  "type": 5,
-                  "position": {
-                    "x": 32,
-                    "y": -14
-                  },
-                  "tileIndex": 1
-                },
-                {
-                  "type": 5,
-                  "position": {
-                    "x": 32,
-                    "y": -8
-                  },
-                  "tileIndex": 0
-                },
-                {
-                  "type": 5,
-                  "position": {
-                    "x": 32,
-                    "y": -6
-                  },
-                  "tileIndex": 1
-                },
-                {
-                  "type": 5,
-                  "position": {
-                    "x": 32,
-                    "y": -10
-                  },
-                  "tileIndex": 1
-                },
-                {
-                  "type": 5,
-                  "position": {
-                    "x": 30,
-                    "y": -10
-                  },
-                  "tileIndex": 0
-                },
-                {
-                  "type": 5,
-                  "position": {
-                    "x": 36,
-                    "y": -14
-                  },
-                  "tileIndex": 1
-                },
-                {
-                  "type": 5,
-                  "position": {
-                    "x": 34,
-                    "y": -14
-                  },
-                  "tileIndex": 0
-                },
-                {
-                  "type": 5,
-                  "position": {
-                    "x": 44,
-                    "y": -14
-                  },
-                  "tileIndex": 1
-                },
-                {
-                  "type": 5,
-                  "position": {
-                    "x": 44,
-                    "y": -10
-                  },
-                  "tileIndex": 1
-                },
-                {
-                  "type": 5,
-                  "position": {
-                    "x": 48,
-                    "y": -10
-                  },
-                  "tileIndex": 1
-                },
-                {
-                  "type": 5,
-                  "position": {
-                    "x": 46,
-                    "y": -10
-                  },
-                  "tileIndex": 0
-                },
-                {
-                  "type": 5,
-                  "position": {
-                    "x": 24,
-                    "y": -14
-                  },
-                  "tileIndex": 3
-                },
-                {
-                  "type": 5,
-                  "position": {
-                    "x": 20,
-                    "y": -14
-                  },
-                  "tileIndex": 3
-                },
-                {
-                  "type": 5,
-                  "position": {
-                    "x": 28,
-                    "y": -14
-                  },
-                  "tileIndex": 2
-                },
-                {
-                  "type": 5,
-                  "position": {
-                    "x": 22,
-                    "y": -14
-                  },
-                  "tileIndex": 2
-                },
-                {
-                  "type": 5,
-                  "position": {
-                    "x": 22,
-                    "y": -12
-                  },
-                  "tileIndex": 2
-                },
-                {
-                  "type": 5,
-                  "position": {
-                    "x": 26,
-                    "y": -12
-                  },
-                  "tileIndex": 1
-                },
-                {
-                  "type": 5,
-                  "position": {
-                    "x": 24,
-                    "y": -12
-                  },
-                  "tileIndex": 3
-                },
-                {
-                  "type": 5,
-                  "position": {
-                    "x": 24,
-                    "y": -10
-                  },
-                  "tileIndex": 2
-                },
-                {
-                  "type": 5,
-                  "position": {
-                    "x": 26,
-                    "y": -10
-                  },
-                  "tileIndex": 1
-                },
-                {
-                  "type": 5,
-                  "position": {
-                    "x": 22,
-                    "y": -10
-                  },
-                  "tileIndex": 2
-                },
-                {
-                  "type": 5,
-                  "position": {
                     "x": 4,
-                    "y": -10
-                  },
-                  "tileIndex": 3
-                },
-                {
-                  "type": 5,
-                  "position": {
-                    "x": 12,
-                    "y": -10
-                  },
-                  "tileIndex": 3
-                },
-                {
-                  "type": 5,
-                  "position": {
-                    "x": 14,
-                    "y": -10
-                  },
-                  "tileIndex": 0
-                },
-                {
-                  "type": 5,
-                  "position": {
-                    "x": 10,
-                    "y": -10
-                  },
-                  "tileIndex": 0
-                },
-                {
-                  "type": 5,
-                  "position": {
-                    "x": 8,
-                    "y": -10
-                  },
-                  "tileIndex": 1
-                },
-                {
-                  "type": 5,
-                  "position": {
-                    "x": 6,
-                    "y": -10
-                  },
-                  "tileIndex": 1
-                },
-                {
-                  "type": 5,
-                  "position": {
-                    "x": 4,
-                    "y": -14
-                  },
-                  "tileIndex": 3
-                },
-                {
-                  "type": 5,
-                  "position": {
-                    "x": -2,
-                    "y": -14
-                  },
-                  "tileIndex": 4
-                },
-                {
-                  "type": 5,
-                  "position": {
-                    "x": -4,
-                    "y": -14
+                    "y": 44
                   },
                   "tileIndex": 3
                 },
@@ -960,143 +192,23 @@
                   "type": 5,
                   "position": {
                     "x": 2,
-                    "y": -14
-                  },
-                  "tileIndex": 0
-                },
-                {
-                  "type": 5,
-                  "position": {
-                    "x": 0,
-                    "y": -12
-                  },
-                  "tileIndex": 3
-                },
-                {
-                  "type": 5,
-                  "position": {
-                    "x": 0,
-                    "y": -14
+                    "y": 44
                   },
                   "tileIndex": 2
                 },
                 {
                   "type": 5,
                   "position": {
-                    "x": 4,
-                    "y": -12
-                  },
-                  "tileIndex": 1
-                },
-                {
-                  "type": 5,
-                  "position": {
                     "x": 0,
-                    "y": -10
-                  },
-                  "tileIndex": 3
-                },
-                {
-                  "type": 5,
-                  "position": {
-                    "x": 48,
-                    "y": -12
-                  },
-                  "tileIndex": 3
-                },
-                {
-                  "type": 5,
-                  "position": {
-                    "x": 54,
-                    "y": -14
-                  },
-                  "tileIndex": 2
-                },
-                {
-                  "type": 5,
-                  "position": {
-                    "x": 52,
-                    "y": -12
-                  },
-                  "tileIndex": 3
-                },
-                {
-                  "type": 5,
-                  "position": {
-                    "x": 52,
-                    "y": -14
-                  },
-                  "tileIndex": 3
-                },
-                {
-                  "type": 5,
-                  "position": {
-                    "x": 50,
-                    "y": -12
-                  },
-                  "tileIndex": 0
-                },
-                {
-                  "type": 5,
-                  "position": {
-                    "x": 50,
-                    "y": -14
+                    "y": 44
                   },
                   "tileIndex": 1
-                },
-                {
-                  "type": 5,
-                  "position": {
-                    "x": 54,
-                    "y": -12
-                  },
-                  "tileIndex": 2
-                },
-                {
-                  "type": 5,
-                  "position": {
-                    "x": 54,
-                    "y": -10
-                  },
-                  "tileIndex": 4
-                },
-                {
-                  "type": 5,
-                  "position": {
-                    "x": 52,
-                    "y": -10
-                  },
-                  "tileIndex": 1
-                },
-                {
-                  "type": 5,
-                  "position": {
-                    "x": 50,
-                    "y": -10
-                  },
-                  "tileIndex": 0
-                },
-                {
-                  "type": 5,
-                  "position": {
-                    "x": -4,
-                    "y": -12
-                  },
-                  "tileIndex": 0
                 },
                 {
                   "type": 5,
                   "position": {
                     "x": -2,
-                    "y": -12
-                  },
-                  "tileIndex": 3
-                },
-                {
-                  "type": 5,
-                  "position": {
-                    "x": 6,
-                    "y": -12
+                    "y": 44
                   },
                   "tileIndex": 1
                 },
@@ -1104,103 +216,15 @@
                   "type": 5,
                   "position": {
                     "x": 2,
-                    "y": -12
-                  },
-                  "tileIndex": 0
-                },
-                {
-                  "type": 5,
-                  "position": {
-                    "x": 38,
-                    "y": -14
-                  },
-                  "tileIndex": 1
-                },
-                {
-                  "type": 5,
-                  "position": {
-                    "x": 42,
-                    "y": -14
-                  },
-                  "tileIndex": 0
-                },
-                {
-                  "type": 5,
-                  "position": {
-                    "x": 44,
-                    "y": -12
-                  },
-                  "tileIndex": 2
-                },
-                {
-                  "type": 5,
-                  "position": {
-                    "x": 40,
-                    "y": -12
-                  },
-                  "tileIndex": 0
-                },
-                {
-                  "type": 5,
-                  "position": {
-                    "x": 42,
-                    "y": -12
-                  },
-                  "tileIndex": 2
-                },
-                {
-                  "type": 5,
-                  "position": {
-                    "x": 38,
-                    "y": -12
+                    "y": 42
                   },
                   "tileIndex": 4
                 },
                 {
                   "type": 5,
                   "position": {
-                    "x": 36,
-                    "y": -12
-                  },
-                  "tileIndex": 0
-                },
-                {
-                  "type": 5,
-                  "position": {
-                    "x": 40,
-                    "y": -14
-                  },
-                  "tileIndex": 1
-                },
-                {
-                  "type": 5,
-                  "position": {
-                    "x": 34,
-                    "y": -12
-                  },
-                  "tileIndex": 4
-                },
-                {
-                  "type": 5,
-                  "position": {
-                    "x": 20,
-                    "y": -8
-                  },
-                  "tileIndex": 3
-                },
-                {
-                  "type": 5,
-                  "position": {
-                    "x": 20,
-                    "y": -6
-                  },
-                  "tileIndex": 0
-                },
-                {
-                  "type": 5,
-                  "position": {
-                    "x": 18,
-                    "y": -10
+                    "x": 0,
+                    "y": 42
                   },
                   "tileIndex": 4
                 },
@@ -1208,95 +232,367 @@
                   "type": 5,
                   "position": {
                     "x": 18,
-                    "y": -8
-                  },
-                  "tileIndex": 2
-                },
-                {
-                  "type": 5,
-                  "position": {
-                    "x": 36,
-                    "y": -10
-                  },
-                  "tileIndex": 4
-                },
-                {
-                  "type": 5,
-                  "position": {
-                    "x": 40,
-                    "y": -10
-                  },
-                  "tileIndex": 1
-                },
-                {
-                  "type": 5,
-                  "position": {
-                    "x": 34,
-                    "y": -10
-                  },
-                  "tileIndex": 4
-                },
-                {
-                  "type": 5,
-                  "position": {
-                    "x": 34,
-                    "y": -8
-                  },
-                  "tileIndex": 2
-                },
-                {
-                  "type": 5,
-                  "position": {
-                    "x": 38,
-                    "y": -8
-                  },
-                  "tileIndex": 4
-                },
-                {
-                  "type": 5,
-                  "position": {
-                    "x": 36,
-                    "y": -8
-                  },
-                  "tileIndex": 3
-                },
-                {
-                  "type": 5,
-                  "position": {
-                    "x": 38,
-                    "y": -10
-                  },
-                  "tileIndex": 3
-                },
-                {
-                  "type": 5,
-                  "position": {
-                    "x": 42,
-                    "y": -10
-                  },
-                  "tileIndex": 2
-                },
-                {
-                  "type": 5,
-                  "position": {
-                    "x": 34,
-                    "y": -6
-                  },
-                  "tileIndex": 3
-                },
-                {
-                  "type": 5,
-                  "position": {
-                    "x": 46,
-                    "y": -14
+                    "y": 48
                   },
                   "tileIndex": 0
                 },
                 {
                   "type": 5,
                   "position": {
-                    "x": 48,
-                    "y": -14
+                    "x": 16,
+                    "y": 48
+                  },
+                  "tileIndex": 4
+                },
+                {
+                  "type": 5,
+                  "position": {
+                    "x": 14,
+                    "y": 48
+                  },
+                  "tileIndex": 3
+                },
+                {
+                  "type": 5,
+                  "position": {
+                    "x": -10,
+                    "y": 38
+                  },
+                  "tileIndex": 1
+                },
+                {
+                  "type": 5,
+                  "position": {
+                    "x": -12,
+                    "y": 38
+                  },
+                  "tileIndex": 4
+                },
+                {
+                  "type": 5,
+                  "position": {
+                    "x": -14,
+                    "y": 38
+                  },
+                  "tileIndex": 0
+                },
+                {
+                  "type": 5,
+                  "position": {
+                    "x": -8,
+                    "y": 38
+                  },
+                  "tileIndex": 4
+                },
+                {
+                  "type": 5,
+                  "position": {
+                    "x": -20,
+                    "y": 28
+                  },
+                  "tileIndex": 4
+                },
+                {
+                  "type": 5,
+                  "position": {
+                    "x": -18,
+                    "y": 28
+                  },
+                  "tileIndex": 0
+                },
+                {
+                  "type": 5,
+                  "position": {
+                    "x": -16,
+                    "y": 28
+                  },
+                  "tileIndex": 1
+                },
+                {
+                  "type": 5,
+                  "position": {
+                    "x": -14,
+                    "y": 28
+                  },
+                  "tileIndex": 0
+                },
+                {
+                  "type": 5,
+                  "position": {
+                    "x": -20,
+                    "y": 26
+                  },
+                  "tileIndex": 0
+                },
+                {
+                  "type": 5,
+                  "position": {
+                    "x": -16,
+                    "y": 26
+                  },
+                  "tileIndex": 4
+                },
+                {
+                  "type": 5,
+                  "position": {
+                    "x": -14,
+                    "y": 26
+                  },
+                  "tileIndex": 0
+                },
+                {
+                  "type": 5,
+                  "position": {
+                    "x": -18,
+                    "y": 26
+                  },
+                  "tileIndex": 3
+                },
+                {
+                  "type": 5,
+                  "position": {
+                    "x": -22,
+                    "y": 24
+                  },
+                  "tileIndex": 0
+                },
+                {
+                  "type": 5,
+                  "position": {
+                    "x": -20,
+                    "y": 24
+                  },
+                  "tileIndex": 1
+                },
+                {
+                  "type": 5,
+                  "position": {
+                    "x": -16,
+                    "y": 24
+                  },
+                  "tileIndex": 2
+                },
+                {
+                  "type": 5,
+                  "position": {
+                    "x": -14,
+                    "y": 24
+                  },
+                  "tileIndex": 0
+                },
+                {
+                  "type": 5,
+                  "position": {
+                    "x": -18,
+                    "y": 24
+                  },
+                  "tileIndex": 4
+                },
+                {
+                  "type": 5,
+                  "position": {
+                    "x": -8,
+                    "y": 26
+                  },
+                  "tileIndex": 2
+                },
+                {
+                  "type": 5,
+                  "position": {
+                    "x": -6,
+                    "y": 26
+                  },
+                  "tileIndex": 3
+                },
+                {
+                  "type": 5,
+                  "position": {
+                    "x": -10,
+                    "y": 26
+                  },
+                  "tileIndex": 4
+                },
+                {
+                  "type": 5,
+                  "position": {
+                    "x": -12,
+                    "y": 26
+                  },
+                  "tileIndex": 4
+                },
+                {
+                  "type": 5,
+                  "position": {
+                    "x": -6,
+                    "y": 24
+                  },
+                  "tileIndex": 4
+                },
+                {
+                  "type": 5,
+                  "position": {
+                    "x": -8,
+                    "y": 24
+                  },
+                  "tileIndex": 3
+                },
+                {
+                  "type": 5,
+                  "position": {
+                    "x": -10,
+                    "y": 24
+                  },
+                  "tileIndex": 1
+                },
+                {
+                  "type": 5,
+                  "position": {
+                    "x": -12,
+                    "y": 24
+                  },
+                  "tileIndex": 3
+                },
+                {
+                  "type": 5,
+                  "position": {
+                    "x": -2,
+                    "y": 24
+                  },
+                  "tileIndex": 0
+                },
+                {
+                  "type": 5,
+                  "position": {
+                    "x": -4,
+                    "y": 24
+                  },
+                  "tileIndex": 2
+                },
+                {
+                  "type": 5,
+                  "position": {
+                    "x": 0,
+                    "y": 24
+                  },
+                  "tileIndex": 3
+                },
+                {
+                  "type": 5,
+                  "position": {
+                    "x": 6,
+                    "y": 24
+                  },
+                  "tileIndex": 3
+                },
+                {
+                  "type": 5,
+                  "position": {
+                    "x": 4,
+                    "y": 24
+                  },
+                  "tileIndex": 2
+                },
+                {
+                  "type": 5,
+                  "position": {
+                    "x": 2,
+                    "y": 24
+                  },
+                  "tileIndex": 0
+                },
+                {
+                  "type": 5,
+                  "position": {
+                    "x": 8,
+                    "y": 24
+                  },
+                  "tileIndex": 0
+                },
+                {
+                  "type": 5,
+                  "position": {
+                    "x": 10,
+                    "y": 24
+                  },
+                  "tileIndex": 3
+                },
+                {
+                  "type": 5,
+                  "position": {
+                    "x": 12,
+                    "y": 24
+                  },
+                  "tileIndex": 0
+                },
+                {
+                  "type": 5,
+                  "position": {
+                    "x": 6,
+                    "y": 26
+                  },
+                  "tileIndex": 3
+                },
+                {
+                  "type": 5,
+                  "position": {
+                    "x": 8,
+                    "y": 28
+                  },
+                  "tileIndex": 3
+                },
+                {
+                  "type": 5,
+                  "position": {
+                    "x": 18,
+                    "y": 32
+                  },
+                  "tileIndex": 4
+                },
+                {
+                  "type": 5,
+                  "position": {
+                    "x": -20,
+                    "y": 22
+                  },
+                  "tileIndex": 3
+                },
+                {
+                  "type": 5,
+                  "position": {
+                    "x": -18,
+                    "y": 22
+                  },
+                  "tileIndex": 3
+                },
+                {
+                  "type": 5,
+                  "position": {
+                    "x": -16,
+                    "y": 22
+                  },
+                  "tileIndex": 0
+                },
+                {
+                  "type": 5,
+                  "position": {
+                    "x": -14,
+                    "y": 22
+                  },
+                  "tileIndex": 3
+                },
+                {
+                  "type": 5,
+                  "position": {
+                    "x": -10,
+                    "y": 22
+                  },
+                  "tileIndex": 1
+                },
+                {
+                  "type": 5,
+                  "position": {
+                    "x": -12,
+                    "y": 22
                   },
                   "tileIndex": 1
                 },
@@ -1304,33 +600,561 @@
                   "type": 5,
                   "position": {
                     "x": -4,
-                    "y": -10
-                  },
-                  "tileIndex": 2
-                },
-                {
-                  "type": 5,
-                  "position": {
-                    "x": 46,
-                    "y": -12
+                    "y": 22
                   },
                   "tileIndex": 1
                 },
                 {
                   "type": 5,
                   "position": {
-                    "x": 36,
-                    "y": -6
+                    "x": -6,
+                    "y": 22
+                  },
+                  "tileIndex": 3
+                },
+                {
+                  "type": 5,
+                  "position": {
+                    "x": -8,
+                    "y": 22
+                  },
+                  "tileIndex": 0
+                },
+                {
+                  "type": 5,
+                  "position": {
+                    "x": -2,
+                    "y": 22
+                  },
+                  "tileIndex": 0
+                },
+                {
+                  "type": 5,
+                  "position": {
+                    "x": 4,
+                    "y": 22
                   },
                   "tileIndex": 4
                 },
                 {
                   "type": 5,
                   "position": {
-                    "x": -2,
-                    "y": -10
+                    "x": 2,
+                    "y": 22
+                  },
+                  "tileIndex": 0
+                },
+                {
+                  "type": 5,
+                  "position": {
+                    "x": 0,
+                    "y": 22
+                  },
+                  "tileIndex": 4
+                },
+                {
+                  "type": 5,
+                  "position": {
+                    "x": 10,
+                    "y": 22
+                  },
+                  "tileIndex": 3
+                },
+                {
+                  "type": 5,
+                  "position": {
+                    "x": 6,
+                    "y": 22
+                  },
+                  "tileIndex": 3
+                },
+                {
+                  "type": 5,
+                  "position": {
+                    "x": 8,
+                    "y": 22
+                  },
+                  "tileIndex": 1
+                },
+                {
+                  "type": 5,
+                  "position": {
+                    "x": -24,
+                    "y": 24
+                  },
+                  "tileIndex": 1
+                },
+                {
+                  "type": 5,
+                  "position": {
+                    "x": -24,
+                    "y": 22
                   },
                   "tileIndex": 2
+                },
+                {
+                  "type": 5,
+                  "position": {
+                    "x": -22,
+                    "y": 28
+                  },
+                  "tileIndex": 0
+                },
+                {
+                  "type": 5,
+                  "position": {
+                    "x": 16,
+                    "y": 20
+                  },
+                  "tileIndex": 4
+                },
+                {
+                  "type": 5,
+                  "position": {
+                    "x": -18,
+                    "y": 46
+                  },
+                  "tileIndex": 2
+                },
+                {
+                  "type": 5,
+                  "position": {
+                    "x": -16,
+                    "y": 46
+                  },
+                  "tileIndex": 3
+                },
+                {
+                  "type": 5,
+                  "position": {
+                    "x": -22,
+                    "y": 46
+                  },
+                  "tileIndex": 3
+                },
+                {
+                  "type": 5,
+                  "position": {
+                    "x": -20,
+                    "y": 46
+                  },
+                  "tileIndex": 3
+                },
+                {
+                  "type": 5,
+                  "position": {
+                    "x": 14,
+                    "y": 20
+                  },
+                  "tileIndex": 0
+                },
+                {
+                  "type": 5,
+                  "position": {
+                    "x": 18,
+                    "y": 20
+                  },
+                  "tileIndex": 2
+                },
+                {
+                  "type": 5,
+                  "position": {
+                    "x": 12,
+                    "y": 20
+                  },
+                  "tileIndex": 3
+                },
+                {
+                  "type": 5,
+                  "position": {
+                    "x": -22,
+                    "y": 22
+                  },
+                  "tileIndex": 2
+                },
+                {
+                  "type": 5,
+                  "position": {
+                    "x": 6,
+                    "y": 20
+                  },
+                  "tileIndex": 2
+                },
+                {
+                  "type": 5,
+                  "position": {
+                    "x": 4,
+                    "y": 20
+                  },
+                  "tileIndex": 2
+                },
+                {
+                  "type": 5,
+                  "position": {
+                    "x": 10,
+                    "y": 20
+                  },
+                  "tileIndex": 1
+                },
+                {
+                  "type": 5,
+                  "position": {
+                    "x": 0,
+                    "y": 20
+                  },
+                  "tileIndex": 2
+                },
+                {
+                  "type": 5,
+                  "position": {
+                    "x": -24,
+                    "y": 26
+                  },
+                  "tileIndex": 0
+                },
+                {
+                  "type": 5,
+                  "position": {
+                    "x": 2,
+                    "y": 20
+                  },
+                  "tileIndex": 3
+                },
+                {
+                  "type": 5,
+                  "position": {
+                    "x": -2,
+                    "y": 20
+                  },
+                  "tileIndex": 4
+                },
+                {
+                  "type": 5,
+                  "position": {
+                    "x": -4,
+                    "y": 20
+                  },
+                  "tileIndex": 3
+                },
+                {
+                  "type": 5,
+                  "position": {
+                    "x": 8,
+                    "y": 20
+                  },
+                  "tileIndex": 2
+                },
+                {
+                  "type": 5,
+                  "position": {
+                    "x": -8,
+                    "y": 20
+                  },
+                  "tileIndex": 0
+                },
+                {
+                  "type": 5,
+                  "position": {
+                    "x": -12,
+                    "y": 20
+                  },
+                  "tileIndex": 2
+                },
+                {
+                  "type": 5,
+                  "position": {
+                    "x": -10,
+                    "y": 20
+                  },
+                  "tileIndex": 1
+                },
+                {
+                  "type": 5,
+                  "position": {
+                    "x": -6,
+                    "y": 20
+                  },
+                  "tileIndex": 2
+                },
+                {
+                  "type": 5,
+                  "position": {
+                    "x": -16,
+                    "y": 20
+                  },
+                  "tileIndex": 3
+                },
+                {
+                  "type": 5,
+                  "position": {
+                    "x": -14,
+                    "y": 20
+                  },
+                  "tileIndex": 3
+                },
+                {
+                  "type": 5,
+                  "position": {
+                    "x": -18,
+                    "y": 20
+                  },
+                  "tileIndex": 4
+                },
+                {
+                  "type": 5,
+                  "position": {
+                    "x": -22,
+                    "y": 20
+                  },
+                  "tileIndex": 4
+                },
+                {
+                  "type": 5,
+                  "position": {
+                    "x": -20,
+                    "y": 20
+                  },
+                  "tileIndex": 1
+                },
+                {
+                  "type": 5,
+                  "position": {
+                    "x": 12,
+                    "y": 30
+                  },
+                  "tileIndex": 2
+                },
+                {
+                  "type": 5,
+                  "position": {
+                    "x": 14,
+                    "y": 30
+                  },
+                  "tileIndex": 0
+                },
+                {
+                  "type": 5,
+                  "position": {
+                    "x": 12,
+                    "y": 32
+                  },
+                  "tileIndex": 1
+                },
+                {
+                  "type": 5,
+                  "position": {
+                    "x": 14,
+                    "y": 32
+                  },
+                  "tileIndex": 4
+                },
+                {
+                  "type": 5,
+                  "position": {
+                    "x": 16,
+                    "y": 32
+                  },
+                  "tileIndex": 2
+                },
+                {
+                  "type": 5,
+                  "position": {
+                    "x": 18,
+                    "y": 30
+                  },
+                  "tileIndex": 3
+                },
+                {
+                  "type": 5,
+                  "position": {
+                    "x": 16,
+                    "y": 30
+                  },
+                  "tileIndex": 2
+                },
+                {
+                  "type": 5,
+                  "position": {
+                    "x": 14,
+                    "y": 28
+                  },
+                  "tileIndex": 3
+                },
+                {
+                  "type": 5,
+                  "position": {
+                    "x": 10,
+                    "y": 30
+                  },
+                  "tileIndex": 2
+                },
+                {
+                  "type": 5,
+                  "position": {
+                    "x": 16,
+                    "y": 28
+                  },
+                  "tileIndex": 1
+                },
+                {
+                  "type": 5,
+                  "position": {
+                    "x": 10,
+                    "y": 28
+                  },
+                  "tileIndex": 0
+                },
+                {
+                  "type": 5,
+                  "position": {
+                    "x": 8,
+                    "y": 26
+                  },
+                  "tileIndex": 1
+                },
+                {
+                  "type": 5,
+                  "position": {
+                    "x": 14,
+                    "y": 22
+                  },
+                  "tileIndex": 0
+                },
+                {
+                  "type": 5,
+                  "position": {
+                    "x": -22,
+                    "y": 26
+                  },
+                  "tileIndex": 0
+                },
+                {
+                  "type": 5,
+                  "position": {
+                    "x": 16,
+                    "y": 22
+                  },
+                  "tileIndex": 0
+                },
+                {
+                  "type": 5,
+                  "position": {
+                    "x": 14,
+                    "y": 24
+                  },
+                  "tileIndex": 4
+                },
+                {
+                  "type": 5,
+                  "position": {
+                    "x": 18,
+                    "y": 22
+                  },
+                  "tileIndex": 4
+                },
+                {
+                  "type": 5,
+                  "position": {
+                    "x": 16,
+                    "y": 24
+                  },
+                  "tileIndex": 3
+                },
+                {
+                  "type": 5,
+                  "position": {
+                    "x": -24,
+                    "y": 20
+                  },
+                  "tileIndex": 1
+                },
+                {
+                  "type": 5,
+                  "position": {
+                    "x": -24,
+                    "y": 28
+                  },
+                  "tileIndex": 0
+                },
+                {
+                  "type": 5,
+                  "position": {
+                    "x": 16,
+                    "y": 26
+                  },
+                  "tileIndex": 4
+                },
+                {
+                  "type": 5,
+                  "position": {
+                    "x": 18,
+                    "y": 28
+                  },
+                  "tileIndex": 1
+                },
+                {
+                  "type": 5,
+                  "position": {
+                    "x": 18,
+                    "y": 26
+                  },
+                  "tileIndex": 2
+                },
+                {
+                  "type": 5,
+                  "position": {
+                    "x": 14,
+                    "y": 26
+                  },
+                  "tileIndex": 3
+                },
+                {
+                  "type": 5,
+                  "position": {
+                    "x": 12,
+                    "y": 28
+                  },
+                  "tileIndex": 1
+                },
+                {
+                  "type": 5,
+                  "position": {
+                    "x": 12,
+                    "y": 26
+                  },
+                  "tileIndex": 4
+                },
+                {
+                  "type": 5,
+                  "position": {
+                    "x": 18,
+                    "y": 24
+                  },
+                  "tileIndex": 3
+                },
+                {
+                  "type": 5,
+                  "position": {
+                    "x": 10,
+                    "y": 26
+                  },
+                  "tileIndex": 3
+                },
+                {
+                  "type": 5,
+                  "position": {
+                    "x": 12,
+                    "y": 22
+                  },
+                  "tileIndex": 3
+                },
+                {
+                  "type": 5,
+                  "position": {
+                    "x": 12,
+                    "y": 48
+                  },
+                  "tileIndex": 3
                 }
               ],
               "Enable": true
@@ -1340,12 +1164,12 @@
         }
       },
       {
-        "id": "9de31da0-eda2-4b57-b406-b3f3a26936dd",
-        "path": "/maps/1000000/TileMap_2",
+        "id": "120012c1-1fc3-457b-af35-97a7015dade2",
+        "path": "/maps/1000006/TileMap_2",
         "componentNames": "MOD.Core.TransformComponent,MOD.Core.TileMapComponent",
         "jsonString": {
           "name": "TileMap_2",
-          "path": "/maps/1000000/TileMap_2",
+          "path": "/maps/1000006/TileMap_2",
           "nameEditable": false,
           "enable": true,
           "visible": true,
@@ -1395,12 +1219,12 @@
         }
       },
       {
-        "id": "fd0ad1d0-8a91-4b9f-8c11-288eec815b36",
-        "path": "/maps/1000000/TileMap_3",
+        "id": "e108a686-8584-442b-bdc8-0629b2ceeab3",
+        "path": "/maps/1000006/TileMap_3",
         "componentNames": "MOD.Core.TransformComponent,MOD.Core.TileMapComponent",
         "jsonString": {
           "name": "TileMap_3",
-          "path": "/maps/1000000/TileMap_3",
+          "path": "/maps/1000006/TileMap_3",
           "nameEditable": false,
           "enable": true,
           "visible": true,
@@ -1450,12 +1274,12 @@
         }
       },
       {
-        "id": "388572b7-16de-4b16-9584-76d7adc71b18",
-        "path": "/maps/1000000/TileMap_4",
+        "id": "8764d248-f564-4a56-acc4-2ac1963f08c6",
+        "path": "/maps/1000006/TileMap_4",
         "componentNames": "MOD.Core.TransformComponent,MOD.Core.TileMapComponent",
         "jsonString": {
           "name": "TileMap_4",
-          "path": "/maps/1000000/TileMap_4",
+          "path": "/maps/1000006/TileMap_4",
           "nameEditable": false,
           "enable": true,
           "visible": true,
@@ -1505,12 +1329,12 @@
         }
       },
       {
-        "id": "21341ede-ca86-4588-bf2c-5ea2d9c844f8",
-        "path": "/maps/1000000/TileMap_5",
+        "id": "29e8ede7-45a7-4aeb-adb3-0944da8b51f0",
+        "path": "/maps/1000006/TileMap_5",
         "componentNames": "MOD.Core.TransformComponent,MOD.Core.TileMapComponent",
         "jsonString": {
           "name": "TileMap_5",
-          "path": "/maps/1000000/TileMap_5",
+          "path": "/maps/1000006/TileMap_5",
           "nameEditable": false,
           "enable": true,
           "visible": true,
@@ -1560,12 +1384,12 @@
         }
       },
       {
-        "id": "0b91485d-a089-4b01-987f-ee9fbf949c72",
-        "path": "/maps/1000000/TileMap_6",
+        "id": "813ba51a-51d2-4559-bf41-d5520383b0ae",
+        "path": "/maps/1000006/TileMap_6",
         "componentNames": "MOD.Core.TransformComponent,MOD.Core.TileMapComponent",
         "jsonString": {
           "name": "TileMap_6",
-          "path": "/maps/1000000/TileMap_6",
+          "path": "/maps/1000006/TileMap_6",
           "nameEditable": false,
           "enable": true,
           "visible": true,
@@ -1615,12 +1439,12 @@
         }
       },
       {
-        "id": "a24bbff5-afa4-4304-b4d0-fafd9300fc2b",
-        "path": "/maps/1000000/TileMap_7",
+        "id": "d3dc1e94-b4d8-441f-b1fd-06939d3538e0",
+        "path": "/maps/1000006/TileMap_7",
         "componentNames": "MOD.Core.TransformComponent,MOD.Core.TileMapComponent",
         "jsonString": {
           "name": "TileMap_7",
-          "path": "/maps/1000000/TileMap_7",
+          "path": "/maps/1000006/TileMap_7",
           "nameEditable": false,
           "enable": true,
           "visible": true,
@@ -1670,12 +1494,12 @@
         }
       },
       {
-        "id": "3d9cf4fd-e814-4cd3-b91f-aadf1f32e4dd",
-        "path": "/maps/1000000/Background",
+        "id": "7cc740f0-92ac-4292-8cd7-ec463cc37bfc",
+        "path": "/maps/1000006/Background",
         "componentNames": "MOD.Core.BackgroundComponent",
         "jsonString": {
           "name": "Background",
-          "path": "/maps/1000000/Background",
+          "path": "/maps/1000006/Background",
           "nameEditable": false,
           "enable": true,
           "visible": true,
@@ -1702,12 +1526,12 @@
         }
       },
       {
-        "id": "e4271e00-ae58-4218-9268-bd570dd2e516",
-        "path": "/maps/1000000/MapleMapLayer",
+        "id": "aa637f19-0505-49ec-a00f-6f5e348781d4",
+        "path": "/maps/1000006/MapleMapLayer",
         "componentNames": "MOD.Core.MapLayerComponent",
         "jsonString": {
           "name": "MapleMapLayer",
-          "path": "/maps/1000000/MapleMapLayer",
+          "path": "/maps/1000006/MapleMapLayer",
           "nameEditable": false,
           "enable": true,
           "visible": true,
@@ -1735,12 +1559,12 @@
         }
       },
       {
-        "id": "2a801d0d-7970-498d-ab50-c65cba8e4fa6",
-        "path": "/maps/1000000/MapleMapLayer_1",
+        "id": "4731c05f-d8b7-421b-b4cc-2d1a55c0b7d8",
+        "path": "/maps/1000006/MapleMapLayer_1",
         "componentNames": "MOD.Core.MapLayerComponent",
         "jsonString": {
           "name": "MapleMapLayer_1",
-          "path": "/maps/1000000/MapleMapLayer_1",
+          "path": "/maps/1000006/MapleMapLayer_1",
           "nameEditable": false,
           "enable": true,
           "visible": true,
@@ -1768,12 +1592,12 @@
         }
       },
       {
-        "id": "4177a44f-5ec3-4e81-be36-47e1b7aa72c9",
-        "path": "/maps/1000000/MapleMapLayer_2",
+        "id": "e8e1ac0d-f324-4c0e-8192-028491ff34cf",
+        "path": "/maps/1000006/MapleMapLayer_2",
         "componentNames": "MOD.Core.MapLayerComponent",
         "jsonString": {
           "name": "MapleMapLayer_2",
-          "path": "/maps/1000000/MapleMapLayer_2",
+          "path": "/maps/1000006/MapleMapLayer_2",
           "nameEditable": false,
           "enable": true,
           "visible": true,
@@ -1801,12 +1625,12 @@
         }
       },
       {
-        "id": "da271674-7035-4219-be46-42c8a86ab90c",
-        "path": "/maps/1000000/MapleMapLayer_3",
+        "id": "bf7cbc68-1a46-4e39-b386-a9f92f18aab8",
+        "path": "/maps/1000006/MapleMapLayer_3",
         "componentNames": "MOD.Core.MapLayerComponent",
         "jsonString": {
           "name": "MapleMapLayer_3",
-          "path": "/maps/1000000/MapleMapLayer_3",
+          "path": "/maps/1000006/MapleMapLayer_3",
           "nameEditable": false,
           "enable": true,
           "visible": true,
@@ -1834,12 +1658,12 @@
         }
       },
       {
-        "id": "0891fc37-0236-4195-8a2b-ec1a75b6d6a9",
-        "path": "/maps/1000000/MapleMapLayer_4",
+        "id": "2c3600f8-6033-42c4-9fbc-ede931757efb",
+        "path": "/maps/1000006/MapleMapLayer_4",
         "componentNames": "MOD.Core.MapLayerComponent",
         "jsonString": {
           "name": "MapleMapLayer_4",
-          "path": "/maps/1000000/MapleMapLayer_4",
+          "path": "/maps/1000006/MapleMapLayer_4",
           "nameEditable": false,
           "enable": true,
           "visible": true,
@@ -1867,12 +1691,12 @@
         }
       },
       {
-        "id": "f7da1beb-b68c-4a4d-b027-afb13fc155a8",
-        "path": "/maps/1000000/MapleMapLayer_5",
+        "id": "e52c6b28-bfb0-489e-a153-c3a7075300ee",
+        "path": "/maps/1000006/MapleMapLayer_5",
         "componentNames": "MOD.Core.MapLayerComponent",
         "jsonString": {
           "name": "MapleMapLayer_5",
-          "path": "/maps/1000000/MapleMapLayer_5",
+          "path": "/maps/1000006/MapleMapLayer_5",
           "nameEditable": false,
           "enable": true,
           "visible": true,
@@ -1900,12 +1724,12 @@
         }
       },
       {
-        "id": "0344362d-615d-40cb-b970-07745df30245",
-        "path": "/maps/1000000/MapleMapLayer_6",
+        "id": "53bf56b8-b5e4-41dc-8a54-b940db7f5bc6",
+        "path": "/maps/1000006/MapleMapLayer_6",
         "componentNames": "MOD.Core.MapLayerComponent",
         "jsonString": {
           "name": "MapleMapLayer_6",
-          "path": "/maps/1000000/MapleMapLayer_6",
+          "path": "/maps/1000006/MapleMapLayer_6",
           "nameEditable": false,
           "enable": true,
           "visible": true,
@@ -1933,12 +1757,12 @@
         }
       },
       {
-        "id": "920bf7df-4d6f-4014-97f7-271c3f819056",
-        "path": "/maps/1000000/MapleMapLayer_7",
+        "id": "d1b6fa46-397a-49d3-828f-44a10d74af62",
+        "path": "/maps/1000006/MapleMapLayer_7",
         "componentNames": "MOD.Core.MapLayerComponent",
         "jsonString": {
           "name": "MapleMapLayer_7",
-          "path": "/maps/1000000/MapleMapLayer_7",
+          "path": "/maps/1000006/MapleMapLayer_7",
           "nameEditable": false,
           "enable": true,
           "visible": true,
@@ -1966,12 +1790,12 @@
         }
       },
       {
-        "id": "de704e86-b4e7-4b62-b25a-fbded6b64c9b",
-        "path": "/maps/1000000/Portal_west00",
+        "id": "13b184c2-dd13-4054-8c5d-486e8c7c2a10",
+        "path": "/maps/1000006/Portal_out00",
         "componentNames": "MOD.Core.TransformComponent,MOD.Core.SpriteRendererComponent,MOD.Core.TagComponent,script.ExtendPortalComponent",
         "jsonString": {
-          "name": "Portal_west00",
-          "path": "/maps/1000000/Portal_west00",
+          "name": "Portal_out00",
+          "path": "/maps/1000006/Portal_out00",
           "nameEditable": true,
           "enable": true,
           "visible": true,
@@ -1988,8 +1812,8 @@
             {
               "@type": "MOD.Core.TransformComponent",
               "Position": {
-                "x": -0.62,
-                "y": -2.42,
+                "x": 1.37,
+                "y": 13.76,
                 "z": 999.999
               },
               "QuaternionRotation": {
@@ -2029,9 +1853,9 @@
               },
               "IsLegacy": false,
               "Enable": true,
-              "TargetMapId": 50000,
-              "TargetPortalName": "east00",
-              "PortalName": "west00",
+              "TargetMapId": 1020000,
+              "TargetPortalName": "in02",
+              "PortalName": "out00",
               "PortalType": 2
             }
           ],
@@ -2039,815 +1863,12 @@
         }
       },
       {
-        "id": "bb7c0669-2e31-41da-9aaa-14cb2ac90f3c",
-        "path": "/maps/1000000/Portal_in00",
-        "componentNames": "MOD.Core.TransformComponent,MOD.Core.SpriteRendererComponent,MOD.Core.TagComponent,script.ExtendPortalComponent",
-        "jsonString": {
-          "name": "Portal_in00",
-          "path": "/maps/1000000/Portal_in00",
-          "nameEditable": true,
-          "enable": true,
-          "visible": true,
-          "displayOrder": 18,
-          "pathConstraints": "///",
-          "revision": 1,
-          "origin": {
-            "type": "Model",
-            "entry_id": "Portal",
-            "sub_entity_id": null
-          },
-          "modelId": "portal",
-          "@components": [
-            {
-              "@type": "MOD.Core.TransformComponent",
-              "Position": {
-                "x": 6.62,
-                "y": 0.89,
-                "z": 999.999
-              },
-              "QuaternionRotation": {
-                "x": 0.0,
-                "y": 0.0,
-                "z": 0.0,
-                "w": 1.0
-              },
-              "Enable": true
-            },
-            {
-              "@type": "MOD.Core.SpriteRendererComponent",
-              "ActionSheet": {},
-              "EndFrameIndex": 2147483647,
-              "RenderSetting": 0,
-              "SortingLayer": "MapLayer7",
-              "SpriteRUID": "edd691cd6ce2417c81f1aee6b6ebedd3",
-              "StartFrameIndex": 0,
-              "Enable": true
-            },
-            {
-              "@type": "MOD.Core.TagComponent",
-              "Tags": [
-                "MODRespawnArea"
-              ],
-              "Enable": true
-            },
-            {
-              "@type": "script.ExtendPortalComponent",
-              "BoxOffset": {
-                "x": 0.0149999857,
-                "y": 0.63
-              },
-              "BoxSize": {
-                "x": 1.01,
-                "y": 1.42
-              },
-              "IsLegacy": false,
-              "Enable": true,
-              "TargetMapId": 1000001,
-              "TargetPortalName": "out00",
-              "PortalName": "in00",
-              "PortalType": 2
-            }
-          ],
-          "@version": 1
-        }
-      },
-      {
-        "id": "0cc941c0-1f66-4d75-bf42-a1015ac0ecd5",
-        "path": "/maps/1000000/Portal_in02",
-        "componentNames": "MOD.Core.TransformComponent,MOD.Core.SpriteRendererComponent,MOD.Core.TagComponent,script.ExtendPortalComponent",
-        "jsonString": {
-          "name": "Portal_in02",
-          "path": "/maps/1000000/Portal_in02",
-          "nameEditable": true,
-          "enable": true,
-          "visible": true,
-          "displayOrder": 19,
-          "pathConstraints": "///",
-          "revision": 1,
-          "origin": {
-            "type": "Model",
-            "entry_id": "Portal",
-            "sub_entity_id": null
-          },
-          "modelId": "portal",
-          "@components": [
-            {
-              "@type": "MOD.Core.TransformComponent",
-              "Position": {
-                "x": 12.83,
-                "y": -1.21,
-                "z": 999.999
-              },
-              "QuaternionRotation": {
-                "x": 0.0,
-                "y": 0.0,
-                "z": 0.0,
-                "w": 1.0
-              },
-              "Enable": true
-            },
-            {
-              "@type": "MOD.Core.SpriteRendererComponent",
-              "ActionSheet": {},
-              "EndFrameIndex": 2147483647,
-              "RenderSetting": 0,
-              "SortingLayer": "MapLayer7",
-              "SpriteRUID": "edd691cd6ce2417c81f1aee6b6ebedd3",
-              "StartFrameIndex": 0,
-              "Enable": true
-            },
-            {
-              "@type": "MOD.Core.TagComponent",
-              "Tags": [
-                "MODRespawnArea"
-              ],
-              "Enable": true
-            },
-            {
-              "@type": "script.ExtendPortalComponent",
-              "BoxOffset": {
-                "x": 0.0149999857,
-                "y": 0.63
-              },
-              "BoxSize": {
-                "x": 1.01,
-                "y": 1.42
-              },
-              "IsLegacy": false,
-              "Enable": true,
-              "TargetMapId": 1000003,
-              "TargetPortalName": "out00",
-              "PortalName": "in02",
-              "PortalType": 2
-            }
-          ],
-          "@version": 1
-        }
-      },
-      {
-        "id": "84b06d6b-cd9e-4601-a48e-c89cb5fe0a97",
-        "path": "/maps/1000000/Portal_east00",
-        "componentNames": "MOD.Core.TransformComponent,MOD.Core.SpriteRendererComponent,MOD.Core.TagComponent,script.ExtendPortalComponent",
-        "jsonString": {
-          "name": "Portal_east00",
-          "path": "/maps/1000000/Portal_east00",
-          "nameEditable": true,
-          "enable": true,
-          "visible": true,
-          "displayOrder": 20,
-          "pathConstraints": "///",
-          "revision": 1,
-          "origin": {
-            "type": "Model",
-            "entry_id": "Portal",
-            "sub_entity_id": null
-          },
-          "modelId": "portal",
-          "@components": [
-            {
-              "@type": "MOD.Core.TransformComponent",
-              "Position": {
-                "x": 22.01,
-                "y": -2.4,
-                "z": 999.999
-              },
-              "QuaternionRotation": {
-                "x": 0.0,
-                "y": 0.0,
-                "z": 0.0,
-                "w": 1.0
-              },
-              "Enable": true
-            },
-            {
-              "@type": "MOD.Core.SpriteRendererComponent",
-              "ActionSheet": {},
-              "EndFrameIndex": 2147483647,
-              "RenderSetting": 0,
-              "SortingLayer": "MapLayer7",
-              "SpriteRUID": "edd691cd6ce2417c81f1aee6b6ebedd3",
-              "StartFrameIndex": 0,
-              "Enable": true
-            },
-            {
-              "@type": "MOD.Core.TagComponent",
-              "Tags": [
-                "MODRespawnArea"
-              ],
-              "Enable": true
-            },
-            {
-              "@type": "script.ExtendPortalComponent",
-              "BoxOffset": {
-                "x": 0.0149999857,
-                "y": 0.63
-              },
-              "BoxSize": {
-                "x": 1.01,
-                "y": 1.42
-              },
-              "IsLegacy": false,
-              "Enable": true,
-              "TargetMapId": 1010000,
-              "TargetPortalName": "west00",
-              "PortalName": "east00",
-              "PortalType": 2
-            }
-          ],
-          "@version": 1
-        }
-      },
-      {
-        "id": "8be80a7f-c772-4358-b13c-48f81490b8cf",
-        "path": "/maps/1000000/Portal_tuto00",
-        "componentNames": "MOD.Core.TransformComponent,MOD.Core.SpriteRendererComponent,MOD.Core.TagComponent,script.ExtendPortalComponent",
-        "jsonString": {
-          "name": "Portal_tuto00",
-          "path": "/maps/1000000/Portal_tuto00",
-          "nameEditable": true,
-          "enable": true,
-          "visible": true,
-          "displayOrder": 21,
-          "pathConstraints": "///",
-          "revision": 1,
-          "origin": {
-            "type": "Model",
-            "entry_id": "Portal",
-            "sub_entity_id": null
-          },
-          "modelId": "portal",
-          "@components": [
-            {
-              "@type": "MOD.Core.TransformComponent",
-              "Position": {
-                "x": 5.71,
-                "y": -1.98,
-                "z": 999.999
-              },
-              "QuaternionRotation": {
-                "x": 0.0,
-                "y": 0.0,
-                "z": 0.0,
-                "w": 1.0
-              },
-              "Enable": true
-            },
-            {
-              "@type": "MOD.Core.SpriteRendererComponent",
-              "ActionSheet": {},
-              "EndFrameIndex": 2147483647,
-              "RenderSetting": 0,
-              "SortingLayer": "MapLayer7",
-              "SpriteRUID": "",
-              "StartFrameIndex": 0,
-              "Enable": true
-            },
-            {
-              "@type": "MOD.Core.TagComponent",
-              "Tags": [
-                "MODRespawnArea"
-              ],
-              "Enable": true
-            },
-            {
-              "@type": "script.ExtendPortalComponent",
-              "BoxOffset": {
-                "x": 0.0149999857,
-                "y": 0.63
-              },
-              "BoxSize": {
-                "x": 1.01,
-                "y": 1.42
-              },
-              "IsLegacy": false,
-              "Enable": true,
-              "TargetMapId": 999999999,
-              "TargetPortalName": "",
-              "PortalName": "tuto00",
-              "PortalType": 9
-            }
-          ],
-          "@version": 1
-        }
-      },
-      {
-        "id": "6f0d56f6-338d-47fe-a87a-3428725e8641",
-        "path": "/maps/1000000/Portal_tuto01",
-        "componentNames": "MOD.Core.TransformComponent,MOD.Core.SpriteRendererComponent,MOD.Core.TagComponent,script.ExtendPortalComponent",
-        "jsonString": {
-          "name": "Portal_tuto01",
-          "path": "/maps/1000000/Portal_tuto01",
-          "nameEditable": true,
-          "enable": true,
-          "visible": true,
-          "displayOrder": 22,
-          "pathConstraints": "///",
-          "revision": 1,
-          "origin": {
-            "type": "Model",
-            "entry_id": "Portal",
-            "sub_entity_id": null
-          },
-          "modelId": "portal",
-          "@components": [
-            {
-              "@type": "MOD.Core.TransformComponent",
-              "Position": {
-                "x": 2.06,
-                "y": -1.96,
-                "z": 999.999
-              },
-              "QuaternionRotation": {
-                "x": 0.0,
-                "y": 0.0,
-                "z": 0.0,
-                "w": 1.0
-              },
-              "Enable": true
-            },
-            {
-              "@type": "MOD.Core.SpriteRendererComponent",
-              "ActionSheet": {},
-              "EndFrameIndex": 2147483647,
-              "RenderSetting": 0,
-              "SortingLayer": "MapLayer7",
-              "SpriteRUID": "",
-              "StartFrameIndex": 0,
-              "Enable": true
-            },
-            {
-              "@type": "MOD.Core.TagComponent",
-              "Tags": [
-                "MODRespawnArea"
-              ],
-              "Enable": true
-            },
-            {
-              "@type": "script.ExtendPortalComponent",
-              "BoxOffset": {
-                "x": 0.0149999857,
-                "y": 0.63
-              },
-              "BoxSize": {
-                "x": 1.01,
-                "y": 1.42
-              },
-              "IsLegacy": false,
-              "Enable": true,
-              "TargetMapId": 999999999,
-              "TargetPortalName": "",
-              "PortalName": "tuto01",
-              "PortalType": 9
-            }
-          ],
-          "@version": 1
-        }
-      },
-      {
-        "id": "7a3c1e2b-04f1-4fc8-8967-751bfbdb9f05",
-        "path": "/maps/1000000/Portal_tp",
-        "componentNames": "MOD.Core.TransformComponent,MOD.Core.SpriteRendererComponent,MOD.Core.TagComponent,script.ExtendPortalComponent",
-        "jsonString": {
-          "name": "Portal_tp",
-          "path": "/maps/1000000/Portal_tp",
-          "nameEditable": true,
-          "enable": true,
-          "visible": true,
-          "displayOrder": 23,
-          "pathConstraints": "///",
-          "revision": 1,
-          "origin": {
-            "type": "Model",
-            "entry_id": "Portal",
-            "sub_entity_id": null
-          },
-          "modelId": "portal",
-          "@components": [
-            {
-              "@type": "MOD.Core.TransformComponent",
-              "Position": {
-                "x": 3.58,
-                "y": -2.46,
-                "z": 999.999
-              },
-              "QuaternionRotation": {
-                "x": 0.0,
-                "y": 0.0,
-                "z": 0.0,
-                "w": 1.0
-              },
-              "Enable": true
-            },
-            {
-              "@type": "MOD.Core.SpriteRendererComponent",
-              "ActionSheet": {},
-              "EndFrameIndex": 2147483647,
-              "RenderSetting": 0,
-              "SortingLayer": "MapLayer7",
-              "SpriteRUID": "",
-              "StartFrameIndex": 0,
-              "Enable": true
-            },
-            {
-              "@type": "MOD.Core.TagComponent",
-              "Tags": [
-                "MODRespawnArea"
-              ],
-              "Enable": true
-            },
-            {
-              "@type": "script.ExtendPortalComponent",
-              "BoxOffset": {
-                "x": 0.0149999857,
-                "y": 0.63
-              },
-              "BoxSize": {
-                "x": 1.01,
-                "y": 1.42
-              },
-              "IsLegacy": false,
-              "Enable": true,
-              "TargetMapId": 999999999,
-              "TargetPortalName": "",
-              "PortalName": "tp",
-              "PortalType": 6
-            }
-          ],
-          "@version": 1
-        }
-      },
-      {
-        "id": "6b9769ab-bed9-48d6-9fd2-b39d2443dc3e",
-        "path": "/maps/1000000/Portal_tp",
-        "componentNames": "MOD.Core.TransformComponent,MOD.Core.SpriteRendererComponent,MOD.Core.TagComponent,script.ExtendPortalComponent",
-        "jsonString": {
-          "name": "Portal_tp",
-          "path": "/maps/1000000/Portal_tp",
-          "nameEditable": true,
-          "enable": true,
-          "visible": true,
-          "displayOrder": 24,
-          "pathConstraints": "///",
-          "revision": 1,
-          "origin": {
-            "type": "Model",
-            "entry_id": "Portal",
-            "sub_entity_id": null
-          },
-          "modelId": "portal",
-          "@components": [
-            {
-              "@type": "MOD.Core.TransformComponent",
-              "Position": {
-                "x": 4.44,
-                "y": -2.51,
-                "z": 999.999
-              },
-              "QuaternionRotation": {
-                "x": 0.0,
-                "y": 0.0,
-                "z": 0.0,
-                "w": 1.0
-              },
-              "Enable": true
-            },
-            {
-              "@type": "MOD.Core.SpriteRendererComponent",
-              "ActionSheet": {},
-              "EndFrameIndex": 2147483647,
-              "RenderSetting": 0,
-              "SortingLayer": "MapLayer7",
-              "SpriteRUID": "",
-              "StartFrameIndex": 0,
-              "Enable": true
-            },
-            {
-              "@type": "MOD.Core.TagComponent",
-              "Tags": [
-                "MODRespawnArea"
-              ],
-              "Enable": true
-            },
-            {
-              "@type": "script.ExtendPortalComponent",
-              "BoxOffset": {
-                "x": 0.0149999857,
-                "y": 0.63
-              },
-              "BoxSize": {
-                "x": 1.01,
-                "y": 1.42
-              },
-              "IsLegacy": false,
-              "Enable": true,
-              "TargetMapId": 999999999,
-              "TargetPortalName": "",
-              "PortalName": "tp",
-              "PortalType": 6
-            }
-          ],
-          "@version": 1
-        }
-      },
-      {
-        "id": "40053d22-fd86-47c4-9a6c-de2a65458a94",
-        "path": "/maps/1000000/Portal_tp",
-        "componentNames": "MOD.Core.TransformComponent,MOD.Core.SpriteRendererComponent,MOD.Core.TagComponent,script.ExtendPortalComponent",
-        "jsonString": {
-          "name": "Portal_tp",
-          "path": "/maps/1000000/Portal_tp",
-          "nameEditable": true,
-          "enable": true,
-          "visible": true,
-          "displayOrder": 25,
-          "pathConstraints": "///",
-          "revision": 1,
-          "origin": {
-            "type": "Model",
-            "entry_id": "Portal",
-            "sub_entity_id": null
-          },
-          "modelId": "portal",
-          "@components": [
-            {
-              "@type": "MOD.Core.TransformComponent",
-              "Position": {
-                "x": 6.44,
-                "y": -2.44,
-                "z": 999.999
-              },
-              "QuaternionRotation": {
-                "x": 0.0,
-                "y": 0.0,
-                "z": 0.0,
-                "w": 1.0
-              },
-              "Enable": true
-            },
-            {
-              "@type": "MOD.Core.SpriteRendererComponent",
-              "ActionSheet": {},
-              "EndFrameIndex": 2147483647,
-              "RenderSetting": 0,
-              "SortingLayer": "MapLayer7",
-              "SpriteRUID": "",
-              "StartFrameIndex": 0,
-              "Enable": true
-            },
-            {
-              "@type": "MOD.Core.TagComponent",
-              "Tags": [
-                "MODRespawnArea"
-              ],
-              "Enable": true
-            },
-            {
-              "@type": "script.ExtendPortalComponent",
-              "BoxOffset": {
-                "x": 0.0149999857,
-                "y": 0.63
-              },
-              "BoxSize": {
-                "x": 1.01,
-                "y": 1.42
-              },
-              "IsLegacy": false,
-              "Enable": true,
-              "TargetMapId": 999999999,
-              "TargetPortalName": "",
-              "PortalName": "tp",
-              "PortalType": 6
-            }
-          ],
-          "@version": 1
-        }
-      },
-      {
-        "id": "1259b862-3cb5-43c1-b466-38ab80248f21",
-        "path": "/maps/1000000/Portal_tp",
-        "componentNames": "MOD.Core.TransformComponent,MOD.Core.SpriteRendererComponent,MOD.Core.TagComponent,script.ExtendPortalComponent",
-        "jsonString": {
-          "name": "Portal_tp",
-          "path": "/maps/1000000/Portal_tp",
-          "nameEditable": true,
-          "enable": true,
-          "visible": true,
-          "displayOrder": 26,
-          "pathConstraints": "///",
-          "revision": 1,
-          "origin": {
-            "type": "Model",
-            "entry_id": "Portal",
-            "sub_entity_id": null
-          },
-          "modelId": "portal",
-          "@components": [
-            {
-              "@type": "MOD.Core.TransformComponent",
-              "Position": {
-                "x": 5.15,
-                "y": -2.47,
-                "z": 999.999
-              },
-              "QuaternionRotation": {
-                "x": 0.0,
-                "y": 0.0,
-                "z": 0.0,
-                "w": 1.0
-              },
-              "Enable": true
-            },
-            {
-              "@type": "MOD.Core.SpriteRendererComponent",
-              "ActionSheet": {},
-              "EndFrameIndex": 2147483647,
-              "RenderSetting": 0,
-              "SortingLayer": "MapLayer7",
-              "SpriteRUID": "",
-              "StartFrameIndex": 0,
-              "Enable": true
-            },
-            {
-              "@type": "MOD.Core.TagComponent",
-              "Tags": [
-                "MODRespawnArea"
-              ],
-              "Enable": true
-            },
-            {
-              "@type": "script.ExtendPortalComponent",
-              "BoxOffset": {
-                "x": 0.0149999857,
-                "y": 0.63
-              },
-              "BoxSize": {
-                "x": 1.01,
-                "y": 1.42
-              },
-              "IsLegacy": false,
-              "Enable": true,
-              "TargetMapId": 999999999,
-              "TargetPortalName": "",
-              "PortalName": "tp",
-              "PortalType": 6
-            }
-          ],
-          "@version": 1
-        }
-      },
-      {
-        "id": "9dfe7cb2-0abf-473c-b6cd-5ab90f40ba39",
-        "path": "/maps/1000000/Portal_tp",
-        "componentNames": "MOD.Core.TransformComponent,MOD.Core.SpriteRendererComponent,MOD.Core.TagComponent,script.ExtendPortalComponent",
-        "jsonString": {
-          "name": "Portal_tp",
-          "path": "/maps/1000000/Portal_tp",
-          "nameEditable": true,
-          "enable": true,
-          "visible": true,
-          "displayOrder": 27,
-          "pathConstraints": "///",
-          "revision": 1,
-          "origin": {
-            "type": "Model",
-            "entry_id": "Portal",
-            "sub_entity_id": null
-          },
-          "modelId": "portal",
-          "@components": [
-            {
-              "@type": "MOD.Core.TransformComponent",
-              "Position": {
-                "x": 1.92,
-                "y": -2.45,
-                "z": 999.999
-              },
-              "QuaternionRotation": {
-                "x": 0.0,
-                "y": 0.0,
-                "z": 0.0,
-                "w": 1.0
-              },
-              "Enable": true
-            },
-            {
-              "@type": "MOD.Core.SpriteRendererComponent",
-              "ActionSheet": {},
-              "EndFrameIndex": 2147483647,
-              "RenderSetting": 0,
-              "SortingLayer": "MapLayer7",
-              "SpriteRUID": "",
-              "StartFrameIndex": 0,
-              "Enable": true
-            },
-            {
-              "@type": "MOD.Core.TagComponent",
-              "Tags": [
-                "MODRespawnArea"
-              ],
-              "Enable": true
-            },
-            {
-              "@type": "script.ExtendPortalComponent",
-              "BoxOffset": {
-                "x": 0.0149999857,
-                "y": 0.63
-              },
-              "BoxSize": {
-                "x": 1.01,
-                "y": 1.42
-              },
-              "IsLegacy": false,
-              "Enable": true,
-              "TargetMapId": 999999999,
-              "TargetPortalName": "",
-              "PortalName": "tp",
-              "PortalType": 6
-            }
-          ],
-          "@version": 1
-        }
-      },
-      {
-        "id": "f6f29f2c-9235-4c69-a4d8-0fd893501cef",
-        "path": "/maps/1000000/Portal_tp",
-        "componentNames": "MOD.Core.TransformComponent,MOD.Core.SpriteRendererComponent,MOD.Core.TagComponent,script.ExtendPortalComponent",
-        "jsonString": {
-          "name": "Portal_tp",
-          "path": "/maps/1000000/Portal_tp",
-          "nameEditable": true,
-          "enable": true,
-          "visible": true,
-          "displayOrder": 28,
-          "pathConstraints": "///",
-          "revision": 1,
-          "origin": {
-            "type": "Model",
-            "entry_id": "Portal",
-            "sub_entity_id": null
-          },
-          "modelId": "portal",
-          "@components": [
-            {
-              "@type": "MOD.Core.TransformComponent",
-              "Position": {
-                "x": 2.75,
-                "y": -2.35,
-                "z": 999.999
-              },
-              "QuaternionRotation": {
-                "x": 0.0,
-                "y": 0.0,
-                "z": 0.0,
-                "w": 1.0
-              },
-              "Enable": true
-            },
-            {
-              "@type": "MOD.Core.SpriteRendererComponent",
-              "ActionSheet": {},
-              "EndFrameIndex": 2147483647,
-              "RenderSetting": 0,
-              "SortingLayer": "MapLayer7",
-              "SpriteRUID": "",
-              "StartFrameIndex": 0,
-              "Enable": true
-            },
-            {
-              "@type": "MOD.Core.TagComponent",
-              "Tags": [
-                "MODRespawnArea"
-              ],
-              "Enable": true
-            },
-            {
-              "@type": "script.ExtendPortalComponent",
-              "BoxOffset": {
-                "x": 0.0149999857,
-                "y": 0.63
-              },
-              "BoxSize": {
-                "x": 1.01,
-                "y": 1.42
-              },
-              "IsLegacy": false,
-              "Enable": true,
-              "TargetMapId": 999999999,
-              "TargetPortalName": "",
-              "PortalName": "tp",
-              "PortalType": 6
-            }
-          ],
-          "@version": 1
-        }
-      },
-      {
-        "id": "a781ca8c-0497-44cd-8f2a-0f836e82193e",
-        "path": "/maps/1000000/SpawnLocation",
+        "id": "5d97689b-726e-4d8f-bdbc-28c8a5270f44",
+        "path": "/maps/1000006/SpawnLocation",
         "componentNames": "MOD.Core.TransformComponent,MOD.Core.SpriteRendererComponent,MOD.Core.SpawnLocationComponent",
         "jsonString": {
           "name": "SpawnLocation",
-          "path": "/maps/1000000/SpawnLocation",
+          "path": "/maps/1000006/SpawnLocation",
           "nameEditable": true,
           "enable": true,
           "visible": true,
@@ -2864,8 +1885,326 @@
             {
               "@type": "MOD.Core.TransformComponent",
               "Position": {
-                "x": 2.44,
-                "y": -1.6,
+                "x": -3.0,
+                "y": 13.98,
+                "z": 999.999
+              },
+              "QuaternionRotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+              },
+              "Enable": true
+            },
+            {
+              "@type": "MOD.Core.SpriteRendererComponent",
+              "ActionSheet": {},
+              "EndFrameIndex": 2147483647,
+              "RenderSetting": 0,
+              "SortingLayer": "MapLayer7",
+              "SpriteRUID": "8ef238e0d0ca4bb783aca526cff35d11",
+              "StartFrameIndex": 0,
+              "Enable": true
+            },
+            {
+              "@type": "MOD.Core.SpawnLocationComponent",
+              "Enable": true
+            }
+          ],
+          "@version": 1
+        }
+      },
+      {
+        "id": "ec8c684f-53ba-4f77-b60c-5d61599a3bbc",
+        "path": "/maps/1000006/SpawnLocation",
+        "componentNames": "MOD.Core.TransformComponent,MOD.Core.SpriteRendererComponent,MOD.Core.SpawnLocationComponent",
+        "jsonString": {
+          "name": "SpawnLocation",
+          "path": "/maps/1000006/SpawnLocation",
+          "nameEditable": true,
+          "enable": true,
+          "visible": true,
+          "displayOrder": 49,
+          "pathConstraints": "///",
+          "revision": 1,
+          "origin": {
+            "type": "Model",
+            "entry_id": "MapObject",
+            "sub_entity_id": null
+          },
+          "modelId": "mapobject",
+          "@components": [
+            {
+              "@type": "MOD.Core.TransformComponent",
+              "Position": {
+                "x": -5.11,
+                "y": 14.45,
+                "z": 999.999
+              },
+              "QuaternionRotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+              },
+              "Enable": true
+            },
+            {
+              "@type": "MOD.Core.SpriteRendererComponent",
+              "ActionSheet": {},
+              "EndFrameIndex": 2147483647,
+              "RenderSetting": 0,
+              "SortingLayer": "MapLayer7",
+              "SpriteRUID": "8ef238e0d0ca4bb783aca526cff35d11",
+              "StartFrameIndex": 0,
+              "Enable": true
+            },
+            {
+              "@type": "MOD.Core.SpawnLocationComponent",
+              "Enable": true
+            }
+          ],
+          "@version": 1
+        }
+      },
+      {
+        "id": "987ef199-9b2e-4afb-bf7c-47a63f8af778",
+        "path": "/maps/1000006/SpawnLocation",
+        "componentNames": "MOD.Core.TransformComponent,MOD.Core.SpriteRendererComponent,MOD.Core.SpawnLocationComponent",
+        "jsonString": {
+          "name": "SpawnLocation",
+          "path": "/maps/1000006/SpawnLocation",
+          "nameEditable": true,
+          "enable": true,
+          "visible": true,
+          "displayOrder": 50,
+          "pathConstraints": "///",
+          "revision": 1,
+          "origin": {
+            "type": "Model",
+            "entry_id": "MapObject",
+            "sub_entity_id": null
+          },
+          "modelId": "mapobject",
+          "@components": [
+            {
+              "@type": "MOD.Core.TransformComponent",
+              "Position": {
+                "x": -0.56,
+                "y": 13.91,
+                "z": 999.999
+              },
+              "QuaternionRotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+              },
+              "Enable": true
+            },
+            {
+              "@type": "MOD.Core.SpriteRendererComponent",
+              "ActionSheet": {},
+              "EndFrameIndex": 2147483647,
+              "RenderSetting": 0,
+              "SortingLayer": "MapLayer7",
+              "SpriteRUID": "8ef238e0d0ca4bb783aca526cff35d11",
+              "StartFrameIndex": 0,
+              "Enable": true
+            },
+            {
+              "@type": "MOD.Core.SpawnLocationComponent",
+              "Enable": true
+            }
+          ],
+          "@version": 1
+        }
+      },
+      {
+        "id": "657dd6c1-af49-4d04-87bf-aa4de49367db",
+        "path": "/maps/1000006/SpawnLocation",
+        "componentNames": "MOD.Core.TransformComponent,MOD.Core.SpriteRendererComponent,MOD.Core.SpawnLocationComponent",
+        "jsonString": {
+          "name": "SpawnLocation",
+          "path": "/maps/1000006/SpawnLocation",
+          "nameEditable": true,
+          "enable": true,
+          "visible": true,
+          "displayOrder": 51,
+          "pathConstraints": "///",
+          "revision": 1,
+          "origin": {
+            "type": "Model",
+            "entry_id": "MapObject",
+            "sub_entity_id": null
+          },
+          "modelId": "mapobject",
+          "@components": [
+            {
+              "@type": "MOD.Core.TransformComponent",
+              "Position": {
+                "x": 0.05,
+                "y": 14.43,
+                "z": 999.999
+              },
+              "QuaternionRotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+              },
+              "Enable": true
+            },
+            {
+              "@type": "MOD.Core.SpriteRendererComponent",
+              "ActionSheet": {},
+              "EndFrameIndex": 2147483647,
+              "RenderSetting": 0,
+              "SortingLayer": "MapLayer7",
+              "SpriteRUID": "8ef238e0d0ca4bb783aca526cff35d11",
+              "StartFrameIndex": 0,
+              "Enable": true
+            },
+            {
+              "@type": "MOD.Core.SpawnLocationComponent",
+              "Enable": true
+            }
+          ],
+          "@version": 1
+        }
+      },
+      {
+        "id": "b0f32a8c-8af0-4dfc-ae20-6963b8c0c1ad",
+        "path": "/maps/1000006/SpawnLocation",
+        "componentNames": "MOD.Core.TransformComponent,MOD.Core.SpriteRendererComponent,MOD.Core.SpawnLocationComponent",
+        "jsonString": {
+          "name": "SpawnLocation",
+          "path": "/maps/1000006/SpawnLocation",
+          "nameEditable": true,
+          "enable": true,
+          "visible": true,
+          "displayOrder": 52,
+          "pathConstraints": "///",
+          "revision": 1,
+          "origin": {
+            "type": "Model",
+            "entry_id": "MapObject",
+            "sub_entity_id": null
+          },
+          "modelId": "mapobject",
+          "@components": [
+            {
+              "@type": "MOD.Core.TransformComponent",
+              "Position": {
+                "x": 1.78,
+                "y": 14.44,
+                "z": 999.999
+              },
+              "QuaternionRotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+              },
+              "Enable": true
+            },
+            {
+              "@type": "MOD.Core.SpriteRendererComponent",
+              "ActionSheet": {},
+              "EndFrameIndex": 2147483647,
+              "RenderSetting": 0,
+              "SortingLayer": "MapLayer7",
+              "SpriteRUID": "8ef238e0d0ca4bb783aca526cff35d11",
+              "StartFrameIndex": 0,
+              "Enable": true
+            },
+            {
+              "@type": "MOD.Core.SpawnLocationComponent",
+              "Enable": true
+            }
+          ],
+          "@version": 1
+        }
+      },
+      {
+        "id": "bd6c7794-0753-4e49-abe9-3dd3944c7e19",
+        "path": "/maps/1000006/SpawnLocation",
+        "componentNames": "MOD.Core.TransformComponent,MOD.Core.SpriteRendererComponent,MOD.Core.SpawnLocationComponent",
+        "jsonString": {
+          "name": "SpawnLocation",
+          "path": "/maps/1000006/SpawnLocation",
+          "nameEditable": true,
+          "enable": true,
+          "visible": true,
+          "displayOrder": 53,
+          "pathConstraints": "///",
+          "revision": 1,
+          "origin": {
+            "type": "Model",
+            "entry_id": "MapObject",
+            "sub_entity_id": null
+          },
+          "modelId": "mapobject",
+          "@components": [
+            {
+              "@type": "MOD.Core.TransformComponent",
+              "Position": {
+                "x": 2.34,
+                "y": 14.42,
+                "z": 999.999
+              },
+              "QuaternionRotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+              },
+              "Enable": true
+            },
+            {
+              "@type": "MOD.Core.SpriteRendererComponent",
+              "ActionSheet": {},
+              "EndFrameIndex": 2147483647,
+              "RenderSetting": 0,
+              "SortingLayer": "MapLayer7",
+              "SpriteRUID": "8ef238e0d0ca4bb783aca526cff35d11",
+              "StartFrameIndex": 0,
+              "Enable": true
+            },
+            {
+              "@type": "MOD.Core.SpawnLocationComponent",
+              "Enable": true
+            }
+          ],
+          "@version": 1
+        }
+      },
+      {
+        "id": "4fd6ae91-34d6-4489-91af-ce2fa922b96b",
+        "path": "/maps/1000006/SpawnLocation",
+        "componentNames": "MOD.Core.TransformComponent,MOD.Core.SpriteRendererComponent,MOD.Core.SpawnLocationComponent",
+        "jsonString": {
+          "name": "SpawnLocation",
+          "path": "/maps/1000006/SpawnLocation",
+          "nameEditable": true,
+          "enable": true,
+          "visible": true,
+          "displayOrder": 54,
+          "pathConstraints": "///",
+          "revision": 1,
+          "origin": {
+            "type": "Model",
+            "entry_id": "MapObject",
+            "sub_entity_id": null
+          },
+          "modelId": "mapobject",
+          "@components": [
+            {
+              "@type": "MOD.Core.TransformComponent",
+              "Position": {
+                "x": 4.13,
+                "y": 14.63,
                 "z": 999.999
               },
               "QuaternionRotation": {

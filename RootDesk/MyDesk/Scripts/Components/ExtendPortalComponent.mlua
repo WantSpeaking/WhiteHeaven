@@ -5,18 +5,29 @@ script ExtendPortalComponent extends PortalComponent
 
 	property string TargetPortalName = "portal-1_1"
 
+	property string PortalName = ""
+
+	@Sync
+	property integer PortalType = 0
+
 	@ExecSpace("ClientOnly")
 	method void OnInitialize()
 		
 	end
 
-	@ExecSpace("ServerOnly")
+	@ExecSpace("ClientOnly")
 	method void OnBeginPlay()
 		--print("/maps/"..self.TargetMapId..self.TargetPortalName)
 		--print(_EntityService:GetEntityByPath("/maps/"..self.TargetMapId.."/"..self.TargetPortalName))
 		--local ref = _EntityService:GetEntityByPath("/maps/"..self.TargetMapId.."/"..self.TargetPortalName)
 		--self.PortalEntityRef = ref
 		--self:SetPortalEntityRef(ref)
+		if self.PortalType == 2 then
+			self.Entity.SpriteRendererComponent.SpriteRUID = "edd691cd6ce2417c81f1aee6b6ebedd3"
+		else
+			self.Entity.SpriteRendererComponent.SpriteRUID = ""
+		end
+		
 	end
 
 	@ExecSpace("Client")
@@ -36,8 +47,13 @@ script ExtendPortalComponent extends PortalComponent
 		-- Parameters
 		-- local PortalUser = event.PortalUser
 		---------------------------------------------------------
-		print("PortalUse")
-		_TeleportService:TeleportToEntityPath(_UserService.LocalPlayer,"/maps/"..self.TargetMapId.."/"..self.TargetPortalName)
+		if self.TargetMapId == 999999999 or self.TargetMapId < 0 then
+			return
+		end
+		
+		local targetPortalPath = "/maps/"..self.TargetMapId.."/Portal_"..self.TargetPortalName
+		print("PortalUse:"..targetPortalPath)
+		_TeleportService:TeleportToEntityPath(_UserService.LocalPlayer,targetPortalPath)
 		
 	end
 
